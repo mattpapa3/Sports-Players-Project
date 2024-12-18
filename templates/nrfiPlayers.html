@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>NRFI</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prop.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    </head>
+    <body>
+        <form action="{{ url_for('MLBcode') }}">
+            <button>New Prop</button> <br><br>
+        </form>
+
+        <h2>{{first}} {{last}}</h2>
+        <div id='last10_1' class='last10_1'></div>
+        <br>
+        <div id='homeaway1' class="homeaway1"></div>
+        <br>
+        <div id="homeaway1_2022" class="homeaway1_2022"></div>
+        <br>
+     <!--   <div id='vs1' class='vs1'></div>
+        <br>
+        <div id="vs1_2022" class="vs1_2022"></div> --->
+        <br>
+        <br>
+        <h2>{{first2}} {{last2}}</h2>
+        <div id='last10_2' class='last10_2'></div>
+        <br>
+        <div id='homeaway2' class="homeaway2"></div>
+        <br>
+        <div id="homeaway2_2022" class="homeaway2_2022"></div>
+        <br>
+     <!--   <div id='vs2' class='vs2'></div>
+        <br>
+        <div id="vs2_2022" class="vs2_2022"></div>  --->
+
+    </body>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type="text/javascript">
+        var graphs = {{graphLast10_1 | safe}};
+        Plotly.plot('last10_1',graphs,{});
+        var graphs = {{graphhomeAway1 | safe}};
+        Plotly.plot('homeaway1',graphs,{});
+        var graphs = {{graphhomeAway1_2022 | safe}};
+        Plotly.plot('homeaway1_2022',graphs,{});
+        var graphs = {{graphLast10_2 | safe}};
+        Plotly.plot('last10_2',graphs,{});
+        var graphs = {{graphhomeAway2 | safe}};
+        Plotly.plot('homeaway2',graphs,{});
+        var graphs = {{graphhomeAway2_2022 | safe}};
+        Plotly.plot('homeaway2_2022',graphs,{});
+    </script>
+
+ <!--   {% if playedAgainst %}
+        <script type="text/javascript">
+            var graphs = {{graphvsLog1 | safe}};
+            Plotly.plot('vs1',graphs,{});
+        </script>
+    {% endif %}
+    {% if playedAgainst_2022 %}
+        <script type="text/javascript">
+            var graphs = {{graphvsLog1_2022 | safe}};
+            Plotly.plot('vs1_2022',graphs,{});
+        </script>
+    {% endif %}
+    {% if playedAgainst2 %}
+        <script type="text/javascript">
+            var graphs = {{graphvsLog2 | safe}};
+            Plotly.plot('vs2',graphs,{});
+        </script>
+    {% endif %}
+    {% if playedAgainst2_2022 %}
+        <script type="text/javascript">
+            var graphs = {{graphvsLog2_2022 | safe}};
+            Plotly.plot('vs2_2022',graphs,{});
+        </script>
+    {% endif %} --->
+</html>

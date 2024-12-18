@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{fname}} {{lname}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prop.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    </head>
+    <body>
+        {% if score >= 1 %}
+            <h1>{{fname}} {{lname}} {{stat}} score is: <span style="color: green">{{score}}</span></h1>
+        {% elif score <= -1 %}
+            <h1>{{fname}} {{lname}} {{stat}} score is: <span style="color: red">{{score}}</span></h1>
+        {% else %}
+            <h1>{{fname}} {{lname}} {{stat}} score is: {{score}}</h2>
+        {% endif %}
+        <br>
+        <form action="{{ url_for('CBBcode') }}">
+            <button>New Prop</button> <br>
+        </form>
+        <br>
+        <div>
+        {% if rank != 364 %}
+            {% if rank <= 25 %}
+                {% if stat == "points" %}
+                    <h2>{{otherOppTeam}} opponent points per game rank: <span style="color: red">{{rank}}</span></h2>
+                {% elif stat == "assists" %}
+                    <h2>{{otherOppTeam}} opponent assists per game rank: <span style="color: red">{{rank}}</span></h2>
+                {% elif stat == "rebounds" %}
+                    <h2>{{otherOppTeam}} opponent rebounds per game rank: <span style="color: red">{{rank}}</span></h2>
+                {% elif stat == "3-pointers" %}
+                    <h2>{{otherOppTeam}} opponent 3-Pt Made per game rank: <span style="color: red">{{rank}}</span></h2>
+                {% endif %}
+            {% elif rank > 50 %}
+                {% if stat == "points" %}
+                    <h2>{{otherOppTeam}} opponent points per game rank: <span style="color: green">{{rank}}</span></h2>
+                {% elif stat == "assists" %}
+                    <h2>{{otherOppTeam}} opponent assists per game rank: <span style="color: green">{{rank}}</span></h2>
+                {% elif stat == "rebounds" %}
+                    <h2>{{otherOppTeam}} opponent rebounds per game rank: <span style="color: green">{{rank}}</span></h2>
+                {% elif stat == "3-pointers" %}
+                    <h2>{{otherOppTeam}} opponent 3-Pt Made per game rank: <span style="color: green">{{rank}}</span></h2>
+                {% endif %}
+            {% else %}
+                {% if stat == "points" %}
+                    <h2>{{otherOppTeam}} opponent points per game rank: {{rank}}</h2>
+                {% elif stat == "assists" %}
+                    <h2>{{otherOppTeam}} opponent assists per game rank: {{rank}}</h2>
+                {% elif stat == "rebounds" %}
+                    <h2>{{otherOppTeam}} opponent rebounds per game rank: {{rank}}</h2>
+                {% elif stat == "3-pointers" %}
+                    <h2>{{otherOppTeam}} opponent 3-Pt Made per game rank: {{rank}}</h2>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <h2>{{otherOppTeam}} opponent per game rank: N/A</h2>
+        {% endif %}
+
+            
+        </div>
+        <div id='chart' class='chart'></div>
+        <br>
+        <div id='top25' class='top25'></div>
+        <br>
+        <div id='unranked' class='unranked'></div>
+        <br>
+        <div id='wins' class='wins'></div>
+        <br>
+        <div id='loss' class='loss'></div>
+        <br>
+        <div id="min" class="min"></div>
+        <br>
+        {% if playedAgainst == True %}
+            <div id='vs' class='vs'></div>
+        {% else %}
+        <div>
+            <br>
+        </div>
+        {% endif %}
+        <br>
+
+    </body>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type="text/javascript">
+        var graphs = {{graphLast10 | safe}};
+        Plotly.plot('chart',graphs,{});
+        var graphs = {{graphTop25 | safe}};
+        Plotly.plot('top25',graphs,{});
+        var graphs = {{graphUnranked | safe}};
+        Plotly.plot('unranked',graphs,{});
+        var graphs = {{graphWins | safe}};
+        Plotly.plot('wins',graphs,{});
+        var graphs = {{graphLoss | safe}};
+        Plotly.plot('loss',graphs,{});
+        var graphs = {{graphMin | safe}};
+        Plotly.plot('min',graphs,{});
+        var graphs = {{graphVs | safe}};
+        Plotly.plot('vs',graphs,{});
+    </script>
+</html>

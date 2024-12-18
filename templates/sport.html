@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>PropCodes</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prop.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    </head>
+    <body>
+        <div class="container">
+        <a href="/" class="w3-bar-item w3-button w3-wide"><img width="220" height="60" src="{{ url_for('static', filename='images/logo_home2.jpg') }}" ></a>
+        </div>
+        <div class='parent'>
+        <div id="nba" class="sport">
+            <a href="/code"><img src="https://m.media-amazon.com/images/I/318GDku6vcL._AC_UF894,1000_QL80_.jpg" style="width:175; height:250;"></a>
+            <form action="{{ url_for('code') }}" id="butt" class="nbaButt">
+                <br><br><button>NBA</button>
+            </form>
+            </div>
+        <div id="cbb" class="sport">
+            <a href="/CBBcode"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/28/March_Madness_logo.svg/1200px-March_Madness_logo.svg.png" style="width:300; height:175;"></a>
+            <form action="{{ url_for('CBBcode') }}" id="butt">
+               <br> <br><button>CBB</button> 
+            </form>
+        </div>
+    </div>
+    </body>

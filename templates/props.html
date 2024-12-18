@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Nba Props</title>
+    </head>
+    <body>
+        <h1>Today's Props</h1>
+        <div id = "table">
+            <table>
+                <tr>
+                    <form method="post" action="/player">
+                        <th><input type="submit" value="Points" name="Points"/></th>
+                        <th><input type="submit" value="Rebounds" name="Rebounds"/></th>
+                        <th><input type="submit" value="Assists" name="Assists"/></th>
+                        <th><input type="submit" value="3-Pointers Made" name="3-Pointers Made"/></th>
+                        <th><input type="submit" value="Turnovers" name="Turnovers"/></th>
+                    </form>
+                </tr>
+                <tr>
+                    <th>Player</th>
+                    <th>Line</th>
+                    <th>PropsCode.ai Score</th>
+                </tr>
+                {% for key in lines %}
+                <tr>
+                    <td>{{ key [0] }}</td>
+                    <td>{{ key [1] }}</td>
+                    <td>{{ key [2] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

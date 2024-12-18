@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{fname}} {{lname}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prop.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ url_for('static', filename='props.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ url_for('static', filename='props.js') }}"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+            .dropbtn {
+              background-color: rgba(0,3,64,1);
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            /* Dropdown button on hover & focus */
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #2980B9;
+            }
+            
+            /* The container <div> - needed to position the dropdown content */
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            
+
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f1f1f1;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+              top: 100%;
+              right: 0;
+            }
+            
+            /* Links inside the dropdown */
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {background-color: #ddd;}
+            
+            /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+            .show {display:block;}
+            
+            .w3-top
+            {
+                background-color: whitesmoke;
+                position: relative;
+            }
+
+            h2, h3{
+                    color: rgb(0,3,64);
+                    margin: auto;
+                    display: block;
+                    text-align: center;
+                }
+
+                h2{
+                  position: relative;
+                  font-weight: bold;
+                }
+            
+                .newProp, .voteProp
+                {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-bottom: 20px;
+                }
+
+                .vote{
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border: none;
+                    cursor: pointer;
+                    margin: 10px;
+                    width: 200px;
+                    height: 40px;
+                }
+                .voted-over {
+                background-color: green;
+                /* Add animation styles for voted-over button */
+                }
+
+                .voted-under {
+                background-color: red;
+                /* Add animation styles for voted-under button */
+                }
+                
+                #overButton{
+                    outline: 2px solid green;
+                }
+
+                #underButton{
+                    outline: 2px solid red;
+                }
+                
+
+                #overButton:hover {
+                    background-color: green;
+                }
+
+                #underButton:hover{
+                    background-color: red;
+                }
+
+                .w3-button:hover {
+                    background-color: inherit !important;
+                    color: inherit !important;
+                    }
+
+                    .w3-bar-item img {
+                    display: block;
+                    margin: 0 auto;
+                    padding-top: 5px; /* Adjust the value as needed */
+                }
+        </style>
+    </head>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="/" class="w3-bar-item w3-button w3-wide"><img width="150" height="35" src="{{ url_for('static', filename='images/Logo-3.png') }}"></a>
+          <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+              <div id="myDropdown" class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/todaysProps">Today's Props</a>
+                <a href="/MLBcode">New Prop</a>
+                <a href="/games">Games</a>
+                <a href="/logout">Logout</a>
+              </div>
+              <button onclick="dropdownFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+              
+            </div>
+          <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      
+        </div>
+    </div>
+    <body>
+        <br>
+        <h2>{{fname}} {{lname}} score is: {{score}}</h2><br>
+        {% if prediction > 0 %}
+            <h1>AI predicts the <span style="color: green">over</span></h1>
+        {% else %}
+            <h1>AI predicts the <span style="color: red">under</span></h1>
+        {% endif %}
+        <div class="newProp">
+            <form action="{{ url_for('MLBcode') }}">
+                <button>New Prop</button>
+            </form>
+        </div>
+        <h3>Prediction?</h3>
+        <div class="voteProp">
+            <button id="overButton" class="vote" data-parameter1="{{fname}}" data-parameter2="{{lname}}" data-parameter3="{{stat}}" data-parameter4="{{line}}" data-parameter5="o">Over</button>
+            <button id="underButton" class="vote" data-parameter1="{{fname}}" data-parameter2="{{lname}}" data-parameter3="{{stat}}" data-parameter4="{{line}}" data-parameter5="u">Under</button>
+        </div>
+        {% if strikeouts %}
+            {% if oppTeamRank <= 10 %}
+                <h3>{{oppTeam}} strikeouts per game rank <span style="color: red">{{oppTeamRank}}</span></h3>
+            {% elif oppTeamRank >= 20 %}
+                <h3>{{oppTeam}} strikeouts per game rank <span style="color: green">{{oppTeamRank}}</span></h3>
+            {% else %}
+                <h3>{{oppTeam}} strikeouts per game rank {{oppTeamRank}}</h3>
+            {% endif %}
+        {% endif %}
+
+        {% if earnedRuns %}
+            {% if oppTeamRank <= 10 %}
+                <h3>{{oppTeam}} runs per game rank <span style="color: green">{{oppTeamRank}}</span></h3>
+            {% elif oppTeamRank >= 20 %}
+                <h3>{{oppTeam}} runs per game rank <span style="color: red">{{oppTeamRank}}</span></h3>
+            {% else %}
+                <h3>{{oppTeam}} runs per game rank {{oppTeamRank}}</h3>
+            {% endif %}
+        {% endif %}
+
+        {% if hits %}
+            {% if oppTeamRank <= 10 %}
+                <h3>{{oppTeam}} hits per game rank <span style="color: red">{{oppTeamRank}}</span></h3>
+            {% elif oppTeamRank >= 20 %}
+                <h3>{{oppTeam}} hits per game rank <span style="color: green">{{oppTeamRank}}</span></h3>
+            {% else %}
+                <h3>{{oppTeam}} hits per game rank {{oppTeamRank}}</h3>
+            {% endif %}
+        {% endif %}
+
+        {% if pitcherLog %}
+            <h3>Career Stats vs {{pitcher}}</h3><br>
+            <table>
+                <tr>
+                    <th>At Bats</th>
+                    <th>Hits</th>
+                    <th>Home Runs</th>
+                    <th>Walks</th>
+                    <th>Strikeouts</th>
+                    <th>AVG</th>
+                </tr>
+                <tr>
+                    <td>{{logvspitcher[0]}}</td>
+                    <td>{{logvspitcher[1]}}</td>
+                    <td>{{logvspitcher[4]}}</td>
+                    <td>{{logvspitcher[6]}}</td>
+                    <td>{{logvspitcher[7]}}</td>
+                    <td>{{logvspitcher[8]}}</td>
+                </tr>
+            </table><br>
+        {% endif %}
+
+        {% if leftRightLog %}
+            <h3>Stats vs {{throw}} Handers This Season</h3><br>
+            <table>
+                <tr>
+                    <th>At Bats</th>
+                    <th>Runs</th>
+                    <th>Hits</th>
+                    <th>Home Runs</th>
+                    <th>RBIs</th>
+                    <th>Walks</th>
+                    <th>Strikeouts</th>
+                    <th>AVG</th>
+                </tr>
+                <tr>
+                    <td>{{leftvsRight[0]}}</td>
+                    <td>{{leftvsRight[1]}}</td>
+                    <td>{{leftvsRight[2]}}</td>
+                    <td>{{leftvsRight[5]}}</td>
+                    <td>{{leftvsRight[6]}}</td>
+                    <td>{{leftvsRight[7]}}</td>
+                    <td>{{leftvsRight[9]}}</td>
+                    <td>{{leftvsRight[12]}}</td>
+                </tr>
+            </table>
+            
+        {% endif %}
+
+        <div id='chart' class='chart'></div>
+        <br>
+        <div id='homeaway' class="homeaway"></div>
+        <br>
+        <div id="homeaway2" class="homeaway2"></div>
+        <br>
+        <div id='vs' class='vs'></div>
+        <br>
+        <div id="vs2" class="vs2"></div>
+
+    </body>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type="text/javascript">
+        var graphs = {{graphLast10 | safe}};
+        Plotly.plot('chart',graphs,{});
+        var graphs = {{graphHomeAway | safe}};
+        Plotly.plot('homeaway',graphs,{});
+        var graphs = {{graphHomeAway2022 | safe}};
+        Plotly.plot('homeaway2',graphs,{});
+        var graphs = {{graphVs | safe}};
+        Plotly.plot('vs',graphs,{});
+        var graphs = {{graphVs2022 | safe}};
+        Plotly.plot('vs2',graphs,{});
+    </script>
+</html>

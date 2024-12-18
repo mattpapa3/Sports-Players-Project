@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{fname}} {{lname}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prop.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ url_for('static', filename='props.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ url_for('static', filename='props.js') }}"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+            .dropbtn {
+              background-color: rgba(0,3,64,1);
+              color: white;
+              padding: 16px;
+              font-size: 16px;
+              border: none;
+              cursor: pointer;
+              
+            }
+            
+            /* Dropdown button on hover & focus */
+            .dropbtn:hover, .dropbtn:focus {
+              background-color: #2980B9;
+            }
+            
+            /* The container <div> - needed to position the dropdown content */
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            
+
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f1f1f1;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+              top: 100%;
+              right: 0;
+            }
+            
+            /* Links inside the dropdown */
+            .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {background-color: #ddd;}
+            
+            /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+            .show {display:block;}
+            
+            .w3-top
+            {
+                background-color: whitesmoke;
+                position: relative;
+            }
+
+            h2, h3{
+                    color: rgb(0,3,64);
+                    margin: auto;
+                    display: block;
+                    text-align: center;
+                }
+
+                h2{
+                  position: relative;
+                  font-weight: bold;
+                }
+            
+                .newProp, .voteProp
+                {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-bottom: 20px;
+                }
+
+                .vote{
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border: none;
+                    cursor: pointer;
+                    margin: 10px;
+                    width: 200px;
+                    height: 40px;
+                }
+                .voted-over {
+                background-color: green;
+                /* Add animation styles for voted-over button */
+                }
+
+                .voted-under {
+                background-color: red;
+                /* Add animation styles for voted-under button */
+                }
+                
+                #overButton{
+                    outline: 2px solid green;
+                }
+
+                #underButton{
+                    outline: 2px solid red;
+                }
+                
+
+                #overButton:hover {
+                    background-color: green;
+                }
+
+                #underButton:hover{
+                    background-color: red;
+                }
+
+                .w3-button:hover {
+                    background-color: inherit !important;
+                    color: inherit !important;
+                    }
+
+                    .w3-bar-item img {
+                    display: block;
+                    margin: 0 auto;
+                    padding-top: 5px; /* Adjust the value as needed */
+                }
+        </style>
+    </head>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="/" class="w3-bar-item w3-button w3-wide"><img width="150" height="35" src="{{ url_for('static', filename='images/Logo-3.png') }}"></a>
+          <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+              <div id="myDropdown" class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <a href="/todaysProps">Today's Props</a>
+                <a href="/MLBcode">New Prop</a>
+                <a href="/games">Games</a>
+                <a href="/logout">Logout</a>
+              </div>
+              <button onclick="dropdownFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+              
+            </div>
+          <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      
+        </div>
+    </div>
+    <body>
+        {% if prediction > 0 %}
+            <h1>AI predicts the <span style="color: green">over</span></h1>
+        {% else %}
+            <h1>AI predicts the <span style="color: red">under</span></h1>
+        {% endif %}
+        <br>
+        <h2>{{fname}} {{lname}} {{line}} {{stat}}</h2><br><br>
+        {% if posrank >= 20 %}
+            <h3>{{oppTeam}} {{stat}} vs {{position}} Rank: <span style="color: green">{{posrank}}</span></h3>
+        {% elif posrank <= 10 %}
+            <h3>{{oppTeam}} {{stat}} vs {{position}} Rank: <span style="color: red">{{posrank}}</span></h3>
+        {% else %}
+            <h3>{{oppTeam}} {{stat}} vs {{position}} Rank: {{posrank}}</h3>
+        {% endif %}
+        {% if rank >= 20 %}
+            <h3>{{oppTeam}} defensive {{stat}} rank: <span style="color: green">{{rank}}</span></h3>
+        {% elif rank <= 10 %}
+            <h3>{{oppTeam}} defensive {{stat}} rank: <span style="color: red">{{rank}}</span></h3>
+        {% else %}
+            <h3>{{oppTeam}} defensive {{stat}} rank: {{rank}}</h3>
+        {% endif %}
+        <div class="newProp">
+            <form action="{{ url_for('code') }}">
+                <button>New Prop</button>
+            </form>
+        </div>
+        <h3>Prediction?</h3>
+        <div class="voteProp">
+            <button id="overButton" class="vote" data-parameter1="{{fname}}" data-parameter2="{{lname}}" data-parameter3="{{stat}}" data-parameter4="{{line}}" data-parameter5="o" data-parameter6="nba">Over</button>
+            <button id="underButton" class="vote" data-parameter1="{{fname}}" data-parameter2="{{lname}}" data-parameter3="{{stat}}" data-parameter4="{{line}}" data-parameter5="u" data-parameter6="nba">Under</button>
+        </div>
+        <div id='chart' class='chart'></div>
+        <br>
+        <div id='homeaway' class='homeaway'></div>
+        <br>
+        <div id='wins' class='wins'></div>
+        <br>
+        <div id='loss' class='loss'></div>
+        <br>
+        <div id="lasthomeAway" class="lasthomeAway"></div>
+        <br>
+
+        {% if playedAgainst2 %}
+            <div id="lastvs" class="lastvs">
+            <br>
+            </div>
+        {% endif %}
+        
+        {% if playedAgainst %}
+            <div id='vs' class='vs'></div>
+        
+        {% else %}
+            <div>
+                <h2>{{fname}} {{lname}} hasn't played against the {{oppTeam}} this season.</h2>
+                <br>
+            </div>
+        {% endif %}
+        <br>
+
+    </body>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script type="text/javascript">
+        var graphs = {{graphLast10 | safe}};
+        Plotly.plot('chart',graphs,{});
+        var graphs = {{graphHomeAway | safe}};
+        Plotly.plot('homeaway',graphs,{});
+        var graphs = {{graphWins | safe}};
+        Plotly.plot('wins',graphs,{});
+        var graphs = {{graphLoss | safe}};
+        Plotly.plot('loss',graphs,{});
+        var graphs = {{lastyeargraphHomeAway | safe}};
+        Plotly.plot('lasthomeAway',graphs,{});
+        var graphs = {{lastyeargraphVs | safe}};
+        Plotly.plot('lastvs',graphs,{});
+        var graphs = {{graphVs | safe}};
+        Plotly.plot('vs',graphs,{});
+    </script>
+</html>

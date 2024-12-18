@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>PropCodes</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    </head>
+    <body>
+        <div>
+        <h2>Enter Two Pitchers</h2> <br><br>
+        <form action="{{ url_for('MLBcode') }}" id="butt"> 
+            <button>Back</button> <br>
+        </form>
+        <form method="post" action="/nrfi">
+            <div style="width:50%; margin:auto; position:absolute; left:150px;">
+                <label for="fname">Pticher 1 First Name:</label><br>
+                <input type="text" id="fname" name="fname" required><br>
+                <label for="lname">Pitcher 1 Last Name:</label><br>
+                <input type="text" id="lname" name="lname" required><br>
+            </div>
+            <div style="width:50%; margin:auto; position:absolute; right:150px;">
+                <label for="fname">Pitcher 2 First Name:</label><br>
+                <input type="text" id="fname2" name="fname2" required><br>
+                <label for="lname">Pitcher 2 Last Name:</label><br>
+                <input type="text" id="lname2" name="lname2" required><br>
+            </div>
+            <input type="submit" value="Submit" style="width:20%; text-align:center; position:absolute; right:0px; left:0px; top:400px;">
+        </form>
+    </div>
+        <h3>{{message}}</h3>
+    </body>
+</html>

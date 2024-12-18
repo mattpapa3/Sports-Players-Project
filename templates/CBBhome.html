@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>PropCodes</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> 
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    </head>
+    <body>
+        <div>
+        <h2>Enter Your College Basketball Player Prop</h2> <br><br>
+        <form action="{{ url_for('sport') }}" id="butt">
+            <button>Change Sport</button> <br>
+        </form>
+        <form method="post" action="/cbbProp">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+            <label for="stat">Pick a Stat</label><br>
+            <select name="stat" id="stat">
+                <option value="points" name="points">Points</option>
+                <option value="assists" name="assists">Assists</option>
+                <option value="rebounds" name="rebounds">Rebounds</option>
+                <option value="3-pointers" name="3-pointers">3-PT Made</option>
+            </select><br>
+            <label for="num">How Many?</label> <br>
+            <input type="number" id="num" name="num" min="0" max="100" step="0.5" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+        <h3>{{message}}</h3>
+    </body>
+</html>

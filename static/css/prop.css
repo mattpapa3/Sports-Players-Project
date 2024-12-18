@@ -1,0 +1,87 @@
+h1, h2, h3{
+    text-align: center;
+    margin: auto;
+    display: block;
+    font-weight: bold;
+}
+
+#chart, #homeaway, #homeaway2, #vs, #vs2, #wins, #loss, #lasthomeAway, #lastvs, #top25, #unranked, #min{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+body {
+    background: rgb(0,3,64);
+background: linear-gradient(90deg, rgba(0,3,64,1) 0%, whitesmoke 20%, whitesmoke 80%, rgba(0,3,64,1) 100%);
+ }
+
+ button {
+    text-align: center;
+    margin: auto;
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px;
+    color: rgb(0,3,64);
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+    
+ }
+
+ button:hover {
+    background-color: rgb(0,3,64);
+    color: white;
+    opacity: 1;
+  }
+
+ .modebar-btn{
+    display: none;
+ }
+
+
+ #nba{
+  height:250px;
+ }
+
+ #cbb{
+  height:245px;
+ }
+
+
+ .sport{
+
+  border: 1px;
+  padding: 5rem 5rem;
+  vertical-align: middle;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+
+ }
+
+ .parent {
+  border: 1px ;
+  margin: 1rem;
+  padding: 5rem 5rem;
+  text-align: center;
+}
+
+ #butt{
+ position: relative;
+
+ }
+
+ table, th, td
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid black;
+}
+
+
+
+
