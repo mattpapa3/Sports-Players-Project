@@ -1220,5 +1220,5 @@ def calcScoreNBA():
 
 	
 if __name__ == "__main__":
-	getNBAProps()
+#	getNBAProps()
 	calcScoreNBA()

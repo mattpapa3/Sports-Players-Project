@@ -32433,3 +32433,1736 @@ homeaway,line,hit,position,opp,cat,last10,last5,log,oppposrank,oppteam,gamescore
 1,37.5,0,Small Forward,5,pra,0.6,0.8,0.46,27,New York,221,2.4,0.0,5
 1,7.5,0,Small Forward,14,assists,0.6,1.0,0.46,12,New York,221,2.4,0.0,5
 1,8.5,0,Small Forward,1,rebounds,0.6,0.6,0.46,28,New York,221,2.4,0.0,5
+1,1.5,1,Guard,2,3-pt,0.8,1.0,0.64,5,Orlando,223,2.8,0.1,5
+1,6.5,1,Guard,1,points,0.5,0.4,0.0,13,Orlando,223,2.8,0.1,5
+1,0.5,1,Shooting Guard,7,3-pt,0.9,0.8,0.87,2,Dallas,222,0.0,1.6,14
+1,12.5,0,Shooting Guard,18,pra,0.5,0.8,0.61,6,Dallas,222,0.0,1.6,14
+1,2.5,0,Shooting Guard,20,rebounds,0.8,1.0,0.74,9,Dallas,222,0.0,1.6,14
+1,7.5,0,Shooting Guard,12,points,0.5,0.6,0.05,7,Dallas,222,0.0,1.6,14
+1,1.5,1,Shooting Guard,7,3-pt,0.4,0.6,0.27,2,Dallas,222,0.4,1.9,14
+1,1.5,1,Shooting Guard,17,steals,0.6,0.8,0.6,5,Dallas,222,0.4,1.9,14
+1,12.5,1,Shooting Guard,18,pra,0.5,0.8,0.33,6,Dallas,222,0.4,1.9,14
+1,2.5,1,Shooting Guard,22,assists,0.4,0.2,0.33,19,Dallas,222,0.4,1.9,14
+1,2.5,1,Shooting Guard,20,rebounds,0.5,0.4,0.47,9,Dallas,222,0.4,1.9,14
+1,7.5,0,Shooting Guard,12,points,0.5,0.8,0.0,7,Dallas,222,0.4,1.9,14
+1,2.5,0,Guard,3,rebounds,0.5,0.2,0.45,13,Orlando,223,0.1,1.0,5
+0,3.5,0,Guard,9,assists,0.3,0.2,0.5,20,Milwaukee,223,-1.5,-1.2,5
+0,7.5,1,Guard,13,points,0.4,0.4,0.04,20,Milwaukee,223,-1.5,-1.2,5
+1,1.5,1,Forward,2,3-pt,0.3,0.4,0.18,1,Orlando,223,-0.3,-1.8,5
+1,10.5,1,Forward,1,points,0.6,0.4,0.05,5,Orlando,223,-0.3,-1.8,5
+1,6.5,1,Forward,3,rebounds,0.3,0.2,0.5,8,Orlando,223,-0.3,-1.8,5
+1,1.5,0,Center,2,3-pt,0.5,0.2,0.48,22,Orlando,223,0.7,-2.1,5
+1,1.5,0,Center,5,blocks,0.6,0.6,0.61,12,Orlando,223,0.7,-2.1,5
+1,15.5,0,Center,1,pra,0.6,0.2,0.57,2,Orlando,223,0.7,-2.1,5
+1,4.5,1,Center,3,rebounds,0.7,0.6,0.61,3,Orlando,223,0.7,-2.1,5
+1,9.5,0,Center,1,points,0.6,0.2,0.04,8,Orlando,223,0.7,-2.1,5
+1,0.5,1,Guard,7,3-pt,0.6,0.8,0.57,2,Dallas,222,2.7,0.8,14
+1,12.5,1,Guard,18,pra,0.5,0.6,0.35,6,Dallas,222,2.7,0.8,14
+1,2.5,1,Guard,22,assists,0.3,0.2,0.26,19,Dallas,222,2.7,0.8,14
+1,2.5,1,Guard,20,rebounds,0.6,0.6,0.61,9,Dallas,222,2.7,0.8,14
+1,7.5,1,Guard,12,points,0.5,0.6,0.0,7,Dallas,222,2.7,0.8,14
+0,1.5,0,Point Guard,20,3-pt,0.3,0.4,0.17,25,Milwaukee,223,1.8,0.6,5
+0,12.5,0,Point Guard,13,points,0.2,0.2,0.0,30,Milwaukee,223,1.8,0.6,5
+0,18.5,0,Point Guard,13,pra,0.2,0.2,0.09,29,Milwaukee,223,1.8,0.6,5
+0,2.5,0,Point Guard,9,assists,0.4,0.6,0.26,12,Milwaukee,223,1.8,0.6,5
+0,3.5,0,Point Guard,14,rebounds,0.1,0.0,0.13,28,Milwaukee,223,1.8,0.6,5
+1,0.5,1,Point Guard,10,steals,0.7,0.8,0.55,6,Orlando,223,0.7,-1.2,5
+1,23.5,1,Point Guard,1,points,0.7,0.8,0.05,17,Orlando,223,0.7,-1.2,5
+1,3.5,0,Point Guard,2,3-pt,0.5,0.8,0.4,16,Orlando,223,0.7,-1.2,5
+1,35.5,1,Point Guard,1,pra,0.6,0.6,0.6,17,Orlando,223,0.7,-1.2,5
+1,4.5,0,Point Guard,3,rebounds,0.5,0.6,0.4,3,Orlando,223,0.7,-1.2,5
+1,6.5,1,Point Guard,2,assists,0.6,0.4,0.55,19,Orlando,223,0.7,-1.2,5
+0,1.5,0,Center,15,blocks,0.4,0.4,0.43,19,Okla City,222,0.6,0.0,14
+0,17.5,0,Center,6,pra,0.7,0.6,0.65,13,Okla City,222,0.6,0.0,14
+0,6.5,0,Center,30,rebounds,0.5,0.4,0.52,26,Okla City,222,0.6,0.0,14
+0,9.5,0,Center,2,points,1.0,1.0,0.0,2,Okla City,222,0.6,0.0,14
+0,1.5,1,Center,4,assists,0.8,0.8,0.74,29,Okla City,222,2.5,0.3,14
+0,1.5,0,Center,15,blocks,0.7,0.6,0.53,19,Okla City,222,2.5,0.3,14
+0,18.5,1,Center,6,pra,0.4,0.4,0.47,13,Okla City,222,2.5,0.3,14
+0,7.5,1,Center,30,rebounds,0.4,0.6,0.47,26,Okla City,222,2.5,0.3,14
+0,8.5,0,Center,2,points,0.5,0.4,0.05,2,Okla City,222,2.5,0.3,14
+1,1.5,1,Shooting Guard,2,3-pt,0.8,0.8,0.67,5,Orlando,223,2.0,0.9,5
+1,2.5,0,Shooting Guard,3,rebounds,0.6,0.8,0.38,13,Orlando,223,2.0,0.9,5
+1,8.5,0,Shooting Guard,1,points,0.8,0.8,0.05,13,Orlando,223,2.0,0.9,5
+1,0.5,0,Power Forward,2,3-pt,0.1,0.0,0.14,1,Orlando,223,0.1,-1.9,5
+1,0.5,1,Power Forward,5,blocks,0.7,0.6,0.71,9,Orlando,223,0.1,-1.9,5
+1,0.5,1,Power Forward,10,steals,0.4,0.4,0.43,13,Orlando,223,0.1,-1.9,5
+1,11.5,0,Power Forward,3,rebounds,0.3,0.2,0.48,8,Orlando,223,0.1,-1.9,5
+1,30.5,1,Power Forward,1,points,0.6,0.6,0.0,5,Orlando,223,0.1,-1.9,5
+1,47.5,0,Power Forward,1,pra,0.6,0.4,0.57,2,Orlando,223,0.1,-1.9,5
+1,5.5,0,Power Forward,2,assists,0.6,0.4,0.57,1,Orlando,223,0.1,-1.9,5
+0,1.5,0,Center,3,blocks,0.5,0.6,0.48,5,Milwaukee,223,3.9,1.3,5
+0,10.5,1,Center,13,points,0.3,0.4,0.0,1,Milwaukee,223,3.9,1.3,5
+0,2.5,1,Center,9,assists,0.3,0.4,0.29,13,Milwaukee,223,3.9,1.3,5
+0,21.5,1,Center,13,pra,0.4,0.4,0.48,4,Milwaukee,223,3.9,1.3,5
+0,8.5,1,Center,14,rebounds,0.4,0.4,0.48,9,Milwaukee,223,3.9,1.3,5
+1,0.5,1,Center,6,blocks,0.75,0.8,0.75,2,Dallas,222,-0.5,-1.8,14
+1,11.5,0,Center,12,points,0.625,0.4,0.14,26,Dallas,222,-0.5,-1.8,14
+1,11.5,1,Center,20,rebounds,0.75,0.8,0.75,11,Dallas,222,-0.5,-1.8,14
+1,27.5,0,Center,18,pra,0.75,0.6,0.75,25,Dallas,222,-0.5,-1.8,14
+1,3.5,0,Center,22,assists,0.75,1.0,0.75,22,Dallas,222,-0.5,-1.8,14
+1,1.5,1,Shooting Guard,7,3-pt,0.6,0.4,0.76,2,Dallas,222,-2.7,-1.3,14
+1,2.5,1,Shooting Guard,20,rebounds,0.5,0.4,0.52,9,Dallas,222,-2.7,-1.3,14
+1,7.5,1,Shooting Guard,12,points,0.5,0.4,0.0,7,Dallas,222,-2.7,-1.3,14
+0,1.5,1,Shooting Guard,12,steals,0.5,0.8,0.4,18,Milwaukee,223,3.1,2.1,5
+0,2.5,1,Shooting Guard,20,3-pt,0.5,0.6,0.36,26,Milwaukee,223,3.1,2.1,5
+0,20.5,1,Shooting Guard,13,points,0.4,0.4,0.0,20,Milwaukee,223,3.1,2.1,5
+0,29.5,1,Shooting Guard,13,pra,0.3,0.2,0.28,22,Milwaukee,223,3.1,2.1,5
+0,4.5,0,Shooting Guard,9,assists,0.5,0.4,0.4,20,Milwaukee,223,3.1,2.1,5
+0,4.5,1,Shooting Guard,14,rebounds,0.1,0.0,0.4,21,Milwaukee,223,3.1,2.1,5
+1,1.5,0,Forward,7,3-pt,0.8,0.8,0.65,30,Dallas,222,0.6,1.2,14
+1,1.5,0,Forward,17,steals,0.7,0.6,0.7,28,Dallas,222,0.6,1.2,14
+1,22.5,0,Forward,12,points,0.6,0.4,0.0,16,Dallas,222,0.6,1.2,14
+1,32.5,0,Forward,18,pra,0.7,0.6,0.52,20,Dallas,222,0.6,1.2,14
+1,4.5,0,Forward,22,assists,0.8,0.6,0.61,20,Dallas,222,0.6,1.2,14
+1,5.5,1,Forward,20,rebounds,0.5,0.4,0.57,25,Dallas,222,0.6,1.2,14
+0,1.5,0,Shooting Guard,20,3-pt,0.5,0.6,0.44,26,Milwaukee,223,1.8,0.5,5
+0,1.5,0,Shooting Guard,12,steals,0.6,0.8,0.44,18,Milwaukee,223,1.8,0.5,5
+0,10.5,0,Shooting Guard,13,points,0.3,0.2,0.0,20,Milwaukee,223,1.8,0.5,5
+0,14.5,0,Shooting Guard,13,pra,0.3,0.2,0.28,22,Milwaukee,223,1.8,0.5,5
+0,2.5,0,Shooting Guard,9,assists,0.1,0.0,0.2,20,Milwaukee,223,1.8,0.5,5
+0,2.5,0,Shooting Guard,14,rebounds,0.3,0.4,0.36,21,Milwaukee,223,1.8,0.5,5
+1,1.5,0,Small Forward,2,3-pt,0.0,0.0,0.0,1,Orlando,223,0.5,2.3,5
+1,11.5,0,Small Forward,1,points,0.0,0.0,0.0,1,Orlando,223,0.5,2.3,5
+1,18.5,0,Small Forward,1,pra,1.0,1.0,1.0,3,Orlando,223,0.5,2.3,5
+1,3.5,1,Small Forward,2,assists,1.0,1.0,1.0,22,Orlando,223,0.5,2.3,5
+1,3.5,1,Small Forward,3,rebounds,0.0,0.0,0.0,21,Orlando,223,0.5,2.3,5
+0,1.5,0,Shooting Guard,4,assists,0.5,0.6,0.5,4,Okla City,222,-3.6,-2.0,14
+0,12.5,1,Shooting Guard,2,points,0.5,0.4,0.05,3,Okla City,222,-3.6,-2.0,14
+0,17.5,1,Shooting Guard,6,pra,0.5,0.4,0.65,4,Okla City,222,-3.6,-2.0,14
+0,2.5,1,Shooting Guard,5,3-pt,0.6,0.6,0.55,8,Okla City,222,-3.6,-2.0,14
+0,2.5,1,Shooting Guard,30,rebounds,0.7,0.6,0.7,23,Okla City,222,-3.6,-2.0,14
+0,0.5,1,Point Guard,4,steals,0.5,0.8,0.64,3,Okla City,222,-1.3,0.3,14
+0,2.5,1,Point Guard,5,3-pt,0.8,0.8,0.64,7,Okla City,222,-1.3,0.3,14
+0,21.5,0,Point Guard,2,points,0.7,0.8,0.0,2,Okla City,222,-1.3,0.3,14
+0,30.5,0,Point Guard,6,pra,0.7,0.8,0.64,6,Okla City,222,-1.3,0.3,14
+0,4.5,1,Point Guard,4,assists,0.7,0.4,0.68,6,Okla City,222,-1.3,0.3,14
+0,4.5,0,Point Guard,30,rebounds,0.6,0.8,0.59,30,Okla City,222,-1.3,0.3,14
+1,1.5,1,Guard,7,3-pt,0.5,0.6,0.57,2,Dallas,222,-1.4,0.1,14
+1,1.5,1,Guard,22,assists,0.7,0.4,0.52,19,Dallas,222,-1.4,0.1,14
+1,10.5,1,Guard,12,points,0.3,0.4,0.0,7,Dallas,222,-1.4,0.1,14
+1,16.5,1,Guard,18,pra,0.4,0.4,0.48,6,Dallas,222,-1.4,0.1,14
+1,3.5,1,Guard,20,rebounds,0.7,0.4,0.57,9,Dallas,222,-1.4,0.1,14
+0,1.5,1,Point Guard,4,steals,0.7,1.0,0.56,3,Okla City,222,-1.7,-2.0,14
+0,28.5,0,Point Guard,2,points,0.6,0.6,0.0,2,Okla City,222,-1.7,-2.0,14
+0,3.5,0,Point Guard,5,3-pt,0.5,0.6,0.5,7,Okla City,222,-1.7,-2.0,14
+0,45.5,0,Point Guard,6,pra,0.4,0.6,0.5,6,Okla City,222,-1.7,-2.0,14
+0,8.5,0,Point Guard,4,assists,0.5,0.6,0.39,6,Okla City,222,-1.7,-2.0,14
+0,8.5,1,Point Guard,30,rebounds,0.4,0.6,0.44,30,Okla City,222,-1.7,-2.0,14
+0,13.5,0,Center,13,points,0.5,0.2,0.0,1,Milwaukee,223,0.8,1.0,5
+0,5.5,0,Center,14,rebounds,0.7,1.0,0.5,9,Milwaukee,223,0.8,1.0,5
+1,1.5,1,Point Guard,7,3-pt,0.6,0.6,0.61,3,Dallas,222,-0.9,0.6,14
+1,32.5,1,Point Guard,12,points,0.4,0.2,0.0,11,Dallas,222,-0.9,0.6,14
+1,44.5,1,Point Guard,18,pra,0.5,0.4,0.3,16,Dallas,222,-0.9,0.6,14
+1,5.5,1,Point Guard,20,rebounds,0.4,0.6,0.43,21,Dallas,222,-0.9,0.6,14
+1,6.5,0,Point Guard,22,assists,0.5,0.4,0.43,17,Dallas,222,-0.9,0.6,14
+1,2.5,0,Power Forward,3,rebounds,0.5,0.4,0.7,8,Orlando,223,-6.8,-1.5,5
+1,4.5,0,Power Forward,1,points,0.6,0.6,0.05,5,Orlando,223,-6.8,-1.5,5
+0,1.5,0,Forward,20,3-pt,0.5,0.2,0.32,6,Milwaukee,223,-4.1,-1.9,5
+0,3.5,0,Forward,14,rebounds,0.5,0.6,0.5,10,Milwaukee,223,-4.1,-1.9,5
+0,8.5,0,Forward,13,points,0.3,0.0,0.0,2,Milwaukee,223,-4.1,-1.9,5
+0,19.5,1,Center,13,pra,0.5,0.4,0.54,4,Milwaukee,223,-0.5,-1.3,5
+0,7.5,1,Center,14,rebounds,0.2,0.2,0.38,9,Milwaukee,223,-0.5,-1.3,5
+0,9.5,0,Center,13,points,0.4,0.2,0.0,1,Milwaukee,223,-0.5,-1.3,5
+1,0.5,0,Center,5,3-pt,0.2,0.2,0.33,8,Golden State,181,3.0,-0.9,1
+1,0.5,0,Center,25,blocks,0.3,0.4,0.58,15,Golden State,181,3.0,-0.9,1
+1,1.5,1,Center,9,steals,0.5,0.4,0.33,26,Golden State,181,3.0,-0.9,1
+1,10.5,1,Center,25,rebounds,0.3,0.4,0.42,29,Golden State,181,3.0,-0.9,1
+1,20.5,1,Center,6,points,0.5,0.4,0.04,12,Golden State,181,3.0,-0.9,1
+1,37.5,1,Center,10,pra,0.5,0.6,0.42,21,Golden State,181,3.0,-0.9,1
+1,5.5,0,Center,15,assists,0.5,0.8,0.38,27,Golden State,181,3.0,-0.9,1
+1,11.5,0,Forward,6,points,0.5,0.6,0.04,18,Golden State,181,3.2,2.6,1
+1,6.5,0,Forward,25,rebounds,0.7,0.6,0.54,16,Golden State,181,3.2,2.6,1
+0,13.5,0,Shooting Guard,10,points,0.5,0.6,0.0,18,New York,208,0.8,-0.2,8
+0,18.5,0,Shooting Guard,6,pra,0.5,0.6,0.5,13,New York,208,0.8,-0.2,8
+0,2.5,0,Shooting Guard,21,3-pt,0.4,0.6,0.4,22,New York,208,0.8,-0.2,8
+0,2.5,0,Shooting Guard,14,assists,0.4,0.4,0.4,17,New York,208,0.8,-0.2,8
+0,2.5,0,Shooting Guard,1,rebounds,0.7,0.8,0.7,3,New York,208,0.8,-0.2,8
+0,0.5,1,Guard,3,3-pt,0.7,0.8,0.59,9,Houston,181,3.1,0.0,1
+0,13.5,1,Guard,3,pra,0.7,0.8,0.59,5,Houston,181,3.1,0.0,1
+0,2.5,1,Guard,1,assists,0.7,0.8,0.64,5,Houston,181,3.1,0.0,1
+0,3.5,0,Guard,23,rebounds,0.6,0.8,0.68,26,Houston,181,3.1,0.0,1
+0,6.5,1,Guard,3,points,0.7,0.8,0.0,5,Houston,181,3.1,0.0,1
+0,12.5,1,Shooting Guard,3,points,0.2,0.2,0.05,5,Houston,181,-1.5,-2.3,1
+0,2.5,1,Shooting Guard,3,3-pt,0.4,0.2,0.52,9,Houston,181,-1.5,-2.3,1
+0,3.5,1,Shooting Guard,23,rebounds,0.3,0.4,0.48,26,Houston,181,-1.5,-2.3,1
+0,0.5,0,Center,8,blocks,0.8,0.8,0.68,8,New York,208,0.4,-1.2,8
+0,8.5,1,Center,1,rebounds,0.8,0.8,0.6,3,New York,208,0.4,-1.2,8
+0,9.5,1,Center,10,points,0.3,0.0,0.0,4,New York,208,0.4,-1.2,8
+0,17.5,1,Small Forward,10,points,0.7,1.0,0.01,27,New York,208,0.2,0.8,8
+0,2.5,1,Small Forward,21,3-pt,0.5,0.6,0.5,25,New York,208,0.2,0.8,8
+0,22.5,1,Small Forward,6,pra,0.6,0.8,0.64,29,New York,208,0.2,0.8,8
+0,3.5,0,Small Forward,1,rebounds,0.5,0.2,0.5,29,New York,208,0.2,0.8,8
+1,12.5,0,Small Forward,6,points,0.6,0.6,0.0,13,Golden State,181,1.1,0.2,1
+1,2.5,0,Small Forward,5,3-pt,0.3,0.2,0.33,19,Golden State,181,1.1,0.2,1
+1,3.5,1,Small Forward,25,rebounds,0.5,0.4,0.5,25,Golden State,181,1.1,0.2,1
+0,0.5,1,Power Forward,27,blocks,0.8,0.8,0.62,15,Houston,181,1.2,0.8,1
+0,0.5,1,Power Forward,6,steals,0.7,0.6,0.62,17,Houston,181,1.2,0.8,1
+0,1.5,0,Power Forward,3,3-pt,0.5,0.4,0.48,28,Houston,181,1.2,0.8,1
+0,20.5,0,Power Forward,3,pra,0.7,0.6,0.57,18,Houston,181,1.2,0.8,1
+0,5.5,0,Power Forward,1,assists,0.9,1.0,0.67,18,Houston,181,1.2,0.8,1
+0,6.5,0,Power Forward,23,rebounds,0.7,0.4,0.48,17,Houston,181,1.2,0.8,1
+0,8.5,0,Power Forward,3,points,0.7,0.6,0.0,9,Houston,181,1.2,0.8,1
+0,1.5,0,Guard,21,3-pt,0.3,0.2,0.43,22,New York,208,-0.4,-1.4,8
+0,12.5,0,Guard,10,points,0.3,0.4,0.05,18,New York,208,-0.4,-1.4,8
+0,2.5,0,Guard,1,steals,0.6,0.8,0.57,1,New York,208,-0.4,-1.4,8
+0,20.5,0,Guard,6,pra,0.3,0.4,0.52,13,New York,208,-0.4,-1.4,8
+0,3.5,0,Guard,14,assists,0.5,0.6,0.39,17,New York,208,-0.4,-1.4,8
+0,4.5,1,Guard,1,rebounds,0.6,0.4,0.57,3,New York,208,-0.4,-1.4,8
+1,1.5,0,Point Guard,9,steals,0.4,0.2,0.55,10,Golden State,181,4.1,3.9,1
+1,17.5,0,Point Guard,6,points,0.5,0.4,0.0,1,Golden State,181,4.1,3.9,1
+1,2.5,0,Point Guard,5,3-pt,0.7,0.8,0.5,1,Golden State,181,4.1,3.9,1
+1,27.5,0,Point Guard,10,pra,0.4,0.4,0.27,3,Golden State,181,4.1,3.9,1
+1,3.5,0,Point Guard,25,rebounds,0.5,0.4,0.5,26,Golden State,181,4.1,3.9,1
+1,6.5,1,Point Guard,15,assists,0.3,0.2,0.36,18,Golden State,181,4.1,3.9,1
+1,1.5,1,Power Forward,5,3-pt,0.7,0.8,0.46,22,Golden State,181,4.1,-0.6,1
+1,12.5,1,Power Forward,6,points,0.5,0.4,0.0,18,Golden State,181,4.1,-0.6,1
+1,21.5,0,Power Forward,10,pra,0.5,0.4,0.38,14,Golden State,181,4.1,-0.6,1
+1,7.5,0,Power Forward,25,rebounds,0.4,0.4,0.38,16,Golden State,181,4.1,-0.6,1
+1,0.5,1,Point Guard,26,steals,0.6,0.4,0.5,15,Atlanta,208,-2.5,-3.6,8
+1,2.5,0,Point Guard,30,3-pt,0.7,0.8,0.58,27,Atlanta,208,-2.5,-3.6,8
+1,26.5,0,Point Guard,28,points,0.4,0.2,0.0,22,Atlanta,208,-2.5,-3.6,8
+1,3.5,1,Point Guard,21,rebounds,0.3,0.4,0.25,23,Atlanta,208,-2.5,-3.6,8
+1,37.5,0,Point Guard,27,pra,0.5,0.2,0.42,23,Atlanta,208,-2.5,-3.6,8
+1,7.5,1,Point Guard,23,assists,0.6,0.6,0.54,14,Atlanta,208,-2.5,-3.6,8
+1,0.5,1,Shooting Guard,9,steals,0.8,0.8,0.62,13,Golden State,181,3.7,-1.0,1
+1,19.5,0,Shooting Guard,6,points,0.4,0.6,0.04,16,Golden State,181,3.7,-1.0,1
+1,2.5,0,Shooting Guard,5,3-pt,0.5,0.6,0.5,2,Golden State,181,3.7,-1.0,1
+1,2.5,1,Shooting Guard,15,assists,0.4,0.6,0.5,11,Golden State,181,3.7,-1.0,1
+1,26.5,0,Shooting Guard,10,pra,0.4,0.6,0.46,15,Golden State,181,3.7,-1.0,1
+1,4.5,0,Shooting Guard,25,rebounds,0.4,0.4,0.46,16,Golden State,181,3.7,-1.0,1
+0,0.5,1,Small Forward,1,steals,0.8,0.8,0.74,6,New York,208,-0.5,-2.3,8
+0,1.5,0,Small Forward,21,3-pt,0.6,0.4,0.52,25,New York,208,-0.5,-2.3,8
+0,18.5,1,Small Forward,10,points,0.8,0.8,0.0,27,New York,208,-0.5,-2.3,8
+0,33.5,1,Small Forward,6,pra,0.5,0.4,0.52,29,New York,208,-0.5,-2.3,8
+0,5.5,1,Small Forward,14,assists,0.4,0.6,0.43,15,New York,208,-0.5,-2.3,8
+0,9.5,1,Small Forward,1,rebounds,0.5,0.4,0.52,29,New York,208,-0.5,-2.3,8
+0,0.5,1,Power Forward,3,3-pt,0.7,0.8,0.67,28,Houston,181,4.2,3.5,1
+0,17.5,1,Power Forward,3,points,0.4,0.6,0.0,9,Houston,181,4.2,3.5,1
+0,2.5,0,Power Forward,1,assists,0.1,0.0,0.14,18,Houston,181,4.2,3.5,1
+0,24.5,1,Power Forward,3,pra,0.4,0.6,0.33,18,Houston,181,4.2,3.5,1
+0,4.5,1,Power Forward,23,rebounds,0.4,0.6,0.48,17,Houston,181,4.2,3.5,1
+1,1.5,1,Shooting Guard,30,3-pt,0.4,0.4,0.42,27,Atlanta,208,-1.2,-0.4,8
+1,1.5,0,Shooting Guard,26,steals,0.6,0.4,0.38,26,Atlanta,208,-1.2,-0.4,8
+1,12.5,1,Shooting Guard,28,points,0.5,0.4,0.0,28,Atlanta,208,-1.2,-0.4,8
+1,26.5,1,Shooting Guard,27,pra,0.5,0.4,0.58,25,Atlanta,208,-1.2,-0.4,8
+1,5.5,1,Shooting Guard,23,assists,0.4,0.4,0.54,23,Atlanta,208,-1.2,-0.4,8
+1,8.5,0,Shooting Guard,21,rebounds,0.4,0.4,0.5,12,Atlanta,208,-1.2,-0.4,8
+1,1.5,1,Center,30,3-pt,0.8,0.8,0.73,23,Atlanta,208,1.0,-1.9,8
+1,13.5,1,Center,21,rebounds,0.7,0.8,0.5,20,Atlanta,208,1.0,-1.9,8
+1,25.5,0,Center,28,points,0.3,0.2,0.0,22,Atlanta,208,1.0,-1.9,8
+1,3.5,1,Center,23,assists,0.5,0.4,0.41,11,Atlanta,208,1.0,-1.9,8
+1,42.5,1,Center,27,pra,0.5,0.4,0.45,20,Atlanta,208,1.0,-1.9,8
+0,5.5,0,Forward,3,points,0.3,0.4,0.0,9,Houston,181,5.8,0.2,1
+0,7.5,0,Forward,23,rebounds,0.4,0.6,0.48,17,Houston,181,5.8,0.2,1
+1,0.5,1,Small Forward,23,blocks,0.3,0.4,0.46,13,Atlanta,208,1.3,0.9,8
+1,1.5,0,Small Forward,26,steals,0.3,0.4,0.29,24,Atlanta,208,1.3,0.9,8
+1,17.5,1,Small Forward,28,points,0.6,1.0,0.0,28,Atlanta,208,1.3,0.9,8
+1,2.5,0,Small Forward,30,3-pt,0.4,0.6,0.42,28,Atlanta,208,1.3,0.9,8
+1,25.5,0,Small Forward,27,pra,0.5,1.0,0.46,28,Atlanta,208,1.3,0.9,8
+1,3.5,0,Small Forward,23,assists,0.4,0.4,0.46,23,Atlanta,208,1.3,0.9,8
+1,3.5,1,Small Forward,21,rebounds,0.2,0.2,0.38,24,Atlanta,208,1.3,0.9,8
+1,1.5,0,Point Guard,30,3-pt,0.7,0.8,0.74,27,Atlanta,208,0.4,-0.7,8
+1,10.5,0,Point Guard,28,points,0.5,0.4,0.05,22,Atlanta,208,0.4,-0.7,8
+1,1.5,0,Small Forward,26,steals,0.6,0.8,0.54,24,Atlanta,208,-0.2,-0.2,8
+1,17.5,0,Small Forward,28,points,0.4,0.4,0.0,28,Atlanta,208,-0.2,-0.2,8
+1,2.5,0,Small Forward,30,3-pt,0.4,0.4,0.42,28,Atlanta,208,-0.2,-0.2,8
+1,2.5,0,Small Forward,23,assists,0.2,0.2,0.25,23,Atlanta,208,-0.2,-0.2,8
+1,24.5,0,Small Forward,27,pra,0.3,0.2,0.46,28,Atlanta,208,-0.2,-0.2,8
+1,4.5,1,Small Forward,21,rebounds,0.4,0.2,0.54,24,Atlanta,208,-0.2,-0.2,8
+0,10.5,1,Power Forward,10,points,0.6,1.0,0.04,3,New York,208,1.1,0.9,8
+0,6.5,1,Power Forward,1,rebounds,0.5,0.4,0.48,6,New York,208,1.1,0.9,8
+0,0.5,1,Point Guard,6,steals,0.5,0.4,0.67,20,Houston,181,1.7,2.6,1
+0,25.5,0,Point Guard,3,points,0.3,0.4,0.0,28,Houston,181,1.7,2.6,1
+0,36.5,0,Point Guard,3,pra,0.4,0.6,0.39,20,Houston,181,1.7,2.6,1
+0,4.5,0,Point Guard,3,3-pt,0.3,0.4,0.28,20,Houston,181,1.7,2.6,1
+0,4.5,0,Point Guard,23,rebounds,0.6,0.4,0.56,21,Houston,181,1.7,2.6,1
+0,5.5,0,Point Guard,1,assists,0.6,0.6,0.67,3,Houston,181,1.7,2.6,1
+1,1.5,0,Forward,9,steals,0.8,0.8,0.68,29,Golden State,181,-0.4,-0.1,1
+1,11.5,0,Forward,6,points,0.4,0.4,0.0,18,Golden State,181,-0.4,-0.1,1
+1,5.5,1,Forward,25,rebounds,0.7,0.4,0.55,16,Golden State,181,-0.4,-0.1,1
+0,0.5,1,Point Guard,1,steals,0.7,0.8,0.67,8,New York,208,-0.2,-0.5,8
+0,11.5,0,Point Guard,14,assists,0.5,0.4,0.54,16,New York,208,-0.2,-0.5,8
+0,2.5,0,Point Guard,21,3-pt,0.2,0.2,0.42,7,New York,208,-0.2,-0.5,8
+0,22.5,0,Point Guard,10,points,0.2,0.2,0.04,15,New York,208,-0.2,-0.5,8
+0,3.5,1,Point Guard,1,rebounds,0.6,1.0,0.58,2,New York,208,-0.2,-0.5,8
+0,37.5,1,Point Guard,6,pra,0.3,0.2,0.46,13,New York,208,-0.2,-0.5,8
+0,1.5,0,Power Forward,21,3-pt,0.5,0.4,0.32,9,New York,208,-0.2,0.5,8
+0,10.5,0,Power Forward,10,points,0.7,0.8,0.0,3,New York,208,-0.2,0.5,8
+0,14.5,0,Power Forward,6,pra,0.7,0.8,0.72,5,New York,208,-0.2,0.5,8
+0,3.5,0,Power Forward,1,rebounds,0.4,0.6,0.44,6,New York,208,-0.2,0.5,8
+1,10.5,0,Center,18,points,0.4,0.2,0.0,23,Detroit,222,3.0,1.0,24
+1,18.5,0,Center,14,pra,0.6,0.4,0.47,18,Detroit,222,3.0,1.0,24
+1,2.5,0,Center,26,3-pt,0.4,0.2,0.32,29,Detroit,222,3.0,1.0,24
+1,2.5,0,Center,9,assists,0.5,0.8,0.47,10,Detroit,222,3.0,1.0,24
+1,6.5,0,Center,7,rebounds,0.4,0.2,0.26,6,Detroit,222,3.0,1.0,24
+1,0.5,1,Center,14,3-pt,0.8,0.8,0.62,5,Toronto,218,-1.3,-0.2,10
+1,0.5,1,Center,23,blocks,0.3,0.4,0.42,27,Toronto,218,-1.3,-0.2,10
+1,1.5,0,Center,24,steals,0.3,0.0,0.38,23,Toronto,218,-1.3,-0.2,10
+1,10.5,1,Center,17,rebounds,0.5,0.6,0.38,23,Toronto,218,-1.3,-0.2,10
+1,16.5,1,Center,25,points,0.2,0.2,0.0,18,Toronto,218,-1.3,-0.2,10
+1,32.5,1,Center,21,pra,0.5,0.6,0.38,23,Toronto,218,-1.3,-0.2,10
+1,5.5,0,Center,16,assists,0.6,0.8,0.35,30,Toronto,218,-1.3,-0.2,10
+1,0.5,0,Shooting Guard,14,steals,0.6,0.8,0.6,8,Sacramento,220,0.0,0.6,2
+1,21.5,1,Shooting Guard,15,points,0.5,0.4,0.0,28,Sacramento,220,0.0,0.6,2
+1,3.5,1,Shooting Guard,29,3-pt,0.1,0.0,0.2,24,Sacramento,220,0.0,0.6,2
+1,3.5,0,Shooting Guard,5,rebounds,0.7,0.6,0.6,5,Sacramento,220,0.0,0.6,2
+1,30.5,1,Shooting Guard,12,pra,0.4,0.4,0.27,24,Sacramento,220,0.0,0.6,2
+1,4.5,0,Shooting Guard,11,assists,0.4,0.6,0.33,12,Sacramento,220,0.0,0.6,2
+0,0.5,0,Point Guard,2,steals,0.7,0.8,0.58,12,Boston,222,-1.5,0.0,24
+0,2.5,0,Point Guard,4,3-pt,0.6,0.8,0.31,3,Boston,222,-1.5,0.0,24
+0,23.5,0,Point Guard,9,points,0.6,0.8,0.0,16,Boston,222,-1.5,0.0,24
+0,38.5,0,Point Guard,8,pra,0.7,0.8,0.54,17,Boston,222,-1.5,0.0,24
+0,6.5,1,Point Guard,22,rebounds,0.6,0.6,0.46,23,Boston,222,-1.5,0.0,24
+0,8.5,0,Point Guard,6,assists,0.9,0.8,0.58,12,Boston,222,-1.5,0.0,24
+0,1.5,0,Point Guard,16,3-pt,0.2,0.2,0.27,11,Miami,218,-1.4,-0.9,10
+0,15.5,1,Point Guard,7,pra,0.0,0.0,0.27,14,Miami,218,-1.4,-0.9,10
+0,2.5,0,Point Guard,11,rebounds,0.4,0.8,0.53,26,Miami,218,-1.4,-0.9,10
+0,5.5,1,Point Guard,21,assists,0.1,0.0,0.33,22,Miami,218,-1.4,-0.9,10
+0,7.5,1,Point Guard,7,points,0.2,0.4,0.0,6,Miami,218,-1.4,-0.9,10
+0,1.5,0,Point Guard,22,steals,0.5,0.6,0.45,24,New Orleans,220,-2.0,-0.4,2
+0,2.5,0,Point Guard,25,3-pt,0.4,0.4,0.38,20,New Orleans,220,-2.0,-0.4,2
+0,23.5,0,Point Guard,23,points,0.3,0.0,0.0,10,New Orleans,220,-2.0,-0.4,2
+0,34.5,0,Point Guard,27,pra,0.5,0.4,0.45,19,New Orleans,220,-2.0,-0.4,2
+0,4.5,1,Point Guard,27,rebounds,0.6,0.6,0.66,16,New Orleans,220,-2.0,-0.4,2
+0,6.5,1,Point Guard,27,assists,0.6,0.8,0.45,26,New Orleans,220,-2.0,-0.4,2
+0,0.5,1,Small Forward,25,3-pt,0.3,0.4,0.48,30,New Orleans,220,-2.2,-0.8,2
+0,1.5,1,Small Forward,22,steals,0.1,0.2,0.28,28,New Orleans,220,-2.2,-0.8,2
+0,21.5,1,Small Forward,23,points,0.4,0.6,0.0,30,New Orleans,220,-2.2,-0.8,2
+0,29.5,1,Small Forward,27,pra,0.4,0.4,0.48,25,New Orleans,220,-2.2,-0.8,2
+0,3.5,0,Small Forward,27,assists,0.6,0.6,0.52,15,New Orleans,220,-2.2,-0.8,2
+0,3.5,0,Small Forward,27,rebounds,0.6,0.4,0.4,3,New Orleans,220,-2.2,-0.8,2
+1,1.5,0,Shooting Guard,14,steals,0.5,0.8,0.45,8,Sacramento,220,1.8,-0.5,2
+1,2.5,0,Shooting Guard,29,3-pt,0.2,0.2,0.18,24,Sacramento,220,1.8,-0.5,2
+1,20.5,0,Shooting Guard,15,points,0.2,0.2,0.0,28,Sacramento,220,1.8,-0.5,2
+1,34.5,1,Shooting Guard,12,pra,0.2,0.4,0.18,24,Sacramento,220,1.8,-0.5,2
+1,5.5,1,Shooting Guard,5,rebounds,0.6,0.6,0.55,5,Sacramento,220,1.8,-0.5,2
+1,7.5,1,Shooting Guard,11,assists,0.3,0.4,0.27,12,Sacramento,220,1.8,-0.5,2
+1,0.5,1,Point Guard,14,blocks,0.6,0.4,0.67,5,Detroit,222,-0.9,-1.5,24
+1,1.5,1,Point Guard,28,steals,0.3,0.6,0.22,23,Detroit,222,-0.9,-1.5,24
+1,16.5,1,Point Guard,18,points,0.5,0.2,0.0,8,Detroit,222,-0.9,-1.5,24
+1,27.5,1,Point Guard,14,pra,0.5,0.4,0.41,2,Detroit,222,-0.9,-1.5,24
+1,3.5,1,Point Guard,26,3-pt,0.5,0.4,0.48,16,Detroit,222,-0.9,-1.5,24
+1,4.5,0,Point Guard,7,rebounds,0.7,0.8,0.52,6,Detroit,222,-0.9,-1.5,24
+1,5.5,0,Point Guard,9,assists,0.4,0.6,0.33,5,Detroit,222,-0.9,-1.5,24
+0,0.5,1,Power Forward,25,3-pt,0.8,0.6,0.57,11,New Orleans,220,-2.6,1.3,2
+0,0.5,0,Power Forward,20,blocks,0.4,0.2,0.32,13,New Orleans,220,-2.6,1.3,2
+0,13.5,1,Power Forward,27,rebounds,0.4,0.2,0.29,12,New Orleans,220,-2.6,1.3,2
+0,18.5,1,Power Forward,23,points,0.8,0.8,0.0,24,New Orleans,220,-2.6,1.3,2
+0,38.5,1,Power Forward,27,pra,0.5,0.4,0.5,11,New Orleans,220,-2.6,1.3,2
+0,5.5,0,Power Forward,27,assists,0.5,0.6,0.54,9,New Orleans,220,-2.6,1.3,2
+1,11.5,0,Forward,25,points,0.4,0.4,0.0,16,Toronto,218,2.5,0.7,10
+1,16.5,0,Forward,21,pra,0.5,0.4,0.36,28,Toronto,218,2.5,0.7,10
+1,2.5,0,Forward,14,3-pt,0.3,0.4,0.28,8,Toronto,218,2.5,0.7,10
+1,2.5,1,Forward,16,assists,0.5,0.6,0.44,29,Toronto,218,2.5,0.7,10
+1,2.5,1,Forward,17,rebounds,0.5,0.6,0.4,14,Toronto,218,2.5,0.7,10
+0,1.5,1,Guard,21,assists,0.4,0.0,0.48,13,Miami,218,-1.8,-1.2,10
+0,17.5,1,Guard,7,points,0.3,0.4,0.0,15,Miami,218,-1.8,-1.2,10
+0,2.5,1,Guard,16,3-pt,0.5,0.6,0.44,17,Miami,218,-1.8,-1.2,10
+0,22.5,1,Guard,7,pra,0.3,0.4,0.36,16,Miami,218,-1.8,-1.2,10
+0,3.5,1,Guard,11,rebounds,0.7,0.8,0.52,16,Miami,218,-1.8,-1.2,10
+1,1.5,1,Forward,14,3-pt,0.5,0.6,0.42,8,Toronto,218,3.9,0.8,10
+1,3.5,0,Forward,17,rebounds,0.5,0.6,0.5,14,Toronto,218,3.9,0.8,10
+1,6.5,1,Forward,25,points,0.5,0.8,0.0,16,Toronto,218,3.9,0.8,10
+1,0.5,0,Small Forward,4,blocks,0.4,0.6,0.4,2,Sacramento,220,-0.3,-0.1,2
+1,1.5,0,Small Forward,29,3-pt,0.2,0.4,0.2,26,Sacramento,220,-0.3,-0.1,2
+1,1.5,0,Small Forward,14,steals,0.7,0.6,0.7,12,Sacramento,220,-0.3,-0.1,2
+1,12.5,0,Small Forward,15,points,0.1,0.2,0.0,16,Sacramento,220,-0.3,-0.1,2
+1,19.5,0,Small Forward,12,pra,0.2,0.4,0.2,18,Sacramento,220,-0.3,-0.1,2
+1,2.5,1,Small Forward,11,assists,0.2,0.4,0.2,12,Sacramento,220,-0.3,-0.1,2
+1,3.5,1,Small Forward,5,rebounds,0.5,0.4,0.5,18,Sacramento,220,-0.3,-0.1,2
+0,7.5,0,Center,22,rebounds,0.1,0.0,0.23,4,Boston,222,-1.6,-0.5,24
+0,14.5,0,Guard,7,pra,0.3,0.4,0.27,16,Miami,218,1.1,1.5,10
+0,3.5,0,Guard,11,rebounds,0.2,0.2,0.27,16,Miami,218,1.1,1.5,10
+0,9.5,0,Guard,7,points,0.3,0.4,0.0,15,Miami,218,1.1,1.5,10
+0,0.5,1,Point Guard,2,steals,0.8,0.8,0.72,12,Boston,222,-2.2,-1.8,24
+0,1.5,1,Point Guard,4,3-pt,0.6,0.6,0.55,3,Boston,222,-2.2,-1.8,24
+0,15.5,0,Point Guard,9,points,0.5,0.4,0.04,16,Boston,222,-2.2,-1.8,24
+0,23.5,0,Point Guard,8,pra,0.4,0.4,0.59,17,Boston,222,-2.2,-1.8,24
+0,3.5,0,Point Guard,6,assists,0.7,0.8,0.62,12,Boston,222,-2.2,-1.8,24
+0,3.5,0,Point Guard,22,rebounds,0.5,0.4,0.62,23,Boston,222,-2.2,-1.8,24
+1,0.5,0,Guard,14,3-pt,0.2,0.2,0.29,20,Toronto,218,0.2,0.2,10
+1,14.5,0,Guard,21,pra,0.3,0.2,0.52,15,Toronto,218,0.2,0.2,10
+1,3.5,0,Guard,17,rebounds,0.5,0.4,0.67,1,Toronto,218,0.2,0.2,10
+1,8.5,0,Guard,25,points,0.4,0.4,0.0,24,Toronto,218,0.2,0.2,10
+0,1.5,0,Center,18,blocks,0.5,0.4,0.38,16,Miami,218,1.9,-1.0,10
+0,11.5,0,Center,11,rebounds,0.4,0.2,0.41,22,Miami,218,1.9,-1.0,10
+0,14.5,1,Center,7,points,0.6,0.8,0.0,13,Miami,218,1.9,-1.0,10
+0,2.5,0,Center,21,assists,0.4,0.8,0.55,20,Miami,218,1.9,-1.0,10
+0,28.5,0,Center,7,pra,0.7,0.8,0.55,17,Miami,218,1.9,-1.0,10
+1,0.5,0,Shooting Guard,14,blocks,0.4,0.2,0.3,24,Detroit,222,-0.6,0.4,24
+1,1.5,0,Shooting Guard,28,steals,0.2,0.2,0.17,27,Detroit,222,-0.6,0.4,24
+1,2.5,0,Shooting Guard,26,3-pt,0.6,0.6,0.43,14,Detroit,222,-0.6,0.4,24
+1,26.5,0,Shooting Guard,18,points,0.5,0.4,0.0,19,Detroit,222,-0.6,0.4,24
+1,37.5,0,Shooting Guard,14,pra,0.4,0.4,0.39,19,Detroit,222,-0.6,0.4,24
+1,4.5,1,Shooting Guard,9,assists,0.5,0.4,0.35,21,Detroit,222,-0.6,0.4,24
+1,5.5,1,Shooting Guard,7,rebounds,0.5,0.4,0.57,10,Detroit,222,-0.6,0.4,24
+1,0.5,0,Small Forward,14,3-pt,0.5,0.6,0.43,8,Toronto,218,1.3,0.7,10
+1,0.5,1,Small Forward,23,blocks,0.3,0.4,0.33,17,Toronto,218,1.3,0.7,10
+1,1.5,0,Small Forward,24,steals,0.3,0.6,0.43,18,Toronto,218,1.3,0.7,10
+1,19.5,0,Small Forward,25,points,0.5,0.4,0.0,14,Toronto,218,1.3,0.7,10
+1,29.5,0,Small Forward,21,pra,0.6,0.6,0.52,13,Toronto,218,1.3,0.7,10
+1,4.5,0,Small Forward,16,assists,0.6,0.6,0.48,19,Toronto,218,1.3,0.7,10
+1,5.5,0,Small Forward,17,rebounds,0.4,0.4,0.33,9,Toronto,218,1.3,0.7,10
+0,14.5,1,Forward,7,pra,0.5,0.8,0.3,14,Miami,218,2.3,1.8,10
+0,5.5,1,Forward,11,rebounds,0.5,0.6,0.37,22,Miami,218,2.3,1.8,10
+0,7.5,0,Forward,7,points,0.3,0.4,0.0,10,Miami,218,2.3,1.8,10
+1,12.5,0,Point Guard,18,points,0.4,0.4,0.0,8,Detroit,222,1.6,3.7,24
+1,2.5,0,Point Guard,26,3-pt,0.3,0.4,0.33,16,Detroit,222,1.6,3.7,24
+1,21.5,1,Point Guard,14,pra,0.5,0.6,0.42,2,Detroit,222,1.6,3.7,24
+1,4.5,1,Point Guard,9,assists,0.4,0.6,0.29,5,Detroit,222,1.6,3.7,24
+1,4.5,1,Point Guard,7,rebounds,0.5,0.4,0.33,6,Detroit,222,1.6,3.7,24
+0,1.5,1,Small Forward,25,3-pt,0.4,0.4,0.43,30,New Orleans,220,-1.1,-1.7,2
+0,13.5,1,Small Forward,23,points,0.3,0.2,0.0,30,New Orleans,220,-1.1,-1.7,2
+0,6.5,1,Small Forward,27,rebounds,0.5,0.4,0.5,3,New Orleans,220,-1.1,-1.7,2
+0,6.5,0,Power Forward,7,points,0.6666666666666666,0.6666666666666666,0.44,10,Miami,218,-0.03,-0.03,10
+0,1.5,0,Shooting Guard,25,3-pt,0.3,0.6,0.45,4,New Orleans,220,-5.0,-0.6,2
+0,1.5,0,Shooting Guard,27,assists,0.5,0.8,0.59,28,New Orleans,220,-5.0,-0.6,2
+0,14.5,0,Shooting Guard,27,pra,0.4,0.6,0.55,17,New Orleans,220,-5.0,-0.6,2
+0,2.5,1,Shooting Guard,27,rebounds,0.6,0.6,0.64,29,New Orleans,220,-5.0,-0.6,2
+0,9.5,0,Shooting Guard,23,points,0.4,0.6,0.0,4,New Orleans,220,-5.0,-0.6,2
+1,2.5,0,Center,26,3-pt,0.6,0.6,0.6,29,Detroit,222,-0.4,-0.5,24
+1,2.5,0,Center,9,assists,0.0,0.0,0.0,10,Detroit,222,-0.4,-0.5,24
+1,21.5,0,Center,18,points,0.2,0.2,0.0,23,Detroit,222,-0.4,-0.5,24
+1,31.5,0,Center,14,pra,0.2,0.2,0.2,18,Detroit,222,-0.4,-0.5,24
+1,7.5,1,Center,7,rebounds,0.8,0.8,0.8,6,Detroit,222,-0.4,-0.5,24
+0,13.5,0,Shooting Guard,9,points,0.8,0.8,0.0,20,Boston,222,-1.4,-0.3,24
+0,3.5,0,Shooting Guard,4,3-pt,0.7,0.8,0.47,15,Boston,222,-1.4,-0.3,24
+0,17.5,0,Shooting Guard,23,points,0.5,0.6,0.0,4,New Orleans,220,4.3,1.7,2
+0,2.5,0,Shooting Guard,25,3-pt,0.6,0.8,0.38,4,New Orleans,220,4.3,1.7,2
+0,26.5,0,Shooting Guard,27,pra,0.6,0.8,0.33,17,New Orleans,220,4.3,1.7,2
+0,3.5,0,Shooting Guard,27,rebounds,0.3,0.4,0.43,29,New Orleans,220,4.3,1.7,2
+0,5.5,1,Shooting Guard,27,assists,0.5,0.6,0.29,28,New Orleans,220,4.3,1.7,2
+0,1.5,0,Guard,16,3-pt,0.3,0.2,0.43,17,Miami,218,-1.2,-1.3,10
+0,1.5,0,Guard,21,assists,0.6,0.8,0.63,13,Miami,218,-1.2,-1.3,10
+0,10.5,1,Guard,7,points,0.3,0.2,0.0,15,Miami,218,-1.2,-1.3,10
+0,16.5,0,Guard,7,pra,0.3,0.2,0.47,16,Miami,218,-1.2,-1.3,10
+0,4.5,0,Guard,11,rebounds,0.5,0.4,0.53,16,Miami,218,-1.2,-1.3,10
+1,16.5,1,Point Guard,18,points,0.6,0.8,0.03,8,Detroit,222,3.0,1.1,24
+1,23.5,1,Point Guard,14,pra,0.6,0.8,0.45,2,Detroit,222,3.0,1.1,24
+1,3.5,1,Point Guard,26,3-pt,0.5,0.6,0.52,16,Detroit,222,3.0,1.1,24
+1,3.5,1,Point Guard,9,assists,0.4,0.4,0.41,5,Detroit,222,3.0,1.1,24
+1,3.5,1,Point Guard,7,rebounds,0.6,0.8,0.41,6,Detroit,222,3.0,1.1,24
+0,1.5,0,Shooting Guard,16,3-pt,0.7,0.8,0.65,17,Miami,218,-0.2,-0.3,10
+0,23.5,0,Shooting Guard,7,points,0.5,0.6,0.0,15,Miami,218,-0.2,-0.3,10
+0,36.5,0,Shooting Guard,7,pra,0.6,0.6,0.48,16,Miami,218,-0.2,-0.3,10
+0,5.5,1,Shooting Guard,21,assists,0.3,0.0,0.39,13,Miami,218,-0.2,-0.3,10
+0,6.5,1,Shooting Guard,11,rebounds,0.6,0.8,0.48,16,Miami,218,-0.2,-0.3,10
+1,1.5,0,Shooting Guard,14,3-pt,0.5,0.6,0.5,20,Toronto,218,-4.4,-1.2,10
+1,10.5,0,Shooting Guard,25,points,0.5,0.6,0.0,24,Toronto,218,-4.4,-1.2,10
+1,15.5,0,Shooting Guard,21,pra,0.5,0.6,0.58,15,Toronto,218,-4.4,-1.2,10
+1,2.5,0,Shooting Guard,16,assists,0.3,0.4,0.58,9,Toronto,218,-4.4,-1.2,10
+1,2.5,1,Shooting Guard,17,rebounds,0.5,0.4,0.71,1,Toronto,218,-4.4,-1.2,10
+0,1.5,0,Small Forward,4,3-pt,0.3,0.4,0.44,5,Boston,222,-0.7,-0.7,24
+0,2.5,1,Small Forward,22,rebounds,0.5,0.8,0.41,11,Boston,222,-0.7,-0.7,24
+0,8.5,0,Small Forward,9,points,0.5,0.6,0.0,3,Boston,222,-0.7,-0.7,24
+0,1.5,0,Power Forward,4,3-pt,0.4,0.6,0.37,27,Boston,222,-2.1,-1.5,24
+0,13.5,0,Power Forward,9,points,0.5,0.6,0.04,21,Boston,222,-2.1,-1.5,24
+0,6.5,1,Power Forward,22,rebounds,0.4,0.4,0.52,26,Boston,222,-2.1,-1.5,24
+1,19.5,1,Shooting Guard,15,points,0.4,0.2,0.0,28,Sacramento,220,0.7,-2.1,2
+1,2.5,0,Shooting Guard,11,assists,0.5,0.4,0.42,12,Sacramento,220,0.7,-2.1,2
+1,27.5,0,Shooting Guard,12,pra,0.5,0.2,0.42,24,Sacramento,220,0.7,-2.1,2
+1,3.5,0,Shooting Guard,29,3-pt,0.2,0.2,0.17,24,Sacramento,220,0.7,-2.1,2
+1,5.5,0,Shooting Guard,5,rebounds,0.4,0.2,0.33,5,Sacramento,220,0.7,-2.1,2
+1,0.5,0,Point Guard,24,steals,0.7,0.6,0.6,27,Toronto,218,-0.9,-0.3,10
+1,22.5,1,Point Guard,25,points,0.5,0.6,0.0,23,Toronto,218,-0.9,-0.3,10
+1,3.5,1,Point Guard,14,3-pt,0.5,0.6,0.44,22,Toronto,218,-0.9,-0.3,10
+1,32.5,0,Point Guard,21,pra,0.5,0.6,0.48,12,Toronto,218,-0.9,-0.3,10
+1,4.5,0,Point Guard,16,assists,0.6,0.4,0.56,1,Toronto,218,-0.9,-0.3,10
+1,5.5,0,Point Guard,17,rebounds,0.4,0.4,0.32,18,Toronto,218,-0.9,-0.3,10
+1,10.5,0,Center,15,points,0.7,0.6,0.0,4,Sacramento,220,2.8,3.2,2
+1,9.5,1,Center,5,rebounds,0.5,0.6,0.33,17,Sacramento,220,2.8,3.2,2
+1,0.5,0,Power Forward,16,blocks,0.3,0.2,0.27,2,LA Clippers,218,-5.6,-2.3,22
+1,1.5,0,Power Forward,7,3-pt,0.4,0.2,0.36,3,LA Clippers,218,-5.6,-2.3,22
+1,13.5,1,Power Forward,5,points,0.5,0.4,0.0,1,LA Clippers,218,-5.6,-2.3,22
+1,22.5,0,Power Forward,4,pra,0.6,0.4,0.64,1,LA Clippers,218,-5.6,-2.3,22
+1,3.5,0,Power Forward,7,assists,0.5,0.6,0.45,4,LA Clippers,218,-5.6,-2.3,22
+1,5.5,1,Power Forward,4,rebounds,0.5,0.4,0.55,7,LA Clippers,218,-5.6,-2.3,22
+0,0.5,1,Power Forward,18,3-pt,0.8,1.0,0.65,23,Cleveland,220,2.0,-0.2,10
+0,1.5,0,Power Forward,12,blocks,0.4,0.4,0.6,24,Cleveland,220,2.0,-0.2,10
+0,10.5,1,Power Forward,11,points,0.5,0.6,0.0,14,Cleveland,220,2.0,-0.2,10
+0,6.5,1,Power Forward,10,rebounds,0.6,0.6,0.4,29,Cleveland,220,2.0,-0.2,10
+0,1.5,0,Shooting Guard,24,3-pt,0.6,0.6,0.46,24,Denver,218,-1.4,2.0,22
+0,13.5,0,Shooting Guard,24,pra,0.6,0.6,0.5,27,Denver,218,-1.4,2.0,22
+0,2.5,0,Shooting Guard,12,rebounds,0.6,0.4,0.5,13,Denver,218,-1.4,2.0,22
+0,9.5,0,Shooting Guard,22,points,0.7,0.8,0.04,25,Denver,218,-1.4,2.0,22
+0,0.5,0,Point Guard,9,3-pt,0.5,0.6,0.45,10,Philadelphia,228,-1.9,-0.2,14
+0,16.5,0,Point Guard,12,pra,0.6,0.6,0.64,5,Philadelphia,228,-1.9,-0.2,14
+0,2.5,1,Point Guard,15,rebounds,0.4,0.4,0.36,8,Philadelphia,228,-1.9,-0.2,14
+0,4.5,1,Point Guard,17,assists,0.3,0.2,0.36,12,Philadelphia,228,-1.9,-0.2,14
+0,9.5,0,Point Guard,9,points,0.5,0.4,0.0,8,Philadelphia,228,-1.9,-0.2,14
+1,0.5,1,Shooting Guard,18,steals,0.6,0.6,0.62,15,San Antonio,234,0.0,-1.7,2
+1,17.5,1,Shooting Guard,16,points,0.4,0.4,0.0,22,San Antonio,234,0.0,-1.7,2
+1,2.5,1,Shooting Guard,12,3-pt,0.4,0.4,0.43,19,San Antonio,234,0.0,-1.7,2
+1,25.5,1,Shooting Guard,13,pra,0.4,0.4,0.48,23,San Antonio,234,0.0,-1.7,2
+1,3.5,0,Shooting Guard,7,rebounds,0.5,0.4,0.33,19,San Antonio,234,0.0,-1.7,2
+1,4.5,1,Shooting Guard,12,assists,0.5,0.8,0.52,24,San Antonio,234,0.0,-1.7,2
+0,0.5,1,Power Forward,1,3-pt,0.3,0.4,0.43,4,Minnesota,184,0.0,1.4,10
+0,1.5,1,Power Forward,11,blocks,0.6,0.4,0.65,6,Minnesota,184,0.0,1.4,10
+0,1.5,0,Power Forward,24,steals,0.3,0.4,0.35,7,Minnesota,184,0.0,1.4,10
+0,11.5,0,Power Forward,9,rebounds,0.3,0.0,0.43,2,Minnesota,184,0.0,1.4,10
+0,28.5,0,Power Forward,4,points,0.4,0.6,0.05,6,Minnesota,184,0.0,1.4,10
+0,3.5,0,Power Forward,3,assists,0.6,0.6,0.43,3,Minnesota,184,0.0,1.4,10
+0,43.5,0,Power Forward,2,pra,0.4,0.4,0.52,3,Minnesota,184,0.0,1.4,10
+1,1.5,0,Shooting Guard,11,steals,0.5,0.6,0.39,2,LA Lakers,184,-4.0,-3.3,10
+1,25.5,0,Shooting Guard,21,points,0.6,0.4,0.05,18,LA Lakers,184,-4.0,-3.3,10
+1,3.5,0,Shooting Guard,21,3-pt,0.7,0.8,0.78,20,LA Lakers,184,-4.0,-3.3,10
+1,35.5,0,Shooting Guard,22,pra,0.5,0.4,0.52,21,LA Lakers,184,-4.0,-3.3,10
+1,4.5,0,Shooting Guard,27,assists,0.5,0.4,0.35,27,LA Lakers,184,-4.0,-3.3,10
+1,5.5,1,Shooting Guard,14,rebounds,0.4,0.4,0.43,7,LA Lakers,184,-4.0,-3.3,10
+0,1.5,1,Shooting Guard,1,3-pt,0.8,0.6,0.74,5,Minnesota,184,-2.4,-1.5,10
+0,14.5,1,Shooting Guard,4,points,0.6,0.4,0.0,10,Minnesota,184,-2.4,-1.5,10
+0,23.5,1,Shooting Guard,2,pra,0.4,0.2,0.63,11,Minnesota,184,-2.4,-1.5,10
+0,3.5,1,Shooting Guard,9,rebounds,0.1,0.2,0.37,30,Minnesota,184,-2.4,-1.5,10
+0,4.5,1,Shooting Guard,3,assists,0.6,0.2,0.58,1,Minnesota,184,-2.4,-1.5,10
+0,1.5,0,Shooting Guard,9,3-pt,0.3,0.2,0.4,14,Philadelphia,228,1.3,0.9,14
+0,16.5,0,Shooting Guard,9,points,0.5,0.6,0.04,12,Philadelphia,228,1.3,0.9,14
+0,5.5,1,Shooting Guard,15,rebounds,0.6,0.4,0.6,9,Philadelphia,228,1.3,0.9,14
+0,0.5,1,Shooting Guard,18,3-pt,0.5,0.2,0.52,10,Cleveland,220,-2.0,-0.6,10
+0,11.5,1,Shooting Guard,11,points,0.3,0.2,0.0,7,Cleveland,220,-2.0,-0.6,10
+0,18.5,1,Shooting Guard,8,pra,0.3,0.2,0.48,6,Cleveland,220,-2.0,-0.6,10
+0,2.5,1,Shooting Guard,10,assists,0.8,1.0,0.67,8,Cleveland,220,-2.0,-0.6,10
+0,4.5,1,Shooting Guard,10,rebounds,0.5,0.6,0.57,23,Cleveland,220,-2.0,-0.6,10
+1,6.5,1,Power Forward,17,rebounds,0.5,0.4,0.25,13,Brooklyn,254,3.9,1.0,16
+1,7.5,1,Power Forward,20,points,0.7,0.8,0.0,7,Brooklyn,254,3.9,1.0,16
+0,27.5,0,Forward,29,points,0.4,0.4,0.0,30,Chicago,204,1.5,3.7,14
+0,3.5,0,Forward,11,3-pt,0.7,0.8,0.45,30,Chicago,204,1.5,3.7,14
+0,3.5,0,Forward,29,assists,0.4,0.4,0.5,19,Chicago,204,1.5,3.7,14
+0,36.5,0,Forward,29,pra,0.5,0.6,0.3,19,Chicago,204,1.5,3.7,14
+0,5.5,1,Forward,28,rebounds,0.7,0.6,0.5,28,Chicago,204,1.5,3.7,14
+0,2.5,1,Small Forward,6,assists,0.5,0.4,0.57,8,Memphis,254,1.0,1.6,16
+0,20.5,0,Small Forward,18,points,0.6,0.6,0.0,26,Memphis,254,1.0,1.6,16
+0,27.5,0,Small Forward,19,pra,0.6,0.6,0.43,24,Memphis,254,1.0,1.6,16
+0,3.5,0,Small Forward,16,3-pt,0.5,0.4,0.35,14,Memphis,254,1.0,1.6,16
+0,4.5,1,Small Forward,23,rebounds,0.5,0.4,0.48,15,Memphis,254,1.0,1.6,16
+1,1.5,0,Shooting Guard,27,3-pt,0.5,0.4,0.58,18,Washington,220,0.7,0.3,10
+1,12.5,1,Shooting Guard,30,points,0.4,0.6,0.05,23,Washington,220,0.7,0.3,10
+1,20.5,1,Shooting Guard,30,pra,0.2,0.2,0.32,26,Washington,220,0.7,0.3,10
+1,3.5,1,Shooting Guard,29,rebounds,0.2,0.2,0.26,25,Washington,220,0.7,0.3,10
+1,4.5,1,Shooting Guard,25,assists,0.2,0.2,0.32,30,Washington,220,0.7,0.3,10
+0,1.5,0,Guard,18,3-pt,0.5,0.6,0.45,10,Cleveland,220,0.8,2.4,10
+0,10.5,0,Guard,11,points,0.3,0.4,0.0,7,Cleveland,220,0.8,2.4,10
+0,19.5,0,Guard,8,pra,0.3,0.4,0.36,6,Cleveland,220,0.8,2.4,10
+0,4.5,0,Guard,10,assists,0.1,0.2,0.36,8,Cleveland,220,0.8,2.4,10
+0,4.5,1,Guard,10,rebounds,0.2,0.4,0.32,23,Cleveland,220,0.8,2.4,10
+0,1.5,0,Point Guard,23,3-pt,0.6,0.6,0.62,18,Portland,234,2.8,1.2,2
+0,23.5,0,Point Guard,26,pra,0.5,0.6,0.46,27,Portland,234,2.8,1.2,2
+0,4.5,0,Point Guard,27,rebounds,0.5,0.6,0.46,15,Portland,234,2.8,1.2,2
+0,9.5,0,Point Guard,24,assists,0.5,0.6,0.46,24,Portland,234,2.8,1.2,2
+0,9.5,0,Point Guard,23,points,0.6,0.6,0.0,25,Portland,234,2.8,1.2,2
+1,12.5,0,Guard,5,points,0.7,0.4,0.05,2,LA Clippers,218,1.5,-0.2,22
+1,19.5,0,Guard,4,pra,0.6,0.4,0.73,3,LA Clippers,218,1.5,-0.2,22
+1,4.5,0,Guard,4,rebounds,0.6,0.6,0.55,15,LA Clippers,218,1.5,-0.2,22
+1,0.5,1,Point Guard,13,steals,0.4,0.4,0.61,7,Charlotte,204,-0.8,-0.3,14
+1,18.5,0,Point Guard,14,points,0.4,0.4,0.0,20,Charlotte,204,-0.8,-0.3,14
+1,27.5,0,Point Guard,16,pra,0.4,0.4,0.43,21,Charlotte,204,-0.8,-0.3,14
+1,3.5,0,Point Guard,19,3-pt,0.3,0.4,0.48,11,Charlotte,204,-0.8,-0.3,14
+1,3.5,0,Point Guard,18,rebounds,0.7,0.8,0.61,28,Charlotte,204,-0.8,-0.3,14
+1,4.5,0,Point Guard,16,assists,0.4,0.4,0.52,11,Charlotte,204,-0.8,-0.3,14
+0,1.5,0,Small Forward,11,3-pt,0.4,0.4,0.33,3,Chicago,204,4.2,1.2,14
+0,4.5,0,Small Forward,28,rebounds,0.7,0.6,0.54,17,Chicago,204,4.2,1.2,14
+0,8.5,0,Small Forward,29,points,0.5,0.6,0.0,7,Chicago,204,4.2,1.2,14
+1,0.5,0,Point Guard,15,steals,0.5,0.4,0.57,10,Phoenix,260,-1.1,0.1,8
+1,1.5,0,Point Guard,17,3-pt,0.6,0.4,0.57,17,Phoenix,260,-1.1,0.1,8
+1,15.5,0,Point Guard,19,points,0.7,0.4,0.04,13,Phoenix,260,-1.1,0.1,8
+1,2.5,1,Point Guard,6,rebounds,0.3,0.6,0.39,29,Phoenix,260,-1.1,0.1,8
+1,21.5,0,Point Guard,17,pra,0.7,0.6,0.65,10,Phoenix,260,-1.1,0.1,8
+1,3.5,0,Point Guard,19,assists,0.7,0.6,0.43,2,Phoenix,260,-1.1,0.1,8
+0,14.5,0,Point Guard,4,points,0.5,0.6,0.0,4,Minnesota,184,2.0,1.5,10
+0,2.5,0,Point Guard,1,3-pt,0.4,0.6,0.3,2,Minnesota,184,2.0,1.5,10
+0,2.5,1,Point Guard,9,rebounds,0.6,0.8,0.43,14,Minnesota,184,2.0,1.5,10
+0,24.5,0,Point Guard,2,pra,0.3,0.6,0.22,4,Minnesota,184,2.0,1.5,10
+0,6.5,0,Point Guard,3,assists,0.1,0.2,0.13,15,Minnesota,184,2.0,1.5,10
+0,12.5,0,Guard,4,points,0.4,0.2,0.0,10,Minnesota,184,2.2,-0.2,10
+0,2.5,0,Guard,1,3-pt,0.3,0.0,0.25,5,Minnesota,184,2.2,-0.2,10
+0,4.5,1,Guard,9,rebounds,0.5,0.4,0.29,30,Minnesota,184,2.2,-0.2,10
+1,1.5,1,Point Guard,23,steals,0.0,0.0,0.21,27,Washington,220,-1.0,-0.5,10
+1,2.5,1,Point Guard,27,3-pt,0.4,0.4,0.5,29,Washington,220,-1.0,-0.5,10
+1,21.5,1,Point Guard,30,points,0.5,0.6,0.0,29,Washington,220,-1.0,-0.5,10
+1,3.5,1,Point Guard,29,rebounds,0.3,0.4,0.17,26,Washington,220,-1.0,-0.5,10
+1,31.5,1,Point Guard,30,pra,0.4,0.4,0.42,30,Washington,220,-1.0,-0.5,10
+1,6.5,1,Point Guard,25,assists,0.4,0.2,0.38,27,Washington,220,-1.0,-0.5,10
+0,0.5,1,Point Guard,20,steals,0.6,0.6,0.68,24,Memphis,254,-0.6,2.9,16
+0,19.5,0,Point Guard,18,points,0.4,0.6,0.0,9,Memphis,254,-0.6,2.9,16
+0,2.5,1,Point Guard,16,3-pt,0.3,0.4,0.41,23,Memphis,254,-0.6,2.9,16
+0,2.5,1,Point Guard,23,rebounds,0.6,0.4,0.59,18,Memphis,254,-0.6,2.9,16
+0,28.5,0,Point Guard,19,pra,0.5,0.6,0.41,8,Memphis,254,-0.6,2.9,16
+0,6.5,1,Point Guard,6,assists,0.7,0.6,0.5,7,Memphis,254,-0.6,2.9,16
+1,0.5,1,Shooting Guard,12,steals,0.8,1.0,0.71,18,Brooklyn,254,2.1,-0.8,16
+1,15.5,1,Shooting Guard,20,points,0.4,0.6,0.06,8,Brooklyn,254,2.1,-0.8,16
+1,2.5,0,Shooting Guard,10,3-pt,0.1,0.0,0.18,22,Brooklyn,254,2.1,-0.8,16
+1,24.5,1,Shooting Guard,20,pra,0.4,0.6,0.47,2,Brooklyn,254,2.1,-0.8,16
+1,3.5,1,Shooting Guard,22,assists,0.7,0.8,0.65,4,Brooklyn,254,2.1,-0.8,16
+1,5.5,0,Shooting Guard,17,rebounds,0.6,0.4,0.65,2,Brooklyn,254,2.1,-0.8,16
+0,0.5,0,Shooting Guard,30,blocks,0.3,0.2,0.35,26,Utah,260,0.8,0.9,8
+0,1.5,0,Shooting Guard,30,steals,0.3,0.6,0.3,28,Utah,260,0.8,0.9,8
+0,2.5,1,Shooting Guard,28,3-pt,0.6,0.6,0.52,29,Utah,260,0.8,0.9,8
+0,25.5,1,Shooting Guard,28,points,0.7,0.6,0.0,29,Utah,260,0.8,0.9,8
+0,3.5,0,Shooting Guard,3,rebounds,0.5,0.8,0.48,20,Utah,260,0.8,0.9,8
+0,36.5,1,Shooting Guard,25,pra,0.6,0.4,0.43,29,Utah,260,0.8,0.9,8
+0,6.5,1,Shooting Guard,28,assists,0.5,0.6,0.43,22,Utah,260,0.8,0.9,8
+0,17.5,1,Shooting Guard,23,points,0.3333333333333333,0.4,0.11,26,Portland,234,0.6,-0.3,2
+0,2.5,1,Shooting Guard,23,3-pt,0.5555555555555556,0.4,0.56,28,Portland,234,0.6,-0.3,2
+0,3.5,1,Shooting Guard,24,assists,0.3333333333333333,0.2,0.33,25,Portland,234,0.6,-0.3,2
+0,3.5,1,Shooting Guard,27,rebounds,0.1111111111111111,0.2,0.11,24,Portland,234,0.6,-0.3,2
+1,1.5,0,Shooting Guard,23,steals,0.7,0.8,0.54,29,Washington,220,0.6,-1.2,10
+1,26.5,0,Shooting Guard,30,points,0.4,0.4,0.0,23,Washington,220,0.6,-1.2,10
+1,3.5,1,Shooting Guard,27,3-pt,0.6,0.8,0.54,18,Washington,220,0.6,-1.2,10
+1,36.5,0,Shooting Guard,30,pra,0.4,0.4,0.38,26,Washington,220,0.6,-1.2,10
+1,4.5,1,Shooting Guard,25,assists,0.6,0.8,0.46,30,Washington,220,0.6,-1.2,10
+1,5.5,1,Shooting Guard,29,rebounds,0.4,0.4,0.29,25,Washington,220,0.6,-1.2,10
+1,15.5,0,Shooting Guard,22,pra,0.5,0.4,0.57,21,LA Lakers,184,-2.2,-1.2,10
+1,2.5,0,Shooting Guard,21,3-pt,0.5,0.4,0.43,20,LA Lakers,184,-2.2,-1.2,10
+1,2.5,1,Shooting Guard,14,rebounds,0.5,0.6,0.57,7,LA Lakers,184,-2.2,-1.2,10
+1,3.5,0,Shooting Guard,27,assists,0.4,0.6,0.35,27,LA Lakers,184,-2.2,-1.2,10
+1,9.5,0,Shooting Guard,21,points,0.4,0.2,0.04,18,LA Lakers,184,-2.2,-1.2,10
+0,1.5,1,Power Forward,16,3-pt,0.8,0.8,0.62,27,Memphis,254,-0.4,-0.9,16
+0,4.5,1,Power Forward,23,rebounds,0.2,0.0,0.44,18,Memphis,254,-0.4,-0.9,16
+0,9.5,1,Power Forward,18,points,0.5,0.4,0.0,23,Memphis,254,-0.4,-0.9,16
+1,4.5,0,Forward,19,rebounds,0.6,0.6,0.55,19,Indiana,228,4.4,0.2,14
+1,7.5,0,Forward,26,points,0.5,0.4,0.05,29,Indiana,228,4.4,0.2,14
+0,1.5,1,Small Forward,23,3-pt,0.5,0.2,0.46,12,Portland,234,-2.5,-0.2,2
+0,11.5,0,Small Forward,23,points,0.5,0.2,0.04,21,Portland,234,-2.5,-0.2,2
+0,4.5,0,Small Forward,27,rebounds,0.5,0.2,0.38,30,Portland,234,-2.5,-0.2,2
+1,1.5,1,Small Forward,27,3-pt,0.5,0.6,0.38,11,Washington,220,0.4,0.4,10
+1,2.5,0,Small Forward,29,rebounds,0.3,0.4,0.33,13,Washington,220,0.4,0.4,10
+1,7.5,1,Small Forward,30,points,0.4,0.4,0.0,11,Washington,220,0.4,0.4,10
+0,1.5,0,Center,22,blocks,0.2,0.4,0.28,22,Denver,218,-0.4,-2.0,22
+0,11.5,1,Center,12,rebounds,0.6,0.4,0.64,27,Denver,218,-0.4,-2.0,22
+0,14.5,0,Center,22,points,0.6,0.4,0.04,15,Denver,218,-0.4,-2.0,22
+0,28.5,1,Center,24,pra,0.7,0.4,0.64,19,Denver,218,-0.4,-2.0,22
+1,0.5,1,Point Guard,12,steals,0.7,0.8,0.57,6,Brooklyn,254,1.4,1.1,16
+1,1.5,1,Point Guard,10,3-pt,0.6,0.6,0.5,5,Brooklyn,254,1.4,1.1,16
+1,21.5,1,Point Guard,20,points,0.6,0.6,0.08,26,Brooklyn,254,1.4,1.1,16
+1,34.5,1,Point Guard,20,pra,0.7,0.6,0.57,26,Brooklyn,254,1.4,1.1,16
+1,4.5,1,Point Guard,17,rebounds,0.4,0.2,0.43,20,Brooklyn,254,1.4,1.1,16
+1,7.5,1,Point Guard,22,assists,0.6,0.4,0.64,21,Brooklyn,254,1.4,1.1,16
+1,0.5,1,Power Forward,4,blocks,0.3,0.4,0.52,7,LA Lakers,184,-2.7,-1.5,10
+1,0.5,1,Power Forward,11,steals,0.6,0.6,0.65,2,LA Lakers,184,-2.7,-1.5,10
+1,1.5,1,Power Forward,21,3-pt,0.4,0.2,0.3,8,LA Lakers,184,-2.7,-1.5,10
+1,14.5,1,Power Forward,22,pra,0.8,0.8,0.61,10,LA Lakers,184,-2.7,-1.5,10
+1,3.5,1,Power Forward,14,rebounds,0.5,0.4,0.43,3,LA Lakers,184,-2.7,-1.5,10
+1,9.5,1,Power Forward,21,points,0.6,0.6,0.0,27,LA Lakers,184,-2.7,-1.5,10
+0,3.5,0,Forward,23,rebounds,0.5,0.2,0.43,18,Memphis,254,3.4,-0.7,16
+0,8.5,1,Forward,18,points,0.5,0.4,0.04,23,Memphis,254,3.4,-0.7,16
+1,17.5,1,Point Guard,5,points,0.5,0.8,0.0,14,LA Clippers,218,0.4,-1.0,22
+1,2.5,0,Point Guard,7,3-pt,0.2,0.0,0.24,6,LA Clippers,218,0.4,-1.0,22
+1,26.5,1,Point Guard,4,pra,0.6,0.6,0.59,7,LA Clippers,218,0.4,-1.0,22
+1,3.5,1,Point Guard,4,rebounds,0.8,0.6,0.65,5,LA Clippers,218,0.4,-1.0,22
+1,5.5,0,Point Guard,7,assists,0.9,1.0,0.71,6,LA Clippers,218,0.4,-1.0,22
+0,1.5,1,Shooting Guard,21,steals,0.4,0.4,0.46,26,Denver,218,-1.0,2.4,22
+0,21.5,0,Shooting Guard,22,points,0.6,0.6,0.04,25,Denver,218,-1.0,2.4,22
+0,3.5,0,Shooting Guard,24,3-pt,0.2,0.4,0.12,24,Denver,218,-1.0,2.4,22
+0,36.5,0,Shooting Guard,24,pra,0.4,0.6,0.46,27,Denver,218,-1.0,2.4,22
+0,5.5,0,Shooting Guard,12,rebounds,0.6,0.4,0.71,13,Denver,218,-1.0,2.4,22
+0,8.5,0,Shooting Guard,30,assists,0.5,0.4,0.46,29,Denver,218,-1.0,2.4,22
+0,3.5,0,Forward,15,rebounds,0.4,0.4,0.48,23,Philadelphia,228,3.7,-0.1,14
+1,1.5,0,Guard,13,3-pt,0.7,0.6,0.59,12,Indiana,228,2.1,-1.5,14
+1,12.5,0,Guard,26,points,0.7,0.4,0.0,13,Indiana,228,2.1,-1.5,14
+1,2.5,1,Guard,18,assists,0.6,0.4,0.41,10,Indiana,228,2.1,-1.5,14
+1,2.5,0,Guard,19,rebounds,0.5,0.4,0.41,18,Indiana,228,2.1,-1.5,14
+1,1.5,1,Power Forward,10,3-pt,0.7,0.8,0.65,16,Brooklyn,254,-1.4,-1.1,16
+1,1.5,0,Power Forward,28,blocks,0.7,0.6,0.61,27,Brooklyn,254,-1.4,-1.1,16
+1,1.5,1,Power Forward,12,steals,0.4,0.6,0.35,29,Brooklyn,254,-1.4,-1.1,16
+1,18.5,1,Power Forward,20,points,0.7,0.6,0.0,7,Brooklyn,254,-1.4,-1.1,16
+1,6.5,1,Power Forward,17,rebounds,0.4,0.6,0.3,13,Brooklyn,254,-1.4,-1.1,16
+1,1.5,0,Center,23,blocks,0.0,0.0,0.2,13,Washington,220,0.9,-1.6,10
+1,12.5,0,Center,29,rebounds,0.2,0.2,0.28,25,Washington,220,0.9,-1.6,10
+1,16.5,1,Center,30,points,0.2,0.0,0.0,30,Washington,220,0.9,-1.6,10
+1,30.5,1,Center,30,pra,0.2,0.0,0.32,30,Washington,220,0.9,-1.6,10
+1,1.5,1,Forward,10,3-pt,0.6,0.4,0.56,16,Brooklyn,254,-2.0,-2.7,16
+1,3.5,1,Forward,17,rebounds,0.5,0.4,0.44,13,Brooklyn,254,-2.0,-2.7,16
+1,8.5,1,Forward,20,points,0.7,0.6,0.0,7,Brooklyn,254,-2.0,-2.7,16
+1,0.5,0,Small Forward,10,blocks,0.6,0.4,0.64,9,San Antonio,234,-1.9,-2.5,2
+1,1.5,1,Small Forward,12,3-pt,0.6,0.6,0.73,17,San Antonio,234,-1.9,-2.5,2
+1,14.5,1,Small Forward,16,points,0.2,0.2,0.05,8,San Antonio,234,-1.9,-2.5,2
+1,2.5,0,Small Forward,12,assists,0.3,0.4,0.27,7,San Antonio,234,-1.9,-2.5,2
+1,20.5,1,Small Forward,13,pra,0.4,0.4,0.59,14,San Antonio,234,-1.9,-2.5,2
+1,3.5,1,Small Forward,7,rebounds,0.4,0.6,0.36,28,San Antonio,234,-1.9,-2.5,2
+0,13.5,1,Forward,23,points,0.7,0.6,0.1,17,Portland,234,-6.0,-2.7,2
+0,2.5,1,Forward,24,assists,0.5,0.0,0.45,15,Portland,234,-6.0,-2.7,2
+0,23.5,0,Forward,26,pra,0.6,0.4,0.64,16,Portland,234,-6.0,-2.7,2
+0,7.5,0,Forward,27,rebounds,0.6,0.4,0.55,20,Portland,234,-6.0,-2.7,2
+1,1.5,0,Center,13,3-pt,0.0,0.0,0.0,10,Indiana,228,2.3,1.4,14
+1,1.5,0,Center,9,blocks,0.2,0.2,0.2,3,Indiana,228,2.3,1.4,14
+1,10.5,0,Center,19,rebounds,0.4,0.4,0.4,22,Indiana,228,2.3,1.4,14
+1,29.5,0,Center,26,points,0.4,0.4,0.0,20,Indiana,228,2.3,1.4,14
+1,4.5,1,Center,18,assists,0.4,0.4,0.4,4,Indiana,228,2.3,1.4,14
+1,44.5,0,Center,23,pra,0.4,0.4,0.4,17,Indiana,228,2.3,1.4,14
+1,1.5,1,Power Forward,17,3-pt,0.4,0.6,0.32,11,Phoenix,260,1.9,-0.5,8
+1,16.5,1,Power Forward,19,points,0.7,0.6,0.0,22,Phoenix,260,1.9,-0.5,8
+1,2.5,1,Power Forward,19,assists,0.4,0.4,0.5,13,Phoenix,260,1.9,-0.5,8
+1,26.5,1,Power Forward,17,pra,0.7,0.6,0.55,9,Phoenix,260,1.9,-0.5,8
+1,7.5,0,Power Forward,6,rebounds,0.7,0.4,0.59,4,Phoenix,260,1.9,-0.5,8
+0,13.5,0,Center,11,points,0.5,0.6,0.05,6,Cleveland,220,3.4,2.6,10
+0,8.5,0,Center,10,rebounds,0.4,0.6,0.36,14,Cleveland,220,3.4,2.6,10
+1,1.5,1,Point Guard,17,3-pt,0.6,0.4,0.54,17,Phoenix,260,1.9,1.6,8
+1,12.5,1,Point Guard,19,points,0.8,0.8,0.08,13,Phoenix,260,1.9,1.6,8
+1,19.5,1,Point Guard,17,pra,0.8,0.8,0.77,10,Phoenix,260,1.9,1.6,8
+1,2.5,0,Point Guard,6,rebounds,1.0,1.0,0.92,29,Phoenix,260,1.9,1.6,8
+1,3.5,1,Point Guard,19,assists,0.5,0.6,0.54,2,Phoenix,260,1.9,1.6,8
+0,0.5,1,Shooting Guard,5,steals,0.5,0.4,0.65,10,Cleveland,220,1.2,0.7,10
+0,2.5,0,Shooting Guard,18,3-pt,0.5,0.4,0.55,10,Cleveland,220,1.2,0.7,10
+0,2.5,1,Shooting Guard,10,rebounds,0.4,0.4,0.35,23,Cleveland,220,1.2,0.7,10
+0,20.5,0,Shooting Guard,11,points,0.5,0.4,0.05,7,Cleveland,220,1.2,0.7,10
+0,27.5,1,Shooting Guard,8,pra,0.5,0.4,0.55,6,Cleveland,220,1.2,0.7,10
+0,4.5,1,Shooting Guard,10,assists,0.7,0.6,0.6,8,Cleveland,220,1.2,0.7,10
+1,0.5,1,Shooting Guard,19,3-pt,0.7,0.6,0.8,11,Charlotte,204,0.4,0.0,14
+1,12.5,1,Shooting Guard,14,points,0.3,0.2,0.04,1,Charlotte,204,0.4,0.0,14
+1,24.5,1,Shooting Guard,16,pra,0.4,0.4,0.52,1,Charlotte,204,0.4,0.0,14
+1,6.5,1,Shooting Guard,16,assists,0.6,0.6,0.56,7,Charlotte,204,0.4,0.0,14
+1,6.5,1,Shooting Guard,18,rebounds,0.4,0.6,0.4,6,Charlotte,204,0.4,0.0,14
+0,1.5,0,Shooting Guard,11,3-pt,0.5,0.4,0.41,30,Chicago,204,5.4,1.6,14
+0,1.5,1,Shooting Guard,29,assists,0.6,0.6,0.5,17,Chicago,204,5.4,1.6,14
+0,15.5,0,Shooting Guard,29,pra,0.5,0.4,0.32,30,Chicago,204,5.4,1.6,14
+0,3.5,0,Shooting Guard,28,rebounds,0.4,0.6,0.32,28,Chicago,204,5.4,1.6,14
+0,9.5,0,Shooting Guard,29,points,0.6,0.6,0.0,30,Chicago,204,5.4,1.6,14
+0,13.5,1,Forward,23,points,0.5,0.4,0.04,17,Portland,234,1.3,1.9,2
+0,2.5,1,Forward,23,3-pt,0.4,0.4,0.46,20,Portland,234,1.3,1.9,2
+0,5.5,0,Forward,27,rebounds,0.4,0.6,0.5,20,Portland,234,1.3,1.9,2
+1,1.5,0,Power Forward,21,3-pt,0.5,0.8,0.43,8,LA Lakers,184,-5.0,-1.8,10
+1,19.5,1,Power Forward,21,points,0.6,0.2,0.0,27,LA Lakers,184,-5.0,-1.8,10
+1,31.5,0,Power Forward,22,pra,0.3,0.0,0.48,10,LA Lakers,184,-5.0,-1.8,10
+1,4.5,0,Power Forward,27,assists,0.1,0.0,0.26,11,LA Lakers,184,-5.0,-1.8,10
+1,7.5,0,Power Forward,14,rebounds,0.5,0.6,0.39,3,LA Lakers,184,-5.0,-1.8,10
+0,7.5,1,Center,28,points,0.5,0.4,0.06,28,Utah,260,-0.5,-0.4,8
+0,8.5,0,Center,3,rebounds,0.6,0.4,0.56,19,Utah,260,-0.5,-0.4,8
+1,1.5,0,Shooting Guard,13,3-pt,0.4,0.8,0.36,12,Indiana,228,2.1,-2.1,14
+1,10.5,1,Shooting Guard,26,points,0.8,1.0,0.05,13,Indiana,228,2.1,-2.1,14
+1,5.5,1,Shooting Guard,19,rebounds,0.4,0.6,0.41,18,Indiana,228,2.1,-2.1,14
+0,1.5,1,Guard,16,3-pt,0.6,0.8,0.45,1,Memphis,254,9.6,4.3,16
+0,1.5,0,Guard,6,assists,0.4,0.6,0.32,15,Memphis,254,9.6,4.3,16
+0,13.5,1,Guard,19,pra,0.3,0.6,0.23,10,Memphis,254,9.6,4.3,16
+0,2.5,0,Guard,23,rebounds,0.6,0.8,0.59,27,Memphis,254,9.6,4.3,16
+0,8.5,1,Guard,18,points,0.2,0.4,0.0,6,Memphis,254,9.6,4.3,16
+0,0.5,1,Power Forward,30,steals,0.3,0.2,0.38,9,Utah,260,-5.2,-1.8,8
+0,1.5,0,Power Forward,30,blocks,0.5,0.6,0.38,11,Utah,260,-5.2,-1.8,8
+0,2.5,0,Power Forward,28,3-pt,0.6,0.8,0.54,2,Utah,260,-5.2,-1.8,8
+0,2.5,1,Power Forward,28,assists,0.6,0.4,0.54,5,Utah,260,-5.2,-1.8,8
+0,23.5,1,Power Forward,28,points,0.5,0.4,0.08,10,Utah,260,-5.2,-1.8,8
+0,32.5,1,Power Forward,25,pra,0.6,0.6,0.62,6,Utah,260,-5.2,-1.8,8
+0,5.5,0,Power Forward,3,rebounds,0.6,0.6,0.62,8,Utah,260,-5.2,-1.8,8
+0,0.5,1,Guard,24,3-pt,0.3,0.4,0.32,24,Denver,218,5.7,1.8,22
+0,11.5,1,Guard,22,points,0.5,0.4,0.0,25,Denver,218,5.7,1.8,22
+0,18.5,1,Guard,24,pra,0.7,0.6,0.45,27,Denver,218,5.7,1.8,22
+0,2.5,1,Guard,30,assists,0.6,0.6,0.5,29,Denver,218,5.7,1.8,22
+0,3.5,0,Guard,12,rebounds,0.6,0.6,0.55,13,Denver,218,5.7,1.8,22
+1,14.5,1,Guard,19,points,0.7,0.6,0.0,11,Phoenix,260,-0.7,-1.9,8
+1,2.5,1,Guard,17,3-pt,0.5,0.2,0.45,13,Phoenix,260,-0.7,-1.9,8
+1,2.5,1,Guard,6,rebounds,0.7,1.0,0.59,4,Phoenix,260,-0.7,-1.9,8
+1,23.5,1,Guard,17,pra,0.8,0.6,0.59,9,Phoenix,260,-0.7,-1.9,8
+1,5.5,1,Guard,19,assists,0.5,0.4,0.45,21,Phoenix,260,-0.7,-1.9,8
+0,2.5,0,Guard,30,assists,0.4,0.2,0.4,29,Denver,218,0.7,0.6,22
+0,3.5,0,Guard,12,rebounds,0.4,0.4,0.48,13,Denver,218,0.7,0.6,22
+0,6.5,1,Guard,22,points,0.4,0.4,0.0,25,Denver,218,0.7,0.6,22
+1,19.5,0,Power Forward,19,points,0.5,0.2,0.06,22,Phoenix,260,0.3,1.3,8
+1,2.5,1,Power Forward,17,3-pt,0.6,0.2,0.5,11,Phoenix,260,0.3,1.3,8
+1,2.5,0,Power Forward,19,assists,0.2,0.4,0.28,13,Phoenix,260,0.3,1.3,8
+1,28.5,0,Power Forward,17,pra,0.6,0.2,0.44,9,Phoenix,260,0.3,1.3,8
+1,6.5,0,Power Forward,6,rebounds,0.5,0.4,0.5,4,Phoenix,260,0.3,1.3,8
+1,1.5,0,Point Guard,10,3-pt,0.5,0.4,0.33,5,Brooklyn,254,1.3,0.7,16
+1,3.5,0,Point Guard,22,assists,0.8,0.6,0.6,21,Brooklyn,254,1.3,0.7,16
+1,9.5,0,Point Guard,20,points,0.6,0.6,0.07,26,Brooklyn,254,1.3,0.7,16
+1,17.5,0,Small Forward,5,points,0.8,0.8,0.0,19,LA Clippers,218,-0.7,-0.3,22
+1,2.5,0,Small Forward,7,3-pt,0.3,0.2,0.5,13,LA Clippers,218,-0.7,-0.3,22
+1,2.5,1,Small Forward,7,assists,0.6,0.4,0.59,6,LA Clippers,218,-0.7,-0.3,22
+1,26.5,0,Small Forward,4,pra,0.8,0.6,0.68,22,LA Clippers,218,-0.7,-0.3,22
+1,6.5,0,Small Forward,4,rebounds,0.8,0.8,0.64,26,LA Clippers,218,-0.7,-0.3,22
+1,17.5,0,Point Guard,22,pra,0.5,0.6,0.47,11,LA Lakers,184,-0.3,0.6,10
+1,2.5,0,Point Guard,21,3-pt,0.6,0.8,0.42,14,LA Lakers,184,-0.3,0.6,10
+1,2.5,1,Point Guard,14,rebounds,0.7,0.6,0.63,13,LA Lakers,184,-0.3,0.6,10
+1,4.5,1,Point Guard,27,assists,0.3,0.2,0.37,25,LA Lakers,184,-0.3,0.6,10
+1,9.5,0,Point Guard,21,points,0.6,0.8,0.0,6,LA Lakers,184,-0.3,0.6,10
+0,17.5,0,Small Forward,29,points,0.5,0.8,0.01,7,Chicago,204,-0.3,0.7,14
+0,2.5,0,Small Forward,11,3-pt,0.4,0.6,0.36,3,Chicago,204,-0.3,0.7,14
+0,2.5,1,Small Forward,29,assists,0.5,0.6,0.45,19,Chicago,204,-0.3,0.7,14
+0,26.5,1,Small Forward,29,pra,0.5,0.6,0.45,9,Chicago,204,-0.3,0.7,14
+0,5.5,1,Small Forward,28,rebounds,0.7,0.8,0.73,17,Chicago,204,-0.3,0.7,14
+0,1.5,0,Center,9,3-pt,0.6,0.8,0.57,19,Philadelphia,228,-1.0,-2.1,14
+0,1.5,0,Center,21,blocks,0.5,0.6,0.57,26,Philadelphia,228,-1.0,-2.1,14
+0,14.5,0,Center,9,points,0.5,0.4,0.04,14,Philadelphia,228,-1.0,-2.1,14
+0,7.5,0,Center,15,rebounds,0.5,0.0,0.48,12,Philadelphia,228,-1.0,-2.1,14
+1,1.5,1,Center,21,3-pt,0.2,0.2,0.52,11,LA Lakers,184,0.2,-1.4,10
+1,11.5,0,Center,21,points,0.3,0.2,0.05,19,LA Lakers,184,0.2,-1.4,10
+1,5.5,0,Center,14,rebounds,0.4,0.6,0.35,28,LA Lakers,184,0.2,-1.4,10
+0,1.5,0,Center,29,assists,0.4444444444444444,0.4,0.44,19,Chicago,204,-1.6,-1.0,14
+0,1.5,0,Center,13,blocks,0.5555555555555556,0.4,0.56,14,Chicago,204,-1.6,-1.0,14
+0,11.5,0,Center,29,points,0.5555555555555556,0.4,0.01,29,Chicago,204,-1.6,-1.0,14
+0,22.5,0,Center,29,pra,0.5555555555555556,0.4,0.56,26,Chicago,204,-1.6,-1.0,14
+0,9.5,0,Center,28,rebounds,0.5555555555555556,0.4,0.56,16,Chicago,204,-1.6,-1.0,14
+1,1.5,0,Shooting Guard,21,3-pt,0.5,0.8,0.52,20,LA Lakers,184,-0.2,2.0,10
+1,2.5,0,Shooting Guard,27,assists,0.5,0.4,0.57,27,LA Lakers,184,-0.2,2.0,10
+1,2.5,1,Shooting Guard,14,rebounds,0.3,0.4,0.39,7,LA Lakers,184,-0.2,2.0,10
+1,8.5,0,Shooting Guard,21,points,0.5,0.6,0.05,18,LA Lakers,184,-0.2,2.0,10
+0,1.5,0,Center,16,blocks,0.4,0.4,0.39,11,Memphis,254,1.8,2.1,16
+0,11.5,0,Center,18,points,0.4,0.4,0.0,16,Memphis,254,1.8,2.1,16
+0,2.5,0,Center,6,assists,0.5,0.2,0.5,5,Memphis,254,1.8,2.1,16
+0,22.5,0,Center,19,pra,0.5,0.4,0.39,11,Memphis,254,1.8,2.1,16
+0,8.5,0,Center,23,rebounds,0.3,0.2,0.39,10,Memphis,254,1.8,2.1,16
+1,0.5,0,Center,17,blocks,0.4,0.4,0.58,20,LA Clippers,218,1.2,7.2,22
+1,1.5,1,Center,7,3-pt,0.9,0.8,0.68,27,LA Clippers,218,1.2,7.2,22
+1,1.5,1,Center,27,steals,0.5,0.6,0.53,28,LA Clippers,218,1.2,7.2,22
+1,12.5,0,Center,4,rebounds,0.7,0.8,0.58,5,LA Clippers,218,1.2,7.2,22
+1,31.5,0,Center,5,points,0.6,0.6,0.0,21,LA Clippers,218,1.2,7.2,22
+1,53.5,0,Center,4,pra,0.7,0.8,0.68,14,LA Clippers,218,1.2,7.2,22
+1,9.5,0,Center,7,assists,0.4,0.4,0.53,27,LA Clippers,218,1.2,7.2,22
+0,2.5,1,Guard,30,assists,0.6,0.6,0.5,29,Denver,218,-3.2,0.0,22
+0,2.5,1,Guard,12,rebounds,0.5,0.4,0.44,13,Denver,218,-3.2,0.0,22
+0,22.5,0,Guard,22,points,0.6,0.6,0.0,25,Denver,218,-3.2,0.0,22
+0,27.5,0,Guard,24,pra,0.5,0.4,0.5,27,Denver,218,-3.2,0.0,22
+0,3.5,0,Guard,24,3-pt,0.6,0.8,0.61,24,Denver,218,-3.2,0.0,22
+0,1.5,1,Power Forward,9,3-pt,0.4,0.6,0.33,15,Philadelphia,228,0.2,2.4,14
+0,3.5,1,Power Forward,15,rebounds,0.6,0.8,0.42,23,Philadelphia,228,0.2,2.4,14
+0,9.5,1,Power Forward,9,points,0.6,1.0,0.0,20,Philadelphia,228,0.2,2.4,14
+0,0.5,1,Power Forward,9,steals,0.7,0.6,0.56,15,Philadelphia,228,0.5,-2.1,14
+0,1.5,1,Power Forward,9,3-pt,0.4,0.4,0.48,15,Philadelphia,228,0.5,-2.1,14
+0,19.5,1,Power Forward,9,points,0.5,0.2,0.0,20,Philadelphia,228,0.5,-2.1,14
+0,2.5,1,Power Forward,17,assists,0.5,0.4,0.64,29,Philadelphia,228,0.5,-2.1,14
+0,29.5,1,Power Forward,12,pra,0.5,0.2,0.52,29,Philadelphia,228,0.5,-2.1,14
+0,6.5,1,Power Forward,15,rebounds,0.6,0.4,0.48,23,Philadelphia,228,0.5,-2.1,14
+1,1.5,1,Forward,16,steals,0.5,0.2,0.5,26,Indiana,228,-0.5,-0.6,14
+1,18.5,0,Forward,26,points,0.3,0.4,0.0,29,Indiana,228,-0.5,-0.6,14
+1,2.5,0,Forward,13,3-pt,0.3,0.2,0.25,26,Indiana,228,-0.5,-0.6,14
+1,28.5,0,Forward,23,pra,0.4,0.4,0.33,30,Indiana,228,-0.5,-0.6,14
+1,4.5,0,Forward,18,assists,0.7,0.6,0.58,30,Indiana,228,-0.5,-0.6,14
+1,5.5,0,Forward,19,rebounds,0.4,0.4,0.42,19,Indiana,228,-0.5,-0.6,14
+0,1.5,1,Power Forward,28,3-pt,0.8,1.0,0.7,2,Utah,260,1.8,1.8,8
+0,5.5,0,Power Forward,3,rebounds,0.6,0.8,0.57,8,Utah,260,1.8,1.8,8
+0,9.5,1,Power Forward,28,points,0.6,1.0,0.0,10,Utah,260,1.8,1.8,8
+1,1.5,0,Center,4,blocks,0.4,0.2,0.39,10,LA Lakers,184,1.0,0.3,10
+1,10.5,1,Center,21,points,0.4,0.4,0.04,19,LA Lakers,184,1.0,0.3,10
+1,12.5,1,Center,14,rebounds,0.2,0.0,0.26,28,LA Lakers,184,1.0,0.3,10
+1,24.5,1,Center,22,pra,0.4,0.4,0.39,22,LA Lakers,184,1.0,0.3,10
+0,1.5,0,Power Forward,1,3-pt,0.6,0.6,0.63,4,Minnesota,184,2.2,-1.3,10
+0,14.5,0,Power Forward,4,points,0.3,0.2,0.05,6,Minnesota,184,2.2,-1.3,10
+0,5.5,1,Power Forward,9,rebounds,0.3,0.4,0.32,2,Minnesota,184,2.2,-1.3,10
+1,1.5,1,Power Forward,10,3-pt,0.5,0.6,0.4,16,Brooklyn,254,-2.8,-2.0,16
+1,6.5,0,Power Forward,17,rebounds,0.5,0.6,0.48,13,Brooklyn,254,-2.8,-2.0,16
+1,9.5,1,Power Forward,20,points,0.8,0.8,0.04,7,Brooklyn,254,-2.8,-2.0,16
+1,4.5,1,Guard,12,assists,0.6,0.8,0.65,24,San Antonio,234,2.0,-0.9,2
+1,9.5,0,Guard,16,points,0.6,0.6,0.06,22,San Antonio,234,2.0,-0.9,2
+1,1.5,0,Shooting Guard,12,3-pt,0.5,0.6,0.5,19,San Antonio,234,2.1,-0.3,2
+1,16.5,0,Shooting Guard,16,points,0.5,0.4,0.0,22,San Antonio,234,2.1,-0.3,2
+1,2.5,0,Shooting Guard,12,assists,0.5,0.8,0.44,24,San Antonio,234,2.1,-0.3,2
+1,23.5,0,Shooting Guard,13,pra,0.4,0.4,0.38,23,San Antonio,234,2.1,-0.3,2
+1,4.5,0,Shooting Guard,7,rebounds,0.1,0.2,0.12,19,San Antonio,234,2.1,-0.3,2
+0,7.5,1,Shooting Guard,18,points,0.5,0.6,0.0,6,Memphis,254,10.3,5.0,16
+0,12.5,0,Point Guard,9,points,0.5,1.0,0.04,8,Philadelphia,228,4.6,3.0,14
+0,2.5,0,Point Guard,15,rebounds,0.4,0.2,0.46,8,Philadelphia,228,4.6,3.0,14
+0,4.5,0,Point Guard,17,assists,0.3,0.4,0.33,12,Philadelphia,228,4.6,3.0,14
+1,1.5,1,Forward,12,3-pt,0.4,0.2,0.42,21,San Antonio,234,-2.9,-0.9,2
+1,5.5,1,Forward,7,rebounds,0.4,0.4,0.38,24,San Antonio,234,-2.9,-0.9,2
+1,8.5,0,Forward,16,points,0.6,0.6,0.04,12,San Antonio,234,-2.9,-0.9,2
+0,1.5,0,Point Guard,9,steals,0.5,0.4,0.4,12,Philadelphia,228,2.5,-1.4,14
+0,17.5,1,Point Guard,9,points,0.7,0.4,0.0,8,Philadelphia,228,2.5,-1.4,14
+0,2.5,1,Point Guard,9,3-pt,0.7,0.4,0.52,10,Philadelphia,228,2.5,-1.4,14
+0,28.5,1,Point Guard,12,pra,0.5,0.4,0.4,5,Philadelphia,228,2.5,-1.4,14
+0,3.5,0,Point Guard,15,rebounds,0.4,0.4,0.4,8,Philadelphia,228,2.5,-1.4,14
+0,8.5,1,Point Guard,17,assists,0.4,0.0,0.48,12,Philadelphia,228,2.5,-1.4,14
+1,1.5,0,Point Guard,16,steals,0.7,0.8,0.56,11,Indiana,228,0.7,-1.3,14
+1,2.5,1,Point Guard,13,3-pt,0.5,0.4,0.5,12,Indiana,228,0.7,-1.3,14
+1,22.5,0,Point Guard,26,points,0.4,0.4,0.07,19,Indiana,228,0.7,-1.3,14
+1,3.5,0,Point Guard,19,rebounds,0.5,0.6,0.44,7,Indiana,228,0.7,-1.3,14
+1,32.5,0,Point Guard,23,pra,0.4,0.4,0.5,18,Indiana,228,0.7,-1.3,14
+1,5.5,0,Point Guard,18,assists,0.5,0.8,0.44,20,Indiana,228,0.7,-1.3,14
+0,11.5,1,Point Guard,28,points,0.8,1.0,0.0,17,Utah,260,-1.1,1.2,8
+0,2.5,1,Point Guard,28,3-pt,0.6,0.8,0.39,30,Utah,260,-1.1,1.2,8
+0,2.5,1,Point Guard,3,rebounds,0.4,0.4,0.39,11,Utah,260,-1.1,1.2,8
+0,20.5,1,Point Guard,25,pra,0.7,0.6,0.52,25,Utah,260,-1.1,1.2,8
+0,6.5,1,Point Guard,28,assists,0.5,0.2,0.48,29,Utah,260,-1.1,1.2,8
+0,1.5,0,Guard,11,3-pt,0.5,0.8,0.38,30,Chicago,204,9.4,2.5,14
+0,13.5,0,Guard,29,points,0.3,0.6,0.0,30,Chicago,204,9.4,2.5,14
+0,24.5,0,Guard,29,pra,0.4,0.8,0.31,30,Chicago,204,9.4,2.5,14
+0,3.5,1,Guard,28,rebounds,0.2,0.4,0.31,28,Chicago,204,9.4,2.5,14
+0,7.5,0,Guard,29,assists,0.3,0.4,0.23,17,Chicago,204,9.4,2.5,14
+0,1.5,0,Center,29,steals,0.1,0.2,0.21,21,Portland,234,1.1,0.6,2
+0,10.5,0,Center,27,rebounds,0.5,0.4,0.37,7,Portland,234,1.1,0.6,2
+0,2.5,0,Center,23,3-pt,0.8,0.6,0.47,23,Portland,234,1.1,0.6,2
+0,23.5,1,Center,23,points,0.8,0.6,0.0,9,Portland,234,1.1,0.6,2
+0,3.5,0,Center,29,blocks,0.1,0.0,0.21,30,Portland,234,1.1,0.6,2
+0,39.5,1,Center,26,pra,0.7,0.4,0.47,10,Portland,234,1.1,0.6,2
+0,4.5,1,Center,24,assists,0.5,0.4,0.37,23,Portland,234,1.1,0.6,2
+1,10.5,1,Center,19,points,0.6,0.8,0.06,27,Phoenix,260,3.5,0.4,8
+1,10.5,0,Center,6,rebounds,0.5,0.8,0.59,20,Phoenix,260,3.5,0.4,8
+1,2.5,0,Center,7,blocks,0.6,0.6,0.59,4,Phoenix,260,3.5,0.4,8
+1,0.5,1,Shooting Guard,13,steals,0.5,0.6,0.59,3,Charlotte,204,-1.3,2.1,14
+1,22.5,0,Shooting Guard,14,points,0.6,0.6,0.05,1,Charlotte,204,-1.3,2.1,14
+1,3.5,0,Shooting Guard,19,3-pt,0.6,0.6,0.55,11,Charlotte,204,-1.3,2.1,14
+1,3.5,0,Shooting Guard,16,assists,0.6,0.4,0.5,7,Charlotte,204,-1.3,2.1,14
+1,31.5,0,Shooting Guard,16,pra,0.5,0.4,0.5,1,Charlotte,204,-1.3,2.1,14
+1,4.5,0,Shooting Guard,18,rebounds,0.3,0.2,0.5,6,Charlotte,204,-1.3,2.1,14
+1,2.5,1,Guard,30,3-pt,0.6,0.4,0.52,27,Atlanta,212,4.3,0.3,8
+1,7.5,1,Guard,27,points,0.6,0.4,0.0,25,Atlanta,212,4.3,0.3,8
+1,1.5,0,Shooting Guard,2,3-pt,0.5,0.6,0.31,6,Houston,207,0.8,2.1,15
+1,1.5,0,Shooting Guard,10,steals,0.6,1.0,0.62,13,Houston,207,0.8,2.1,15
+1,12.5,0,Shooting Guard,3,pra,0.6,0.8,0.38,5,Houston,207,0.8,2.1,15
+1,2.5,0,Shooting Guard,1,assists,0.5,0.4,0.38,4,Houston,207,0.8,2.1,15
+1,2.5,0,Shooting Guard,24,rebounds,0.6,0.6,0.5,26,Houston,207,0.8,2.1,15
+1,6.5,0,Shooting Guard,3,points,0.5,0.6,0.0,2,Houston,207,0.8,2.1,15
+0,0.5,1,Center,6,3-pt,0.2,0.2,0.32,2,Okla City,207,2.3,0.5,15
+0,0.5,0,Center,13,blocks,0.3,0.2,0.56,19,Okla City,207,2.3,0.5,15
+0,10.5,1,Center,30,rebounds,0.4,0.4,0.44,28,Okla City,207,2.3,0.5,15
+0,18.5,0,Center,1,points,0.7,0.6,0.04,3,Okla City,207,2.3,0.5,15
+0,34.5,0,Center,5,pra,0.6,0.6,0.48,13,Okla City,207,2.3,0.5,15
+0,5.5,0,Center,4,assists,0.5,0.6,0.36,29,Okla City,207,2.3,0.5,15
+0,11.5,1,Forward,1,points,0.5,0.4,0.04,4,Okla City,207,0.9,1.7,15
+0,20.5,1,Forward,5,pra,0.6,0.4,0.48,20,Okla City,207,0.9,1.7,15
+0,6.5,1,Forward,30,rebounds,0.6,0.4,0.52,19,Okla City,207,0.9,1.7,15
+1,1.5,0,Forward,30,3-pt,0.4,0.6,0.22,24,Atlanta,212,1.5,-0.7,8
+1,1.5,1,Forward,23,assists,0.7,0.8,0.43,15,Atlanta,212,1.5,-0.7,8
+1,13.5,0,Forward,27,points,0.4,0.6,0.04,14,Atlanta,212,1.5,-0.7,8
+1,23.5,0,Forward,28,pra,0.4,0.6,0.39,15,Atlanta,212,1.5,-0.7,8
+1,7.5,1,Forward,22,rebounds,0.2,0.4,0.3,21,Atlanta,212,1.5,-0.7,8
+0,11.5,0,Shooting Guard,13,points,0.5,0.4,0.0,19,Milwaukee,212,0.5,0.3,8
+0,16.5,0,Shooting Guard,13,pra,0.6,0.6,0.55,22,Milwaukee,212,0.5,0.3,8
+0,2.5,0,Shooting Guard,15,3-pt,0.4,0.4,0.36,24,Milwaukee,212,0.5,0.3,8
+0,2.5,0,Shooting Guard,13,rebounds,0.7,0.6,0.64,22,Milwaukee,212,0.5,0.3,8
+1,0.5,0,Center,26,steals,0.5,0.4,0.54,25,Atlanta,212,-0.7,-3.5,8
+1,1.5,1,Center,30,3-pt,0.4,0.0,0.46,25,Atlanta,212,-0.7,-3.5,8
+1,1.5,0,Center,23,assists,0.6,0.2,0.46,10,Atlanta,212,-0.7,-3.5,8
+1,15.5,1,Center,28,pra,0.5,0.0,0.54,20,Atlanta,212,-0.7,-3.5,8
+1,2.5,0,Center,25,blocks,0.5,0.4,0.5,24,Atlanta,212,-0.7,-3.5,8
+1,4.5,0,Center,22,rebounds,0.7,0.8,0.62,19,Atlanta,212,-0.7,-3.5,8
+1,9.5,1,Center,27,points,0.5,0.0,0.04,22,Atlanta,212,-0.7,-3.5,8
+1,1.5,0,Guard,10,steals,0.7,0.8,0.62,13,Houston,207,2.5,1.8,15
+1,3.5,1,Guard,24,rebounds,0.6,0.6,0.58,26,Houston,207,2.5,1.8,15
+1,7.5,0,Guard,3,points,0.6,0.8,0.0,2,Houston,207,2.5,1.8,15
+0,0.5,1,Center,5,blocks,0.7,0.6,0.65,6,Milwaukee,212,1.2,-0.8,8
+0,8.5,0,Center,13,points,0.5,0.6,0.0,1,Milwaukee,212,1.2,-0.8,8
+0,9.5,0,Center,13,rebounds,0.7,0.8,0.5,8,Milwaukee,212,1.2,-0.8,8
+1,0.5,1,Point Guard,26,steals,0.8,0.8,0.57,17,Atlanta,212,0.4,-2.0,8
+1,25.5,0,Point Guard,27,points,0.5,0.6,0.05,23,Atlanta,212,0.4,-2.0,8
+1,3.5,1,Point Guard,30,3-pt,0.5,0.6,0.38,27,Atlanta,212,0.4,-2.0,8
+1,37.5,1,Point Guard,28,pra,0.6,0.4,0.57,24,Atlanta,212,0.4,-2.0,8
+1,4.5,1,Point Guard,22,rebounds,0.5,0.4,0.38,22,Atlanta,212,0.4,-2.0,8
+1,7.5,0,Point Guard,23,assists,0.6,0.4,0.43,15,Atlanta,212,0.4,-2.0,8
+0,16.5,0,Small Forward,13,points,0.8,1.0,0.0,16,Milwaukee,212,0.9,1.8,8
+0,2.5,1,Small Forward,15,3-pt,0.6,0.8,0.53,4,Milwaukee,212,0.9,1.8,8
+0,3.5,1,Small Forward,13,rebounds,0.4,0.2,0.47,21,Milwaukee,212,0.9,1.8,8
+0,1.5,1,Small Forward,6,3-pt,0.6,0.8,0.56,21,Okla City,207,1.5,-0.7,15
+0,12.5,1,Small Forward,1,points,0.6,0.6,0.0,23,Okla City,207,1.5,-0.7,15
+0,3.5,1,Small Forward,30,rebounds,0.5,0.6,0.52,27,Okla City,207,1.5,-0.7,15
+0,1.5,0,Guard,15,3-pt,0.3,0.2,0.42,24,Milwaukee,212,0.4,-1.3,8
+0,11.5,0,Guard,13,points,0.4,0.4,0.04,19,Milwaukee,212,0.4,-1.3,8
+0,19.5,1,Guard,13,pra,0.5,0.6,0.62,22,Milwaukee,212,0.4,-1.3,8
+0,2.5,1,Guard,8,assists,0.7,0.8,0.67,19,Milwaukee,212,0.4,-1.3,8
+0,2.5,0,Guard,6,steals,0.6,0.8,0.54,15,Milwaukee,212,0.4,-1.3,8
+0,4.5,1,Guard,13,rebounds,0.6,0.4,0.58,22,Milwaukee,212,0.4,-1.3,8
+0,1.5,0,Point Guard,4,steals,0.3,0.2,0.52,3,Okla City,207,2.0,1.4,15
+0,15.5,0,Point Guard,1,points,0.4,0.2,0.0,1,Okla City,207,2.0,1.4,15
+0,2.5,0,Point Guard,6,3-pt,0.6,0.6,0.48,6,Okla City,207,2.0,1.4,15
+0,24.5,0,Point Guard,5,pra,0.4,0.2,0.43,5,Okla City,207,2.0,1.4,15
+0,3.5,1,Point Guard,30,rebounds,0.4,0.2,0.48,30,Okla City,207,2.0,1.4,15
+0,5.5,1,Point Guard,4,assists,0.4,0.2,0.48,5,Okla City,207,2.0,1.4,15
+1,1.5,0,Shooting Guard,30,3-pt,0.8,1.0,0.68,27,Atlanta,212,3.0,1.2,8
+1,8.5,0,Shooting Guard,27,points,0.7,0.8,0.05,25,Atlanta,212,3.0,1.2,8
+1,0.5,1,Power Forward,26,steals,0.5,0.6,0.45,30,Atlanta,212,-0.4,-1.6,8
+1,1.5,1,Power Forward,25,blocks,0.4,0.4,0.41,22,Atlanta,212,-0.4,-1.6,8
+1,11.5,1,Power Forward,22,rebounds,0.2,0.0,0.45,21,Atlanta,212,-0.4,-1.6,8
+1,10.5,1,Center,3,points,0.6666666666666666,0.4,0.12,14,Houston,207,-2.3,-1.3,15
+1,12.5,0,Center,24,rebounds,0.6666666666666666,0.6,0.67,18,Houston,207,-2.3,-1.3,15
+1,26.5,1,Center,3,pra,0.6666666666666666,0.4,0.67,9,Houston,207,-2.3,-1.3,15
+1,3.5,0,Center,1,assists,0.6666666666666666,0.8,0.67,1,Houston,207,-2.3,-1.3,15
+1,1.5,0,Shooting Guard,2,3-pt,0.7,0.6,0.77,6,Houston,207,-3.9,-1.1,15
+1,2.5,0,Shooting Guard,24,rebounds,0.5,0.6,0.55,26,Houston,207,-3.9,-1.1,15
+1,6.5,0,Shooting Guard,3,points,0.6,0.6,0.05,2,Houston,207,-3.9,-1.1,15
+0,1.5,1,Power Forward,6,3-pt,0.8,0.8,0.48,26,Okla City,207,6.3,0.8,15
+0,12.5,1,Power Forward,1,points,0.6,0.6,0.0,4,Okla City,207,6.3,0.8,15
+0,7.5,0,Power Forward,30,rebounds,0.4,0.4,0.36,19,Okla City,207,6.3,0.8,15
+0,0.5,0,Shooting Guard,4,steals,0.9,0.8,0.64,3,Okla City,207,1.6,-2.0,15
+0,16.5,0,Shooting Guard,1,points,0.4,0.4,0.04,4,Okla City,207,1.6,-2.0,15
+0,2.5,0,Shooting Guard,6,3-pt,0.4,0.4,0.48,8,Okla City,207,1.6,-2.0,15
+0,2.5,0,Shooting Guard,4,assists,0.5,0.8,0.52,3,Okla City,207,1.6,-2.0,15
+0,23.5,0,Shooting Guard,5,pra,0.3,0.4,0.48,4,Okla City,207,1.6,-2.0,15
+0,4.5,0,Shooting Guard,30,rebounds,0.3,0.2,0.44,21,Okla City,207,1.6,-2.0,15
+0,1.5,0,Small Forward,15,3-pt,0.6,0.2,0.5,4,Milwaukee,212,0.6,-1.0,8
+0,1.5,0,Small Forward,5,blocks,0.3,0.4,0.25,17,Milwaukee,212,0.6,-1.0,8
+0,1.5,0,Small Forward,6,steals,0.4,0.4,0.46,13,Milwaukee,212,0.6,-1.0,8
+0,18.5,0,Small Forward,13,points,0.8,0.8,0.0,16,Milwaukee,212,0.6,-1.0,8
+0,33.5,0,Small Forward,13,pra,0.6,0.4,0.54,18,Milwaukee,212,0.6,-1.0,8
+0,4.5,0,Small Forward,8,assists,0.8,1.0,0.62,11,Milwaukee,212,0.6,-1.0,8
+0,9.5,1,Small Forward,13,rebounds,0.6,0.6,0.54,21,Milwaukee,212,0.6,-1.0,8
+1,1.5,1,Forward,2,3-pt,0.7,0.6,0.62,20,Houston,207,-0.1,1.4,15
+1,1.5,0,Forward,10,steals,0.7,0.4,0.67,26,Houston,207,-0.1,1.4,15
+1,21.5,0,Forward,3,points,0.6,0.6,0.0,10,Houston,207,-0.1,1.4,15
+1,31.5,0,Forward,3,pra,0.6,0.6,0.5,24,Houston,207,-0.1,1.4,15
+1,4.5,1,Forward,1,assists,0.7,0.6,0.58,24,Houston,207,-0.1,1.4,15
+1,5.5,0,Forward,24,rebounds,0.6,0.6,0.58,15,Houston,207,-0.1,1.4,15
+1,3.5,0,Small Forward,24,rebounds,0.4,0.4,0.43,7,Houston,207,1.1,0.4,15
+1,4.5,1,Small Forward,3,points,0.6,0.8,0.01,2,Houston,207,1.1,0.4,15
+1,1.5,1,Guard,2,3-pt,0.5,0.6,0.58,6,Houston,207,0.2,0.4,15
+1,4.5,1,Guard,24,rebounds,0.7,0.6,0.54,26,Houston,207,0.2,0.4,15
+1,9.5,1,Guard,3,points,0.3,0.4,0.0,2,Houston,207,0.2,0.4,15
+0,0.5,0,Power Forward,5,blocks,0.5,0.6,0.5,3,Milwaukee,212,0.2,1.1,8
+0,10.5,0,Power Forward,13,points,0.7,1.0,0.04,2,Milwaukee,212,0.2,1.1,8
+0,6.5,0,Power Forward,13,rebounds,0.5,0.4,0.5,12,Milwaukee,212,0.2,1.1,8
+1,1.5,1,Point Guard,10,steals,0.7,0.8,0.54,21,Houston,207,-0.8,-0.4,15
+1,2.5,0,Point Guard,2,3-pt,0.6,0.4,0.38,17,Houston,207,-0.8,-0.4,15
+1,31.5,1,Point Guard,3,points,0.6,0.4,0.0,28,Houston,207,-0.8,-0.4,15
+1,42.5,1,Point Guard,3,pra,0.6,0.4,0.46,21,Houston,207,-0.8,-0.4,15
+1,5.5,1,Point Guard,1,assists,0.4,0.2,0.5,3,Houston,207,-0.8,-0.4,15
+1,5.5,1,Point Guard,24,rebounds,0.5,0.6,0.46,23,Houston,207,-0.8,-0.4,15
+0,1.5,0,Forward,4,steals,0.7,0.6,0.65,21,Okla City,207,0.6,0.0,15
+0,6.5,0,Forward,30,rebounds,0.6,0.6,0.39,19,Okla City,207,0.6,0.0,15
+0,9.5,1,Forward,1,points,0.4,0.4,0.0,4,Okla City,207,0.6,0.0,15
+1,0.5,1,Power Forward,30,3-pt,0.6,0.4,0.79,24,Atlanta,212,-7.4,-2.2,8
+1,4.5,1,Power Forward,27,points,0.6,0.4,0.04,14,Atlanta,212,-7.4,-2.2,8
+0,1.5,0,Point Guard,6,steals,0.4,0.4,0.4,1,Milwaukee,212,0.7,2.1,8
+0,10.5,0,Point Guard,8,assists,0.7,0.6,0.64,11,Milwaukee,212,0.7,2.1,8
+0,2.5,1,Point Guard,15,3-pt,0.2,0.2,0.4,24,Milwaukee,212,0.7,2.1,8
+0,22.5,1,Point Guard,13,points,0.2,0.2,0.04,30,Milwaukee,212,0.7,2.1,8
+0,3.5,1,Point Guard,13,rebounds,0.7,1.0,0.6,27,Milwaukee,212,0.7,2.1,8
+0,37.5,1,Point Guard,13,pra,0.4,0.4,0.48,30,Milwaukee,212,0.7,2.1,8
+0,1.5,0,Power Forward,15,3-pt,0.4,0.2,0.31,5,Milwaukee,212,-1.5,0.4,8
+0,2.5,0,Power Forward,13,rebounds,0.5,0.6,0.62,12,Milwaukee,212,-1.5,0.4,8
+0,8.5,0,Power Forward,13,points,0.7,0.8,0.0,2,Milwaukee,212,-1.5,0.4,8
+1,1.5,1,Power Forward,2,blocks,0.3,0.4,0.57,17,Boston,210,1.1,-0.8,14
+1,10.5,1,Power Forward,7,points,0.5,0.6,0.0,21,Boston,210,1.1,-0.8,14
+1,19.5,1,Power Forward,8,pra,0.4,0.4,0.33,30,Boston,210,1.1,-0.8,14
+1,6.5,0,Power Forward,22,rebounds,0.6,0.6,0.43,26,Boston,210,1.1,-0.8,14
+1,0.5,0,Point Guard,25,3-pt,0.5,0.4,0.42,28,New Orleans,223,-1.6,-0.7,15
+1,10.5,1,Point Guard,24,points,0.3,0.2,0.0,11,New Orleans,223,-1.6,-0.7,15
+1,19.5,1,Point Guard,28,pra,0.3,0.2,0.25,19,New Orleans,223,-1.6,-0.7,15
+1,3.5,0,Point Guard,26,rebounds,0.3,0.6,0.25,14,New Orleans,223,-1.6,-0.7,15
+1,4.5,1,Point Guard,27,assists,0.4,0.2,0.42,28,New Orleans,223,-1.6,-0.7,15
+0,0.5,1,Shooting Guard,14,steals,0.7,0.6,0.64,21,Phoenix,225,-1.1,-1.5,7
+0,19.5,1,Shooting Guard,19,points,0.5,0.4,0.0,11,Phoenix,225,-1.1,-1.5,7
+0,2.5,1,Shooting Guard,19,3-pt,0.5,0.4,0.45,12,Phoenix,225,-1.1,-1.5,7
+0,27.5,1,Shooting Guard,17,pra,0.5,0.4,0.45,11,Phoenix,225,-1.1,-1.5,7
+0,3.5,1,Shooting Guard,6,rebounds,0.5,0.2,0.32,4,Phoenix,225,-1.1,-1.5,7
+0,4.5,1,Shooting Guard,19,assists,0.6,0.8,0.55,23,Phoenix,225,-1.1,-1.5,7
+1,16.5,0,Guard,5,pra,0.3,0.4,0.37,9,New York,191,1.1,0.8,9
+1,2.5,0,Guard,1,rebounds,0.6,0.6,0.63,3,New York,191,1.1,0.8,9
+1,4.5,0,Guard,13,assists,0.2,0.2,0.37,15,New York,191,1.1,0.8,9
+1,9.5,0,Guard,9,points,0.4,0.4,0.04,14,New York,191,1.1,0.8,9
+1,0.5,1,Power Forward,14,3-pt,0.3,0.4,0.46,19,Memphis,226,-0.5,0.5,6
+1,0.5,1,Power Forward,20,steals,0.8,0.6,0.75,27,Memphis,226,-0.5,0.5,6
+1,11.5,1,Power Forward,23,rebounds,0.3,0.0,0.42,17,Memphis,226,-0.5,0.5,6
+1,2.5,0,Power Forward,17,blocks,0.4,0.4,0.38,30,Memphis,226,-0.5,0.5,6
+1,27.5,1,Power Forward,18,points,0.3,0.4,0.04,23,Memphis,226,-0.5,0.5,6
+1,3.5,0,Power Forward,6,assists,0.6,0.6,0.42,19,Memphis,226,-0.5,0.5,6
+1,43.5,1,Power Forward,18,pra,0.3,0.2,0.5,19,Memphis,226,-0.5,0.5,6
+0,1.5,0,Shooting Guard,19,steals,0.5,0.4,0.38,15,San Antonio,198,-4.3,-3.5,14
+0,24.5,1,Shooting Guard,15,points,0.6,0.4,0.04,23,San Antonio,198,-4.3,-3.5,14
+0,3.5,0,Shooting Guard,10,3-pt,0.7,0.6,0.75,20,San Antonio,198,-4.3,-3.5,14
+0,34.5,0,Shooting Guard,14,pra,0.5,0.4,0.5,25,San Antonio,198,-4.3,-3.5,14
+0,4.5,0,Shooting Guard,12,assists,0.4,0.4,0.33,24,San Antonio,198,-4.3,-3.5,14
+0,5.5,0,Shooting Guard,9,rebounds,0.5,0.6,0.46,21,San Antonio,198,-4.3,-3.5,14
+1,17.5,1,Shooting Guard,18,points,0.4,0.4,0.0,6,Memphis,226,-3.1,-0.8,6
+1,2.5,0,Shooting Guard,14,3-pt,0.6,0.6,0.55,1,Memphis,226,-3.1,-0.8,6
+1,26.5,1,Shooting Guard,18,pra,0.3,0.4,0.5,10,Memphis,226,-3.1,-0.8,6
+1,3.5,0,Shooting Guard,23,rebounds,0.2,0.4,0.4,27,Memphis,226,-3.1,-0.8,6
+1,5.5,1,Shooting Guard,6,assists,0.4,0.2,0.45,14,Memphis,226,-3.1,-0.8,6
+1,1.5,0,Shooting Guard,25,3-pt,0.3,0.0,0.38,2,New Orleans,223,2.1,1.3,15
+1,16.5,0,Shooting Guard,24,points,0.4,0.4,0.04,5,New Orleans,223,2.1,1.3,15
+1,6.5,0,Shooting Guard,26,rebounds,0.4,0.2,0.42,29,New Orleans,223,2.1,1.3,15
+1,1.5,1,Shooting Guard,4,3-pt,0.2,0.2,0.23,15,Boston,210,-1.3,0.9,14
+1,13.5,1,Shooting Guard,7,points,0.3,0.4,0.0,21,Boston,210,-1.3,0.9,14
+1,2.5,1,Shooting Guard,5,assists,0.9,1.0,0.68,17,Boston,210,-1.3,0.9,14
+1,21.5,1,Shooting Guard,8,pra,0.3,0.4,0.41,20,Boston,210,-1.3,0.9,14
+1,4.5,1,Shooting Guard,22,rebounds,0.6,0.8,0.59,13,Boston,210,-1.3,0.9,14
+0,6.5,0,Power Forward,19,rebounds,0.6,0.6,0.28,3,LA Lakers,226,3.9,2.3,6
+0,8.5,0,Power Forward,21,points,0.6,0.6,0.0,27,LA Lakers,226,3.9,2.3,6
+0,1.5,0,Shooting Guard,16,steals,0.2,0.4,0.31,6,Indiana,223,2.6,2.2,15
+0,22.5,0,Shooting Guard,26,points,0.5,0.6,0.08,15,Indiana,223,2.6,2.2,15
+0,3.5,0,Shooting Guard,13,3-pt,0.2,0.2,0.31,11,Indiana,223,2.6,2.2,15
+0,31.5,0,Shooting Guard,23,pra,0.4,0.6,0.38,13,Indiana,223,2.6,2.2,15
+0,4.5,0,Shooting Guard,15,assists,0.4,0.6,0.38,8,Indiana,223,2.6,2.2,15
+0,4.5,0,Shooting Guard,20,rebounds,0.3,0.4,0.23,18,Indiana,223,2.6,2.2,15
+0,1.5,0,Point Guard,2,3-pt,0.6,0.4,0.53,16,Orlando,191,-2.1,-0.3,9
+0,2.5,0,Point Guard,2,assists,0.6,0.4,0.63,16,Orlando,191,-2.1,-0.3,9
+0,5.5,0,Point Guard,2,points,1.0,1.0,0.06,18,Orlando,191,-2.1,-0.3,9
+1,1.5,1,Guard,4,3-pt,0.4,0.6,0.43,15,Boston,210,2.7,2.6,14
+1,10.5,1,Guard,7,points,0.2,0.4,0.0,21,Boston,210,2.7,2.6,14
+1,20.5,1,Guard,8,pra,0.1,0.2,0.3,20,Boston,210,2.7,2.6,14
+1,4.5,0,Guard,5,assists,0.1,0.2,0.35,17,Boston,210,2.7,2.6,14
+1,4.5,1,Guard,22,rebounds,0.3,0.6,0.35,13,Boston,210,2.7,2.6,14
+1,1.5,0,Point Guard,1,3-pt,0.5,0.4,0.6,1,Minnesota,198,-1.9,-0.3,14
+1,1.5,1,Point Guard,23,steals,0.4,0.4,0.44,16,Minnesota,198,-1.9,-0.3,14
+1,21.5,0,Point Guard,2,pra,0.5,0.6,0.52,1,Minnesota,198,-1.9,-0.3,14
+1,3.5,1,Point Guard,10,rebounds,0.5,0.8,0.52,13,Minnesota,198,-1.9,-0.3,14
+1,8.5,1,Point Guard,3,assists,0.5,0.6,0.6,15,Minnesota,198,-1.9,-0.3,14
+1,8.5,0,Point Guard,3,points,0.6,0.4,0.0,2,Minnesota,198,-1.9,-0.3,14
+0,1.5,0,Center,25,blocks,0.4,0.4,0.42,15,Golden State,276,-0.9,-0.4,10
+0,6.5,1,Center,25,rebounds,0.4,0.2,0.5,27,Golden State,276,-0.9,-0.4,10
+0,9.5,1,Center,8,points,0.9,0.8,0.0,10,Golden State,276,-0.9,-0.4,10
+0,1.5,1,Shooting Guard,13,3-pt,0.5555555555555556,0.6,0.56,11,Indiana,223,2.6,0.0,15
+0,1.5,1,Shooting Guard,16,steals,0.5555555555555556,0.6,0.56,6,Indiana,223,2.6,0.0,15
+0,21.5,0,Shooting Guard,26,points,0.1111111111111111,0.2,0.0,15,Indiana,223,2.6,0.0,15
+0,35.5,0,Shooting Guard,23,pra,0.2222222222222222,0.4,0.22,13,Indiana,223,2.6,0.0,15
+0,6.5,1,Shooting Guard,20,rebounds,0.4444444444444444,0.4,0.44,18,Indiana,223,2.6,0.0,15
+0,7.5,0,Shooting Guard,15,assists,0.4444444444444444,0.6,0.44,8,Indiana,223,2.6,0.0,15
+0,1.5,1,Small Forward,19,3-pt,0.7,0.6,0.4,11,Phoenix,225,-1.6,0.3,7
+0,12.5,1,Small Forward,19,points,0.9,0.8,0.04,6,Phoenix,225,-1.6,0.3,7
+0,2.5,1,Small Forward,19,assists,0.5,0.4,0.52,18,Phoenix,225,-1.6,0.3,7
+0,20.5,1,Small Forward,17,pra,0.7,0.6,0.52,7,Phoenix,225,-1.6,0.3,7
+0,5.5,1,Small Forward,6,rebounds,0.4,0.0,0.56,25,Phoenix,225,-1.6,0.3,7
+0,1.5,1,Center,18,assists,0.8,0.8,0.75,28,Golden State,276,2.5,0.2,10
+0,1.5,0,Center,25,blocks,0.6,0.6,0.5,15,Golden State,276,2.5,0.2,10
+0,18.5,0,Center,15,pra,0.5,0.4,0.5,21,Golden State,276,2.5,0.2,10
+0,7.5,1,Center,8,points,0.5,0.2,0.05,10,Golden State,276,2.5,0.2,10
+0,8.5,0,Center,25,rebounds,0.5,0.6,0.45,27,Golden State,276,2.5,0.2,10
+0,0.5,1,Point Guard,23,blocks,0.6,0.6,0.67,21,Washington,210,0.5,-0.8,14
+0,1.5,1,Point Guard,24,steals,0.4,0.8,0.25,23,Washington,210,0.5,-0.8,14
+0,14.5,1,Point Guard,30,points,0.6,0.4,0.04,29,Washington,210,0.5,-0.8,14
+0,2.5,1,Point Guard,27,3-pt,0.7,0.6,0.79,27,Washington,210,0.5,-0.8,14
+0,23.5,1,Point Guard,30,pra,0.7,0.6,0.79,29,Washington,210,0.5,-0.8,14
+0,4.5,1,Point Guard,25,assists,0.6,0.6,0.5,26,Washington,210,0.5,-0.8,14
+0,4.5,1,Point Guard,30,rebounds,0.6,0.6,0.54,24,Washington,210,0.5,-0.8,14
+0,0.5,0,Shooting Guard,13,steals,0.8,1.0,0.72,4,LA Lakers,226,2.5,0.7,6
+0,16.5,0,Shooting Guard,21,points,0.4,0.6,0.06,18,LA Lakers,226,2.5,0.7,6
+0,2.5,0,Shooting Guard,21,3-pt,0.1,0.0,0.17,17,LA Lakers,226,2.5,0.7,6
+0,26.5,0,Shooting Guard,22,pra,0.4,0.6,0.39,21,LA Lakers,226,2.5,0.7,6
+0,4.5,1,Shooting Guard,26,assists,0.5,0.6,0.39,27,LA Lakers,226,2.5,0.7,6
+0,5.5,1,Shooting Guard,19,rebounds,0.6,0.4,0.61,12,LA Lakers,226,2.5,0.7,6
+1,1.5,0,Shooting Guard,29,steals,0.3,0.4,0.29,22,Portland,225,0.8,2.5,7
+1,2.5,1,Shooting Guard,23,3-pt,0.6,0.6,0.54,29,Portland,225,0.8,2.5,7
+1,25.5,1,Shooting Guard,23,points,0.7,0.6,0.0,27,Portland,225,0.8,2.5,7
+1,3.5,0,Shooting Guard,27,rebounds,0.4,0.8,0.46,22,Portland,225,0.8,2.5,7
+1,35.5,1,Shooting Guard,26,pra,0.7,0.6,0.54,28,Portland,225,0.8,2.5,7
+1,5.5,0,Shooting Guard,24,assists,0.5,0.6,0.54,25,Portland,225,0.8,2.5,7
+0,1.5,1,Center,7,blocks,0.6,0.8,0.5,4,Phoenix,225,2.7,0.8,7
+0,6.5,1,Center,19,points,0.4,0.4,0.0,27,Phoenix,225,2.7,0.8,7
+0,7.5,1,Center,6,rebounds,0.4,0.6,0.28,21,Phoenix,225,2.7,0.8,7
+0,1.5,0,Shooting Guard,10,3-pt,0.5,0.4,0.58,20,San Antonio,198,-2.4,-1.6,14
+0,13.5,1,Shooting Guard,14,pra,0.5,0.4,0.58,25,San Antonio,198,-2.4,-1.6,14
+0,2.5,0,Shooting Guard,12,assists,0.6,0.4,0.58,24,San Antonio,198,-2.4,-1.6,14
+0,2.5,1,Shooting Guard,9,rebounds,0.6,0.8,0.58,21,San Antonio,198,-2.4,-1.6,14
+0,8.5,0,Shooting Guard,15,points,0.4,0.2,0.04,23,San Antonio,198,-2.4,-1.6,14
+1,1.5,1,Center,10,blocks,0.5,0.4,0.45,10,New York,191,6.1,2.7,9
+1,10.5,0,Center,9,points,0.4,0.6,0.0,7,New York,191,6.1,2.7,9
+1,2.5,0,Center,13,assists,0.4,0.4,0.32,12,New York,191,6.1,2.7,9
+1,22.5,0,Center,5,pra,0.5,0.6,0.5,4,New York,191,6.1,2.7,9
+1,8.5,1,Center,1,rebounds,0.5,0.6,0.5,3,New York,191,6.1,2.7,9
+1,1.5,1,Small Forward,1,3-pt,0.5,0.4,0.48,6,Minnesota,198,-1.2,-0.1,14
+1,3.5,0,Small Forward,10,rebounds,0.4,0.0,0.48,19,Minnesota,198,-1.2,-0.1,14
+1,9.5,1,Small Forward,3,points,0.5,0.4,0.04,12,Minnesota,198,-1.2,-0.1,14
+0,1.5,1,Small Forward,13,3-pt,0.25,0.4,0.25,22,Indiana,223,-0.2,-0.4,15
+0,1.5,1,Small Forward,16,steals,0.625,0.4,0.62,19,Indiana,223,-0.2,-0.4,15
+0,12.5,1,Small Forward,26,points,0.125,0.2,0.0,20,Indiana,223,-0.2,-0.4,15
+0,4.5,1,Small Forward,20,rebounds,0.25,0.4,0.25,3,Indiana,223,-0.2,-0.4,15
+0,0.5,1,Point Guard,13,steals,0.7,0.8,0.6,15,LA Lakers,226,1.8,1.0,6
+0,1.5,1,Point Guard,21,3-pt,0.6,0.8,0.53,12,LA Lakers,226,1.8,1.0,6
+0,23.5,0,Point Guard,21,points,0.5,0.6,0.0,5,LA Lakers,226,1.8,1.0,6
+0,36.5,0,Point Guard,22,pra,0.5,0.6,0.47,9,LA Lakers,226,1.8,1.0,6
+0,4.5,1,Point Guard,19,rebounds,0.4,0.4,0.47,15,LA Lakers,226,1.8,1.0,6
+0,8.5,0,Point Guard,26,assists,0.5,0.4,0.6,25,LA Lakers,226,1.8,1.0,6
+0,0.5,0,Power Forward,9,blocks,0.3,0.4,0.54,29,San Antonio,198,-0.2,-0.5,14
+0,1.5,1,Power Forward,10,3-pt,0.4,0.4,0.33,22,San Antonio,198,-0.2,-0.5,14
+0,1.5,1,Power Forward,19,steals,0.3,0.4,0.33,17,San Antonio,198,-0.2,-0.5,14
+0,10.5,1,Power Forward,15,points,0.4,0.4,0.0,11,San Antonio,198,-0.2,-0.5,14
+0,4.5,1,Power Forward,9,rebounds,0.5,0.4,0.38,22,San Antonio,198,-0.2,-0.5,14
+0,7.5,0,Forward,21,points,0.5,0.4,0.0,27,LA Lakers,226,-1.3,-0.8,6
+0,0.5,1,Point Guard,7,steals,0.6,0.6,0.52,5,Orlando,191,-0.6,-2.8,9
+0,2.5,1,Point Guard,2,3-pt,0.6,0.6,0.56,16,Orlando,191,-0.6,-2.8,9
+0,2.5,1,Point Guard,3,rebounds,0.6,0.6,0.6,3,Orlando,191,-0.6,-2.8,9
+0,22.5,1,Point Guard,2,points,0.6,0.4,0.0,18,Orlando,191,-0.6,-2.8,9
+0,33.5,1,Point Guard,1,pra,0.5,0.4,0.52,16,Orlando,191,-0.6,-2.8,9
+0,6.5,0,Point Guard,2,assists,0.7,0.6,0.68,16,Orlando,191,-0.6,-2.8,9
+1,1.5,0,Shooting Guard,1,steals,0.6,0.8,0.42,1,New York,191,5.2,4.9,9
+1,2.5,0,Shooting Guard,22,3-pt,0.6,0.8,0.38,19,New York,191,5.2,4.9,9
+1,21.5,0,Shooting Guard,9,points,0.5,0.6,0.0,14,New York,191,5.2,4.9,9
+1,30.5,0,Shooting Guard,5,pra,0.4,0.4,0.31,9,New York,191,5.2,4.9,9
+1,4.5,1,Shooting Guard,13,assists,0.5,0.2,0.38,15,New York,191,5.2,4.9,9
+1,4.5,1,Shooting Guard,1,rebounds,0.2,0.2,0.42,3,New York,191,5.2,4.9,9
+0,1.5,1,Power Forward,21,3-pt,0.7,0.8,0.67,5,LA Lakers,226,-0.8,-0.4,6
+0,1.5,0,Power Forward,1,blocks,0.6,0.4,0.58,7,LA Lakers,226,-0.8,-0.4,6
+0,1.5,0,Power Forward,13,steals,0.5,0.6,0.38,2,LA Lakers,226,-0.8,-0.4,6
+0,19.5,1,Power Forward,21,points,0.7,0.6,0.0,27,LA Lakers,226,-0.8,-0.4,6
+0,6.5,0,Power Forward,19,rebounds,0.5,0.6,0.33,3,LA Lakers,226,-0.8,-0.4,6
+0,0.5,1,Shooting Guard,23,blocks,0.3,0.2,0.3,27,Washington,210,-1.5,-1.1,14
+0,1.5,1,Shooting Guard,27,3-pt,0.8,0.6,0.7,23,Washington,210,-1.5,-1.1,14
+0,1.5,1,Shooting Guard,24,steals,0.2,0.2,0.2,28,Washington,210,-1.5,-1.1,14
+0,21.5,0,Shooting Guard,30,points,0.6,0.8,0.05,22,Washington,210,-1.5,-1.1,14
+0,31.5,0,Shooting Guard,30,pra,0.4,0.4,0.6,27,Washington,210,-1.5,-1.1,14
+0,4.5,0,Shooting Guard,25,assists,0.5,0.6,0.45,30,Washington,210,-1.5,-1.1,14
+0,5.5,0,Shooting Guard,30,rebounds,0.5,0.6,0.65,26,Washington,210,-1.5,-1.1,14
+0,1.5,0,Forward,21,3-pt,0.6,0.4,0.58,5,LA Lakers,226,-2.0,-2.8,6
+0,9.5,0,Forward,21,points,0.7,0.6,0.0,27,LA Lakers,226,-2.0,-2.8,6
+0,0.5,0,Small Forward,23,blocks,0.3,0.4,0.43,12,Washington,210,0.6,1.0,14
+0,1.5,0,Small Forward,24,steals,0.3,0.0,0.39,17,Washington,210,0.6,1.0,14
+0,26.5,1,Small Forward,30,points,0.4,0.6,0.04,11,Washington,210,0.6,1.0,14
+0,3.5,0,Small Forward,27,3-pt,0.6,0.6,0.61,10,Washington,210,0.6,1.0,14
+0,40.5,1,Small Forward,30,pra,0.5,0.6,0.61,11,Washington,210,0.6,1.0,14
+0,5.5,0,Small Forward,25,assists,0.4,0.2,0.48,16,Washington,210,0.6,1.0,14
+0,8.5,1,Small Forward,30,rebounds,0.8,0.8,0.57,11,Washington,210,0.6,1.0,14
+0,0.5,0,Small Forward,7,blocks,0.5,0.4,0.61,6,Phoenix,225,1.3,-0.8,7
+0,16.5,1,Small Forward,19,points,0.3,0.4,0.0,6,Phoenix,225,1.3,-0.8,7
+0,2.5,1,Small Forward,19,3-pt,0.4,0.4,0.26,11,Phoenix,225,1.3,-0.8,7
+0,22.5,1,Small Forward,17,pra,0.4,0.6,0.43,7,Phoenix,225,1.3,-0.8,7
+0,3.5,1,Small Forward,6,rebounds,0.5,0.8,0.39,25,Phoenix,225,1.3,-0.8,7
+1,12.5,1,Forward,3,points,0.7,0.8,0.09,6,Minnesota,198,-2.2,-1.4,14
+1,10.5,0,Center,7,points,0.6,0.6,0.04,3,Boston,210,1.1,2.2,14
+1,20.5,0,Center,8,pra,0.6,0.6,0.57,1,Boston,210,1.1,2.2,14
+1,7.5,0,Center,22,rebounds,0.5,0.6,0.57,1,Boston,210,1.1,2.2,14
+1,0.5,1,Shooting Guard,3,steals,0.5,0.4,0.67,13,Boston,210,1.4,-1.1,14
+1,2.5,1,Shooting Guard,22,rebounds,0.4,0.4,0.38,13,Boston,210,1.4,-1.1,14
+1,22.5,0,Shooting Guard,7,points,0.3,0.2,0.05,21,Boston,210,1.4,-1.1,14
+1,3.5,0,Shooting Guard,4,3-pt,0.1,0.2,0.33,15,Boston,210,1.4,-1.1,14
+1,31.5,0,Shooting Guard,8,pra,0.3,0.2,0.33,20,Boston,210,1.4,-1.1,14
+1,5.5,1,Shooting Guard,5,assists,0.5,0.6,0.48,17,Boston,210,1.4,-1.1,14
+0,0.5,1,Shooting Guard,2,3-pt,0.9,0.8,0.8,4,Orlando,191,-0.4,0.2,9
+0,10.5,1,Shooting Guard,2,points,0.9,0.8,0.04,13,Orlando,191,-0.4,0.2,9
+0,23.5,0,Shooting Guard,1,pra,0.6,0.8,0.68,7,Orlando,191,-0.4,0.2,9
+0,4.5,1,Shooting Guard,2,assists,0.6,0.6,0.64,1,Orlando,191,-0.4,0.2,9
+0,7.5,0,Shooting Guard,3,rebounds,0.4,0.6,0.64,10,Orlando,191,-0.4,0.2,9
+0,0.5,1,Point Guard,24,steals,0.6,0.6,0.41,23,Washington,210,1.1,3.4,14
+0,1.5,0,Point Guard,27,3-pt,0.6,0.6,0.59,27,Washington,210,1.1,3.4,14
+0,10.5,1,Point Guard,30,points,0.7,0.8,0.05,29,Washington,210,1.1,3.4,14
+0,19.5,0,Point Guard,30,pra,0.7,0.8,0.68,29,Washington,210,1.1,3.4,14
+0,3.5,0,Point Guard,25,assists,0.7,0.8,0.64,26,Washington,210,1.1,3.4,14
+0,4.5,0,Point Guard,30,rebounds,0.6,0.6,0.41,24,Washington,210,1.1,3.4,14
+1,11.5,0,Forward,3,points,0.8,0.8,0.04,6,Minnesota,198,1.1,2.6,14
+1,2.5,1,Forward,1,3-pt,0.5,0.4,0.48,6,Minnesota,198,1.1,2.6,14
+1,4.5,1,Forward,10,rebounds,0.6,0.6,0.72,2,Minnesota,198,1.1,2.6,14
+0,1.5,0,Power Forward,10,3-pt,0.4,0.8,0.42,22,San Antonio,198,-4.2,-0.2,14
+0,19.5,0,Power Forward,15,points,0.6,0.4,0.0,11,San Antonio,198,-4.2,-0.2,14
+0,3.5,0,Power Forward,12,assists,0.5,0.6,0.62,25,San Antonio,198,-4.2,-0.2,14
+0,30.5,0,Power Forward,14,pra,0.3,0.0,0.5,25,San Antonio,198,-4.2,-0.2,14
+0,6.5,0,Power Forward,9,rebounds,0.5,0.4,0.42,22,San Antonio,198,-4.2,-0.2,14
+1,0.5,0,Center,23,3-pt,0.5,0.6,0.53,20,Portland,225,-0.2,-0.5,7
+1,0.5,1,Center,29,blocks,0.4,0.6,0.47,29,Portland,225,-0.2,-0.5,7
+1,10.5,1,Center,27,rebounds,0.4,0.4,0.41,9,Portland,225,-0.2,-0.5,7
+1,8.5,1,Center,23,points,0.5,0.6,0.06,9,Portland,225,-0.2,-0.5,7
+0,0.5,1,Center,3,blocks,0.8,1.0,0.65,11,Orlando,191,0.3,-2.0,9
+0,1.5,0,Center,2,3-pt,0.8,0.8,0.74,18,Orlando,191,0.3,-2.0,9
+0,12.5,1,Center,3,rebounds,0.8,1.0,0.61,4,Orlando,191,0.3,-2.0,9
+0,22.5,0,Center,2,points,0.6,0.6,0.0,8,Orlando,191,0.3,-2.0,9
+0,3.5,1,Center,2,assists,0.6,0.4,0.43,3,Orlando,191,0.3,-2.0,9
+0,38.5,1,Center,1,pra,0.6,0.6,0.65,3,Orlando,191,0.3,-2.0,9
+1,1.5,0,Shooting Guard,22,3-pt,0.5,0.4,0.42,19,New York,191,1.1,-0.3,9
+1,1.5,0,Shooting Guard,1,steals,0.6,0.6,0.42,1,New York,191,1.1,-0.3,9
+1,9.5,0,Shooting Guard,9,points,0.3,0.0,0.0,14,New York,191,1.1,-0.3,9
+1,0.5,1,Power Forward,29,steals,0.4,0.2,0.43,13,Portland,225,-5.8,-1.6,7
+1,1.5,0,Power Forward,29,blocks,0.4,0.4,0.36,28,Portland,225,-5.8,-1.6,7
+1,2.5,0,Power Forward,23,3-pt,0.6,0.6,0.5,26,Portland,225,-5.8,-1.6,7
+1,24.5,0,Power Forward,23,points,0.5,0.4,0.08,19,Portland,225,-5.8,-1.6,7
+1,3.5,1,Power Forward,24,assists,0.4,0.2,0.43,13,Portland,225,-5.8,-1.6,7
+1,33.5,1,Power Forward,26,pra,0.6,0.6,0.64,13,Portland,225,-5.8,-1.6,7
+1,5.5,1,Power Forward,27,rebounds,0.5,0.6,0.57,20,Portland,225,-5.8,-1.6,7
+0,1.5,1,Shooting Guard,18,assists,0.4,0.4,0.48,13,Golden State,276,-2.7,-0.9,10
+0,14.5,1,Shooting Guard,8,points,0.5,0.6,0.05,17,Golden State,276,-2.7,-0.9,10
+0,19.5,1,Shooting Guard,15,pra,0.5,0.6,0.52,18,Golden State,276,-2.7,-0.9,10
+0,2.5,1,Shooting Guard,8,3-pt,0.6,0.8,0.57,3,Golden State,276,-2.7,-0.9,10
+0,3.5,1,Shooting Guard,25,rebounds,0.5,0.6,0.57,15,Golden State,276,-2.7,-0.9,10
+0,1.5,0,Center,23,blocks,0.6666666666666666,0.6,0.67,13,Washington,210,3.5,2.0,14
+0,18.5,0,Center,30,points,0.8333333333333334,1.0,0.03,30,Washington,210,3.5,2.0,14
+0,2.5,0,Center,27,3-pt,0.5,0.6,0.5,28,Washington,210,3.5,2.0,14
+0,28.5,0,Center,30,pra,0.8333333333333334,1.0,0.83,30,Washington,210,3.5,2.0,14
+0,8.5,0,Center,30,rebounds,0.16666666666666666,0.2,0.17,25,Washington,210,3.5,2.0,14
+0,1.5,0,Point Guard,8,steals,0.3,0.6,0.39,10,Golden State,276,-0.3,-1.0,10
+0,2.5,0,Point Guard,8,3-pt,0.8,0.8,0.65,2,Golden State,276,-0.3,-1.0,10
+0,23.5,0,Point Guard,8,points,0.5,0.6,0.0,4,Golden State,276,-0.3,-1.0,10
+0,33.5,0,Point Guard,15,pra,0.5,0.4,0.52,7,Golden State,276,-0.3,-1.0,10
+0,4.5,0,Point Guard,25,rebounds,0.6,0.6,0.57,26,Golden State,276,-0.3,-1.0,10
+0,5.5,1,Point Guard,18,assists,0.6,0.2,0.52,21,Golden State,276,-0.3,-1.0,10
+1,0.5,1,Small Forward,17,blocks,0.4,0.4,0.3,11,Memphis,226,-0.4,2.4,6
+1,0.5,1,Small Forward,20,steals,0.4,0.4,0.52,26,Memphis,226,-0.4,2.4,6
+1,1.5,1,Small Forward,14,3-pt,0.3,0.2,0.48,9,Memphis,226,-0.4,2.4,6
+1,23.5,0,Small Forward,18,points,0.5,0.6,0.0,26,Memphis,226,-0.4,2.4,6
+1,40.5,0,Small Forward,18,pra,0.4,0.6,0.48,23,Memphis,226,-0.4,2.4,6
+1,7.5,1,Small Forward,23,rebounds,0.6,0.6,0.52,14,Memphis,226,-0.4,2.4,6
+1,8.5,0,Small Forward,6,assists,0.5,0.4,0.52,8,Memphis,226,-0.4,2.4,6
+0,1.5,1,Point Guard,8,steals,0.8,1.0,0.58,10,Golden State,276,0.2,-2.3,10
+0,28.5,1,Point Guard,8,points,0.5,0.6,0.0,4,Golden State,276,0.2,-2.3,10
+0,3.5,1,Point Guard,8,3-pt,0.4,0.6,0.47,2,Golden State,276,0.2,-2.3,10
+0,45.5,1,Point Guard,15,pra,0.4,0.6,0.47,7,Golden State,276,0.2,-2.3,10
+0,8.5,1,Point Guard,18,assists,0.5,0.6,0.37,21,Golden State,276,0.2,-2.3,10
+0,8.5,1,Point Guard,25,rebounds,0.5,0.8,0.47,26,Golden State,276,0.2,-2.3,10
+0,0.5,1,Small Forward,3,blocks,0.4,0.4,0.48,4,Orlando,191,1.6,0.6,9
+0,0.5,1,Small Forward,7,steals,0.6,0.8,0.72,15,Orlando,191,1.6,0.6,9
+0,14.5,1,Small Forward,2,points,0.7,1.0,0.04,1,Orlando,191,1.6,0.6,9
+0,2.5,0,Small Forward,2,3-pt,0.4,0.4,0.4,1,Orlando,191,1.6,0.6,9
+0,2.5,0,Small Forward,2,assists,0.5,0.8,0.68,21,Orlando,191,1.6,0.6,9
+0,21.5,0,Small Forward,1,pra,0.8,1.0,0.72,2,Orlando,191,1.6,0.6,9
+0,3.5,0,Small Forward,3,rebounds,0.3,0.2,0.4,20,Orlando,191,1.6,0.6,9
+0,1.5,1,Point Guard,10,3-pt,0.7,0.6,0.65,21,San Antonio,198,-1.2,0.3,14
+0,1.5,0,Point Guard,19,steals,0.6,0.2,0.45,19,San Antonio,198,-1.2,0.3,14
+0,17.5,1,Point Guard,14,pra,0.5,0.4,0.45,11,San Antonio,198,-1.2,0.3,14
+0,3.5,1,Point Guard,9,rebounds,0.5,0.4,0.45,10,San Antonio,198,-1.2,0.3,14
+0,4.5,1,Point Guard,12,assists,0.4,0.4,0.4,9,San Antonio,198,-1.2,0.3,14
+0,9.5,0,Point Guard,15,points,0.6,0.6,0.0,12,San Antonio,198,-1.2,0.3,14
+0,1.5,1,Point Guard,2,3-pt,0.6,0.6,0.7,16,Orlando,191,0.2,-0.8,9
+0,13.5,0,Point Guard,1,pra,0.6,0.6,0.65,16,Orlando,191,0.2,-0.8,9
+0,2.5,0,Point Guard,2,assists,0.6,0.8,0.4,16,Orlando,191,0.2,-0.8,9
+0,2.5,0,Point Guard,3,rebounds,0.4,0.4,0.5,3,Orlando,191,0.2,-0.8,9
+0,8.5,0,Point Guard,2,points,0.5,0.4,0.05,18,Orlando,191,0.2,-0.8,9
+1,12.5,1,Center,9,points,0.5,0.4,0.0,7,New York,191,1.2,0.2,9
+1,4.5,1,Center,1,rebounds,0.8,0.8,0.63,3,New York,191,1.2,0.2,9
+1,1.5,1,Center,25,3-pt,0.5,0.6,0.54,17,New Orleans,223,-2.1,-2.6,15
+1,1.5,1,Center,22,blocks,0.4,0.6,0.54,22,New Orleans,223,-2.1,-2.6,15
+1,14.5,0,Center,24,points,0.4,0.4,0.04,25,New Orleans,223,-2.1,-2.6,15
+1,7.5,0,Center,26,rebounds,0.4,0.0,0.46,30,New Orleans,223,-2.1,-2.6,15
+0,1.5,0,Center,10,3-pt,0.3,0.4,0.54,3,San Antonio,198,0.8,-1.2,14
+0,11.5,0,Center,15,points,0.2,0.2,0.04,23,San Antonio,198,0.8,-1.2,14
+0,5.5,1,Center,9,rebounds,0.4,0.4,0.33,8,San Antonio,198,0.8,-1.2,14
+0,1.5,0,Small Forward,2,3-pt,0.6,0.8,0.6,1,Orlando,191,1.4,1.4,9
+0,1.5,0,Small Forward,3,blocks,0.8,1.0,0.44,4,Orlando,191,1.4,1.4,9
+0,1.5,0,Small Forward,7,steals,0.5,0.6,0.52,15,Orlando,191,1.4,1.4,9
+0,14.5,0,Small Forward,2,points,0.5,0.6,0.0,1,Orlando,191,1.4,1.4,9
+0,21.5,0,Small Forward,1,pra,0.5,0.6,0.64,2,Orlando,191,1.4,1.4,9
+0,4.5,1,Small Forward,3,rebounds,0.4,0.4,0.56,20,Orlando,191,1.4,1.4,9
+1,10.5,1,Power Forward,24,points,0.7,1.0,0.0,26,New Orleans,223,2.1,2.5,15
+1,4.5,1,Power Forward,26,rebounds,0.6,0.8,0.36,13,New Orleans,223,2.1,2.5,15
+0,1.5,1,Power Forward,8,3-pt,0.5,0.8,0.42,27,Golden State,276,0.9,0.5,10
+0,12.5,1,Power Forward,8,points,0.7,0.8,0.0,16,Golden State,276,0.9,0.5,10
+0,2.5,0,Power Forward,18,assists,0.5,0.4,0.32,12,Golden State,276,0.9,0.5,10
+0,22.5,0,Power Forward,15,pra,0.7,0.6,0.53,12,Golden State,276,0.9,0.5,10
+0,7.5,0,Power Forward,25,rebounds,0.6,0.4,0.58,16,Golden State,276,0.9,0.5,10
+1,0.5,1,Power Forward,22,steals,0.7,0.8,0.58,28,New Orleans,223,0.7,-2.9,15
+1,1.5,1,Power Forward,25,3-pt,0.5,0.6,0.5,25,New Orleans,223,0.7,-2.9,15
+1,19.5,1,Power Forward,24,points,0.5,0.4,0.0,26,New Orleans,223,0.7,-2.9,15
+1,2.5,0,Power Forward,27,assists,0.6,0.4,0.65,26,New Orleans,223,0.7,-2.9,15
+1,29.5,0,Power Forward,28,pra,0.5,0.4,0.54,27,New Orleans,223,0.7,-2.9,15
+1,6.5,0,Power Forward,26,rebounds,0.6,0.6,0.5,13,New Orleans,223,0.7,-2.9,15
+0,14.5,1,Point Guard,30,points,0.7,0.8,0.0,29,Washington,210,1.7,1.9,14
+0,22.5,1,Point Guard,30,pra,0.7,0.8,0.48,29,Washington,210,1.7,1.9,14
+0,3.5,1,Point Guard,27,3-pt,0.6,0.8,0.52,27,Washington,210,1.7,1.9,14
+0,3.5,1,Point Guard,25,assists,0.5,0.6,0.36,26,Washington,210,1.7,1.9,14
+0,3.5,1,Point Guard,30,rebounds,0.7,0.8,0.44,24,Washington,210,1.7,1.9,14
+0,5.5,1,Shooting Guard,8,points,0.7,0.6,0.0,17,Golden State,276,2.9,0.5,10
+1,4.5,0,Power Forward,27,rebounds,0.6,0.8,0.71,20,Portland,225,3.4,2.8,7
+0,1.5,0,Center,9,blocks,0.3,0.2,0.38,7,San Antonio,198,0.0,0.3,14
+0,10.5,0,Center,15,points,0.4,0.6,0.04,23,San Antonio,198,0.0,0.3,14
+0,11.5,0,Center,9,rebounds,0.5,0.4,0.42,8,San Antonio,198,0.0,0.3,14
+1,1.5,0,Power Forward,14,3-pt,0.5,0.4,0.6,19,Memphis,226,1.8,-0.6,6
+1,13.5,0,Power Forward,18,points,0.3,0.4,0.05,23,Memphis,226,1.8,-0.6,6
+1,5.5,1,Power Forward,23,rebounds,0.3,0.4,0.35,17,Memphis,226,1.8,-0.6,6
+0,10.5,0,Guard,19,points,0.6,0.4,0.06,11,Phoenix,225,1.4,-0.7,7
+0,17.5,0,Guard,17,pra,0.5,0.4,0.56,11,Phoenix,225,1.4,-0.7,7
+0,2.5,0,Guard,6,rebounds,0.5,0.2,0.56,4,Phoenix,225,1.4,-0.7,7
+0,4.5,0,Guard,19,assists,0.6,0.8,0.67,23,Phoenix,225,1.4,-0.7,7
+0,1.5,0,Shooting Guard,19,3-pt,0.4,0.6,0.47,12,Phoenix,225,1.2,-1.3,7
+0,17.5,0,Shooting Guard,19,points,0.3,0.4,0.0,11,Phoenix,225,1.2,-1.3,7
+0,2.5,1,Shooting Guard,19,assists,0.5,0.6,0.41,23,Phoenix,225,1.2,-1.3,7
+0,24.5,0,Shooting Guard,17,pra,0.3,0.4,0.35,11,Phoenix,225,1.2,-1.3,7
+0,4.5,1,Shooting Guard,6,rebounds,0.1,0.2,0.12,4,Phoenix,225,1.2,-1.3,7
+0,7.5,0,Point Guard,8,points,0.8,1.0,0.0,4,Golden State,276,4.2,2.0,10
+1,0.5,1,Point Guard,17,steals,0.5,0.4,0.68,18,Dallas,276,2.5,2.5,10
+1,25.5,1,Point Guard,14,points,0.3,0.2,0.0,14,Dallas,276,2.5,2.5,10
+1,36.5,1,Point Guard,19,pra,0.4,0.4,0.37,17,Dallas,276,2.5,2.5,10
+1,4.5,1,Point Guard,12,3-pt,0.3,0.2,0.26,7,Dallas,276,2.5,2.5,10
+1,4.5,1,Point Guard,18,rebounds,0.5,0.4,0.53,22,Dallas,276,2.5,2.5,10
+1,6.5,1,Point Guard,22,assists,0.5,0.4,0.47,17,Dallas,276,2.5,2.5,10
+1,1.5,0,Guard,1,3-pt,0.5,0.6,0.38,6,Minnesota,198,3.4,2.3,14
+1,1.5,0,Guard,23,steals,0.2,0.4,0.25,5,Minnesota,198,3.4,2.3,14
+1,13.5,0,Guard,3,points,0.6,0.6,0.0,10,Minnesota,198,3.4,2.3,14
+1,2.5,0,Guard,10,rebounds,0.7,0.4,0.58,30,Minnesota,198,3.4,2.3,14
+1,3.5,1,Guard,3,assists,0.7,0.6,0.54,2,Minnesota,198,3.4,2.3,14
+1,1.5,0,Point Guard,22,steals,0.4,0.4,0.28,30,New Orleans,223,3.8,3.3,15
+1,11.5,0,Point Guard,24,points,0.7,0.8,0.04,11,New Orleans,223,3.8,3.3,15
+1,3.5,1,Point Guard,27,assists,0.5,0.8,0.6,28,New Orleans,223,3.8,3.3,15
+0,5.5,1,Forward,6,rebounds,0.4,0.6,0.4,4,Phoenix,225,-2.0,-1.4,7
+0,19.5,0,Shooting Guard,26,points,0.5,0.4,0.0,15,Indiana,223,2.7,-2.4,15
+0,2.5,0,Shooting Guard,15,assists,0.4,0.4,0.38,8,Indiana,223,2.7,-2.4,15
+0,27.5,0,Shooting Guard,23,pra,0.4,0.2,0.38,13,Indiana,223,2.7,-2.4,15
+0,3.5,0,Shooting Guard,13,3-pt,0.2,0.2,0.15,11,Indiana,223,2.7,-2.4,15
+0,5.5,1,Shooting Guard,20,rebounds,0.3,0.2,0.31,18,Indiana,223,2.7,-2.4,15
+1,2.5,1,Forward,1,rebounds,0.7,0.6,0.78,6,New York,191,-5.9,-2.8,9
+1,6.5,1,Forward,9,points,0.6,0.4,0.0,3,New York,191,-5.9,-2.8,9
+1,1.5,1,Point Guard,22,steals,0.5,0.4,0.38,30,New Orleans,223,2.1,1.2,15
+1,18.5,1,Point Guard,24,points,0.7,0.6,0.0,11,New Orleans,223,2.1,1.2,15
+1,3.5,1,Point Guard,25,3-pt,0.6,0.6,0.42,28,New Orleans,223,2.1,1.2,15
+1,31.5,1,Point Guard,28,pra,0.6,0.6,0.42,19,New Orleans,223,2.1,1.2,15
+1,4.5,0,Point Guard,26,rebounds,0.1,0.0,0.19,14,New Orleans,223,2.1,1.2,15
+1,8.5,1,Point Guard,27,assists,0.4,0.2,0.5,28,New Orleans,223,2.1,1.2,15
+1,11.5,1,Point Guard,23,points,0.8,1.0,0.0,25,Portland,225,-1.0,1.2,7
+1,2.5,1,Point Guard,23,3-pt,0.7,0.8,0.42,19,Portland,225,-1.0,1.2,7
+1,2.5,1,Point Guard,27,rebounds,0.4,0.4,0.42,16,Portland,225,-1.0,1.2,7
+1,21.5,1,Point Guard,26,pra,0.7,0.6,0.46,27,Portland,225,-1.0,1.2,7
+1,6.5,0,Point Guard,24,assists,0.5,0.2,0.5,22,Portland,225,-1.0,1.2,7
+1,1.5,0,Center,23,steals,0.1,0.2,0.2,27,Minnesota,198,0.5,-0.2,14
+1,10.5,1,Center,10,rebounds,0.4,0.4,0.35,2,Minnesota,198,0.5,-0.2,14
+1,2.5,0,Center,1,3-pt,0.7,0.4,0.45,8,Minnesota,198,0.5,-0.2,14
+1,23.5,0,Center,3,points,0.8,0.6,0.0,14,Minnesota,198,0.5,-0.2,14
+1,3.5,1,Center,3,assists,0.6,0.6,0.4,23,Minnesota,198,0.5,-0.2,14
+1,3.5,1,Center,12,blocks,0.0,0.0,0.2,27,Minnesota,198,0.5,-0.2,14
+1,37.5,0,Center,2,pra,0.7,0.4,0.55,9,Minnesota,198,0.5,-0.2,14
+1,0.5,0,Center,22,3-pt,0.3,0.2,0.36,23,New York,191,0.6,-1.3,9
+1,19.5,0,Center,5,pra,0.5,0.4,0.57,4,New York,191,0.6,-1.3,9
+1,2.5,0,Center,13,assists,0.4,0.6,0.36,12,New York,191,0.6,-1.3,9
+1,7.5,0,Center,1,rebounds,0.2,0.4,0.43,3,New York,191,0.6,-1.3,9
+1,9.5,0,Center,9,points,0.3,0.0,0.0,7,New York,191,0.6,-1.3,9
+0,1.5,0,Center,8,blocks,0.5,0.4,0.4,3,Indiana,223,4.7,2.5,15
+0,10.5,1,Center,20,rebounds,0.6,0.8,0.32,24,Indiana,223,4.7,2.5,15
+0,11.5,0,Center,26,points,0.5,0.4,0.04,16,Indiana,223,4.7,2.5,15
+0,0.5,0,Power Forward,4,blocks,0.3,0.2,0.25,4,Sacramento,259,-1.9,-1.7,1
+0,1.5,0,Power Forward,28,3-pt,0.4,0.2,0.33,11,Sacramento,259,-1.9,-1.7,1
+0,13.5,1,Power Forward,16,points,0.6,0.6,0.0,27,Sacramento,259,-1.9,-1.7,1
+0,22.5,1,Power Forward,15,pra,0.6,0.4,0.58,7,Sacramento,259,-1.9,-1.7,1
+0,3.5,0,Power Forward,15,assists,0.5,0.6,0.42,2,Sacramento,259,-1.9,-1.7,1
+0,5.5,1,Power Forward,6,rebounds,0.6,0.6,0.58,1,Sacramento,259,-1.9,-1.7,1
+1,1.5,1,Shooting Guard,29,3-pt,0.5,0.6,0.44,28,Utah,251,-0.2,2.2,37
+1,10.5,1,Shooting Guard,28,points,0.6,0.8,0.04,28,Utah,251,-0.2,2.2,37
+0,11.5,1,Center,17,rebounds,0.0,0.0,0.15,16,Charlotte,229,-2.5,-1.8,13
+0,9.5,0,Center,14,points,0.2,0.0,0.05,5,Charlotte,229,-2.5,-1.8,13
+1,4.5,1,Forward,13,rebounds,0.16666666666666666,0.2,0.17,24,Miami,249,-2.1,-1.6,1
+1,7.5,1,Forward,6,points,0.3333333333333333,0.4,0.0,10,Miami,249,-2.1,-1.6,1
+0,1.5,0,Shooting Guard,15,3-pt,0.6,0.8,0.46,20,Toronto,243,2.4,0.4,1
+0,14.5,0,Shooting Guard,26,points,0.6,0.8,0.0,25,Toronto,243,2.4,0.4,1
+0,22.5,0,Shooting Guard,21,pra,0.5,0.6,0.35,15,Toronto,243,2.4,0.4,1
+0,3.5,1,Shooting Guard,15,rebounds,0.2,0.2,0.42,1,Toronto,243,2.4,0.4,1
+0,4.5,1,Shooting Guard,16,assists,0.8,1.0,0.5,9,Toronto,243,2.4,0.4,1
+0,0.5,1,Center,25,3-pt,0.8,0.8,0.61,29,Detroit,249,-2.4,0.7,1
+0,0.5,0,Center,13,blocks,0.3,0.6,0.48,18,Detroit,249,-2.4,0.7,1
+0,1.5,0,Center,29,steals,0.2,0.0,0.35,13,Detroit,249,-2.4,0.7,1
+0,10.5,0,Center,7,rebounds,0.5,0.6,0.48,5,Detroit,249,-2.4,0.7,1
+0,17.5,0,Center,18,points,0.3,0.4,0.0,23,Detroit,249,-2.4,0.7,1
+0,33.5,0,Center,13,pra,0.6,0.6,0.43,15,Detroit,249,-2.4,0.7,1
+0,4.5,0,Center,10,assists,1.0,1.0,0.61,12,Detroit,249,-2.4,0.7,1
+1,18.5,1,Point Guard,7,pra,0.4,0.4,0.42,20,Cleveland,231,-4.3,-2.4,29
+1,5.5,0,Point Guard,8,rebounds,0.4,0.4,0.53,9,Cleveland,231,-4.3,-2.4,29
+1,6.5,1,Point Guard,11,points,0.3,0.2,0.0,23,Cleveland,231,-4.3,-2.4,29
+1,7.5,1,Point Guard,9,assists,0.5,0.6,0.47,16,Cleveland,231,-4.3,-2.4,29
+1,1.5,1,Point Guard,29,3-pt,0.4,0.8,0.36,30,Utah,251,6.0,2.7,37
+1,7.5,1,Point Guard,28,points,0.4,0.8,0.0,26,Utah,251,6.0,2.7,37
+1,20.5,0,Forward,10,points,0.8,1.0,0.0,20,Philadelphia,229,1.4,2.3,13
+1,29.5,0,Forward,9,pra,0.8,1.0,0.57,27,Philadelphia,229,1.4,2.3,13
+1,3.5,0,Forward,7,3-pt,0.6,0.6,0.43,28,Philadelphia,229,1.4,2.3,13
+1,3.5,1,Forward,17,assists,0.3,0.2,0.48,26,Philadelphia,229,1.4,2.3,13
+1,5.5,0,Forward,12,rebounds,0.7,0.6,0.52,22,Philadelphia,229,1.4,2.3,13
+1,0.5,0,Point Guard,2,steals,0.7,0.6,0.55,4,Miami,249,-2.1,-0.7,1
+1,2.5,1,Point Guard,22,3-pt,0.6,0.8,0.36,12,Miami,249,-2.1,-0.7,1
+1,22.5,0,Point Guard,6,points,0.7,0.8,0.05,6,Miami,249,-2.1,-0.7,1
+1,38.5,1,Point Guard,10,pra,0.7,0.6,0.59,16,Miami,249,-2.1,-0.7,1
+1,6.5,1,Point Guard,13,rebounds,0.6,0.6,0.55,25,Miami,249,-2.1,-0.7,1
+1,9.5,1,Point Guard,20,assists,0.8,0.6,0.55,26,Miami,249,-2.1,-0.7,1
+1,2.5,1,Small Forward,9,assists,0.5,0.4,0.58,17,Cleveland,231,1.3,1.8,29
+1,20.5,1,Small Forward,11,points,0.5,0.6,0.0,23,Cleveland,231,1.3,1.8,29
+1,27.5,1,Small Forward,7,pra,0.5,0.6,0.42,20,Cleveland,231,1.3,1.8,29
+1,3.5,0,Small Forward,17,3-pt,0.4,0.4,0.33,24,Cleveland,231,1.3,1.8,29
+1,4.5,0,Small Forward,8,rebounds,0.5,0.4,0.5,4,Cleveland,231,1.3,1.8,29
+0,1.5,1,Shooting Guard,13,3-pt,0.4,0.4,0.55,23,Brooklyn,231,2.0,-0.2,29
+0,10.5,1,Shooting Guard,21,points,0.5,0.6,0.05,10,Brooklyn,231,2.0,-0.2,29
+0,18.5,1,Shooting Guard,20,pra,0.5,0.6,0.55,5,Brooklyn,231,2.0,-0.2,29
+0,3.5,1,Shooting Guard,21,assists,0.5,0.8,0.6,10,Brooklyn,231,2.0,-0.2,29
+0,3.5,0,Shooting Guard,16,rebounds,0.3,0.2,0.3,2,Brooklyn,231,2.0,-0.2,29
+0,1.5,1,Point Guard,26,steals,0.2,0.2,0.29,26,Toronto,243,-0.7,0.1,1
+0,20.5,0,Point Guard,26,points,0.2,0.0,0.0,19,Toronto,243,-0.7,0.1,1
+0,28.5,0,Point Guard,21,pra,0.4,0.2,0.42,14,Toronto,243,-0.7,0.1,1
+0,3.5,0,Point Guard,15,3-pt,0.3,0.2,0.46,20,Toronto,243,-0.7,0.1,1
+0,3.5,0,Point Guard,15,rebounds,0.7,0.6,0.58,22,Toronto,243,-0.7,0.1,1
+0,4.5,1,Point Guard,16,assists,0.4,0.4,0.5,1,Toronto,243,-0.7,0.1,1
+1,0.5,1,Small Forward,7,3-pt,0.5,0.6,0.72,14,Philadelphia,229,3.9,0.9,13
+1,4.5,1,Small Forward,12,rebounds,0.7,0.4,0.52,11,Philadelphia,229,3.9,0.9,13
+1,7.5,1,Small Forward,10,points,0.4,0.4,0.04,4,Philadelphia,229,3.9,0.9,13
+0,0.5,0,Point Guard,27,steals,0.4,0.4,0.54,20,LA Clippers,251,-2.2,-0.6,37
+0,1.5,0,Point Guard,6,3-pt,0.5,0.4,0.54,5,LA Clippers,251,-2.2,-0.6,37
+0,13.5,1,Point Guard,5,points,0.8,0.8,0.04,10,LA Clippers,251,-2.2,-0.6,37
+0,19.5,0,Point Guard,4,pra,0.7,0.6,0.71,5,LA Clippers,251,-2.2,-0.6,37
+0,2.5,0,Point Guard,2,rebounds,0.4,0.6,0.42,4,LA Clippers,251,-2.2,-0.6,37
+0,3.5,0,Point Guard,7,assists,0.6,0.6,0.42,8,LA Clippers,251,-2.2,-0.6,37
+0,0.5,1,Point Guard,14,steals,0.6,0.4,0.64,7,Brooklyn,231,-0.6,0.9,29
+0,18.5,0,Point Guard,21,points,0.6,0.6,0.0,25,Brooklyn,231,-0.6,0.9,29
+0,2.5,0,Point Guard,13,3-pt,0.5,0.4,0.52,7,Brooklyn,231,-0.6,0.9,29
+0,2.5,0,Point Guard,16,rebounds,0.5,0.4,0.48,18,Brooklyn,231,-0.6,0.9,29
+0,27.5,0,Point Guard,20,pra,0.6,0.6,0.56,25,Brooklyn,231,-0.6,0.9,29
+0,6.5,0,Point Guard,21,assists,0.4,0.2,0.4,21,Brooklyn,231,-0.6,0.9,29
+1,4.5,0,Point Guard,29,assists,0.1,0.2,0.5,30,Chicago,243,-2.4,-1.1,1
+1,7.5,0,Point Guard,29,points,0.3,0.6,0.04,27,Chicago,243,-2.4,-1.1,1
+1,1.5,0,Point Guard,21,steals,0.5,0.4,0.46,2,Denver,259,-2.1,-1.2,1
+1,2.5,0,Point Guard,23,3-pt,0.4,0.2,0.38,29,Denver,259,-2.1,-1.2,1
+1,25.5,1,Point Guard,23,points,0.2,0.0,0.0,20,Denver,259,-2.1,-1.2,1
+1,35.5,1,Point Guard,24,pra,0.3,0.0,0.46,24,Denver,259,-2.1,-1.2,1
+1,4.5,1,Point Guard,11,rebounds,0.6,0.6,0.65,5,Denver,259,-2.1,-1.2,1
+1,5.5,1,Point Guard,30,assists,0.6,0.8,0.58,27,Denver,259,-2.1,-1.2,1
+1,0.5,1,Small Forward,21,steals,0.9,1.0,0.9,8,Denver,259,-2.7,-1.3,1
+1,21.5,0,Small Forward,23,points,0.5,0.6,0.05,17,Denver,259,-2.7,-1.3,1
+1,28.5,0,Small Forward,24,pra,0.4,0.4,0.62,11,Denver,259,-2.7,-1.3,1
+1,3.5,1,Small Forward,30,assists,0.5,0.4,0.48,28,Denver,259,-2.7,-1.3,1
+1,3.5,0,Small Forward,11,rebounds,0.5,0.2,0.48,1,Denver,259,-2.7,-1.3,1
+1,0.5,0,Power Forward,22,blocks,0.3,0.2,0.33,30,Denver,259,-3.4,0.8,1
+1,12.5,1,Power Forward,11,rebounds,0.6,0.6,0.46,26,Denver,259,-3.4,0.8,1
+1,20.5,1,Power Forward,23,points,0.7,0.6,0.04,13,Denver,259,-3.4,0.8,1
+1,39.5,1,Power Forward,24,pra,0.5,0.4,0.46,29,Denver,259,-3.4,0.8,1
+1,5.5,1,Power Forward,30,assists,0.5,0.4,0.54,29,Denver,259,-3.4,0.8,1
+0,1.5,1,Shooting Guard,14,steals,0.7,0.6,0.52,22,Brooklyn,231,0.5,-1.6,29
+0,22.5,0,Shooting Guard,21,points,0.4,0.2,0.0,10,Brooklyn,231,0.5,-1.6,29
+0,3.5,0,Shooting Guard,13,3-pt,0.7,0.8,0.56,23,Brooklyn,231,0.5,-1.6,29
+0,32.5,0,Shooting Guard,20,pra,0.4,0.4,0.48,5,Brooklyn,231,0.5,-1.6,29
+0,4.5,1,Shooting Guard,21,assists,0.7,1.0,0.48,10,Brooklyn,231,0.5,-1.6,29
+0,4.5,0,Shooting Guard,16,rebounds,0.5,0.6,0.4,2,Brooklyn,231,0.5,-1.6,29
+1,1.5,1,Power Forward,17,3-pt,0.8,0.8,0.65,14,Cleveland,231,0.3,-1.5,29
+1,3.5,1,Power Forward,8,rebounds,0.7,0.4,0.71,28,Cleveland,231,0.3,-1.5,29
+1,9.5,1,Power Forward,11,points,0.6,0.4,0.0,12,Cleveland,231,0.3,-1.5,29
+0,11.5,1,Forward,18,points,0.3,0.4,0.0,16,Detroit,249,1.8,-0.1,1
+0,16.5,0,Forward,13,pra,0.4,0.4,0.36,8,Detroit,249,1.8,-0.1,1
+0,2.5,1,Forward,25,3-pt,0.3,0.4,0.32,7,Detroit,249,1.8,-0.1,1
+0,2.5,0,Forward,10,assists,0.5,0.8,0.45,8,Detroit,249,1.8,-0.1,1
+0,2.5,0,Forward,7,rebounds,0.6,0.8,0.45,10,Detroit,249,1.8,-0.1,1
+0,0.5,1,Power Forward,13,3-pt,0.6,0.6,0.54,12,Brooklyn,231,-1.6,0.1,29
+0,0.5,1,Power Forward,14,steals,0.8,0.8,0.58,29,Brooklyn,231,-1.6,0.1,29
+0,1.5,0,Power Forward,28,blocks,0.5,0.6,0.5,16,Brooklyn,231,-1.6,0.1,29
+0,15.5,1,Power Forward,21,points,0.6,0.6,0.04,7,Brooklyn,231,-1.6,0.1,29
+0,2.5,0,Power Forward,21,assists,0.6,0.4,0.58,23,Brooklyn,231,-1.6,0.1,29
+0,26.5,1,Power Forward,20,pra,0.7,0.6,0.67,23,Brooklyn,231,-1.6,0.1,29
+0,9.5,0,Power Forward,16,rebounds,0.7,0.6,0.5,15,Brooklyn,231,-1.6,0.1,29
+0,1.5,1,Small Forward,13,3-pt,0.6,0.6,0.42,18,Brooklyn,231,1.8,-1.1,29
+0,3.5,1,Small Forward,16,rebounds,0.8,1.0,0.62,15,Brooklyn,231,1.8,-1.1,29
+0,6.5,1,Small Forward,21,points,0.6,0.6,0.04,29,Brooklyn,231,1.8,-1.1,29
+1,19.5,1,Guard,29,points,0.3,0.4,0.0,30,Chicago,243,-2.4,0.5,1
+1,2.5,1,Guard,9,3-pt,0.6,0.8,0.48,29,Chicago,243,-2.4,0.5,1
+1,2.5,0,Guard,29,assists,0.3,0.0,0.33,16,Chicago,243,-2.4,0.5,1
+1,25.5,1,Guard,29,pra,0.3,0.4,0.38,30,Chicago,243,-2.4,0.5,1
+1,3.5,1,Guard,28,rebounds,0.8,0.8,0.52,28,Chicago,243,-2.4,0.5,1
+0,1.5,0,Forward,21,3-pt,0.4,0.2,0.39,9,Charlotte,229,2.4,-0.2,13
+0,5.5,0,Forward,17,rebounds,0.6,0.4,0.48,5,Charlotte,229,2.4,-0.2,13
+0,9.5,0,Forward,14,points,0.5,0.4,0.04,26,Charlotte,229,2.4,-0.2,13
+0,1.5,0,Forward,25,3-pt,0.5,0.8,0.43,7,Detroit,249,2.6,1.7,1
+0,3.5,0,Forward,7,rebounds,0.5,0.4,0.48,10,Detroit,249,2.6,1.7,1
+0,6.5,0,Forward,18,points,0.5,0.8,0.05,16,Detroit,249,2.6,1.7,1
+0,2.5,0,Small Forward,16,rebounds,0.3,0.2,0.32,15,Brooklyn,231,0.8,0.3,29
+0,6.5,1,Small Forward,21,points,0.5,0.4,0.0,29,Brooklyn,231,0.8,0.3,29
+1,5.5,0,Center,13,rebounds,0.3,0.2,0.46,25,Miami,249,0.2,-0.5,1
+1,6.5,0,Center,6,points,0.4,0.2,0.0,11,Miami,249,0.2,-0.5,1
+1,1.5,1,Center,30,blocks,0.2,0.4,0.27,30,Utah,251,-0.5,-1.4,37
+1,11.5,1,Center,3,rebounds,0.6,0.4,0.65,20,Utah,251,-0.5,-1.4,37
+1,15.5,1,Center,28,points,0.5,0.2,0.04,29,Utah,251,-0.5,-1.4,37
+1,10.5,0,Guard,29,points,0.3,0.2,0.0,30,Chicago,243,2.5,1.3,1
+0,3.5,0,Guard,7,rebounds,0.5,0.4,0.63,7,Detroit,249,-0.3,-0.5,1
+0,7.5,1,Guard,18,points,0.4,0.4,0.05,19,Detroit,249,-0.3,-0.5,1
+1,1.5,0,Center,15,blocks,0.4,0.4,0.4,12,Chicago,243,1.3,-0.6,1
+1,11.5,0,Center,28,rebounds,0.3,0.2,0.4,14,Chicago,243,1.3,-0.6,1
+1,17.5,0,Center,29,points,0.2,0.2,0.0,27,Chicago,243,1.3,-0.6,1
+1,3.5,0,Center,29,assists,0.3,0.6,0.24,17,Chicago,243,1.3,-0.6,1
+1,32.5,0,Center,29,pra,0.3,0.2,0.4,26,Chicago,243,1.3,-0.6,1
+1,1.5,0,Center,18,blocks,0.4,0.4,0.35,16,Miami,249,-2.5,0.6,1
+1,9.5,0,Center,6,points,0.5,0.6,0.04,11,Miami,249,-2.5,0.6,1
+1,9.5,1,Center,13,rebounds,0.3,0.2,0.39,25,Miami,249,-2.5,0.6,1
+0,1.5,0,Point Guard,13,steals,0.4,0.4,0.39,15,Sacramento,259,0.5,-0.9,1
+0,18.5,1,Point Guard,16,points,0.5,0.6,0.0,3,Sacramento,259,0.5,-0.9,1
+0,2.5,1,Point Guard,28,3-pt,0.2,0.0,0.22,10,Sacramento,259,0.5,-0.9,1
+0,27.5,1,Point Guard,15,pra,0.6,0.6,0.61,3,Sacramento,259,0.5,-0.9,1
+0,3.5,0,Point Guard,6,rebounds,0.8,0.6,0.67,1,Sacramento,259,0.5,-0.9,1
+0,5.5,1,Point Guard,15,assists,0.8,0.8,0.67,24,Sacramento,259,0.5,-0.9,1
+1,1.5,0,Shooting Guard,30,steals,0.4,0.4,0.48,30,Utah,251,-0.9,0.8,37
+1,22.5,1,Shooting Guard,28,points,0.5,0.4,0.04,28,Utah,251,-0.9,0.8,37
+1,3.5,1,Shooting Guard,29,3-pt,0.2,0.2,0.12,28,Utah,251,-0.9,0.8,37
+1,36.5,1,Shooting Guard,26,pra,0.4,0.4,0.44,29,Utah,251,-0.9,0.8,37
+1,5.5,0,Shooting Guard,3,rebounds,0.5,0.4,0.68,23,Utah,251,-0.9,0.8,37
+1,8.5,0,Shooting Guard,28,assists,0.4,0.4,0.44,23,Utah,251,-0.9,0.8,37
+0,0.5,0,Center,28,blocks,0.4,0.4,0.62,23,Brooklyn,231,1.3,-0.9,29
+0,10.5,0,Center,16,rebounds,0.4,0.4,0.58,15,Brooklyn,231,1.3,-0.9,29
+0,12.5,0,Center,21,points,0.4,0.2,0.04,18,Brooklyn,231,1.3,-0.9,29
+0,0.5,1,Small Forward,25,3-pt,0.5,0.4,0.39,19,Detroit,249,-0.4,-1.0,1
+0,0.5,1,Small Forward,13,blocks,0.4,0.6,0.33,7,Detroit,249,-0.4,-1.0,1
+0,1.5,1,Small Forward,29,steals,0.3,0.4,0.39,27,Detroit,249,-0.4,-1.0,1
+0,18.5,1,Small Forward,18,points,0.5,0.2,0.0,13,Detroit,249,-0.4,-1.0,1
+0,29.5,1,Small Forward,13,pra,0.6,0.4,0.56,18,Detroit,249,-0.4,-1.0,1
+0,4.5,1,Small Forward,10,assists,0.6,0.4,0.56,21,Detroit,249,-0.4,-1.0,1
+0,5.5,1,Small Forward,7,rebounds,0.4,0.4,0.39,22,Detroit,249,-0.4,-1.0,1
+0,1.5,0,Power Forward,6,3-pt,0.5,0.8,0.35,2,LA Clippers,251,1.1,-1.0,37
+0,16.5,0,Power Forward,5,points,0.8,0.8,0.0,1,LA Clippers,251,1.1,-1.0,37
+0,2.5,0,Power Forward,7,assists,0.5,0.6,0.52,4,LA Clippers,251,1.1,-1.0,37
+0,7.5,0,Power Forward,2,rebounds,0.6,0.2,0.57,6,LA Clippers,251,1.1,-1.0,37
+1,20.5,0,Forward,29,pra,0.0,0.0,0.04,18,Chicago,243,5.1,2.4,1
+1,3.5,0,Forward,29,assists,0.2,0.2,0.12,17,Chicago,243,5.1,2.4,1
+1,7.5,0,Forward,28,rebounds,0.1,0.2,0.08,29,Chicago,243,5.1,2.4,1
+1,9.5,0,Forward,29,points,0.2,0.2,0.0,29,Chicago,243,5.1,2.4,1
+0,1.5,1,Point Guard,6,3-pt,0.6,0.4,0.57,5,LA Clippers,251,2.3,1.1,37
+0,13.5,1,Point Guard,5,points,0.8,0.8,0.07,10,LA Clippers,251,2.3,1.1,37
+0,3.5,0,Point Guard,2,rebounds,0.6,0.6,0.64,4,LA Clippers,251,2.3,1.1,37
+0,1.5,0,Shooting Guard,15,3-pt,0.3,0.2,0.31,20,Toronto,243,1.5,1.6,1
+0,14.5,0,Shooting Guard,26,points,0.3,0.4,0.0,25,Toronto,243,1.5,1.6,1
+0,28.5,0,Shooting Guard,21,pra,0.3,0.4,0.31,15,Toronto,243,1.5,1.6,1
+0,6.5,1,Shooting Guard,16,assists,0.7,0.6,0.58,9,Toronto,243,1.5,1.6,1
+0,6.5,1,Shooting Guard,15,rebounds,0.5,0.6,0.42,1,Toronto,243,1.5,1.6,1
+1,1.5,1,Shooting Guard,7,3-pt,0.4,0.2,0.39,14,Philadelphia,229,4.3,1.3,13
+1,3.5,0,Shooting Guard,12,rebounds,0.4,0.6,0.3,10,Philadelphia,229,4.3,1.3,13
+1,6.5,1,Shooting Guard,10,points,0.6,0.6,0.0,12,Philadelphia,229,4.3,1.3,13
+0,8.5,1,Guard,16,points,0.5,0.6,0.0,29,Sacramento,259,1.5,0.2,1
+0,1.5,0,Shooting Guard,21,3-pt,0.4,0.6,0.35,11,Charlotte,229,2.3,-1.7,13
+0,14.5,1,Shooting Guard,14,points,0.1,0.2,0.05,1,Charlotte,229,2.3,-1.7,13
+0,5.5,1,Shooting Guard,17,rebounds,0.5,0.6,0.43,6,Charlotte,229,2.3,-1.7,13
+0,8.5,0,Forward,14,points,0.5,0.8,0.0,26,Charlotte,229,5.8,3.4,13
+1,1.5,0,Guard,17,3-pt,0.7,0.8,0.48,9,Cleveland,231,8.3,2.8,29
+1,10.5,0,Guard,11,points,0.3,0.4,0.0,5,Cleveland,231,8.3,2.8,29
+1,2.5,1,Guard,8,rebounds,0.6,0.6,0.57,24,Cleveland,231,8.3,2.8,29
+1,11.5,0,Guard,28,points,0.5,0.6,0.0,28,Utah,251,5.4,2.1,37
+1,17.5,1,Guard,26,pra,0.7,0.6,0.48,29,Utah,251,5.4,2.1,37
+1,2.5,1,Guard,28,assists,0.6,0.6,0.52,23,Utah,251,5.4,2.1,37
+1,2.5,1,Guard,3,rebounds,0.7,0.6,0.61,23,Utah,251,5.4,2.1,37
+0,14.5,0,Guard,5,points,0.7,0.8,0.0,7,LA Clippers,251,-1.2,-0.8,37
+0,2.5,0,Guard,6,3-pt,0.5,0.4,0.48,10,LA Clippers,251,-1.2,-0.8,37
+0,2.5,1,Guard,2,rebounds,0.8,1.0,0.61,11,LA Clippers,251,-1.2,-0.8,37
+0,5.5,1,Guard,7,assists,0.5,0.4,0.48,6,LA Clippers,251,-1.2,-0.8,37
+1,3.5,0,Guard,3,rebounds,0.4,0.2,0.46,23,Utah,251,-0.6,0.7,37
+1,7.5,1,Guard,28,points,0.2,0.2,0.0,28,Utah,251,-0.6,0.7,37
+1,0.5,1,Point Guard,10,steals,0.7,0.8,0.83,14,Philadelphia,229,1.1,4.2,13
+1,22.5,0,Point Guard,10,points,0.9,0.8,0.06,8,Philadelphia,229,1.1,4.2,13
+1,3.5,0,Point Guard,7,3-pt,0.8,0.8,0.78,9,Philadelphia,229,1.1,4.2,13
+1,3.5,1,Point Guard,12,rebounds,0.8,0.8,0.72,8,Philadelphia,229,1.1,4.2,13
+1,32.5,0,Point Guard,9,pra,0.9,0.8,0.83,7,Philadelphia,229,1.1,4.2,13
+1,5.5,1,Point Guard,17,assists,0.9,0.8,0.78,12,Philadelphia,229,1.1,4.2,13
+0,18.5,0,Power Forward,5,points,0.6,0.6,0.05,1,LA Clippers,251,0.8,0.4,37
+0,2.5,1,Power Forward,6,3-pt,0.6,0.4,0.53,2,LA Clippers,251,0.8,0.4,37
+0,2.5,0,Power Forward,7,assists,0.2,0.4,0.26,4,LA Clippers,251,0.8,0.4,37
+0,26.5,0,Power Forward,4,pra,0.6,0.4,0.53,1,LA Clippers,251,0.8,0.4,37
+0,6.5,0,Power Forward,2,rebounds,0.5,0.2,0.47,6,LA Clippers,251,0.8,0.4,37
+1,13.5,1,Shooting Guard,6,points,0.7,0.6,0.04,18,Miami,249,-4.4,-1.9,1
+1,2.5,1,Shooting Guard,13,rebounds,0.6,1.0,0.62,15,Miami,249,-4.4,-1.9,1
+1,3.5,1,Shooting Guard,22,3-pt,0.6,0.6,0.54,22,Miami,249,-4.4,-1.9,1
+1,17.5,1,Shooting Guard,23,points,0.5,0.4,0.0,26,Denver,259,3.4,0.7,1
+1,2.5,1,Shooting Guard,23,3-pt,0.6,0.6,0.42,25,Denver,259,3.4,0.7,1
+1,26.5,1,Shooting Guard,24,pra,0.6,0.6,0.37,27,Denver,259,3.4,0.7,1
+1,3.5,1,Shooting Guard,11,rebounds,0.3,0.2,0.42,18,Denver,259,3.4,0.7,1
+1,5.5,1,Shooting Guard,30,assists,0.6,0.6,0.37,29,Denver,259,3.4,0.7,1
+1,6.5,0,Center,12,rebounds,0.25,0.25,0.25,13,Philadelphia,229,-0.8,0.1,13
+1,7.5,0,Center,10,points,0.5,0.5,0.02,14,Philadelphia,229,-0.8,0.1,13
+0,17.5,0,Small Forward,16,points,0.7,0.6,0.0,15,Sacramento,259,-1.2,0.0,1
+0,2.5,0,Small Forward,28,3-pt,0.3,0.2,0.48,26,Sacramento,259,-1.2,0.0,1
+0,2.5,0,Small Forward,15,assists,0.6,0.6,0.61,11,Sacramento,259,-1.2,0.0,1
+0,26.5,0,Small Forward,15,pra,0.7,0.6,0.65,14,Sacramento,259,-1.2,0.0,1
+0,5.5,1,Small Forward,6,rebounds,0.7,0.6,0.7,18,Sacramento,259,-1.2,0.0,1
+1,1.5,1,Small Forward,7,3-pt,0.6,0.8,0.58,14,Philadelphia,229,-0.1,0.9,13
+1,13.5,1,Small Forward,10,points,0.7,1.0,0.01,4,Philadelphia,229,-0.1,0.9,13
+1,2.5,1,Small Forward,17,assists,0.6,0.6,0.5,10,Philadelphia,229,-0.1,0.9,13
+1,21.5,1,Small Forward,9,pra,0.7,1.0,0.67,4,Philadelphia,229,-0.1,0.9,13
+1,5.5,1,Small Forward,12,rebounds,0.8,0.8,0.75,11,Philadelphia,229,-0.1,0.9,13
+1,6.5,1,Center,10,points,0.6,0.6,0.01,14,Philadelphia,229,-0.7,-0.7,13
+1,6.5,0,Center,12,rebounds,0.7,0.6,0.7,13,Philadelphia,229,-0.7,-0.7,13
+1,1.5,0,Center,11,blocks,0.4,0.2,0.37,4,Cleveland,231,2.3,3.1,29
+1,11.5,0,Center,11,points,0.4,0.4,0.0,7,Cleveland,231,2.3,3.1,29
+1,2.5,0,Center,9,assists,0.4,0.2,0.47,15,Cleveland,231,2.3,3.1,29
+1,21.5,0,Center,7,pra,0.4,0.4,0.42,6,Cleveland,231,2.3,3.1,29
+1,7.5,0,Center,8,rebounds,0.5,0.6,0.58,10,Cleveland,231,2.3,3.1,29
+0,0.5,1,Center,4,blocks,0.4,0.2,0.55,17,Sacramento,259,-0.6,4.3,1
+0,1.5,0,Center,28,3-pt,0.9,0.8,0.7,13,Sacramento,259,-0.6,4.3,1
+0,1.5,1,Center,13,steals,0.5,0.8,0.55,22,Sacramento,259,-0.6,4.3,1
+0,12.5,1,Center,6,rebounds,0.6,0.6,0.55,17,Sacramento,259,-0.6,4.3,1
+0,28.5,0,Center,16,points,0.6,0.6,0.0,4,Sacramento,259,-0.6,4.3,1
+0,49.5,0,Center,15,pra,0.7,0.8,0.75,5,Sacramento,259,-0.6,4.3,1
+0,8.5,1,Center,15,assists,0.3,0.2,0.55,20,Sacramento,259,-0.6,4.3,1
+0,0.5,1,Center,26,blocks,0.3,0.2,0.48,28,Toronto,243,-0.5,-0.9,1
+0,1.5,1,Center,15,3-pt,0.8,0.8,0.68,8,Toronto,243,-0.5,-0.9,1
+0,10.5,0,Center,15,rebounds,0.4,0.2,0.44,22,Toronto,243,-0.5,-0.9,1
+0,20.5,1,Center,26,points,0.4,0.6,0.04,20,Toronto,243,-0.5,-0.9,1
+0,3.5,0,Center,16,assists,0.4,0.2,0.32,30,Toronto,243,-0.5,-0.9,1
+0,33.5,0,Center,21,pra,0.7,0.6,0.56,24,Toronto,243,-0.5,-0.9,1
+1,2.5,0,Guard,28,assists,0.7,0.6,0.53,23,Utah,251,-4.0,-0.6,37
+1,2.5,1,Guard,3,rebounds,0.5,0.6,0.47,23,Utah,251,-4.0,-0.6,37
+1,22.5,1,Guard,28,points,0.5,0.6,0.0,28,Utah,251,-4.0,-0.6,37
+1,27.5,1,Guard,26,pra,0.4,0.4,0.47,29,Utah,251,-4.0,-0.6,37
+1,3.5,1,Guard,29,3-pt,0.5,0.6,0.58,28,Utah,251,-4.0,-0.6,37
+1,1.5,0,Guard,9,3-pt,0.3,0.2,0.5,29,Chicago,243,-2.8,-1.4,1
+1,10.5,1,Guard,29,points,0.4,0.4,0.0,30,Chicago,243,-2.8,-1.4,1
+1,17.5,1,Guard,29,pra,0.3,0.2,0.46,30,Chicago,243,-2.8,-1.4,1
+1,2.5,0,Guard,29,assists,0.3,0.2,0.35,16,Chicago,243,-2.8,-1.4,1
+1,4.5,0,Guard,28,rebounds,0.5,0.2,0.54,28,Chicago,243,-2.8,-1.4,1
+0,1.5,0,Power Forward,15,3-pt,0.7,0.6,0.56,16,Toronto,243,-1.5,-0.2,1
+0,3.5,1,Power Forward,15,rebounds,0.5,0.4,0.62,14,Toronto,243,-1.5,-0.2,1
+0,9.5,0,Power Forward,26,points,0.6,0.4,0.0,15,Toronto,243,-1.5,-0.2,1
+0,1.5,1,Forward,15,steals,0.6,0.4,0.54,9,Charlotte,229,2.4,0.2,13
+0,2.5,1,Forward,21,3-pt,0.3,0.2,0.23,9,Charlotte,229,2.4,0.2,13
+0,21.5,1,Forward,14,points,0.2,0.2,0.0,26,Charlotte,229,2.4,0.2,13
+0,32.5,1,Forward,16,pra,0.3,0.4,0.23,10,Charlotte,229,2.4,0.2,13
+0,5.5,1,Forward,13,assists,0.3,0.4,0.31,10,Charlotte,229,2.4,0.2,13
+0,5.5,0,Forward,17,rebounds,0.4,0.4,0.38,5,Charlotte,229,2.4,0.2,13
+0,7.5,1,Forward,16,points,0.5,0.2,0.0,27,Sacramento,259,-3.4,-3.4,1
+1,2.5,0,Shooting Guard,9,3-pt,0.3,0.2,0.3,29,Chicago,243,-1.1,-1.0,1
+1,25.5,1,Shooting Guard,29,points,0.3,0.4,0.0,30,Chicago,243,-1.1,-1.0,1
+1,39.5,1,Shooting Guard,29,pra,0.4,0.4,0.43,30,Chicago,243,-1.1,-1.0,1
+1,6.5,1,Shooting Guard,29,assists,0.3,0.2,0.35,16,Chicago,243,-1.1,-1.0,1
+1,7.5,0,Shooting Guard,28,rebounds,0.5,0.8,0.35,28,Chicago,243,-1.1,-1.0,1
+1,6.5,1,Forward,6,points,0.3,0.4,0.0,10,Miami,249,1.7,0.0,1
+0,1.5,0,Shooting Guard,13,3-pt,0.7,0.8,0.64,23,Brooklyn,231,1.6,1.7,29
+0,6.5,1,Shooting Guard,21,points,0.6,0.8,0.05,10,Brooklyn,231,1.6,1.7,29
+1,6.5,1,Forward,6,points,0.3,0.2,0.0,10,Miami,249,-1.8,0.6,1
+0,1.5,0,Shooting Guard,25,3-pt,0.5,0.4,0.57,16,Detroit,249,-5.5,-2.3,1
+0,10.5,1,Shooting Guard,18,points,0.5,0.4,0.05,19,Detroit,249,-5.5,-2.3,1
+0,16.5,1,Shooting Guard,13,pra,0.5,0.4,0.62,17,Detroit,249,-5.5,-2.3,1
+0,2.5,1,Shooting Guard,10,assists,0.3,0.2,0.57,17,Detroit,249,-5.5,-2.3,1
+0,3.5,1,Shooting Guard,7,rebounds,0.3,0.4,0.48,7,Detroit,249,-5.5,-2.3,1
+1,1.5,1,Small Forward,22,3-pt,0.3,0.2,0.52,17,Miami,249,-2.6,-1.3,1
+1,2.5,0,Small Forward,13,rebounds,0.6,0.8,0.43,3,Miami,249,-2.6,-1.3,1
+1,9.5,1,Small Forward,6,points,0.5,0.4,0.04,9,Miami,249,-2.6,-1.3,1
+0,0.5,1,Point Guard,29,steals,0.7,0.4,0.52,23,Detroit,249,-2.1,-1.2,1
+0,22.5,1,Point Guard,18,points,0.6,0.6,0.0,7,Detroit,249,-2.1,-1.2,1
+0,3.5,1,Point Guard,25,3-pt,0.6,0.6,0.52,15,Detroit,249,-2.1,-1.2,1
+0,32.5,0,Point Guard,13,pra,0.5,0.4,0.52,1,Detroit,249,-2.1,-1.2,1
+0,4.5,0,Point Guard,10,assists,0.5,0.4,0.57,4,Detroit,249,-2.1,-1.2,1
+0,4.5,0,Point Guard,7,rebounds,0.7,0.8,0.7,6,Detroit,249,-2.1,-1.2,1
+0,1.5,1,Point Guard,15,steals,0.7,0.6,0.53,10,Charlotte,229,0.9,-3.5,13
+0,26.5,1,Point Guard,14,points,0.2,0.0,0.0,21,Charlotte,229,0.9,-3.5,13
+0,3.5,1,Point Guard,21,3-pt,0.2,0.0,0.29,14,Charlotte,229,0.9,-3.5,13
+0,3.5,1,Point Guard,17,rebounds,0.5,0.4,0.41,26,Charlotte,229,0.9,-3.5,13
+0,36.5,1,Point Guard,16,pra,0.3,0.2,0.35,22,Charlotte,229,0.9,-3.5,13
+0,5.5,0,Point Guard,13,assists,0.5,0.6,0.41,9,Charlotte,229,0.9,-3.5,13
+0,2.5,0,Center,16,blocks,0.5,0.4,0.56,21,LA Clippers,251,4.5,0.8,37
+0,21.5,0,Center,4,pra,0.8,1.0,0.67,16,LA Clippers,251,4.5,0.8,37
+0,9.5,1,Center,5,points,0.7,0.8,0.06,19,LA Clippers,251,4.5,0.8,37
+0,9.5,0,Center,2,rebounds,0.7,0.8,0.67,6,LA Clippers,251,4.5,0.8,37
+0,10.5,1,Guard,6,pra,0.7,0.6,0.58,2,Okla City,178,3.7,0.7,16
+0,2.5,1,Guard,5,3-pt,0.6,0.4,0.54,8,Okla City,178,3.7,0.7,16
+0,2.5,0,Guard,30,rebounds,0.5,0.4,0.38,19,Okla City,178,3.7,0.7,16
+0,6.5,1,Guard,1,points,0.6,0.4,0.0,3,Okla City,178,3.7,0.7,16
+1,1.5,0,Shooting Guard,10,3-pt,0.5,0.6,0.29,24,Milwaukee,178,-0.4,1.3,16
+1,1.5,1,Shooting Guard,6,steals,0.6,0.8,0.59,18,Milwaukee,178,-0.4,1.3,16
+1,11.5,0,Shooting Guard,9,pra,0.7,0.8,0.41,22,Milwaukee,178,-0.4,1.3,16
+1,2.5,0,Shooting Guard,8,assists,0.4,0.4,0.35,20,Milwaukee,178,-0.4,1.3,16
+1,3.5,0,Shooting Guard,14,rebounds,0.5,0.4,0.35,22,Milwaukee,178,-0.4,1.3,16
+1,6.5,0,Shooting Guard,11,points,0.5,0.6,0.0,20,Milwaukee,178,-0.4,1.3,16
+0,1.5,0,Forward,5,3-pt,0.4,0.4,0.21,24,Okla City,178,0.9,-1.1,16
+0,1.5,1,Forward,4,assists,0.7,0.8,0.46,21,Okla City,178,0.9,-1.1,16
+0,12.5,0,Forward,1,points,0.4,0.4,0.04,5,Okla City,178,0.9,-1.1,16
+0,21.5,0,Forward,6,pra,0.4,0.6,0.5,21,Okla City,178,0.9,-1.1,16
+0,7.5,1,Forward,30,rebounds,0.3,0.6,0.33,19,Okla City,178,0.9,-1.1,16
+0,1.5,1,Center,5,3-pt,0.4,0.2,0.48,2,Okla City,178,-0.7,-2.5,16
+0,1.5,0,Center,13,blocks,0.6,0.4,0.6,19,Okla City,178,-0.7,-2.5,16
+0,15.5,1,Center,6,pra,0.5,0.2,0.56,12,Okla City,178,-0.7,-2.5,16
+0,5.5,1,Center,30,rebounds,0.4,0.4,0.44,28,Okla City,178,-0.7,-2.5,16
+0,9.5,1,Center,1,points,0.5,0.2,0.04,2,Okla City,178,-0.7,-2.5,16
+1,1.5,0,Guard,10,3-pt,0.3,0.4,0.24,24,Milwaukee,178,1.7,0.8,16
+1,1.5,0,Guard,8,assists,0.9,1.0,0.64,20,Milwaukee,178,1.7,0.8,16
+1,1.5,1,Guard,6,steals,0.7,0.8,0.6,18,Milwaukee,178,1.7,0.8,16
+1,13.5,0,Guard,9,pra,0.5,0.6,0.36,22,Milwaukee,178,1.7,0.8,16
+1,3.5,0,Guard,14,rebounds,0.7,0.6,0.6,22,Milwaukee,178,1.7,0.8,16
+1,7.5,0,Guard,11,points,0.5,0.6,0.0,20,Milwaukee,178,1.7,0.8,16
+0,0.5,1,Point Guard,2,steals,0.9,1.0,0.59,5,Okla City,178,1.4,-1.2,16
+0,22.5,1,Point Guard,1,points,0.9,0.8,0.05,1,Okla City,178,1.4,-1.2,16
+0,3.5,1,Point Guard,5,3-pt,0.6,0.6,0.41,6,Okla City,178,1.4,-1.2,16
+0,34.5,0,Point Guard,6,pra,0.8,0.6,0.68,4,Okla City,178,1.4,-1.2,16
+0,4.5,0,Point Guard,30,rebounds,0.5,0.6,0.41,30,Okla City,178,1.4,-1.2,16
+0,7.5,0,Point Guard,4,assists,0.5,0.4,0.41,5,Okla City,178,1.4,-1.2,16
+0,1.5,1,Shooting Guard,5,3-pt,0.7,0.8,0.65,8,Okla City,178,2.0,-0.2,16
+0,11.5,1,Shooting Guard,6,pra,0.6,0.6,0.52,2,Okla City,178,2.0,-0.2,16
+0,2.5,1,Shooting Guard,30,rebounds,0.5,0.4,0.35,19,Okla City,178,2.0,-0.2,16
+0,8.5,1,Shooting Guard,1,points,0.6,0.6,0.05,3,Okla City,178,2.0,-0.2,16
+0,0.5,0,Power Forward,5,3-pt,0.1,0.0,0.13,24,Okla City,178,1.6,-0.8,16
+0,0.5,1,Power Forward,2,steals,0.6,0.8,0.48,20,Okla City,178,1.6,-0.8,16
+0,1.5,1,Power Forward,13,blocks,0.4,0.6,0.43,3,Okla City,178,1.6,-0.8,16
+0,12.5,1,Power Forward,30,rebounds,0.1,0.2,0.35,19,Okla City,178,1.6,-0.8,16
+0,30.5,0,Power Forward,1,points,0.8,0.8,0.0,5,Okla City,178,1.6,-0.8,16
+0,49.5,1,Power Forward,6,pra,0.4,0.2,0.39,21,Okla City,178,1.6,-0.8,16
+0,6.5,1,Power Forward,4,assists,0.5,0.2,0.48,21,Okla City,178,1.6,-0.8,16
+1,1.5,0,Center,5,blocks,0.2,0.0,0.2,6,Milwaukee,178,-1.7,-1.3,16
+1,10.5,1,Center,11,points,0.7,0.4,0.11,1,Milwaukee,178,-1.7,-1.3,16
+1,11.5,1,Center,14,rebounds,0.7,0.6,0.7,7,Milwaukee,178,-1.7,-1.3,16
+1,26.5,1,Center,9,pra,0.7,0.4,0.7,2,Milwaukee,178,-1.7,-1.3,16
+1,3.5,0,Center,8,assists,0.6,0.6,0.6,8,Milwaukee,178,-1.7,-1.3,16
+1,1.5,0,Shooting Guard,10,3-pt,0.6,0.6,0.74,24,Milwaukee,178,-2.9,-0.7,16
+1,10.5,1,Shooting Guard,9,pra,0.6,0.6,0.61,22,Milwaukee,178,-2.9,-0.7,16
+1,2.5,1,Shooting Guard,14,rebounds,0.4,0.6,0.52,22,Milwaukee,178,-2.9,-0.7,16
+1,7.5,0,Shooting Guard,11,points,0.5,0.6,0.0,20,Milwaukee,178,-2.9,-0.7,16
+1,1.5,1,Forward,6,steals,0.6,0.4,0.64,4,Milwaukee,178,0.3,1.2,16
+1,2.5,0,Forward,10,3-pt,0.3,0.2,0.36,4,Milwaukee,178,0.3,1.2,16
+1,22.5,0,Forward,11,points,0.4,0.4,0.0,2,Milwaukee,178,0.3,1.2,16
+1,33.5,0,Forward,9,pra,0.5,0.4,0.48,5,Milwaukee,178,0.3,1.2,16
+1,4.5,0,Forward,8,assists,0.7,0.6,0.6,7,Milwaukee,178,0.3,1.2,16
+1,5.5,0,Forward,14,rebounds,0.5,0.6,0.56,11,Milwaukee,178,0.3,1.2,16
+1,1.5,0,Guard,8,assists,0.6,0.2,0.52,20,Milwaukee,178,1.0,1.4,16
+1,1.5,0,Guard,6,steals,0.4,0.6,0.44,18,Milwaukee,178,1.0,1.4,16
+1,10.5,0,Guard,11,points,0.4,0.6,0.0,20,Milwaukee,178,1.0,1.4,16
+1,16.5,0,Guard,9,pra,0.4,0.6,0.52,22,Milwaukee,178,1.0,1.4,16
+1,2.5,0,Guard,10,3-pt,0.4,0.6,0.44,24,Milwaukee,178,1.0,1.4,16
+1,4.5,1,Guard,14,rebounds,0.7,0.8,0.56,22,Milwaukee,178,1.0,1.4,16
+1,1.5,1,Point Guard,6,steals,0.7,0.8,0.56,1,Milwaukee,178,-0.4,0.0,16
+1,2.5,0,Point Guard,10,3-pt,0.5,0.2,0.36,24,Milwaukee,178,-0.4,0.0,16
+1,31.5,0,Point Guard,11,points,0.6,0.4,0.0,30,Milwaukee,178,-0.4,0.0,16
+1,43.5,0,Point Guard,9,pra,0.6,0.4,0.36,30,Milwaukee,178,-0.4,0.0,16
+1,5.5,0,Point Guard,14,rebounds,0.6,0.6,0.48,29,Milwaukee,178,-0.4,0.0,16
+1,6.5,0,Point Guard,8,assists,0.3,0.2,0.4,11,Milwaukee,178,-0.4,0.0,16
+0,1.5,1,Power Forward,5,3-pt,0.7,0.4,0.56,24,Okla City,178,-8.2,-1.8,16
+0,11.5,0,Power Forward,6,pra,0.6,0.2,0.52,21,Okla City,178,-8.2,-1.8,16
+0,3.5,0,Power Forward,30,rebounds,0.2,0.2,0.52,19,Okla City,178,-8.2,-1.8,16
+0,6.5,0,Power Forward,1,points,0.6,0.2,0.04,5,Okla City,178,-8.2,-1.8,16

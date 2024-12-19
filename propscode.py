@@ -18,6 +18,7 @@ import datetime
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+import openai
 
 from authlib.integrations.flask_client import OAuth
 from dotenv import find_dotenv, load_dotenv
@@ -31,7 +32,7 @@ app = Flask(__name__)
 app.secret_key = env.get("APP_SECRET_KEY")
 
 oauth = OAuth(app)
-
+openai.api_key = env.get("OPENAI_API_KEY")
 #model = pickle.load(open("nbamodel.pkl", "rb"))
 assistsmodel = pickle.load(open("/root/propscode/propscode/NBA/assistsmodel.pkl", "rb"))
 reboundsmodel = pickle.load(open("/root/propscode/propscode/NBA/reboundsmodel.pkl", "rb"))
@@ -2636,9 +2637,18 @@ def researchNBAPlayer():
             minutes = 0
             shots = 0
    #     oppteamnum = teamnamemap(teamnameFull(teamname(oppteamname2(oppTeam))))
+        llmMessage = ""
         if stat == "points":
-            features = [[ positionint,rank, last10Hit(log,"points", float(line)), posrank, total, minutes,shots, spread]]
+            last10PointsHit = last10Hit(log,"points", float(line))
+            features = [[ positionint,rank, last10PointsHit, posrank, total, minutes,shots, spread]]
             prediction = pointsmodel.predict(features)
+            response = openai.ChatCompletion.create(
+            model="ft:gpt-3.5-turbo-0125:propcodes::AgIOduxo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that predicts and explains why an NBA player will go over or under their points player prop line."},
+                {"role": "user", "content": f"With this information of a player coming into their game: Position={position}, OppRank={rank}, last10={last10PointsHit}, OppPosRank={posrank}, OverUnder={total}, DeltaMinutes={minutes}, DeltaShots={shots}, Spread={spread}. Why will this player score more or less than {line} points?"}
+            ])
+            llmMessage = response['choices'][0]['message']['content']
         elif stat == "3-pt":
             features = [[float(line), rank, last5Hit(log,'3-pt', float(line)), posrank, total, shots, spread]]
             prediction = tresmodel.predict(features)
@@ -2860,7 +2870,7 @@ def researchNBAPlayer():
     #         cursor.close()
     #         sqlite_connection.close()
     return render_template("player.html", playedAgainst2=playedAgainst2, lastyeargraphHomeAway=lastyeargraphHomeAway, lastyeargraphVs=lastyeargraphVs, fname=first, lname=last, score=score, graphLast10=graphLast10, graphHomeAway=graphHomeAway, stat=stat,\
-                            playedAgainst=playedAgainst, oppTeam=oppTeam, graphVs=graphVs, graphWins=graphWins, graphLoss=graphLoss, prediction=prediction, posrank=posrank, rank=rank, position=position, line=line)
+                            playedAgainst=playedAgainst, oppTeam=oppTeam, graphVs=graphVs, graphWins=graphWins, graphLoss=graphLoss, prediction=prediction, posrank=posrank, rank=rank, position=position, line=line, llmMessage=llmMessage)
 
 
 @app.route("/prop", methods=('GET','POST'))
@@ -3111,4 +3121,4 @@ def player():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5001, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)

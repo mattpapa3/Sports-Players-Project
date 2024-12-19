@@ -68,6 +68,12 @@
                 position: relative;
             }
 
+            h3 {
+                margin: 0 auto; /* Centers the element horizontally */
+                max-width: 600px; /* Limits the maximum width */
+                text-align: center; /* Optional: Centers text inside the element */
+            }
+
             h2, h3{
                     color: rgb(0,3,64);
                     margin: auto;
@@ -177,6 +183,9 @@
         {% else %}
             <h3>{{oppTeam}} defensive {{stat}} rank: {{rank}}</h3>
         {% endif %}
+        <br>
+        <h3>{{llmMessage}}</h3>
+        <br>
         <div class="newProp">
             <form action="{{ url_for('code') }}">
                 <button>New Prop</button>
