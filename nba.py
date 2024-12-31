@@ -1404,6 +1404,7 @@ def getNbaTodayGames():
             away = False
     element = data_soup.findAll('span', attrs={'class':"VZTD mLASH rIczU LNzKp jsU hfDkF FoYYc FuEs"})
     index = 0
+    #print(games)
     for num, row in enumerate(element):
         if row.text != None:
             games[index].append(row.text)
@@ -1411,14 +1412,14 @@ def getNbaTodayGames():
                 index += 1
 
     # Get game IDs
-    element = data_soup.findAll('a', attrs={'class':"AnchorLink Button Button--sm Button--anchorLink Button--alt mb4 w-100 mr2"})
-    index = 0
-    for num, row in enumerate(element):
-        #if num % 3 == 0:
-        temp = row['href'][row['href'].find("gameId/"):]
-        id = temp[temp.find('/') + 1:temp.find('/', temp.find('/') + 1)]
-        games[index].append(id)
-        index += 1
+    # element = data_soup.findAll('a', attrs={'class':"AnchorLink Button Button--sm Button--anchorLink Button--alt mb4 w-100 mr2"})
+    # index = 0
+    # for num, row in enumerate(element):
+    #     #if num % 3 == 0:
+    #     temp = row['href'][row['href'].find("gameId/"):]
+    #     id = temp[temp.find('/') + 1:temp.find('/', temp.find('/') + 1)]
+    #     games[index].append(id)
+    #     index += 1
     return games
 
 def getPlayerInfo(id):

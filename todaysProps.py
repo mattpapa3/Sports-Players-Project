@@ -647,7 +647,7 @@ def getNBAProps():
 		cursor.execute("SELECT * FROM nbaTodaysGames WHERE game=?", (i[0],))
 		result = cursor.fetchall()
 		if len(result) == 0:
-			cursor.execute("INSERT INTO nbaTodaysGames(game,spread,overunder,id) VALUES(?,?,?,?)", (i[0],i[1],i[2],i[3]))
+			cursor.execute("INSERT INTO nbaTodaysGames(game,spread,overunder) VALUES(?,?,?)", (i[0],i[1],i[2]))
 			sqlite_connection.commit()
 	
 #	props = []
@@ -685,10 +685,10 @@ def getNBAProps():
 				print(i[0])
 				_, team = nba.getPlayerInfo(id)
 		previous = i[0]
-		print("PLAYER INFO")
-		print(id)
-		print(position)
-		print(team)
+		# print("PLAYER INFO")
+		# print(id)
+		# print(position)
+		# print(team)
 		game_index = np.char.find(games, team)
 		print(game_index)
 		if game_index.size == 0:
@@ -698,10 +698,10 @@ def getNBAProps():
 			continue
 		index = np.where(game_index != -1)[0]
 		if len(index) > 0:
-			print(index)
-			print(games[index[0]])
-			print(gameinfo[index[0]][1])
-			print(gameinfo[index[0]][2])
+			# print(index)
+			# print(games[index[0]])
+			# print(gameinfo[index[0]][1])
+			# print(gameinfo[index[0]][2])
 			cursor.execute("SELECT * FROM Props WHERE name=? AND cat=?", (i[0], i[2]))
 			result = cursor.fetchall()
 			if len(result) == 0:
@@ -1149,7 +1149,7 @@ def calcScoreNBA():
                    break
             last10Hit = nba.last10Hit(log, 'assists', i[1])
             #logHit = nba.logHit(lastyearLog, 'assists', i[1])
-            features = [[rank, last10Hit, nba.last5Hit(log,'assists',i[1]), posrank, gamescore, minutes, spread]]
+            features = [[home, rank, last10Hit, nba.last5Hit(log,'assists',i[1]), posrank, gamescore, minutes, spread]]
             prediction = assistsRegressionModel.predict(features)
             print(i)
             print(features)
@@ -1220,5 +1220,5 @@ def calcScoreNBA():
 
 	
 if __name__ == "__main__":
-#	getNBAProps()
-	calcScoreNBA()
+	getNBAProps()
+#	calcScoreNBA()

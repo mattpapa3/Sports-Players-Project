@@ -65,24 +65,24 @@ df['position'] = df['position'].map(position_mapping)
 #df['cat'] = df['cat'].map(cat_mapping)
 df['oppteam'] = df['oppteam'].map(team_mapping)
 
-df = df[df['cat'] == 'points']
+df = df[df['cat'] == '3-pt']
 
-X = df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
+#X = df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
 #X = df[[ "line","position","opp", "last10", "oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]] #PRA
-#X = df[[ "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
+#X = df[[ "homeaway", "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
 #X = df[[ "line","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
-#X = df[[ "line",  "opp", "last10", "last5","oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]]    # 3PT
+X = df[[ "line",  "opp", "last10", "last5","oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]]    # 3PT
 #X = df[["line", "position", "opp", "last10", "oppposrank", "minutes", "shots"]]  # Steals
 #X = df[["homeaway", "line", "opp", "last10", "last5","oppteam", "gamescore", "minutes", "shots", "spread"]]  # Blocks
 y = df["hit"].astype(float)
 
-#corr_matrix = df.corr()
-#plt.figure(figsize=(12, 10))
-#sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', linewidths=0.5)
-#plt.title('Feature Correlation Matrix')
+corr_matrix = df.corr()
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', linewidths=0.5)
+plt.title('Feature Correlation Matrix')
 
-# Save the plot to a file
-#plt.savefig('Rebounds_feature_correlation_matrix.png')
+#Save the plot to a file
+plt.savefig('3PT_feature_correlation_matrix.png')
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
@@ -100,4 +100,4 @@ r2 = r2_score(y_test, y_pred)
 print(f'Mean Squared Error: {mse}')
 print(f'R-squared: {r2}')
 
-pickle.dump(model, open("pointsRegressionmodel.pkl", "wb"))
+#pickle.dump(model, open("threepointRegressionmodel.pkl", "wb"))

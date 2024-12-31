@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Props Chat</title>
+        <style>
+            .bot-message {
+                color: gray;
+                margin: 5px 0;
+            }
+            .user-message {
+                color: blue;
+                margin: 5px 0;
+                text-align: right;
+            }
+        </style>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <h1>Props Chat</h1>
+        <div id="chatbox">
+            <div id="messages">
+                <!-- Initial message -->
+                <div class="bot-message">How may I help you?</div>
+            </div>
+            <textarea id="user-input" placeholder="Type your message..."></textarea>
+            <button id="send-btn">Send</button>
+        </div>
+        <script>
+            const sendButton = document.getElementById("send-btn");
+            const userInput = document.getElementById("user-input");
+            const messages = document.getElementById("messages");
+
+            sendButton.addEventListener("click", async () => {
+                const userMessage = userInput.value;
+                if (!userMessage) return;
+
+                const userMessageElem = document.createElement("div");
+                userMessageElem.classList.add("user-message");
+                userMessageElem.textContent = userMessage;
+                messages.appendChild(userMessageElem);
+
+                userInput.value = "";
+
+                const response = await fetch("/propschat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ message: userMessage })
+                });
+
+                const data = await response.json();
+                const botMessageElem = document.createElement("div");
+                botMessageElem.classList.add("bot-message");
+                if (data.reply) {
+                    botMessageElem.textContent = data.reply;
+                } else {
+                    botMessageElem.textContent = "Error: " + data.error;
+                }
+                messages.appendChild(botMessageElem);
+            });
+        </script>
+    </body>
+</html>

@@ -2642,13 +2642,13 @@ def researchNBAPlayer():
             last10PointsHit = last10Hit(log,"points", float(line))
             features = [[ positionint,rank, last10PointsHit, posrank, total, minutes,shots, spread]]
             prediction = pointsmodel.predict(features)
-            response = openai.ChatCompletion.create(
-            model="ft:gpt-3.5-turbo-0125:propcodes::AgIOduxo",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant that predicts and explains why an NBA player will go over or under their points player prop line."},
-                {"role": "user", "content": f"With this information of a player coming into their game: Position={position}, OppRank={rank}, last10={last10PointsHit}, OppPosRank={posrank}, OverUnder={total}, DeltaMinutes={minutes}, DeltaShots={shots}, Spread={spread}. Why will this player score more or less than {line} points?"}
-            ])
-            llmMessage = response['choices'][0]['message']['content']
+            # response = openai.ChatCompletion.create(
+            # model="ft:gpt-3.5-turbo-0125:propcodes::AgIOduxo",
+            # messages=[
+            #     {"role": "system", "content": "You are a helpful assistant that predicts and explains why an NBA player will go over or under their points player prop line."},
+            #     {"role": "user", "content": f"With this information of a player coming into their game: Position={position}, OppRank={rank}, last10={last10PointsHit}, OppPosRank={posrank}, OverUnder={total}, DeltaMinutes={minutes}, DeltaShots={shots}, Spread={spread}. Why will this player score more or less than {line} points?"}
+            # ])
+            # llmMessage = response['choices'][0]['message']['content']
         elif stat == "3-pt":
             features = [[float(line), rank, last5Hit(log,'3-pt', float(line)), posrank, total, shots, spread]]
             prediction = tresmodel.predict(features)
@@ -3119,6 +3119,25 @@ def player():
                             playedAgainst=playedAgainst, oppTeam=oppTeam, graphVs=graphVs, graphWins=graphWins, graphLoss=graphLoss)
     
 
+@app.route("/propschat", methods=('GET','POST'))
+def chat():
+    if request.method == 'POST':
+        user_message = request.json.get("message", "")
+        if not user_message:
+            return jsonify({"error": "Message is required!"}), 400
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful chatbot that only answers questions about NBA players or NBA player props."},
+                    {"role": "user", "content": user_message}
+                ]
+            )
+            bot_reply = response['choices'][0]['message']['content']
+            return jsonify({"reply": bot_reply})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    return render_template("chat.html")
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000, debug=True)

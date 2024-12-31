@@ -8,7 +8,7 @@ connection = sqlite3.connect('subscribers.db')  # Replace 'your_database_name.db
 cursor = connection.cursor()
 
 # SQL command to select all data from a table
-select_command = "SELECT * FROM traindataNBA2;"  # Replace 'your_table_name' with your table name
+select_command = "SELECT * FROM traindataNBA;"  # Replace 'your_table_name' with your table name
 
 # Execute the select command
 cursor.execute(select_command)
