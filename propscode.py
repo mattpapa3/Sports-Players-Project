@@ -69,6 +69,119 @@ stripe_keys = {
 
 stripe.api_key = stripe_keys["secret_key"]
 
+tools = [
+    {
+        "name": "createTicket",
+        "description": "Create a requested number player prop parlay/ticket.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "n": {
+                    "type": "integer",
+                    "description": "Number of players/legs in the parlay.",
+                }
+            },
+            "required": ["n"]
+        }
+    },
+    {
+        "name": "rankProp",
+        "description": "Rank a custom requested player prop with our model.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string",
+                    "description": "The first name of the NBA player.",
+                },
+                "lastname": {
+                    "type": "string",
+                    "description": "The last name of the NBA player",
+                },
+                "cat":{
+                    "type": "string",
+                    "description": "The requested stat category of the prop. Ex: Points, Rebounds, Assists, 3-Pt, Points+Rebounds+Assits (PRA)"
+                },
+                "line":{
+                    "type": "number",
+                    "description": "The requested line of the player prop."
+                }
+            },
+            "required": ["firstname", "lastname", "cat", "line"],
+        },
+    },
+    {
+        "name": "getLastNumGames",
+        "description": "Get certain requested last games from NBA players game log.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string",
+                    "description": "The first name of the NBA player.",
+                },
+                "lastname": {
+                    "type": "string",
+                    "description": "The last name of the NBA player",
+                },
+                "num": {
+                    "type": "integer",
+                    "description": "Number of last games requested.",
+                },
+            },
+            "required": ["firstname", "lastname", "num"],
+        },
+    },
+    {
+        "name": "playerVsTeam",
+        "description": "Get the game logs of a player vs a specific team.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string",
+                    "description": "The first name of the NBA player.",
+                },
+                "lastname": {
+                    "type": "string",
+                    "description": "The last name of the NBA player",
+                },
+                "team": {
+                    "type": "string",
+                    "description": "The NBA team that the player is going against.",
+                },
+            },
+            "required": ["firstname", "lastname", "team"],
+        },
+    },
+    {
+        "name": "playerHomeAwayAvg",
+        "description": "Get a player's home or away average of a specific stat.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string",
+                    "description": "The first name of the NBA player.",
+                },
+                "lastname": {
+                    "type": "string",
+                    "description": "The last name of the NBA player",
+                },
+                "stat": {
+                    "type": "string",
+                    "description": "Stat of average wanted. (points, rebounds, assists, 3-pt, pra)",
+                },
+                "home":{
+                    "type":"boolean",
+                    "description": "Whether it wants home or away average. (1 = Home, 0 = Away)"
+                }
+            },
+            "required": ["firstname", "lastname", "stat", "home"],
+        },
+    }
+]
+
 @app.route("/callback", methods=["GET", "POST"])
 def callback():
     """Docstring"""
@@ -3129,13 +3242,87 @@ def chat():
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "You are a helpful chatbot that only answers questions about NBA players or NBA player props."},
+                    {"role": "system", "content": "You are a helpful chatbot that answers questions about NBA players or NBA player props."},
                     {"role": "user", "content": user_message}
-                ]
+                ],
+                functions=tools,
+                function_call='auto'
             )
+            message = response['choices'][0]['message']
+            if 'function_call' in message:
+                function = message['function_call']['name']
+                arguments = json.loads(message['function_call']['arguments'])
+                if function == "getLastNumGames":
+                    id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
+                    log = getGameLog(id,False)
+                    lastGames = getLastNumGames(log,arguments.get("num"))
+                    user_message = f"Here are {arguments.get('firstname')} {arguments.get('lastname')} last {arguments.get('num')} games: {lastGames}. " \
+                                "Can you describe this in natural language in an organized easy to read way?"
+
+                    response = openai.ChatCompletion.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": user_message}
+                        ]
+                    )
+                elif function == "createTicket":
+                    ticket = createTicket(arguments.get("n"))
+                    user_message = f"Here is a {arguments.get('n')} leg player prop parlay/ticket: {ticket}." \
+                                "Can you describe this in natural language?"
+
+                    response = openai.ChatCompletion.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": user_message}
+                        ]
+                    )
+                elif function == "rankProp":
+                    cat = arguments.get("cat")
+                    id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
+                    log = getGameLog(id,False)
+                    if cat.lower() == "points":
+                        features = [[arguments.get("line")]]
+                elif function == "playerVsTeam":
+                    id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
+                    log = getGameLog(id,False)
+                    lastYearLog = getGameLog(id,True)
+                    vsLog = getLogVsTeam(log, arguments.get("team"))
+                    lastYearVsLog = getLogVsTeam(lastYearLog, arguments.get("team"))
+                    user_message = f"Here is {arguments.get('firstname')} {arguments.get('lastname')} log this year vs the {arguments.get('team')}: {vsLog}." \
+                                f"Here is {arguments.get('firstname')} {arguments.get('lastname')} log last year vs the {arguments.get('team')}: {lastYearVsLog}." \
+                                "Can you describe this in natural language and make it easy to read?"
+
+                    response = openai.ChatCompletion.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": user_message}
+                        ]
+                    )
+                elif function == "playerHomeAwayAvg":
+                    id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
+                    log = getGameLog(id,False)
+                    lastYearLog = getGameLog(id,True)
+                    homeAVG = getAVGHomeAway(log, arguments.get("home"), arguments.get("stat"))
+                    lastYearHomeAVG = getAVGHomeAway(lastYearLog, arguments.get("home"), arguments.get("stat"))
+                    user_message = f"Here is {arguments.get('firstname')} {arguments.get('lastname')} {arguments.get('stat')} averages {'at home' if arguments.get('home') == 1 else 'on the road'} this year: {homeAVG}." \
+                                f"Here is {arguments.get('firstname')} {arguments.get('lastname')} {arguments.get('stat')} averages {'at home' if arguments.get('home') == 1 else 'on the road'} last year: {lastYearHomeAVG}." \
+                                "Can you describe this in natural language?"
+
+                    response = openai.ChatCompletion.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": user_message}
+                        ]
+                    )
+
             bot_reply = response['choices'][0]['message']['content']
             return jsonify({"reply": bot_reply})
         except Exception as e:
+            print(e)
             return jsonify({"error": str(e)}), 500
     return render_template("chat.html")
 

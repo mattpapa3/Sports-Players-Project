@@ -4,6 +4,8 @@ import requests
 import random
 from datetime import datetime, date
 import copy
+import sqlite3
+import numpy as np
 
 def oppteamname(teamname):
     if teamname == "Celtics":
@@ -323,32 +325,41 @@ def teamnamemap(teamname):
     return teamname
 
 def getPlayerID(firstname, lastname):
-    firstname = firstname.lower()
-    lastname = lastname.lower()
-    if firstname[len(firstname) - 1] == " ":
-        firstname = firstname[:-1]
-    
-    if lastname[len(lastname) - 1] == " ":
-        lastname = lastname[:-1]
-    player_found = True
-    fullname = "/" + firstname + "-" + lastname
-    player_API = requests.get(f'http://www.espn.com/nba/players/_/search/{lastname}', headers={"User-Agent": "Mozilla/5.0"})
-    player = player_API.text
-    player_soup = BeautifulSoup(player, 'html5lib')
-    temp = 'No players'
-    for row in player_soup.findAll('tr', attrs = {'class':'oddrow'}):
-        if temp in row.text:
-            player_found = False
-
-    if player_found == True:
-        #tag = player_soup.find('meta', attrs = {'property':'og:url'})
-        #print(tag)
-        player = player[:player.find(fullname)]
-        index = player.rfind('/')               # index of last occurence of "/"
-        id = player[index + 1:]                                                   # Right after last occurence of "/" is players id
-
+    sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
+    cursor = sqlite_connection.cursor()
+    cursor.execute("SELECT id FROM nbaInfo WHERE name=? COLLATE NOCASE;", (firstname + " " + lastname,))
+    result = cursor.fetchall()
+    if len(result) > 0:
+        id = result[0][0]
     else:
-        id = -1
+        firstname = firstname.lower()
+        lastname = lastname.lower()
+        if firstname[len(firstname) - 1] == " ":
+            firstname = firstname[:-1]
+        
+        if lastname[len(lastname) - 1] == " ":
+            lastname = lastname[:-1]
+        player_found = True
+        fullname = "/" + firstname + "-" + lastname
+        player_API = requests.get(f'http://www.espn.com/nba/players/_/search/{lastname}', headers={"User-Agent": "Mozilla/5.0"})
+        player = player_API.text
+        player_soup = BeautifulSoup(player, 'html5lib')
+        temp = 'No players'
+        for row in player_soup.findAll('tr', attrs = {'class':'oddrow'}):
+            if temp in row.text:
+                player_found = False
+
+        if player_found == True:
+            #tag = player_soup.find('meta', attrs = {'property':'og:url'})
+            #print(tag)
+            player = player[:player.find(fullname)]
+            index = player.rfind('/')               # index of last occurence of "/"
+            id = player[index + 1:]                                                   # Right after last occurence of "/" is players id
+
+        else:
+            id = -1
+    cursor.close()
+    sqlite_connection.close()
 
     return id
 
@@ -1460,6 +1471,8 @@ def getPlayerInfoNBA(id):
         break
     print(position)
     print(team)
+    cursor.close()
+    sqlite_connection.close()
     return position, team
 
 def getDNPPlayers(id):
@@ -1519,3 +1532,86 @@ def getInjuredPlayers(teamABBV, teamName):
         players.append(row.text)
     
     return players
+
+def getLastNumGames(log, num):
+    if num < len(log):
+        return log[:num]
+    return log
+
+def createTicket(num):
+    if num > 10:
+        num = 10
+    sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
+    cursor = sqlite_connection.cursor()
+    cursor.execute("SELECT * FROM Props WHERE cat != ? AND cat != ? ORDER BY RANDOM() LIMIT ?;", ("steals", "blocks", num))
+    result = cursor.fetchall()
+    ticket = []
+    for a,b,c,d,e,f,g,h,i,j,k,l,m in result:
+        val = random.random()
+        if val < m:
+            ticket.append(f"{a} over {b} {c}")
+        else:
+            ticket.append(f"{a} under {b} {c}")
+    cursor.close()
+    sqlite_connection.close()
+    return ticket
+
+def getLogVsTeam(log, oppTeam):
+    oppTeam = oppteamname2(oppTeam)
+    oppTeamAbb = teamname(oppTeam)
+    logVs = []
+    for i in log:
+        if oppTeamAbb in i[1]:
+            logVs.append(i)
+    return logVs
+
+def getAVGHomeAway(log, home, cat):
+    log = np.array(log)
+    if home:
+        mask = np.char.find(log[:, 1].astype(str), 'vs') >= 0
+        homeLog = log[mask]
+        if cat.lower() == "points":
+            points = homeLog[:,16].astype(float)
+            avg = np.mean(points)
+        elif cat.lower() == "assists":
+            points = homeLog[:,11].astype(float)
+            avg = np.mean(points)
+        elif cat.lower() == 'rebounds':
+            points = homeLog[:,10].astype(float)
+            avg = np.mean(points)
+        elif '3' in cat or "three" in cat.lower():
+            points = homeLog[:,6]
+            split_arr = np.char.split(points[:], '-')
+            result = np.array([item[0] for item in split_arr]).reshape(-1, 1)
+            points = result.astype(float)
+            avg = np.mean(points)
+        elif 'pra' in cat.lower() or 'points rebounds assists' in cat.lower():
+            columns = [16,10,11]
+            pra = homeLog[:,columns].astype(float)
+            sums = np.sum(pra, axis=1)
+            avg = np.mean(sums)
+    else:
+        mask = np.char.find(log[:, 1].astype(str), '@') >= 0
+        awayLog = log[mask]
+        if cat.lower() == "points":
+            points = awayLog[:,16].astype(float)
+            avg = np.mean(points)
+        elif cat.lower() == "assists":
+            points = awayLog[:,11].astype(float)
+            avg = np.mean(points)
+        elif cat.lower() == 'rebounds':
+            points = awayLog[:,10].astype(float)
+            avg = np.mean(points)
+        elif '3' in cat or "three" in cat.lower():
+            points = awayLog[:,6]
+            split_arr = np.char.split(points[:], '-')
+            result = np.array([item[0] for item in split_arr]).reshape(-1, 1)
+            points = result.astype(float)
+            avg = np.mean(points)
+        elif 'pra' in cat.lower() or 'points rebounds assists' in cat.lower():
+            columns = [16,10,11]
+            pra = awayLog[:,columns].astype(float)
+            sums = np.sum(pra, axis=1)
+            avg = np.mean(sums)
+    avg = round(avg,2)
+    return avg
