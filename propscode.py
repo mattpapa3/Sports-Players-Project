@@ -86,7 +86,7 @@ tools = [
     },
     {
         "name": "rankProp",
-        "description": "Rank a custom requested player prop with our model.",
+        "description": "Predict if a custom requested player prop will go over or under their line with our model.",
         "parameters": {
             "type": "object",
             "properties": {
@@ -3282,8 +3282,84 @@ def chat():
                     cat = arguments.get("cat")
                     id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
                     log = getGameLog(id,False)
+                    position, team = getPlayerInfoNBA(id)
+                    if position == 'Point Guard':
+                        new_pos = 'GC-0 PG'
+                    elif position == 'Shooting Guard':
+                        new_pos = 'GC-0 SG'
+                    elif position == 'Small Forward':
+                        new_pos = 'GC-0 SF'
+                    elif position == 'Power Forward':
+                        new_pos = 'GC-0 PF'
+                    elif position == 'Center':
+                        new_pos = 'GC-0 C'
+                    elif position == 'Guard':
+                        new_pos = 'GC-0 SG'
+                    elif position == 'Forward':
+                        new_pos = 'GC-0 PF'
+                    oppTeam = getOppTeamDB(team)
+                    if len(oppTeam) < 1:
+                        homeAway, oppTeam = homeoraway(teamname(oppteamname2(team)), team)
+                    posrankings = getTeamPos(new_pos)
+                    fulloppteam = teamnameFull(teamname(oppteamname2(oppTeam)))
+                    if fulloppteam == "LA Clippers":
+                        oppTeam2 = "Clippers"
+                    elif oppTeam == "Los Angeles Clippers":
+                        oppTeam2 = "Clippers"
+                    elif fulloppteam == "LA Lakers":
+                        oppTeam2 = "Lakers"
+                    elif oppTeam == "Los Angeles Lakers":
+                        oppTeam2 = "Lakers"
+                    elif fulloppteam == "Okla City":
+                        oppTeam2 = "Thunder"
+                    elif oppTeam == "Oklahoma City Thunder":
+                        oppTeam2 = "Thunder"
+                    else:
+                        oppTeam2 = fulloppteam
+                    if len(log) > 1:
+                        tot = 0
+                        totshots = 0
+                        if len(log) >= 5:
+                            last5log = log[:5]
+                        else:
+                            last5log = log
+                        for m in last5log:
+                            tot += int(m[3])
+                            totshots += int(m[4][m[4].find('-') + 1:])
+                        minutes = tot / len(last5log)
+                        shotslast5 = totshots / len(last5log)
+                        mpg, shots = nba.getMinutes(id)
+                        minutes = round(minutes - float(mpg), 2)
+                        shots = round(shotslast5 - float(shots), 2)
+                    else:
+                        minutes = 0
+                        shots = 0
+                    spread, overunder = getSpreads(team)
                     if cat.lower() == "points":
-                        features = [[arguments.get("line")]]
+                        pRank = getPointsRank()
+                        for x in posrankings[0]:
+                            if oppTeam2 in x[1]:
+                                posrank = x[0]
+                                break
+                        for x in pRank:
+                            if fulloppteam in x:
+                                rank = int(x[0])
+                                break
+                        features = [[float(arguments.get("line")), rank, nba.last10Hit(log,"points",arguments.get("line")),\
+                                     posrank,float(overunder), minutes,shots,float(spread)]]
+                        prediction = pointsmodel.predict(features)
+                        print(prediction)
+                    user_message = f"The player prop {arguments.get('firstname')} {arguments.get('lastname')} {arguments.get('line')} {cat} got a prediction value of {prediction} \
+                        on our classification model where 0 is under and 1 is over." \
+                            "With this information can you re state the player prop and whether the prop will go over or under its line?"
+
+                    response = openai.ChatCompletion.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": user_message}
+                        ]
+                    )
                 elif function == "playerVsTeam":
                     id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
                     log = getGameLog(id,False)
@@ -3322,7 +3398,6 @@ def chat():
             bot_reply = response['choices'][0]['message']['content']
             return jsonify({"reply": bot_reply})
         except Exception as e:
-            print(e)
             return jsonify({"error": str(e)}), 500
     return render_template("chat.html")
 

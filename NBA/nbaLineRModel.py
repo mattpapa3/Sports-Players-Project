@@ -6,8 +6,6 @@ from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import pickle
 import seaborn as sns
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.linear_model import ElasticNet
 
 
 df = pd.read_csv("/root/propscode/propscode/NBAdata.csv")
@@ -67,16 +65,16 @@ df['position'] = df['position'].map(position_mapping)
 #df['cat'] = df['cat'].map(cat_mapping)
 df['oppteam'] = df['oppteam'].map(team_mapping)
 #df.fillna(df.mean(), inplace=True)
-df = df[df['cat'] == 'points']
+df = df[df['cat'] == '3-pt']
 
-X = df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
+#X = df[["position","opp", "last10", "last5","oppposrank", "gamescore", "minutes", "shots",]]    # POINTS
 #X = df[[ "line","position","opp", "last10", "oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]] #PRA
 #X = df[[ "homeaway", "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
 #X = df[[ "line","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
-#X = df[[ "line",  "opp", "last10", "last5","oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]]    # 3PT
+X = df[[ "position",  "opp", "last10", "last5","oppposrank", "gamescore", "minutes", "shots"]]    # 3PT
 #X = df[["line", "position", "opp", "last10", "oppposrank", "minutes", "shots"]]  # Steals
 #X = df[["homeaway", "line", "opp", "last10", "last5","oppteam", "gamescore", "minutes", "shots", "spread"]]  # Blocks
-y = df["hit"].astype(float)
+y = df["line"].astype(float)
 
 # corr_matrix = df.corr()
 # plt.figure(figsize=(12, 10))
@@ -84,12 +82,12 @@ y = df["hit"].astype(float)
 # plt.title('Feature Correlation Matrix')
 
 # #Save the plot to a file
-# plt.savefig('3PT_feature_correlation_matrix.png')
+# plt.savefig('Points_feature_correlation_matrix.png')
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # Create and train the model
-model = GradientBoostingRegressor()
+model = LinearRegression()
 model.fit(X_train, y_train)
 
 # Make predictions

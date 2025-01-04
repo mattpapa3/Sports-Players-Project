@@ -650,13 +650,31 @@ def getNBAProps():
 			cursor.execute("INSERT INTO nbaTodaysGames(game,spread,overunder) VALUES(?,?,?)", (i[0],i[1],i[2]))
 			sqlite_connection.commit()
 	
-#	props = []
-	props = getNBAPointsLines()
-	props += getNBA3PTLines()
-	props += getNBAAssistsLines()
-	props += getNBAPRALines()
-	props += getNBAReboundsLines()
-	props += getNBAStealBlockLines()
+	props = []
+	try:
+		props += getNBAPointsLines()
+	except:
+		pass
+	try:
+		props += getNBA3PTLines()
+	except:
+		pass
+	try:
+		props += getNBAAssistsLines()
+	except:
+		pass
+	try:
+		props += getNBAPRALines()
+	except:
+		pass
+	try:
+		props += getNBAReboundsLines()
+	except:
+		pass
+	try:
+		props += getNBAStealBlockLines()
+	except:
+		pass
 	props.sort()
 	games = arr_games[:,0]
 	previous = ""

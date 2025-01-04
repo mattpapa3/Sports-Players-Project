@@ -7,6 +7,16 @@ import copy
 import sqlite3
 import numpy as np
 
+
+position_mapping = {
+    "Guard": 0,
+    "Point Guard": 1,
+    "Shooting Guard": 2,
+    "Small Forward": 3,
+    "Power Forward": 4,
+    "Center": 5,
+    "Forward": 6
+}
 def oppteamname(teamname):
     if teamname == "Celtics":
         teamname = "Boston Celtics"
@@ -545,29 +555,38 @@ def getOppTeam(id, home):
     return opp_team
 
 
-def homeoraway(id):
-    player_API = requests.get(f'https://www.espn.com/nba/player/_/id/{id}', headers={"User-Agent": "Mozilla/5.0"})
+
+
+def homeoraway(teamABBV, teamName):
+    teamABBV = teamABBV.lower()
+    teamName = teamName.lower()
+    team = teamName.split()
+    name = ""
+    for i in team:
+        name += i
+        name += '-'
+    name = name[:-1]
+    player_API = requests.get(f'https://www.espn.com/nba/team/_/name/{teamABBV}/{name}', headers={"User-Agent": "Mozilla/5.0"})
     player = player_API.text
     soup = BeautifulSoup(player, 'html5lib')
-    home = True
-
-    for row in soup.findAll('div', attrs = {'class':'PlayerHeader__Team n8 mt3 mb4 flex items-center mt3 mb4 clr-gray-01'}):
-        team = row.text
+    for row in soup.findAll('div', attrs = {'class': 'Schedule__Game__Wrapper flex items-center'}):
+        game = row.text
         break
 
-    team = team[:team.find('#')]
-    team_ab = team.split()
-    l = len(team_ab)
-    i = 0
+    if '@' in game:
+        home = False
+        game = game[1:]
+    else:
+        home = True
+        game = game[2:]
+    index = 0
+    for num, i in enumerate(game):
+        if i.isdigit():
+            index = num
+            break
+    oppTeam = game[:index]
 
-    for row in soup.findAll('div', attrs = {'class': 'ScoreCell__TeamName ScoreCell__TeamName--shortDisplayName truncate db'}):
-        if row.text == team_ab[l - 1] and i == 0:
-            home = False
-        if row.text == team_ab[l - 1] and i == 1:
-            home = True
-        i = i + 1
-    
-    return home
+    return home, oppTeam
 
     
 def getTeamPos(new_pos):
@@ -1449,8 +1468,7 @@ def getPlayerInfo(id):
     for row in soup.findAll('a', attrs = {'class':'AnchorLink clr-black'}):
         team = oppteamname(row.text)
         break
-    print(position)
-    print(team)
+
     return position, team
 
 def getPlayerInfoNBA(id):
@@ -1469,10 +1487,7 @@ def getPlayerInfoNBA(id):
     for row in soup.findAll('a', attrs = {'class':'AnchorLink clr-black'}):
         team = oppteamname(row.text)
         break
-    print(position)
-    print(team)
-    cursor.close()
-    sqlite_connection.close()
+
     return position, team
 
 def getDNPPlayers(id):
@@ -1615,3 +1630,38 @@ def getAVGHomeAway(log, home, cat):
             avg = np.mean(sums)
     avg = round(avg,2)
     return avg
+
+def getSpreads(team):
+    sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
+    cursor = sqlite_connection.cursor()
+    cursor.execute("SELECT spread, overunder FROM nbaTodaysGames WHERE game LIKE ?;", ("%" + team + "%",))
+    result = cursor.fetchall()
+    if len(result) > 0:
+        spread = result[0][0]
+        overunder = result[0][1]
+        spread = spread[spread.find("-")+1:]
+    else:
+        spread = 10
+        overunder = 230
+    cursor.close()
+    sqlite_connection.close()
+
+    return spread, overunder
+
+def getOppTeamDB(team):
+    oppTeam = ""
+    sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
+    cursor = sqlite_connection.cursor()
+    cursor.execute("SELECT game FROM nbaTodaysGames WHERE game LIKE ?;", ("%" + team + "%",))
+    result = cursor.fetchall()
+    if len(result) > 0:
+        game = result[0][0]
+        num = game.find(team)
+        if num > 0:
+            oppTeam = game[:game.find("@")-1]
+        else:
+            oppTeam = game[game.find("@")+2:]
+    cursor.close()
+    sqlite_connection.close()
+    
+    return oppTeam

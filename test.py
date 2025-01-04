@@ -7,6 +7,5 @@ import numpy as np
 import pandas as pd
 import sqlite3
 
-id = nba.getPlayerID("Jordan", "Poole")
-log = nba.getGameLog(id, False)
-print(nba.getAVGHomeAway(log, True, "3"))
+
+print(nba.teamnameFull(nba.teamname(nba.oppteamname2("Atlanta Hawks"))))
