@@ -8,4 +8,4 @@ import pandas as pd
 import sqlite3
 
 
-print(nba.teamnameFull(nba.teamname(nba.oppteamname2("Atlanta Hawks"))))
+print(nba.getNbaTodayGames())

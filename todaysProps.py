@@ -1141,7 +1141,7 @@ def calcScoreNBA():
                 if fulloppteam in x:
                    rank = int(x[0])
                    break
-            features = [[line, positionnum, rank, nba.last10Hit(log,"points",i[1]), posrank, gamescore, minutes, shots, spread]]
+            features = [[line, rank, nba.last10Hit(log,"points",i[1]), posrank, gamescore, minutes, shots, spread]]
             print(features)
             print(i)
             prediction = pointsRegressionMdoel.predict(features)
@@ -1151,7 +1151,7 @@ def calcScoreNBA():
                    posrank = x[0]
                    break
           #  logHit = nba.logHit(lastyearLog, 'rebounds', i[1])
-            features = [[ line, nba.last10Hit(log,"rebounds",i[1]), nba.last5Hit(log,'rebounds',i[1]), posrank, gamescore, minutes, shots, spread]]
+            features = [[ line, positionnum, nba.last10Hit(log,"rebounds",i[1]), nba.last5Hit(log,'rebounds',i[1]), posrank, gamescore, minutes, shots, spread]]
             prediction = reboundsRegressionModel.predict(features)
             print(i)
             print(features)
@@ -1167,7 +1167,7 @@ def calcScoreNBA():
                    break
             last10Hit = nba.last10Hit(log, 'assists', i[1])
             #logHit = nba.logHit(lastyearLog, 'assists', i[1])
-            features = [[home, rank, last10Hit, nba.last5Hit(log,'assists',i[1]), posrank, gamescore, minutes, spread]]
+            features = [[home, line, positionnum, rank, last10Hit, nba.last5Hit(log,'assists',i[1]), posrank, gamescore, minutes, spread]]
             prediction = assistsRegressionModel.predict(features)
             print(i)
             print(features)
@@ -1181,7 +1181,7 @@ def calcScoreNBA():
                 if fulloppteam in x:
                    rank = int(x[0])
                    break
-            features = [[line, rank, nba.last10Hit(log,"3-pt",i[1]), nba.last5Hit(log,'3-pt',i[1]), posrank, oppTeamNum, gamescore, minutes, shots, spread]]
+            features = [[line, rank, nba.last10Hit(log,"3-pt",i[1]), nba.last5Hit(log,'3-pt',i[1]), posrank, gamescore, minutes, shots, spread]]
             print(features)
             prediction = threePtRegressionModel.predict(features)
             print(i)
@@ -1191,11 +1191,11 @@ def calcScoreNBA():
                 if oppTeam2 in x[1]:
                     posrank = x[0]
                     break
-            for x in pointsRank:
+            for x in praRank:
                 if fulloppteam in x:
                    rank = int(x[0])
                    break
-            features = [[line, positionnum, rank, nba.last10Hit(log,"points",i[1]), posrank, oppTeamNum, gamescore, minutes, shots, spread]]
+            features = [[line, positionnum, rank, nba.last10Hit(log,"points",i[1]), posrank, gamescore, minutes, shots, spread]]
             print(features)
             prediction = praRegressionModel.predict(features)
             print(i)

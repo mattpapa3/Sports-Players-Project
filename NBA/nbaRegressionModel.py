@@ -67,13 +67,13 @@ df['position'] = df['position'].map(position_mapping)
 #df['cat'] = df['cat'].map(cat_mapping)
 df['oppteam'] = df['oppteam'].map(team_mapping)
 #df.fillna(df.mean(), inplace=True)
-df = df[df['cat'] == 'points']
+df = df[df['cat'] == 'rebounds']
 
-X = df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
-#X = df[[ "line","position","opp", "last10", "oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]] #PRA
-#X = df[[ "homeaway", "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
-#X = df[[ "line","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
-#X = df[[ "line",  "opp", "last10", "last5","oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]]    # 3PT
+#X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
+#X = df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]] #PRA
+#X = df[[ "homeaway", "line","position","opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
+X = df[[ "line","position","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
+#X = df[[ "line",  "opp", "last10", "last5","oppposrank", "gamescore", "minutes", "shots", "spread"]]    # 3PT
 #X = df[["line", "position", "opp", "last10", "oppposrank", "minutes", "shots"]]  # Steals
 #X = df[["homeaway", "line", "opp", "last10", "last5","oppteam", "gamescore", "minutes", "shots", "spread"]]  # Blocks
 y = df["hit"].astype(float)
@@ -102,4 +102,4 @@ r2 = r2_score(y_test, y_pred)
 print(f'Mean Squared Error: {mse}')
 print(f'R-squared: {r2}')
 
-#pickle.dump(model, open("pointsRegressionmodel.pkl", "wb"))
+pickle.dump(model, open("reboundsRegressionmodel.pkl", "wb"))

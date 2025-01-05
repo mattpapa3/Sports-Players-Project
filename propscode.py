@@ -2772,7 +2772,7 @@ def researchNBAPlayer():
             features = [[rank, last10Hit(lastYearLog,stat,line), posrank, total, minutes,spread]]
             prediction = assistsmodel.predict(features)
         else:
-            features = [[ positionint,rank, last10Hit(log,"pra", float(line)), posrank, total, minutes,shots, spread]]
+            features = [[ float(line),positionint,rank, last10Hit(log,"pra", float(line)), posrank, total, minutes,shots, spread]]
             prediction = pramodel.predict(features)
         print(features)
         print(prediction)
@@ -3297,7 +3297,7 @@ def chat():
                         new_pos = 'GC-0 SG'
                     elif position == 'Forward':
                         new_pos = 'GC-0 PF'
-                    oppTeam = getOppTeamDB(team)
+                    homeAway, oppTeam = getOppTeamDB(team)
                     if len(oppTeam) < 1:
                         homeAway, oppTeam = homeoraway(teamname(oppteamname2(team)), team)
                     posrankings = getTeamPos(new_pos)
@@ -3335,6 +3335,7 @@ def chat():
                         minutes = 0
                         shots = 0
                     spread, overunder = getSpreads(team)
+                    print(cat)
                     if cat.lower() == "points":
                         pRank = getPointsRank()
                         for x in posrankings[0]:
@@ -3349,9 +3350,60 @@ def chat():
                                      posrank,float(overunder), minutes,shots,float(spread)]]
                         prediction = pointsmodel.predict(features)
                         print(prediction)
-                    user_message = f"The player prop {arguments.get('firstname')} {arguments.get('lastname')} {arguments.get('line')} {cat} got a prediction value of {prediction} \
-                        on our classification model where 0 is under and 1 is over." \
-                            "With this information can you re state the player prop and whether the prop will go over or under its line?"
+                    elif cat.lower() == "pra" or cat.lower() == "points + rebounds + assists":
+                        positionnum = position_mapping.get(position)
+                        praRank = getpraRank()
+                        for x in posrankings[4]:
+                            if oppTeam2 in x[1]:
+                                posrank = x[0]
+                                break
+                        for x in praRank:
+                            if fulloppteam in x:
+                                rank = int(x[0])
+                                break
+                        features = [[float(arguments.get("line")), positionnum, rank, nba.last10Hit(log,"pra",arguments.get("line")),\
+                                     posrank,float(overunder), minutes,shots,float(spread)]]
+                        prediction = pramodel.predict(features)
+                    elif cat.lower() == "assists":
+                        aRank = getAssistsRank()
+                        for x in posrankings[2]:
+                            if oppTeam2 in x[1]:
+                                posrank = x[0]
+                                break
+
+                        for x in aRank:
+                            if fulloppteam in x:
+                                rank = int(x[0])
+                                break
+                        features = [[homeAway, float(arguments.get("line")), rank, nba.last10Hit(log,"assists",arguments.get("line")), nba.last5Hit(log,"assists",arguments.get("line")),\
+                                     posrank,float(overunder), minutes,float(spread)]]
+                        prediction = assistsmodel.predict(features)
+                    elif cat.lower() == "rebounds":
+                        for x in posrankings[1]:
+                            if oppTeam2 in x[1]:
+                                posrank = x[0]
+                                break
+                        features = [[ float(arguments.get("line")), nba.last10Hit(log,"rebounds",arguments.get("line")), nba.last5Hit(log,'rebounds',arguments.get("line")), posrank, float(overunder), minutes,shots,float(spread)]]
+                        prediction = reboundsmodel.predict(features)
+                    elif cat.lower() == '3-pt' or cat.lower() == "three pointers made":
+                        print(arguments.get("line"))
+                        threeptRank = get3ptRank()
+                        for x in posrankings[3]:
+                            if oppTeam2 in x[1]:
+                                posrank = x[0]
+                                break
+                        
+                        for x in threeptRank:
+                            if fulloppteam in x:
+                                rank = int(x[0])
+                                break
+                        features = [[float(arguments.get("line")), rank, nba.last10Hit(log,"3-pt",arguments.get("line")), nba.last5Hit(log,'3-pt',arguments.get("line")), posrank, float(overunder), minutes, shots, float(spread)]]
+                        prediction = tresmodel.predict(features)
+                        
+                        
+                    user_message = f"The player prop {arguments.get('firstname')} {arguments.get('lastname')} {arguments.get('line')} {cat} got a prediction of {prediction} \
+                        on our model where 0 is under and 1 is over." \
+                            "With this information can you re state the player prop and say whether the prop will go over or under its line?"
 
                     response = openai.ChatCompletion.create(
                         model="gpt-3.5-turbo",

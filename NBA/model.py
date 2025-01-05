@@ -70,16 +70,16 @@ df['position'] = df['position'].map(position_mapping)
 #df['cat'] = df['cat'].map(cat_mapping)
 df['oppteam'] = df['oppteam'].map(team_mapping)
 
-df = df[df['cat'] == 'points']
+df = df[df['cat'] == '3-pt']
 df = df.sample(frac = 1)
 
-X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
-#X = df[[ "line","position","opp", "last10", "oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]] #PRA
-#X = df[[ "homeaway", "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
+#X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
+#X=df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]] #PRA
+#X = df[[ "homeaway", "line", "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
 #X = df[[ "line","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
-#X = df[[ "line",  "opp", "last10", "last5","oppposrank", "oppteam", "gamescore", "minutes", "shots", "spread"]]    # 3PT
+X = df[[ "line",  "opp", "last10", "last5","oppposrank", "gamescore", "minutes", "shots", "spread"]]    # 3PT
 #X = df[["line", "position", "opp", "last10", "last5", "oppposrank", "minutes", "shots"]]  # Steals
-#X = df[["homeaway", "line", "position","opp", "last10", "last5","oppteam", "gamescore", "minutes", "shots", "spread"]]  # Blocks
+#X = df[["homeaway", "line", "position","opp", "last10", "last5", "gamescore", "minutes", "shots", "spread"]]  # Blocks
 y = df["hit"]
 
 # corr_matrix = df.corr()
@@ -108,11 +108,11 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 #classifier = RandomForestClassifier()
-classifier = MLPClassifier(hidden_layer_sizes=(128,64), activation='relu', alpha=0.0001, learning_rate='adaptive', solver='adam', max_iter=1000, random_state=42) #POINTS
+#classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='lbfgs', max_iter=1000) #POINTS
 #classifier = MLPClassifier(hidden_layer_sizes=(100,), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='sgd') #PRA
-#classifier = MLPClassifier(hidden_layer_sizes=(64,32,16), activation='identity', alpha=0.001, learning_rate='adaptive', solver='sgd') #ASSISTS
-#classifier = MLPClassifier(hidden_layer_sizes=(32,16), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='adam') #3PT
-#classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='tanh', alpha=0.01, learning_rate='adaptive', solver='sgd') #REBOUNDS
+#classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.0001, learning_rate='adaptive', solver='lbfgs') #ASSISTS
+classifier = MLPClassifier(hidden_layer_sizes=(32,16), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='lbfgs') #3PT
+#classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.01, learning_rate='adaptive', solver='lbfgs') #REBOUNDS
 #classifier = MLPClassifier(hidden_layer_sizes=(25,), activation='relu', alpha=0.001, learning_rate='adaptive', solver='adam') #Steals
 #classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='tanh', alpha=0.01, learning_rate='adaptive', solver='sgd') #BLOCKS
 #grid_search = GridSearchCV(estimator=classifier, param_grid=param_grid, 
@@ -129,7 +129,7 @@ classifier.fit(X_train, y_train)
 #best_params = grid_search.best_params_
 #print("Best Parameters:", best_params)
 #best_model = grid_search.best_estimator_
-pickle.dump(classifier, open("pointsmodel.pkl", "wb"))
+pickle.dump(classifier, open("threepointmodel.pkl", "wb"))
 
 y_pred = classifier.predict(X_test)
 #y_pred = regressor.predict(X_test)

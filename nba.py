@@ -574,10 +574,10 @@ def homeoraway(teamABBV, teamName):
         break
 
     if '@' in game:
-        home = False
+        home = 0
         game = game[1:]
     else:
-        home = True
+        home = 1
         game = game[2:]
     index = 0
     for num, i in enumerate(game):
@@ -1433,14 +1433,15 @@ def getNbaTodayGames():
             home = False
             away = False
     element = data_soup.findAll('span', attrs={'class':"VZTD mLASH rIczU LNzKp jsU hfDkF FoYYc FuEs"})
+    num_games = len(element) // 2
     index = 0
+    games = games[len(games) - num_games:]
     #print(games)
     for num, row in enumerate(element):
         if row.text != None:
             games[index].append(row.text)
             if num % 2 != 0 and num != 0:
                 index += 1
-
     # Get game IDs
     # element = data_soup.findAll('a', attrs={'class':"AnchorLink Button Button--sm Button--anchorLink Button--alt mb4 w-100 mr2"})
     # index = 0
@@ -1658,10 +1659,12 @@ def getOppTeamDB(team):
         game = result[0][0]
         num = game.find(team)
         if num > 0:
+            home = 1
             oppTeam = game[:game.find("@")-1]
         else:
+            home = 0
             oppTeam = game[game.find("@")+2:]
     cursor.close()
     sqlite_connection.close()
     
-    return oppTeam
+    return home, oppTeam
