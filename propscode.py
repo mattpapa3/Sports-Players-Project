@@ -179,6 +179,20 @@ tools = [
             },
             "required": ["firstname", "lastname", "stat", "home"],
         },
+    },
+    {
+        "name": "injuredPlayers",
+        "description": "Get what players are currently injured on an NBA team.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "team": {
+                    "type": "string",
+                    "description": "NBA team name",
+                }
+            },
+            "required": ["team"],
+        },
     }
 ]
 
@@ -3446,6 +3460,19 @@ def chat():
                             {"role": "user", "content": user_message}
                         ]
                     )
+                elif function == "injuredPlayers":
+                    injuries = getInjuredPlayers(nba.teamname(nba.oppteamname2(arguments.get("team"))), oppteamname(arguments.get("team")))
+                    user_message = f"Here are the injured players for the {arguments.get('team')}: {injuries}." \
+                                "Can you repeat this in natural language?"
+
+                    response = openai.ChatCompletion.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": user_message}
+                        ]
+                    )
+                    
 
             bot_reply = response['choices'][0]['message']['content']
             return jsonify({"reply": bot_reply})
