@@ -17,6 +17,47 @@ position_mapping = {
     "Center": 5,
     "Forward": 6
 }
+
+cat_mapping = {
+    "3-pt": 0,
+    "points": 1,
+    "assists": 2,
+    "pra": 3,
+    "rebounds": 4
+}
+
+team_mapping = {
+    "Boston" : 1,
+    "Brooklyn" : 2,
+    "New York" : 3,
+    "Philadelphia" : 4,
+    "Toronto" : 5,
+    "Golden State" : 6,
+    "Clippers" : 7,
+    "Lakers" : 8,
+    "Phoenix" : 9,
+    "Sacramento" : 10,
+    "Chicago" : 11,
+    "Cleveland" : 12,
+    "Detroit" : 13,
+    "Indiana" : 14,
+    "Milwaukee" : 15,
+    "Atlanta" : 16,
+    "Charlotte" : 17,   
+    "Miami" : 18,
+    "Orlando" : 19,
+    "Washington" : 20,
+    "Denver" : 21,
+    "Minnesota" : 22,
+    "Thunder" : 23,
+    "Portland" : 24,
+    "Utah" : 25,
+    "Dallas" : 26,
+    "Houston" : 27,
+    "Memphis" : 28,
+    "New Orleans" : 29,
+    "San Antonio" : 30
+}
 def oppteamname(teamname):
     if teamname == "Celtics":
         teamname = "Boston Celtics"

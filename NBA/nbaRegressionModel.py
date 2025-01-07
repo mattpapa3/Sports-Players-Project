@@ -8,6 +8,7 @@ import pickle
 import seaborn as sns
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.linear_model import ElasticNet
+from sklearn.preprocessing import StandardScaler
 
 
 df = pd.read_csv("/root/propscode/propscode/NBAdata.csv")
@@ -67,12 +68,12 @@ df['position'] = df['position'].map(position_mapping)
 #df['cat'] = df['cat'].map(cat_mapping)
 df['oppteam'] = df['oppteam'].map(team_mapping)
 #df.fillna(df.mean(), inplace=True)
-df = df[df['cat'] == 'rebounds']
+df = df[df['cat'] == 'points']
 
-#X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
+X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
 #X = df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]] #PRA
 #X = df[[ "homeaway", "line","position","opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
-X = df[[ "line","position","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
+#X = df[[ "line","position","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
 #X = df[[ "line",  "opp", "last10", "last5","oppposrank", "gamescore", "minutes", "shots", "spread"]]    # 3PT
 #X = df[["line", "position", "opp", "last10", "oppposrank", "minutes", "shots"]]  # Steals
 #X = df[["homeaway", "line", "opp", "last10", "last5","oppteam", "gamescore", "minutes", "shots", "spread"]]  # Blocks
@@ -87,7 +88,10 @@ y = df["hit"].astype(float)
 # plt.savefig('3PT_feature_correlation_matrix.png')
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-
+# sc = StandardScaler()
+# scaler = sc.fit(X_train)
+# X_train = scaler.transform(X_train)
+# X_test = scaler.transform(X_test)
 # Create and train the model
 model = GradientBoostingRegressor()
 model.fit(X_train, y_train)
@@ -102,4 +106,4 @@ r2 = r2_score(y_test, y_pred)
 print(f'Mean Squared Error: {mse}')
 print(f'R-squared: {r2}')
 
-pickle.dump(model, open("reboundsRegressionmodel.pkl", "wb"))
+#pickle.dump(model, open("reboundsRegressionmodel.pkl", "wb"))

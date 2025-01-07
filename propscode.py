@@ -33,7 +33,7 @@ app.secret_key = env.get("APP_SECRET_KEY")
 
 oauth = OAuth(app)
 openai.api_key = env.get("OPENAI_API_KEY")
-#model = pickle.load(open("nbamodel.pkl", "rb"))
+#model = pickle.load(open("/root/propscode/propscode/NBA/model.pkl", "rb"))
 assistsmodel = pickle.load(open("/root/propscode/propscode/NBA/assistsmodel.pkl", "rb"))
 reboundsmodel = pickle.load(open("/root/propscode/propscode/NBA/reboundsmodel.pkl", "rb"))
 pramodel = pickle.load(open("/root/propscode/propscode/NBA/pramodel.pkl", "rb"))
@@ -3349,7 +3349,6 @@ def chat():
                         minutes = 0
                         shots = 0
                     spread, overunder = getSpreads(team)
-                    print(cat)
                     if cat.lower() == "points":
                         pRank = getPointsRank()
                         for x in posrankings[0]:
@@ -3363,7 +3362,6 @@ def chat():
                         features = [[float(arguments.get("line")), rank, nba.last10Hit(log,"points",arguments.get("line")),\
                                      posrank,float(overunder), minutes,shots,float(spread)]]
                         prediction = pointsmodel.predict(features)
-                        print(prediction)
                     elif cat.lower() == "pra" or cat.lower() == "points + rebounds + assists":
                         positionnum = position_mapping.get(position)
                         praRank = getpraRank()
@@ -3379,6 +3377,7 @@ def chat():
                                      posrank,float(overunder), minutes,shots,float(spread)]]
                         prediction = pramodel.predict(features)
                     elif cat.lower() == "assists":
+                        positionnum = position_mapping.get(position)
                         aRank = getAssistsRank()
                         for x in posrankings[2]:
                             if oppTeam2 in x[1]:
@@ -3390,7 +3389,8 @@ def chat():
                                 rank = int(x[0])
                                 break
                         features = [[homeAway, float(arguments.get("line")), rank, nba.last10Hit(log,"assists",arguments.get("line")), nba.last5Hit(log,"assists",arguments.get("line")),\
-                                     posrank,float(overunder), minutes,float(spread)]]
+                                    posrank,float(overunder), minutes,float(spread)]]
+             #           teamNum = teamnamemap(teamnameFull(teamname(oppteamname2(oppTeam))))
                         prediction = assistsmodel.predict(features)
                     elif cat.lower() == "rebounds":
                         for x in posrankings[1]:
@@ -3414,18 +3414,13 @@ def chat():
                         features = [[float(arguments.get("line")), rank, nba.last10Hit(log,"3-pt",arguments.get("line")), nba.last5Hit(log,'3-pt',arguments.get("line")), posrank, float(overunder), minutes, shots, float(spread)]]
                         prediction = tresmodel.predict(features)
                         
-                        
-                    user_message = f"The player prop {arguments.get('firstname')} {arguments.get('lastname')} {arguments.get('line')} {cat} got a prediction of {prediction} \
-                        on our model where 0 is under and 1 is over." \
-                            "With this information can you re state the player prop and say whether the prop will go over or under its line?"
+                    if prediction == 0:   
+                        user_message = f"From our model we predict that {arguments.get('firstname')} {arguments.get('lastname')} will have less than {arguments.get('line')} {cat} in his upcoming game."
+                    else:
+                        user_message = f"From our model we predict that {arguments.get('firstname')} {arguments.get('lastname')} will have more than {arguments.get('line')} {cat} in his upcoming game."
+                    
 
-                    response = openai.ChatCompletion.create(
-                        model="gpt-3.5-turbo",
-                        messages=[
-                            {"role": "system", "content": "You are a helpful assistant."},
-                            {"role": "user", "content": user_message}
-                        ]
-                    )
+                    return jsonify({"reply": user_message})
                 elif function == "playerVsTeam":
                     id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
                     log = getGameLog(id,False)

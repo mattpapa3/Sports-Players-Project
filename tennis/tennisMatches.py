@@ -8,9 +8,9 @@ def getMatches():
     sqlite_connection = sqlite3.connect("/root/propscode/propscode/tennis/tennis.db")
     cursor = sqlite_connection.cursor()
     lines = tennis.getLines()
+  #  print(lines)
+    lines = lines[25:39]
     print(lines)
-    #lines = [lines[1]]
-   # print(lines)
     for i in lines:
         vs_index = i[0].find("vs")
         odds_index = i[1].find("vs")
@@ -193,7 +193,7 @@ def getMatches():
 
 def updateMatches():
     # 0 = Dog Won, 1 = Favorite Won
-    winner = 1
+    winner = 0
     sqlite_connection = sqlite3.connect("/root/propscode/propscode/tennis/tennis.db")
     cursor = sqlite_connection.cursor()
     cursor.execute("SELECT * FROM matches;")
@@ -235,4 +235,4 @@ def updateMatches():
 
 if __name__ == "__main__":
     getMatches()
-  #  updateMatches()
+#    updateMatches()

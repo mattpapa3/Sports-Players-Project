@@ -12,7 +12,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 def getLines():
     # Put whatever tennis moneylines from DraftKings you want
-    page = requests.get("https://sportsbook.draftkings.com/leagues/tennis/atp-brisbane")
+    page = requests.get("https://sportsbook.draftkings.com/leagues/tennis/australian-open-men-qualifiers")
     page = page.text
     page_soup = BeautifulSoup(page, 'html5lib')
     matches = []
@@ -81,7 +81,8 @@ def getStats(name):
     # Extract the text from the element
     current_rank = current_rank_element.text
 
-    if int(current_rank) > 1000:
+    print(current_rank)
+    if current_rank.isnumeric() and int(current_rank) > 1000:
     
         table = driver.find_element(By.XPATH, "//table[@style='border-spacing:0']")
 
@@ -90,6 +91,7 @@ def getStats(name):
 
         # Find the b element that contains the rank value next to the label
         current_rank = current_rank_label.find_element(By.XPATH, ".//b").text
+        print(current_rank)
 
     if name == "RinkyHijikata" or name == "AlexMichelsen" or name == "BillyHarris" or name == "BuYunchaokete" or name == "NisheshBasavareddy" \
         or name == "EliotSpizzirri" or name == "MaksKasnikowski" or name == "AdamWalton" or name == "AleksandarKovacevic" or name == "JakubMensik":
