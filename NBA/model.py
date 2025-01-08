@@ -72,7 +72,7 @@ df['position'] = df['position'].map(position_mapping)
 #df['cat'] = df['cat'].map(cat_mapping)
 df['oppteam'] = df['oppteam'].map(team_mapping)
 
-df = df[df['cat'] == 'rebounds']
+df = df[df['cat'] == 'blocks']
 #df = df.sample(frac = 1)
 # nan_rows = df.isna().any(axis=1).sum()
 
@@ -82,9 +82,9 @@ df = df[df['cat'] == 'rebounds']
 #X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # POINTS
 # X=df[[ "line","position","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", "spread"]] #PRA
 #X = df[[ "homeaway", "line", "opp", "last10", "last5", "oppposrank", "gamescore", "minutes", "spread"]]    # Assists
-X = df[[ "line","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
+# X = df[[ "line","last10", "last5", "oppposrank", "gamescore", "minutes", "shots", "spread"]]    # Rebounds
 #X = df[[ "line",  "opp", "last10", "last5","oppposrank", "gamescore", "minutes", "shots", "spread"]]    # 3PT
-#X = df[["line", "position", "opp", "last10", "last5", "oppposrank", "minutes", "shots"]]  # Steals
+X = df[["line", "position", "opp", "last10", "last5", "oppposrank", "minutes", "shots"]]  # Steals
 #X = df[["homeaway", "line", "position","opp", "last10", "last5", "gamescore", "minutes", "shots", "spread"]]  # Blocks
 y = df["hit"]
 
@@ -120,9 +120,9 @@ parameter_space = {
 # classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.01, learning_rate='adaptive', solver='adam', verbose=True) #PRA2
 #classifier = MLPClassifier(hidden_layer_sizes=(32,16), activation='relu', alpha=0.001, learning_rate='adaptive', solver='adam', verbose=True, max_iter=500) #ASSISTS
 # classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='adam', verbose=True) #3PT
-classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='adam', verbose=True) #REBOUNDS
+# classifier = MLPClassifier(hidden_layer_sizes=(64,32), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='adam', verbose=True) #REBOUNDS
 # classifier = MLPClassifier(hidden_layer_sizes=(64, 32, 16), activation='logistic', alpha=0.005, learning_rate='adaptive', solver='adam') #Steals
-#classifier = MLPClassifier(hidden_layer_sizes=(64, 32, 16), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='adam') #BLOCKS
+classifier = MLPClassifier(hidden_layer_sizes=(64, 32, 16), activation='logistic', alpha=0.001, learning_rate='adaptive', solver='adam') #BLOCKS
 #grid_search = GridSearchCV(estimator=classifier, param_grid=param_grid, 
  #                          scoring='neg_mean_squared_error', cv=5, verbose=2, n_jobs=-1)
 

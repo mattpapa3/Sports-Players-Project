@@ -234,5 +234,5 @@ def updateMatches():
     sqlite_connection.close()
 
 if __name__ == "__main__":
-    getMatches()
-#    updateMatches()
+    # getMatches()
+    updateMatches()

@@ -639,7 +639,7 @@ def getNBAProps():
 	#print(links[:2])
 	today = datetime.now()
 	gameinfo = nba.getNbaTodayGames()
-	print(gameinfo)
+	# print(gameinfo)
 	arr_games = np.array(gameinfo)
 	sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
 	cursor = sqlite_connection.cursor()
@@ -686,7 +686,7 @@ def getNBAProps():
 			if len(result) == 0:
 				names = i[0].split()
 				#if len(names) > 2:
-				print(i[0])
+				# print(i[0])
 				id = nba.getPlayerID(names[0], names[1])
 				if id == -1:
 					print("CAN'T GET ID")
@@ -700,7 +700,7 @@ def getNBAProps():
 				for a, b, c, d in result:
 					id = a
 					position = c
-				print(i[0])
+				# print(i[0])
 				_, team = nba.getPlayerInfo(id)
 		previous = i[0]
 		# print("PLAYER INFO")
@@ -708,7 +708,7 @@ def getNBAProps():
 		# print(position)
 		# print(team)
 		game_index = np.char.find(games, team)
-		print(game_index)
+		# print(game_index)
 		if game_index.size == 0:
 			print(team)
 			print(games)
@@ -727,6 +727,12 @@ def getNBAProps():
 																																		0, 0, 0, today, games[index][0],\
 																																			gameinfo[index[0]][2],gameinfo[index[0]][1]))
 				sqlite_connection.commit()
+			else:
+				if result[0][1] != i[1]:
+					cursor.execute("UPDATE Props SET stat=? WHERE name=? AND cat=?;", (i[1],i[0],i[2]))
+					sqlite_connection.commit()
+					cursor.execute("UPDATE Props SET regressionLine=NULL WHERE name=? AND cat=?;", (i[0],i[2]))
+					sqlite_connection.commit()
 
 	if sqlite_connection:
 		cursor.close()
@@ -1043,7 +1049,7 @@ def calcScoreNBA():
     for a,b,c,d,e,f,g,h,i,j,k,l,m in result:
         props.append([a,b,c,j,k,l[l.find('-')+1:]])
     props.sort()
-    print(props)
+    # print(props)
     previous = ""
     for i in props:
         if i[0] != previous:
@@ -1052,7 +1058,7 @@ def calcScoreNBA():
 			# If not retrieve info and add to database
             if len(result) == 0:
                 names = i[0].split()
-                print(i[0])
+                # print(i[0])
                 id = nba.getPlayerID(names[0], names[1])
                 if id == -1:
                     print("CAN'T GET ID")
@@ -1080,7 +1086,6 @@ def calcScoreNBA():
             else:
                 home = 1
                 oppTeam = i[3][:atIndex - 1]
-            print(oppTeam)
             if len(log) > 1:
                 tot = 0
                 totshots = 0
@@ -1126,13 +1131,12 @@ def calcScoreNBA():
             else:
                 oppTeam2 = fulloppteam
             previous = i[0]
-            print(oppTeam2)
             oppTeamNum = team_mapping.get(oppTeam2)
          #   lastyearLog = nba.getGameLog(id,True) 
         gamescore = float(i[4])
         spread = float(i[5])
         line = float(i[1])
-        print(position)
+        # print(position)
         if i[2] == "points":
             for x in posrankings[0]:
                 if oppTeam2 in x[1]:
@@ -1142,8 +1146,8 @@ def calcScoreNBA():
                    rank = int(x[0])
                    break
             features = [[line, rank, nba.last10Hit(log,"points",i[1]), posrank, gamescore, minutes, shots, spread]]
-            print(features)
-            print(i)
+            # print(features)
+            # print(i)
             prediction = pointsRegressionMdoel.predict(features)
         elif i[2] == 'rebounds':
             for x in posrankings[1]:
@@ -1153,8 +1157,8 @@ def calcScoreNBA():
           #  logHit = nba.logHit(lastyearLog, 'rebounds', i[1])
             features = [[ line, positionnum, nba.last10Hit(log,"rebounds",i[1]), nba.last5Hit(log,'rebounds',i[1]), posrank, gamescore, minutes, shots, spread]]
             prediction = reboundsRegressionModel.predict(features)
-            print(i)
-            print(features)
+            # print(i)
+            # print(features)
         elif i[2] == "assists":
             for x in posrankings[2]:
                 if oppTeam2 in x[1]:
@@ -1169,8 +1173,8 @@ def calcScoreNBA():
             #logHit = nba.logHit(lastyearLog, 'assists', i[1])
             features = [[home, line, positionnum, rank, last10Hit, nba.last5Hit(log,'assists',i[1]), posrank, gamescore, minutes, spread]]
             prediction = assistsRegressionModel.predict(features)
-            print(i)
-            print(features)
+            # print(i)
+            # print(features)
         elif i[2] == '3-pt':
             for x in posrankings[3]:
                if oppTeam2 in x[1]:
@@ -1182,10 +1186,10 @@ def calcScoreNBA():
                    rank = int(x[0])
                    break
             features = [[line, rank, nba.last10Hit(log,"3-pt",i[1]), nba.last5Hit(log,'3-pt',i[1]), posrank, gamescore, minutes, shots, spread]]
-            print(features)
+            # print(features)
             prediction = threePtRegressionModel.predict(features)
-            print(i)
-            print(features)
+            # print(i)
+            # print(features)
         elif i[2] == 'pra':
             for x in posrankings[4]:
                 if oppTeam2 in x[1]:
@@ -1196,10 +1200,10 @@ def calcScoreNBA():
                    rank = int(x[0])
                    break
             features = [[line, positionnum, rank, nba.last10Hit(log,"points",i[1]), posrank, gamescore, minutes, shots, spread]]
-            print(features)
+            # print(features)
             prediction = praRegressionModel.predict(features)
-            print(i)
-            print(features)
+            # print(i)
+            # print(features)
         elif i[2] == "steals":
             for x in posrankings[6]:
                 if oppTeam2 in x[1]:
@@ -1210,10 +1214,10 @@ def calcScoreNBA():
                    rank = int(x[0])
                    break
             features = [[line, positionnum, rank, nba.last10Hit(log,"steals",i[1]), posrank, minutes,shots]]
-            print(features)
+            # print(features)
             prediction = stealsRegressionModel.predict(features)
-            print(i)
-            print(features)
+            # print(i)
+            # print(features)
         elif i[2] == "blocks":
             for x in posrankings[5]:
                 if oppTeam2 in x[1]:
@@ -1224,10 +1228,10 @@ def calcScoreNBA():
                    rank = int(x[0])
                    break
             features = [[home, line, rank, nba.last10Hit(log,"blocks",i[1]), nba.last5Hit(log,'steals',i[1]), oppTeamNum, gamescore, minutes, shots, spread]]
-            print(features)
+            # print(features)
             prediction = blocksRegressionModel.predict(features)
-            print(i)
-            print(features)
+            # print(i)
+            # print(features)
         cursor.execute("UPDATE Props SET regressionLine = ? WHERE name = ? AND cat = ?;", (prediction[0], i[0], i[2]))
         sqlite_connection.commit()
     cursor.close()
