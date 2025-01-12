@@ -39,14 +39,14 @@ reboundsmodel = pickle.load(open("/root/propscode/propscode/NBA/reboundsmodel.pk
 pramodel = pickle.load(open("/root/propscode/propscode/NBA/pramodel.pkl", "rb"))
 pointsmodel = pickle.load(open("/root/propscode/propscode/NBA/pointsmodel.pkl", "rb"))
 tresmodel = pickle.load(open("/root/propscode/propscode/NBA/threepointmodel.pkl", "rb"))
-hittersmodel = pickle.load(open("/root/propscode/propscode/MLB/hittersmodel.pkl", "rb"))
-strikeoutmodel = pickle.load(open("/root/propscode/propscode/MLB/strikeoutmodel.pkl", "rb"))
-otherpitchermodel = pickle.load(open("/root/propscode/propscode/MLB/pitcherothermodel.pkl", "rb"))
-earnedRunsModel = pickle.load(open("/root/propscode/propscode/MLB/earnedRunsmodel.pkl", "rb"))
-hittersRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/hittersRegressionmodel.pkl", "rb"))
-strikeoutRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/strikeoutRegressionmodel.pkl", "rb"))
-earnedRunsRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/earnedRunsAllowedRegressionmodel.pkl", "rb"))
-hitsAllowedRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/hitsAllowedRegressionmodel.pkl", "rb"))
+# hittersmodel = pickle.load(open("/root/propscode/propscode/MLB/hittersmodel.pkl", "rb"))
+# strikeoutmodel = pickle.load(open("/root/propscode/propscode/MLB/strikeoutmodel.pkl", "rb"))
+# otherpitchermodel = pickle.load(open("/root/propscode/propscode/MLB/pitcherothermodel.pkl", "rb"))
+# earnedRunsModel = pickle.load(open("/root/propscode/propscode/MLB/earnedRunsmodel.pkl", "rb"))
+# hittersRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/hittersRegressionmodel.pkl", "rb"))
+# strikeoutRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/strikeoutRegressionmodel.pkl", "rb"))
+# earnedRunsRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/earnedRunsAllowedRegressionmodel.pkl", "rb"))
+# hitsAllowedRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/hitsAllowedRegressionmodel.pkl", "rb"))
 
 
 oauth.register(
@@ -2255,8 +2255,8 @@ def nbaTodaysProps():
                 games.append(i[0])
             cursor.execute("SELECT * FROM Props WHERE cat=? AND game=?;", ("points",games[0]))
             result = cursor.fetchall()
-            for a, b, c, d, e, f, g, h, i, j, k, l, m in result:
-                props.append([a,b,c,d,m,f,g,h,k,l])
+            for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o in result:
+                props.append([a,b,c,n,m,f,o,h,k,l])
     except sqlite3.Error as error:
         print("Error while connection to sqlite", error)
     finally:
@@ -2516,8 +2516,8 @@ def process():
  #           cursor.close()
  #           sqlite_connection.close()
     
-    for a, b, c, d, e, f, g, h, i, j, k, l, m in result:
-        updatedProps.append([a,b,c,d,m,f,g,h,k,l])
+    for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o in result:
+        updatedProps.append([a,b,c,n,m,f,o,h,k,l])
     print(updatedProps)
     return jsonify(content=updatedProps)
 
@@ -2767,7 +2767,7 @@ def researchNBAPlayer():
         llmMessage = ""
         if stat == "points":
             last10PointsHit = last10Hit(log,"points", float(line))
-            features = [[ positionint,rank, last10PointsHit, posrank, total, minutes,shots, spread]]
+            features = [[ float(line),rank, last10PointsHit, posrank, total, minutes,shots, spread]]
             prediction = pointsmodel.predict(features)
             # response = openai.ChatCompletion.create(
             # model="ft:gpt-3.5-turbo-0125:propcodes::AgIOduxo",
@@ -2777,13 +2777,13 @@ def researchNBAPlayer():
             # ])
             # llmMessage = response['choices'][0]['message']['content']
         elif stat == "3-pt":
-            features = [[float(line), rank, last5Hit(log,'3-pt', float(line)), posrank, total, shots, spread]]
+            features = [[float(line), rank, last10Hit(log,'3-pt', float(line)), last5Hit(log,'3-pt', float(line)), posrank, total, minutes, shots, spread]]
             prediction = tresmodel.predict(features)
         elif stat == "rebounds":
             features = [[ last10Hit(lastYearLog,"rebounds",line), posrank, total, minutes,shots, spread]]
             prediction = reboundsmodel.predict(features)
         elif stat == "assists":
-            features = [[rank, last10Hit(lastYearLog,stat,line), posrank, total, minutes,spread]]
+            features = [[homeint, float(line),rank, last10Hit(lastYearLog,stat,line), last5Hit(lastYearLog,stat,line),posrank, total, minutes,spread]]
             prediction = assistsmodel.predict(features)
         else:
             features = [[ float(line),positionint,rank, last10Hit(log,"pra", float(line)), posrank, total, minutes,shots, spread]]
@@ -3296,6 +3296,7 @@ def chat():
                     cat = arguments.get("cat")
                     id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
                     log = getGameLog(id,False)
+                    print(cat)
                     position, team = getPlayerInfoNBA(id)
                     if position == 'Point Guard':
                         new_pos = 'GC-0 PG'
@@ -3418,7 +3419,8 @@ def chat():
                         user_message = f"From our model we predict that {arguments.get('firstname')} {arguments.get('lastname')} will have less than {arguments.get('line')} {cat} in his upcoming game."
                     else:
                         user_message = f"From our model we predict that {arguments.get('firstname')} {arguments.get('lastname')} will have more than {arguments.get('line')} {cat} in his upcoming game."
-                    
+                    print(features)
+                    print(prediction)
 
                     return jsonify({"reply": user_message})
                 elif function == "playerVsTeam":

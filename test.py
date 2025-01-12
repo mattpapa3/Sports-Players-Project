@@ -10,8 +10,9 @@ import sqlite3
 
 sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
 cursor = sqlite_connection.cursor()
-cursor.execute("SELECT * FROM Props WHERE name=? AND cat=?", ("Zach LaVine", "points"))
+cursor.execute("SELECT id FROM nbaInfo WHERE name=?;", ("Anfernee Simons",))
 result = cursor.fetchall()
-print(result[0][1])
+log = nba.getGameLog(result[0][0], False)
+print(log[0])
 cursor.close()
 sqlite_connection.close()

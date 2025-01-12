@@ -33,7 +33,7 @@ $(document).ready(function() {
                         }
                         else if (itemIndex === 7)
                         {
-                            updatedProps += ("<td style='color: red;'>" + i + "</td>")
+                            updatedProps += ("<td>" + i + "</td>")
                         }
                         else if (itemIndex != 8 && itemIndex != 2 && itemIndex != 9)
                         {

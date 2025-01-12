@@ -1236,7 +1236,7 @@ def last10Hit(log,cat, line):
     if cat == '3-pt':
         if len(log) >= 10:
             for i in range(0,10):
-                if float(log[i][6][0]) > float(line):
+                if float(log[i][6][:log[i][6].find('-')]) > float(line):
                     last10hit += 1
             last10hit = last10hit / 10
         else:
@@ -1322,7 +1322,7 @@ def last5Hit(log,cat, line):
     if cat == '3-pt':
         if len(log) >= 5:
             for i in range(0,5):
-                if float(log[i][6][0]) > float(line):
+                if float(log[i][6][:log[i][6].find('-')]) > float(line):
                     last10hit += 1
             last10hit = last10hit / 5
         else:
@@ -1476,6 +1476,7 @@ def getNbaTodayGames():
     element = data_soup.findAll('span', attrs={'class':"VZTD mLASH rIczU LNzKp jsU hfDkF FoYYc FuEs"})
     num_games = len(element) // 2
     index = 0
+    # print(games)
     games = games[len(games) - num_games:]
     #print(games)
     for num, row in enumerate(element):
