@@ -384,18 +384,19 @@ def getNBAPointsLines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
+      #  if len(title.text) > 0:
+      #      m += 1
     
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
     i = 0
     for name in names:
         val = name.text
         val.replace("'", "")
-        props.append([val, lines[i], 'points', odds[i]])
+        props.append([val, lines[i], 'points', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
 
     driver.quit()
@@ -435,17 +436,16 @@ def getNBAReboundsLines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
     i = 0
     for name in names:
         val = name.text
         val.replace("'", "")
-        props.append([val, lines[i], 'rebounds', odds[i]])
+        props.append([val, lines[i], 'rebounds', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
 
     driver.quit()
@@ -486,17 +486,16 @@ def getNBAAssistsLines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
     i = 0
     for name in names:
         val = name.text
         val.replace("'", "")
-        props.append([val, lines[i], 'assists', odds[i]])
+        props.append([val, lines[i], 'assists', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
 
     driver.quit()
@@ -537,10 +536,8 @@ def getNBA3PTLines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')    
      
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
@@ -548,8 +545,9 @@ def getNBA3PTLines():
     for name in names:
         val = name.text
         val.replace("'", "")
-        props.append([val, lines[i], '3-pt', odds[i]])
+        props.append([val, lines[i], '3-pt', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
 
     driver.quit()
@@ -590,10 +588,8 @@ def getNBAPRALines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
     
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
@@ -601,8 +597,9 @@ def getNBAPRALines():
     for name in names:
         val = name.text
         val.replace("'", "")
-        props.append([val, lines[i], 'pra', odds[i]])
+        props.append([val, lines[i], 'pra', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
 
     driver.quit()
@@ -643,15 +640,14 @@ def getNBAStealBlockLines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
     i = 0
     for name in names:
-        props.append([name.text, lines[i], 'steals', odds[i]])
+        props.append([name.text, lines[i], 'steals', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
     element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[@id='subcategory_Blocks O/U']")))
     driver.execute_script("arguments[0].scrollIntoView();", element)
@@ -673,17 +669,16 @@ def getNBAStealBlockLines():
     odds = []
     m = 0
     for title in elements:
-        if m % 2 == 0 and len(title.text) > 0:
-            odds.append(title.text)
         if len(title.text) > 0:
-            m += 1
+            odds.append(title.text)
     names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name')
     i = 0
     for name in names:
         val = name.text
         val.replace("'", "")
-        props.append([val, lines[i], 'blocks', odds[i]])
+        props.append([val, lines[i], 'blocks', odds[m], odds[m+1]])
         i += 1
+        m += 2
     
 
     driver.quit()
@@ -706,6 +701,13 @@ def getNBAProps():
         if len(result) == 0:
             cursor.execute("INSERT INTO nbaTodaysGames(game,spread,overunder) VALUES(?,?,?)", (i[0],i[1],i[2]))
             sqlite_connection.commit()
+        else:
+            if i[1] != result[0][1]:
+                cursor.execute("UPDATE nbaTodaysGames SET spread=? WHERE game=?;", (i[1],i[0]))
+                sqlite_connection.commit()
+            if i[2] != result[0][2]:
+                cursor.execute("UPDATE nbaTodaysGames SET overunder=? WHERE game=?;", (i[2],i[0]))
+                sqlite_connection.commit()
     
     props = []
     try:
@@ -780,11 +782,15 @@ def getNBAProps():
             cursor.execute("SELECT * FROM Props WHERE name=? AND cat=?", (i[0], i[2]))
             result = cursor.fetchall()
             if len(result) == 0:
-                cursor.execute("""INSERT INTO Props(name, stat, cat, views, over, under, date, game, totalscore, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?);""", (i[0], i[1], i[2],\
+                cursor.execute("""INSERT INTO Props(name, stat, cat, views, over, under, date, game, totalscore, spread, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?);""", (i[0], i[1], i[2],\
                                                                                                                                         0, 0, 0, today, games[index][0],\
-                                                                                                                                            gameinfo[index[0]][2],gameinfo[index[0]][1],i[3]))
+                                                                                                                                            gameinfo[index[0]][2],gameinfo[index[0]][1],i[3],i[4]))
                 sqlite_connection.commit()
             else:
+                cursor.execute("UPDATE Props SET totalscore=? WHERE name=? AND cat=?;", (gameinfo[index[0]][2],i[0],i[2]))
+                sqlite_connection.commit()
+                cursor.execute("UPDATE Props SET spread=? WHERE name=? AND cat=?;", (gameinfo[index[0]][1],i[2]))
+                sqlite_connection.commit()
                 if result[0][1] != i[1]:
                     cursor.execute("UPDATE Props SET stat=? WHERE name=? AND cat=?;", (i[1],i[0],i[2]))
                     sqlite_connection.commit()
@@ -792,6 +798,9 @@ def getNBAProps():
                     sqlite_connection.commit()
                 if result[0][14] != i[3]:
                     cursor.execute("UPDATE Props SET odds=? WHERE name=? AND cat=?;", (i[3],i[0],i[2]))
+                    sqlite_connection.commit()
+                if result[0][15] != i[4]:
+                    cursor.execute("UPDATE Props SET underodds=? WHERE name=? AND cat=?;", (i[4],i[0],i[2]))
                     sqlite_connection.commit()
 
     if sqlite_connection:
@@ -1106,7 +1115,7 @@ def calcScoreNBA():
     cursor = sqlite_connection.cursor()
     cursor.execute("SELECT * FROM Props WHERE regressionLine IS NULL AND cat != ? AND cat != ?;", ("blocks", "steals"))
     result = cursor.fetchall()
-    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o in result:
+    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p in result:
         props.append([a,b,c,j,k,l[l.find('-')+1:]])
     props.sort()
     # print(props)
@@ -1358,7 +1367,7 @@ def checkModelAcc():
             id = cursor.fetchall()[0][0]
             log = nba.getGameLog(id,False)
             lastGame = log[0]
-        if lastGame[0] == '1/11':
+        if lastGame[0] == '1/12':
             if i[2] == "points":
                 pointsTot += 1
                 if float(i[1]) > float(lastGame[16]):
