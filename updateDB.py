@@ -616,10 +616,15 @@ def checkProps():
                     home = 1
                     oppTeam = oppTeam[2:]
                 oppTeam = nba.teamnameFull(oppTeam)
+                if team == "LA Clippers":
+                    teamstats = nba.getTeamStats("Los Angeles Clippers")
+                else:
+                    teamstats = nba.getTeamStats(team)
 
                 # Calculate the number of starters/bench players that didn't play
                 startersInjured = 0
                 benchInjured = 0
+                usageInjured = 0.0
                 DNPplayers = nba.getInjuredPlayers(team_abb, team)
                 for p in DNPplayers:
                     cursor.execute("SELECT id FROM nbaInfo WHERE name=?", (p,))
@@ -628,6 +633,8 @@ def checkProps():
                         DNPid = result[0][0]
                     else:
                         DNPid = nba.getPlayerID(p[:p.find(" ")], p[p.find(" ") + 1:])
+                    DNPstats = nba.getTotStats(DNPid)
+                    usageInjured += nba.calc_uasge_perc(DNPstats, teamstats)
                     playerMin, _ = nba.getMinutes(DNPid)
                     if float(playerMin) >= 29.0:
                         startersInjured += 1
@@ -636,7 +643,8 @@ def checkProps():
                 print("INJURIES")
                 print(DNPplayers)
                 print(startersInjured)
-                print(benchInjured)               
+                print(benchInjured)
+                print(usageInjured)            
 
 
                 # Get oppTeam2 for position rankings
@@ -706,16 +714,19 @@ def checkProps():
                     else:
                         FGlast3 /= len(log)
                         threePTPercentlast3 /= len(log)
+                totstats = nba.getTotStats(id)
+                usageP = nba.calc_uasge_perc(totstats, teamstats)
+                print(usageP)
                 
-                print(minutes)
-                print(shots)
-                print(FGlast5)
-                print(FGlast3)
-                print(threePTPercentlast3)
-                print(threePTPercentlast5)
-                print(lastgamescore)
-                print(lastgameSpread)
-                print(lastGame)
+                # print(minutes)
+                # print(shots)
+                # print(FGlast5)
+                # print(FGlast3)
+                # print(threePTPercentlast3)
+                # print(threePTPercentlast5)
+                # print(lastgamescore)
+                # print(lastgameSpread)
+                # print(lastGame)
             
             #If player played in game yesterday (Check)
             if check:
@@ -756,8 +767,9 @@ def checkProps():
                         loghit = loghit / (len(log) - 1)
                         loghit = round(loghit, 2)
                     print(hit)
-                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5],i[7]))
+                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) \
+                                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5],i[7], usageInjured, usageP))
                     sqlite_connection.commit()
                     cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                    (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))
@@ -798,8 +810,8 @@ def checkProps():
                         last5hit = last5hit / len(last5)
                     
                     print(hit)
-                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7]))
+                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7],usageInjured,usageP))
                     sqlite_connection.commit()
                     cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                    (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))
@@ -841,8 +853,8 @@ def checkProps():
                         loghit = round(loghit, 2)
                     
                     print(hit)
-                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7]))
+                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7], usageInjured, usageP))
                     sqlite_connection.commit()
                     cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                    (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))
@@ -883,8 +895,8 @@ def checkProps():
                         loghit = loghit / (len(log) - 1)
                         loghit = round(loghit, 2)
                     print(hit)
-                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7]))
+                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7], usageInjured, usageP))
                     sqlite_connection.commit()
                     cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                    (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))
@@ -929,8 +941,8 @@ def checkProps():
                         loghit = loghit / (len(log) - 1)
                         loghit = round(loghit, 2)
                     print(hit)
-                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7]))
+                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7], usageInjured, usageP))
                     sqlite_connection.commit()
                     cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                    (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))
@@ -969,8 +981,8 @@ def checkProps():
                             lastGameHit = 1
                         loghit = loghit / (len(log) - 1)
                         loghit = round(loghit, 2)
-                        cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7]))
+                        cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7], usageInjured, usageP))
                         sqlite_connection.commit()
                         cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                     (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))
@@ -1011,8 +1023,8 @@ def checkProps():
                         loghit = loghit / (len(log) - 1)
                         loghit = round(loghit, 2)
                     print(hit)
-                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
-                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7]))
+                    cursor.execute("INSERT INTO traindataNBA(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, gamescore, minutes, oppteam, shots, spread, date, favorite, injuredStarters, injuredBench, shootingPLast3, shootingPLast5, lastGameHit, threePTPercentlast5, threePTPercentlast3, id, odds, underodds, injuredUsage, usageP) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
+                                   (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, i[6], minutes, oppTeam, shots, i[3], yesterday, favorite, startersInjured, benchInjured, FGlast5, FGlast3, lastGameHit, threePTPercentlast5, threePTPercentlast5, id, i[5], i[7], usageInjured, usageP))
                     sqlite_connection.commit()
                     cursor.execute("INSERT INTO traindataNBA2(homeaway, line, hit, position, opp, cat, last10, last5, log, oppposrank, oppteam, gamescore, minutes, shots, spread, odds) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\
                                 (home, float(i[1]), hit, position, rank, i[2], last10hit, last5hit, loghit, posrank, oppTeam, lastgamescore, minutes, shots, lastgameSpread, i[5]))

@@ -6,6 +6,7 @@ from datetime import datetime, date
 import copy
 import sqlite3
 import numpy as np
+import pandas as pd
 
 
 position_mapping = {
@@ -476,42 +477,79 @@ def getGameLog(id, lastYear):
     return log
 
 
-def getTeamStats():
-    team_api = requests.get("https://www.espn.com/nba/stats/team/_/view/opponent/season", headers={"User-Agent": "Mozilla/5.0"})
+def getTeamStats(team):
+    team = team.lower()
+    team = team.split()
+    url = ""
+    for num, i in enumerate(team):
+        if num != 0:
+            url += '-'
+        url += i
+    team_api = requests.get(f"https://www.teamrankings.com/nba/team/{url}/stats")
     team = team_api.text
-    team = team[team.find("</thead>"):]
-    real_team = team[:team.find("<li>Statistics are updated nightly</li>")]
-    team_soup = BeautifulSoup(real_team, 'html5lib')
-    teams = []
-    team_stats = []
-    i = 0
-    num = 1
 
-    for row in team_soup.findAll('a', attrs = {'class':'AnchorLink'}):
-        if i == 30:
-            break
-        if num % 2 == 0:
-            teams.append(row.text)
-            i = i + 1
-        num = num + 1
+    team_soup = BeautifulSoup(team, 'html5lib')
+    fta = ""
+    fga = ""
+    tov = ""
+    fta_app = False
+    fga_app = False
+    tov_app = False
 
-    updated_team = real_team[real_team.find("PF</a></span>"):]
-    team_soup2 = BeautifulSoup(updated_team, 'html5lib')
-    i = 0
-    n = 0
-    for row in team_soup2.findAll('div', attrs = {'class':''}):
-        if i == 0:
-            team_stats.append([teams[n], row.text])
-        else:
-            team_stats[n].append(row.text)
-        
-        i = i + 1
-        if i == 19:
-            i = 0
-            n = n + 1
+    for row in team_soup.findAll('td', attrs = {'class':'nowrap'}):
+        if fta_app:
+            fta = row.text[:row.text.find('(') - 1]
+            fta_app = False
+        if fga_app:
+            fga = row.text[:row.text.find('(') - 1]
+            fga_app = False
+        if tov_app:
+            tov = row.text[:row.text.find('(') - 1]
+            tov_app = False
+
+        if 'FTA/Game' == row.text:
+            fta_app = True
+        if 'FGA/Game' == row.text:
+            fga_app = True
+        if 'Turnovers/Game' == row.text:
+            tov_app = True
     
-    return team_stats
+    team_api = requests.get(f"https://www.teamrankings.com/nba/team/{url}/")
+    team = team_api.text
+    team_soup = BeautifulSoup(team, 'html.parser')
+    tr_element = team_soup.find('tr', class_='team-blockup-data')
 
+    # Find the first <p> element within the <tr>
+    record_p = tr_element.find('p').text
+    games = int(record_p[:record_p.find('-')]) + int(record_p[record_p.find('-')+1:])
+    min_played = games * 48 * 5
+
+    return float(fga) * games, float(fta) * games, float(tov) * games, min_played
+
+
+def getTotStats(id):
+    player_api = requests.get(f"https://www.espn.com/nba/player/splits/_/id/{id}/type/nba/year/2025/category/total", headers={"User-Agent": "Mozilla/5.0"})
+    player = player_api.text
+    player_soup = BeautifulSoup(player, 'html.parser')
+    stats = []
+    start = False
+    for row in player_soup.findAll('td', attrs = {'class':'Table__TD'}):
+        if start:
+            stats.append(row.text)
+        if row.text == 'PTS':
+            start = True
+        if len(stats) >= 16:
+            break
+    
+    try:
+        stats = np.array(stats)
+        stats = stats[[1,2,6,15]]
+        stats[1] = stats[1][stats[1].find('-')+1:]
+        stats[2] = stats[2][stats[2].find('-')+1:]
+    except:
+        return [0,0,0,0]
+    return stats
+        
 
 def getPosition(id):
     nba_API = requests.get(f'https://www.espn.com/nba/player/_/id/{id}', headers={"User-Agent": "Mozilla/5.0"})
@@ -1710,3 +1748,18 @@ def getOppTeamDB(team):
     sqlite_connection.close()
     
     return home, oppTeam
+
+def calc_uasge_perc(stats, team_stats):
+    # USG% formula
+    try:
+        usg_percentage = 100 * (
+            (float(stats[1]) + 0.44 * float(stats[2]) + float(stats[3]))
+            * (float(team_stats[3]) / 5)
+        ) / (
+            float(stats[0]) * (float(team_stats[0]) + 0.44 * float(team_stats[1]) + float(team_stats[2]))
+        )
+    except:
+        return 0.0
+
+    return usg_percentage
+

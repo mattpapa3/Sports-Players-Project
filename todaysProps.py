@@ -526,7 +526,7 @@ def getNBA3PTLines():
     lines = []
     m = 0
     #names = driver.find_elements(By.CLASS_NAME, 'sportsbook-row-name') 
-    for title in elements: 
+    for title in elements:
         if m % 2 != 0:
             lines.append(title.text)
         m += 1
@@ -713,26 +713,32 @@ def getNBAProps():
     try:
         props += getNBAPointsLines()
     except:
+        print("Points")
         pass
     try:
         props += getNBA3PTLines()
     except:
+        print("3PT")
         pass
     try:
         props += getNBAAssistsLines()
     except:
+        print("ASSISTS")
         pass
     try:
         props += getNBAPRALines()
     except:
+        print("PRA")
         pass
     try:
         props += getNBAReboundsLines()
     except:
+        print("REBOUNDS")
         pass
     try:
         props += getNBAStealBlockLines()
     except:
+        print("STEAL/BLOCk")
         pass
     props.sort()
     games = arr_games[:,0]
@@ -750,8 +756,8 @@ def getNBAProps():
                 if id == -1:
                     print("CAN'T GET ID")
                     continue
-                else:
-                    print(id)
+                # else:
+                #     print(id)
                 position, team = nba.getPlayerInfo(id)
                 cursor.execute("""INSERT INTO nbaInfo(id, name, position, team) VALUES(?,?,?,?);""", (id, i[0], position,team))
                 sqlite_connection.commit()
@@ -789,7 +795,7 @@ def getNBAProps():
             else:
                 cursor.execute("UPDATE Props SET totalscore=? WHERE name=? AND cat=?;", (gameinfo[index[0]][2],i[0],i[2]))
                 sqlite_connection.commit()
-                cursor.execute("UPDATE Props SET spread=? WHERE name=? AND cat=?;", (gameinfo[index[0]][1],i[2]))
+                cursor.execute("UPDATE Props SET spread=? WHERE name=? AND cat=?;", (gameinfo[index[0]][1],i[0],i[2]))
                 sqlite_connection.commit()
                 if result[0][1] != i[1]:
                     cursor.execute("UPDATE Props SET stat=? WHERE name=? AND cat=?;", (i[1],i[0],i[2]))
