@@ -732,14 +732,6 @@ def nrfi():
     
     graphhomeAway2_2022 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     
-        
-    
-    
-
-   # return render_template("nrfiPlayers.html", graphLast10_1=last10_1, graphLast10_2=last10_2, graphhomeAway1=homeAway1, graphhomeAway2=homeAway2, graphhomeAway1_2022=homeAway1_2022, 
-    #graphhomeAway2_2022=homeAway2_2022, graphvsLog1=graphvsLog1, graphvsLog2=graphvsLog2, graphvsLog1_2022=graphvsLog1_2022, graphvsLog2_2022=graphvsLog2_2022, first=first, last=last, first2=first2, last2=last2, 
-    #playedAgainst=playedAgainst, playedAgainst2=playedAgainst2, playedAgainst_2022=playedAgainst_2022, playedAgainst2_2022=playedAgainst2_2022)
-    
     return render_template("nrfiPlayers.html", graphLast10_1=graphLast10_1, graphLast10_2=graphLast10_2, graphhomeAway1=graphhomeAway1, graphhomeAway2=graphhomeAway2, graphhomeAway1_2022=graphhomeAway1_2022, graphhomeAway2_2022=graphhomeAway2_2022, first=first, last=last, first2=first2, last2=last2)
 
 
@@ -765,7 +757,6 @@ def cbb_player():
         if id != -1:
             line = request.form.get("num")
             log = getCBBGameLog(id)
-            print(log)
             home = CBBhomeoraway(id)
             oppTeam = getCBBOppTeam(id, home)
             top25 = oppTeamTop25(oppTeam)
@@ -1005,504 +996,6 @@ def cbb_player():
     return render_template("CBBplayer.html", fname=first, lname=last, score=score, graphTop25=graphTop25, stat=stat, playedAgainst=playedAgainst, otherOppTeam=otherOppTeam, graphVs=graphVs, graphLast10=graphLast10, graphLoss=graphLoss, graphWins=graphWins, rank=rank, graphUnranked=graphUnranked, graphMin=graphMin)
         
 
-
-@app.route("/mlbprop", methods=('GET','POST'))
-def mlbPlayer():
-    ses = session.get('user')
-    sub = False
-    if ses:
-        try:
-            sqlite_connection = sqlite3.connect('subscribers.db')
-            cursor = sqlite_connection.cursor()
-            cursor.execute("SELECT subscribed FROM subscribers WHERE email=?;", (ses['userinfo']['nickname'],))
-            result = cursor.fetchall()
-            if len(result) > 0:
-                if 'y' in result[0]:
-                    sub = True
-        except sqlite3.Error as error:
-            print("Error while connection to sqlite", error)
-        finally:
-            if sqlite_connection:
-                cursor.close()
-                sqlite_connection.close()
-    if not ses or not sub:
-        return redirect("/")
-    score = 0
-    ohtani = False
-    stat = request.form.get('stat')
-    first = request.form.get("fname")
-    last = request.form.get("lname")
-    first = first.capitalize()
-    last = last.capitalize()
-    name = first + " " + last
-
-    sqlite_connection = sqlite3.connect("/root/propscode/propscode/MLB/mlb.db")
-    cursor = sqlite_connection.cursor()
-    cursor.execute("SELECT * FROM mlbPlayer WHERE name=?;", (name,))
-    result = cursor.fetchall()
-    rightleft = -1
-    if len(result) > 0:
-        for a,b,c,d,e in result:
-            id = a
-            pos = c
-            team = d
-            rightleft = e
-    else:
-        id = getMLBPlayerID(first,last)
-        #pos = getMLBPosition(id)
-        pos, team, _ = getPlayerInfo(id)
-    if id == -1:
-        return redirect("MLBnotfound")
-
-    if first.lower() == 'shohei' and stat == 'tb' or first.lower() == 'shohei' and stat == 'r' or first.lower() == 'shohei' and stat == 'hrb':
-        ohtani = True
-    elif pos != "Starting Pitcher" and pos != "Relief Pitcher" and stat != "tb" and stat != "r" and stat != "hrb":
-        return redirect('MLBwrongpos')
-    elif pos == "Starting Pitcher" and stat != "k" and stat != "era" and stat != "outs" and stat != "hits" or pos == "Relief Pitcher" and stat != "k" and stat != "era" and stat != "outs" and stat != "hits":
-        return redirect('MLBwrongpos')
-    
-    cursor.execute("SELECT game FROM mlbTodaysGames;")
-    result = cursor.fetchall()
-    games = []
-    oppTeam = ""
-    for a in result:
-        if team in a[0][:a[0].find('@')]:
-            oppTeam = a[0][a[0].find('@') + 2:]
-            home = False
-            break
-        elif team in a[0][a[0].find('@'):]:
-            oppTeam = a[0][:a[0].find('@')]
-            home = True
-            break
-
-    line = request.form.get("num")
-    log = getMLBGameLog(id, pos, ohtani)
-    print(log)
-    log2022 = getMLB2022Log(id, pos, ohtani)
-    print(log2022)
-    if len(oppTeam) < 1:
-        home = MLBhomeoraway(id)
-        oppTeam = getMLBOppTeam(id, home)
-    logvspitcher = []
-    leftvsRight = []
-    throw = ""
-    pitcher = ""
-    oppPitcherStats = []
-    games = getGameInfo()
-    arr = np.array(games)
-    games_teams = arr[:,0]
-    game_index = np.char.find(games_teams, team)
-    print(games)
-    index = np.where(game_index != -1)[0]
-    if home:
-        homeint = 1
-    else:
-        homeint = 0
-    if len(index) == 0:
-        overunder = 10
-        wind = 0
-        temperature = 70
-    else:
-        overunder = games[index[0]][1]
-        wind = games[index[0]][3]
-        temperature = games[index[0]][2]
-    if "Pitcher" not in pos or ohtani:
-        log = np.array(log)
-        pitcher = getOppStartingPitcher(id,home)
-        pitcher_first = pitcher[:pitcher.find(" ")]
-        if pitcher[:pitcher.find(" ")] == "J.":
-            pitcher_first = "Jesus"
-        if '(' in pitcher:
-            pitcher = pitcher_first + " " + pitcher[pitcher.find(" ") + 1:pitcher.find("(") - 1]
-        else:
-            pitcher = pitcher_first + " " + pitcher[pitcher.find(" ") + 1:]
-        print("PITCHER: ")
-        print(len(pitcher))
-        cursor.execute("SELECT * FROM mlbPlayer WHERE name=?;", (pitcher,))
-        result = cursor.fetchall()
-        if len(result) > 0:
-            for a,b,c,d,e in result:
-                pitcherID = a
-        elif len(pitcher) > 1:
-            pitchernames = pitcher.split(" ")
-            print(pitcher_first)
-            print(pitcher)
-            pitcherID = getMLBPlayerID(pitcher_first, pitcher[pitcher.find(" ") + 1:])
-            throw = getPitcherThrowingArm(pitcherID)
-            oppPitcherStats, opphbp, oppbattersfaced = getPitcherStats(pitcherID)
-        if len(oppPitcherStats) > 0:
-            oppPitchfip = calculateFIP(oppPitcherStats, opphbp)
-            oppwhip = (float(oppPitcherStats[9]) + float(oppPitcherStats[13])) / float(oppPitcherStats[8])
-            oppwhip = round(oppwhip, 2)
-        else:
-            oppPitchfip = 0.0
-            oppwhip = 0.0
-        cursor.execute("SELECT id FROM mlbTeams WHERE name=?;", (oppTeam,))
-        teamid = cursor.fetchall()
-        print(teamid)
-        print(pitcher)
-        logvspitcher = getHittervsPitcherStats(id,teamid,pitcher)
-        print(logvspitcher)
-        leftvsRight = rightvsLeftStats(id, throw)
-        
-        if throw == "Right":
-            pitchrightleft = 0
-        else:
-            pitchrightleft = 1
-        
-        if stat == 'tb' or stat == 'hrb':
-            catrank = 0
-            last5Hit = 0
-            last10Hit = 0
-            logHit = 0
-            for num, game in enumerate(log):
-                    singles = float(game[5]) - (float(game[6]) + float(game[7]) + float(game[8]))
-                    tot = singles + (float(game[6]) * 2) + (float(game[7]) * 3) + (float(game[8]) * 4)
-                    if tot > float(line):
-                        logHit += 1
-                        if num < 5:
-                            last5Hit += 1
-                            last10Hit += 1
-                        elif num < 10:
-                            last10Hit += 1
-            if logHit > 0:
-                logHit = logHit / len(log)
-            
-        else:
-            catrank = 1
-            if len(log) >= 5:
-                runLast5 = np.float64(log[:5, 4])
-            else:
-                runLast5 = np.float64(log[:len(log), 4])
-            numLast5 = np.where(runLast5 > float(line))
-            last5Hit = numLast5[0].shape[0]
-
-            if len(log) >= 10:
-                runLast10 = np.float64(log[:10,4])
-            else:
-                runLast10 = np.float64(log[:len(log),4])
-            numLast10 = np.where(runLast10 > float(line))
-            last10Hit = numLast10[0].shape[0]
-
-            runLog = np.float64(log[:, 4])
-            numLog = np.where(runLog > float(line))
-            logHit = numLog[0].shape[0] 
-            logHit = logHit / len(log)
-        oppteamname = MLBteamname(MLBabbrev(oppTeam))
-        print(oppteamname)
-        oppteamnum = get_team_number(oppteamname)
-        print(oppteamnum)
-        if len(log) >= 5:
-            last5 = np.array(log[:5])
-        else:
-            last5 = np.array(log)
-        last5ops = last5[:, 18]
-        last5ops = np.sum(np.float64(last5ops)) / len(last5ops)
-        last5ops = round(last5ops,3)
-       # if len(wind) == 0:
-      #      wind = 0.0
-        features = [[ logHit, oppwhip, last5ops, temperature, oppPitchfip]]
-        print(features)
-        prediction = hittersmodel.predict(features)
-    else:
-        if rightleft == -1:
-            throw = getPitcherThrowingArm(id)
-            if throw == "Right":
-                rightleft = 0
-            else:
-                rightleft = 1
-        stats, hbp, battersfaced = getPitcherStats(id)
-        k9 = (float(stats[14]) / float(stats[8])) * 9
-        k9 = round(k9, 2)
-
-        #Calculate fip
-        fip = calculateFIP(stats, hbp)
-
-        # Caluclate WHIP
-        whip = (float(stats[9]) + float(stats[13])) / float(stats[8])
-        whip = round(whip, 2)
-
-        #Calculate K%
-        kpercent = float(stats[14]) / float(battersfaced)
-        kpercent = round(kpercent, 2)
-
-        log = np.array(log)
-
-        if len(log) > 3:
-            last3 = np.array(log[:3, 3])
-        elif len(log) == 0:
-            last3 = np.array([])
-        else:
-            last3 = np.array(log[:, 3])
-        print(last3)
-        last3 = np.float64(last3)
-        print(last3)
-        print(last3.shape)
-        if len(last3.shape) == 0:
-            inningslast3 = [last3]
-        elif last3.shape[0] == 0:
-            inningslast3 = [0]
-        else:
-            inningslast3 = np.sum(last3) / last3.shape
-        print(inningslast3[0])
-
-        if stat == "era":
-            catnum = 0
-        elif stat == "outs": 
-            catnum = 2
-        elif stat == "hits":
-            catnum = 1
-
-        if len(log) >= 5:
-            last5 = np.array(log[:5])
-        else:
-            last5 = np.array(log)
-
-    
-    score = getMLBPlayerScore(log, pos, home, stat, line, log2022, oppTeam, ohtani)
-
-    first = first.capitalize()
-    last = last.capitalize()
-    t = ""
-
-    oppTeam_abbrev = MLBabbrev(oppTeam)
-    last10 = getMLBLast10(log, stat)
-    homeAway = getMLBHomeAwayLog(log, stat, home)
-    vsLog = getMLBvsLog(log, stat, oppTeam_abbrev)
-    homeAway2022 = getMLBHomeAwayLog(log2022, stat, home)
-    vsLog2022 = getMLBvsLog(log2022, stat, oppTeam_abbrev)
-    earnedRuns = False
-    strikeouts = False
-    hits = False
-    oppTeamRank = 0
-    
-
-    if stat == 'k':
-        t = "Strikeouts"
-        strikeouts = True
-        oppTeamRank = getMLBStrikoutRanks(oppTeam_abbrev)
-        kwalk = float(stats[14]) / float(stats[13])
-        print(oppTeam)
-        
-        # Get walk per k Team
-        teamstats = getMLBTeamStats()
-        for team in teamstats:
-            if team[0] == oppTeam:
-                walkKTeam = float(team[10]) / float(team[11])
-                print("found opp team!")
-                break
-        
-        features = [[ oppTeamRank,  kpercent, inningslast3[0], float(wind), walkKTeam, kwalk]]
-        print(features)
-        prediction = strikeoutmodel.predict(features)
-
-    elif stat == 'era':
-        t = "Earned Runs Allowed"
-        earnedRuns = True
-        oppTeamRank = getMLBRunsPerGameRanks(MLBteamname(oppTeam_abbrev))
-        if len(last5) > 0:
-            eraLast5 = np.float64(last5[:, 6])
-            numLast5 = np.where(eraLast5 > float(line))
-            last5Hit = numLast5[0].shape[0]
-        else:
-            last5Hit = 0
-        print(features)
-        features = [[ homeint, float(line), catnum, last5Hit, inningslast3[0], int(temperature), fip]]
-        prediction = otherpitchermodel.predict(features)
-    elif stat == 'r':
-        t = "Runs"
-    elif stat == 'hrb':
-        t = "Hits+Runs+RBI"
-    elif stat == 'hits':
-        t = "Hits Allowed"
-        hits = True
-        oppTeamRank = getMLBHitsPerGameRanks(MLBteamname(oppTeam_abbrev))
-        # Get Last 5
-        if len(last5) > 0:
-            hitsLast5 = np.float64(last5[:, 4])
-            numLast5 = np.where(hitsLast5 > float(line))
-            last5Hit = numLast5[0].shape[0]
-        else:
-            last5Hit = 0
-        features = [[ homeint, float(line), catnum, last5Hit, inningslast3[0], temperature, fip]]
-        print(features)
-        prediction = otherpitchermodel.predict(features)
-    elif stat == 'tb':
-        t = "Total Bases"
-    elif stat == 'outs':
-        t = "Pitching Outs"
-        if len(last5) > 1:
-            innLast5 = last5[:, 3]
-        else:
-            innLast5 = []
-        last5Hit = 0
-        for inn in innLast5:
-            innsplit = inn.split('.')
-            outs = (float(innsplit[0]) * 3) + float(innsplit[1])
-            if outs > float(line):
-                last5Hit += 1
-        features = [[ homeint, float(line), catnum, last5Hit, inningslast3[0], temperature, fip]]
-        print(features)
-        prediction = otherpitchermodel.predict(features)
-
-    last10num = []
-    last10vs = []
-    for i in last10:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    
-    i = 0
-    graphLine = []
-    while i < len(last10):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title='Last 10 Games', xaxis=dict(title='Game'), yaxis=dict(title=t), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-    
-    graphLast10 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-    last10num = []
-    last10vs = []
-    for i in vsLog:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-
-    i = 0
-    graphLine = []
-    while i < len(last10num):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title='vs ' + oppTeam, xaxis=dict(title='Game'), yaxis=dict(title=t), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-
-    graphVs = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-    last10num = []
-    last10vs = []
-    for i in homeAway:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    
-    if home:
-        title = "At Home"
-    else:
-        title = "On the road"
-    i = 0
-    graphLine = []
-    while i < len(homeAway):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title=title, xaxis=dict(title='Game'), yaxis=dict(title=t), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-    #fig.update_layout(displayModeBar = False)
-
-    graphHomeAway = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-
-    last10num = []
-    last10vs = []
-    for i in homeAway2022:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    
-    if home:
-        title = "2023 At Home"
-    else:
-        title = "2023 On the road"
-
-    i = 0
-    graphLine = []
-    while i < len(homeAway2022):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title=title, xaxis=dict(title='Game'), yaxis=dict(title=t), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-    #fig.update_layout(displayModeBar = False)
-
-    graphHomeAway2022 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-    
-
-    last10num = []
-    last10vs = []
-    for i in vsLog2022:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-
-    i = 0
-    graphLine = []
-    while i < len(last10num):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title='2023 vs ' + oppTeam, xaxis=dict(title='Game'), yaxis=dict(title=t), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-
-    graphVs2022 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-
-    
-    pitcherLog = False
-    if len(logvspitcher) > 0:
-        pitcherLog = True
-    leftRightLog = False
-    if len(leftvsRight) > 0:
-        leftRightLog = True
-    
-    
-    fullname = first + " " + last
-    score = round(score, 2)
-
-    #try:
-        #sqlite_connection = sqlite3.connect('subscribers.db')
-        #cursor = sqlite_connection.cursor()
-       # cursor.execute("SELECT * FROM Props WHERE name=? AND stat=? AND cat=?;", (fullname, line, stat))
-      #  result = cursor.fetchall()
-     #   if len(result) > 0:
-         #   cursor.execute("UPDATE Props SET views = views + ? WHERE name=? AND stat=? AND cat=?", (1, fullname, line, stat))
-        #    sqlite_connection.commit()
-       # else:
-      #      cursor.execute("""INSERT INTO Props(name, stat, cat, score, views, over, under) VALUES(?, ?, ?, ?, ?, ?, ?);""", (fullname, line, stat, score, 1, 0, 0))
-     #       sqlite_connection.commit()
-    #except sqlite3.Error as error:
-    #    print("Error while connection to sqlite", error)
-   # finally:
-  #      if sqlite_connection:
-   #         cursor.close()
-    #        sqlite_connection.close()
-    
-    if "Pitcher" not in pos:
-        return render_template("MLBhitter.html", score=score, line=line, stat=stat, fname=first, lname=last, graphLast10=graphLast10, graphVs=graphVs, oppTeam=oppTeam, graphHomeAway=graphHomeAway, graphHomeAway2022=graphHomeAway2022, graphVs2022=graphVs2022,\
-                                 pitcher=pitcher, logvspitcher=logvspitcher, pitcherLog=pitcherLog, strikeouts=strikeouts, earnedRuns=earnedRuns, oppTeamRank=oppTeamRank, throw=throw, leftvsRight=leftvsRight, leftRightLog=leftRightLog, hits=hits, prediction=prediction)
-    else:
-        return render_template("MLBplayer.html", score=score, line=line, stat=stat, fname=first, lname=last, graphLast10=graphLast10, graphVs=graphVs, oppTeam=oppTeam, graphHomeAway=graphHomeAway, graphHomeAway2022=graphHomeAway2022, \
-                               graphVs2022=graphVs2022,  pitcher=pitcher, logvspitcher=logvspitcher, pitcherLog=pitcherLog, strikeouts=strikeouts, earnedRuns=earnedRuns, oppTeamRank=oppTeamRank, throw=throw, leftvsRight=leftvsRight, leftRightLog=leftRightLog, hits=hits, prediction=prediction)
-
-
 @app.route("/researchMLBteam", methods=('POST', 'GET'))
 def researchMLBteam():
     ses = session.get('user')
@@ -1540,9 +1033,7 @@ def researchMLBteam():
     awayTeamSchedule = getTeamSchedule(awayTeam)
     homeTeamSchedule = getTeamSchedule(homeTeam)
     awayTeamVs = getMLBTeamvs(awayTeamSchedule, homeTeam)
-    #print(awayTeamVs)
     homeTeamVs = getMLBTeamvs(homeTeamSchedule, awayTeam)
-    #print(homeTeamVs)
     awayRunsPerGame = getRoadHomeRunsPerGame(awayTeamSchedule, False)
     homeRunsPerGame = getRoadHomeRunsPerGame(homeTeamSchedule, True)
     awayTeamLast10Runs = getLast10avgRuns(awayTeamSchedule)
@@ -1558,11 +1049,9 @@ def researchMLBteam():
             pitchers = i
             break
     homePitcher = []
-    print(pitchers)
     awayPitcher = []
     awayPitcher.append(pitchers[0])
     awayPitcherGameLog = getMLBGameLog(pitchers[2], "Starting Pitcher", False)
-    print(awayPitcherGameLog)
     awayPitcher.append(getPitcherRecord(pitchers[2]))
     last10AwayPitcher = getMLBLast10(awayPitcherGameLog, 'era')
     awayPitcheravg = getMLBHomeAwayLog(awayPitcherGameLog, 'era', False)
@@ -1624,7 +1113,6 @@ def researchmlbPlayer():
     player = json.loads(player_json)
     score = 0
     ohtani = False
-    print(player)
     stat = player['stat']
     first = player['fname']
     last = player['lname']
@@ -1696,9 +1184,7 @@ def researchmlbPlayer():
             break
 
     log = getMLBGameLog(id, pos, ohtani)
- #   print(log)
     log2022 = getMLB2022Log(id, pos, ohtani)
- #   print(log2022)
     if len(oppTeam) < 1:
         home = MLBhomeoraway(id)
         oppTeam = getMLBOppTeam(id, home)
@@ -1707,7 +1193,6 @@ def researchmlbPlayer():
     throw = ""
     pitcher = ""
     oppPitcherStats = []
-    print(game)
     cursor.execute("SELECT * FROM mlbTodaysGames WHERE game=?;",(game[0],))
     result = cursor.fetchall()
     if len(result) > 0:
@@ -1721,7 +1206,6 @@ def researchmlbPlayer():
         arr = np.array(games)
         games_teams = arr[:,0]
         game_index = np.char.find(games_teams, team)
-        print(games)
         index = np.where(game_index != -1)[0]
     if home:
         homeint = 1
@@ -1756,8 +1240,6 @@ def researchmlbPlayer():
             pitcher = pitcher_first + " " + pitcher[pitcher.find(" ") + 1:pitcher.find("(") - 1]
         else:
             pitcher = pitcher_first + " " + pitcher[pitcher.find(" ") + 1:]
-        print("PITCHER: ")
-        print(pitcher)
         cursor.execute("SELECT * FROM mlbPlayer WHERE name=?;", (pitcher,))
         result = cursor.fetchall()
         if len(result) > 0:
@@ -1766,8 +1248,6 @@ def researchmlbPlayer():
             oppPitcherStats, opphbp, oppbattersfaced = getPitcherStats(pitcherID)
         elif len(pitcher) > 1:
             pitchernames = pitcher.split(" ")
-            print(pitcher_first)
-            print(pitcher)
             pitcherID = getMLBPlayerID(pitcher_first, pitcher[pitcher.find(" ") + 1:])
             oppPitcherStats, opphbp, oppbattersfaced = getPitcherStats(pitcherID)
         if len(oppPitcherStats) > 0:
@@ -1778,15 +1258,10 @@ def researchmlbPlayer():
             oppPitchfip = 0.0
             oppwhip = 0.0
         throw = getPitcherThrowingArm(pitcherID)
-        print(home)
-        print(id)
         cursor.execute("SELECT id FROM mlbTeams WHERE name=?;", (oppTeam,))
         teamid = cursor.fetchall()
-        print(oppTeam)
- #       print(teamid)
         teamid = teamid[0]
         logvspitcher = getHittervsPitcherStats(id,teamid,pitcher)
-        print(logvspitcher)
         leftvsRight = rightvsLeftStats(id, throw)
         
         if throw == "Right":
@@ -1833,9 +1308,7 @@ def researchmlbPlayer():
             logHit = numLog[0].shape[0] 
             logHit = logHit / len(log)
         oppteamname = MLBteamname(MLBabbrev(oppTeam))
-        print(oppteamname)
         oppteamnum = get_team_number(oppteamname)
-        print(oppteamnum)
         if len(log) >= 5:
             last5 = np.array(log[:5])
         else:
@@ -1853,9 +1326,6 @@ def researchmlbPlayer():
         if result[0][0] is None:
             idLook = playerid_lookup(last,first)
             if len(idLook) > 1 or len(idLook) == 0:
-                print(name)
-                print(idLook)
-                print("CANT FIND PYBASEBALL ID")
                 return redirect("/MLBnotfound")
         else:
             cursor.execute("SELECT pybaseballID FROM mlbPlayer WHERE id=?;", (id,))
@@ -1864,13 +1334,9 @@ def researchmlbPlayer():
         
         cursor.execute("SELECT pybaseballID FROM mlbPlayer WHERE id=?;", (pitcherID,))
         result = cursor.fetchall()
-        print(result)
         if len(result) == 0 or result[0][0] is None:
             idLook = playerid_lookup(pitcher[pitcher.find(" ") + 1:],pitcher[:pitcher.find(" ")])
             if len(idLook) > 1 or len(idLook) == 0:
-                print(pitcher)
-                print(idLook)
-                print("CANT FIND PYBASEBALL ID")
                 return redirect("/MLBnotfound")
         else:
             cursor.execute("SELECT pybaseballID FROM mlbPlayer WHERE id=?;", (pitcherID,))
@@ -1881,12 +1347,9 @@ def researchmlbPlayer():
        # if len(wind) == 0:
       #      wind = 0.0
         features = [[ last10Hit, last5Hit, logHit, oppwhip, last5ops, float(temperature), oppPitchfip, percentFastballs, avg_vs_FF, avg_vs_off, avg_vs_pitchFF,avg_spin_ff,avg_spin_off]]
-        print(features)
         prediction = hittersmodel.predict(features)
         features2 = [[ last10Hit, last5Hit, logHit, float(overunder), last5ops, float(temperature), oppPitchfip, avg_vs_FF, avg_vs_off, avg_vs_pitchFF,avg_spin_ff,avg_spin_off]]
-        print(features2)
         regressionPrediction = hittersRegressionmodel.predict(features2)
-        print(f'\nREGRESSION LINE PREDICTION: {regressionPrediction}')
     else:
         if rightleft == -1:
             throw = getPitcherThrowingArm(id)
@@ -1895,7 +1358,6 @@ def researchmlbPlayer():
             else:
                 rightleft = 1
         stats, hbp, battersfaced = getPitcherStats(id)
-    #    print(stats)
         k9 = (float(stats[14]) / float(stats[8])) * 9
         k9 = round(k9, 2)
 
@@ -1918,17 +1380,13 @@ def researchmlbPlayer():
             last3 = np.array([])
         else:
             last3 = np.array(log[:, 3])
-    #    print(last3)
         last3 = np.float64(last3)
-    #    print(last3)
-    #    print(last3.shape)
         if len(last3.shape) == 0:
             inningslast3 = [last3]
         elif last3.shape[0] == 0:
             inningslast3 = [0]
         else:
             inningslast3 = np.sum(last3) / last3.shape
-        print(inningslast3[0])
 
         if stat == "era":
             catnum = 0
@@ -1965,7 +1423,6 @@ def researchmlbPlayer():
         t = "Strikeouts"
         strikeouts = True
         oppTeamRank = getMLBStrikoutRanks(oppTeam_abbrev)
-        print(stats)
         if stats[14] == '0' or stats[13] == '0':
             kwalk = 0
         else:
@@ -1976,7 +1433,6 @@ def researchmlbPlayer():
     #    else:
     #        k9 = (float(stats[14]) / float(stats[8])) * 9
     #        k9 = round(k9, 2)
-        print(oppTeam)
          # Get walk per k Team
       #  teamstats = getMLBTeamStats()
       #  print(teamstats)
@@ -1987,12 +1443,9 @@ def researchmlbPlayer():
       #          break
         
         features = [[ oppTeamRank, k9, kpercent,  kwalk]]
-        print(features)
         prediction = strikeoutmodel.predict(features)
         features2 = [[ homeint, oppTeamRank, inningslast3[0], kpercent, float(temperature), float(wind), fip, float(overunder), kwalk]]
-        print(features2)
         prediction2 = strikeoutRegressionmodel.predict(features2)
-        print(f"STRIKEOUT REGRESSION PREDICTION LINE: {prediction2}")
 
     elif stat == 'era':
         t = "Earned Runs Allowed"
@@ -2006,12 +1459,10 @@ def researchmlbPlayer():
             last5Hit = 0
 
         features = [[  float(line), oppTeamRank, last5Hit, inningslast3[0], float(temperature), float(wind), fip]]
-        print(features)
         prediction = earnedRunsModel.predict(features)
         oppTeamNum = mapTeamInt(oppTeam)
         features2 = [[homeint, oppTeamRank, last5Hit, oppTeamNum, inningslast3[0], float(temperature), fip]]
         prediction2 = earnedRunsRegressionmodel.predict(features2)
-        print(f"Earned Runs REGRESSION PREDICTION LINE: {prediction2}")
     elif stat == 'r':
         t = "Runs"
     elif stat == 'hrb':
@@ -2029,12 +1480,9 @@ def researchmlbPlayer():
             last5Hit = 0
         oppTeamNum = mapTeamInt(oppTeam)
         features = [[ homeint, float(line), catnum, last5Hit, inningslast3[0], float(temperature), fip]]
-        print(features)
         prediction = otherpitchermodel.predict(features)
         features2 = [[homeint, oppTeamRank, oppTeamNum, inningslast3[0], float(temperature), fip, float(overunder)]]
-        print(features2)
         prediction2 = hitsAllowedRegressionmodel.predict(features2)
-        print(f"Hits Allowed REGRESSION PREDICTION LINE: {prediction2}")
     elif stat == 'tb':
         t = "Total Bases"
     elif stat == 'outs':
@@ -2050,7 +1498,6 @@ def researchmlbPlayer():
             if outs > float(line):
                 last5Hit += 1
         features = [[ homeint, float(line), catnum, last5Hit, inningslast3[0], temperature, fip]]
-        print(features)
         prediction = otherpitchermodel.predict(features)
 
     last10num = []
@@ -2518,7 +1965,6 @@ def process():
     
     for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o in result:
         updatedProps.append([a,b,c,n,m,f,o,h,k,l])
-    print(updatedProps)
     return jsonify(content=updatedProps)
 
 @app.route("/sportprocess", methods=["POST"])
@@ -2526,7 +1972,6 @@ def sportprocess():
     sport = request.form['parameter']
     result = ()
     updatedProps = []
-    print(sport)
     if sport == "nba":
         try:
             sqlite_connection = sqlite3.connect('subscribers.db')
@@ -2561,8 +2006,6 @@ def sportprocess():
         for a, b, c, d, e, f, g, h in result:
             updatedProps.append([a,b,c,d,e,f,g])
     
-    print(games[0][0])
-    print(updatedProps)
     return jsonify(content=updatedProps, games=games)
     
 
@@ -2614,7 +2057,6 @@ def researchNBAPlayer():
     if stat == 'pra':
         stat2 = 'pra'
     cursor.execute("SELECT * FROM nbaInfo WHERE name=?", (name,))
-    print(name)
     result = cursor.fetchall()
     if len(result) == 0:
             id = getPlayerID(first, last)
@@ -2629,17 +2071,11 @@ def researchNBAPlayer():
     cursor.close()
     sqlite_connection.close()
     if id.isdigit() and id != -1:
-        print(id)
         position, team = getPlayerInfoNBA(id)
-        print(gameinfo)
         arr_games = np.array(gameinfo)
-        print(arr_games)
         games = arr_games[:,0]
         game_index = np.char.find(games, team)
-        print(team)
         index = np.where(game_index != -1)[0]
-        print(index)
-        print(games)
         game = games[index[0]]
         atIndex = game.find("@")
         teamIndex = game.find(team)
@@ -2769,13 +2205,6 @@ def researchNBAPlayer():
             last10PointsHit = last10Hit(log,"points", float(line))
             features = [[ float(line),rank, last10PointsHit, posrank, total, minutes,shots, spread]]
             prediction = pointsmodel.predict(features)
-            # response = openai.ChatCompletion.create(
-            # model="ft:gpt-3.5-turbo-0125:propcodes::AgIOduxo",
-            # messages=[
-            #     {"role": "system", "content": "You are a helpful assistant that predicts and explains why an NBA player will go over or under their points player prop line."},
-            #     {"role": "user", "content": f"With this information of a player coming into their game: Position={position}, OppRank={rank}, last10={last10PointsHit}, OppPosRank={posrank}, OverUnder={total}, DeltaMinutes={minutes}, DeltaShots={shots}, Spread={spread}. Why will this player score more or less than {line} points?"}
-            # ])
-            # llmMessage = response['choices'][0]['message']['content']
         elif stat == "3-pt":
             features = [[float(line), rank, last10Hit(log,'3-pt', float(line)), last5Hit(log,'3-pt', float(line)), posrank, total, minutes, shots, spread]]
             prediction = tresmodel.predict(features)
@@ -2788,12 +2217,9 @@ def researchNBAPlayer():
         else:
             features = [[ float(line),positionint,rank, last10Hit(log,"pra", float(line)), posrank, total, minutes,shots, spread]]
             prediction = pramodel.predict(features)
-        print(features)
-        print(prediction)
         last10 = getLast10(log, stat2)
         homeAway = getHomeAwayLog(log, stat2, home)
         lastYearhomeAway = getHomeAwayLog(lastYearLog, stat2, home)
-        print(teamname(oppteamname2(oppTeam)))
         vsLog = getVSLog(log, stat2, teamname(oppteamname2(oppTeam)))
         lastYearvsLog = getVSLog(lastYearLog, stat2, teamname(oppteamname2(oppTeam)))
         winLog = getWinLossLog(log, 'W', stat2)
@@ -3000,252 +2426,6 @@ def researchNBAPlayer():
                             playedAgainst=playedAgainst, oppTeam=oppTeam, graphVs=graphVs, graphWins=graphWins, graphLoss=graphLoss, prediction=prediction, posrank=posrank, rank=rank, position=position, line=line, llmMessage=llmMessage)
 
 
-@app.route("/prop", methods=('GET','POST'))
-def player():
-    ses = session.get('user')
-    sub = False
-    if ses:
-        try:
-            sqlite_connection = sqlite3.connect('subscribers.db')
-            cursor = sqlite_connection.cursor()
-            cursor.execute("SELECT subscribed FROM subscribers WHERE email=?;", (ses['userinfo']['nickname'],))
-            result = cursor.fetchall()
-            if len(result) > 0:
-                if 'y' in result[0]:
-                    sub = True
-        except sqlite3.Error as error:
-            print("Error while connection to sqlite", error)
-        finally:
-            if sqlite_connection:
-                cursor.close()
-                sqlite_connection.close()
-    if not ses or not sub:
-        return redirect("/")
-    score = 0
-    stat = request.form.get('stat')
-    stat2 = stat[0]
-    first = request.form.get("fname")
-    last = request.form.get("lname")
-    id = getPlayerID(first, last)
-    print(id)
-    if id != -1:
-        line = request.form.get("num")
-        #real_stats = getPlayerStats(id)
-        real_stats = []
-        log = getGameLog(id, False)
-        lastYearLog = getGameLog(id, True)
-        position = getPosition(id)
-        home = homeoraway(id)
-        playerTeam = getTeam(id, home)
-        oppTeam = getOppTeam(id, home)
-        team_pos = getTeamPos(position, oppTeam)
-       # score = getScore(stat2, line, log, home, team_pos, position, real_stats, playerTeam, oppTeam)
-        last10 = getLast10(log, stat2)
-        homeAway = getHomeAwayLog(log, stat2, home)
-        lastYearhomeAway = getHomeAwayLog(lastYearLog, stat2, home)
-        vsLog = getVSLog(log, stat2, oppTeam)
-        lastYearvsLog = getVSLog(lastYearLog, stat2, oppTeam)
-        winLog = getWinLossLog(log, 'W', stat2)
-        lossLog = getWinLossLog(log, 'L', stat2) 
-    else:
-        return redirect("/notfound")
-    last10num = []
-    last10vs = []
-    for i in last10:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    
-    i = 0
-    graphLine = []
-    while i < 10:
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title='Last 10 Games', xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-    
-    graphLast10 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-    last10num = []
-    last10vs = []
-    for i in homeAway:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    
-    if home:
-        title = "At Home"
-    else:
-        title = "On the road"
-    i = 0
-    graphLine = []
-    while i < len(homeAway):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title=title, xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-    #fig.update_layout(displayModeBar = False)
-
-    graphHomeAway = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-    first = first.capitalize()
-    last = last.capitalize()
-
-    if len(vsLog) > 0:
-        playedAgainst = True
-        last10num = []
-        last10vs = []
-        for i in vsLog:
-            last10num.append(i[1])
-            last10vs.append(i[0])
-
-        i = 0
-        graphLine = []
-        while i < 10:
-            graphLine.append(float(line))
-            i = i + 1
-        data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-        layout = go.Layout(title='vs ' + oppTeam, xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-        fig = go.Figure(data=data, layout=layout)
-        fig.update_yaxes(rangemode= "tozero")
-        fig.update_yaxes(fixedrange= True)
-        fig.update_xaxes(fixedrange= True)
-        fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-
-        graphVs = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-    else:
-        playedAgainst = False
-        graphVs = graphLast10
-    
-    
-    last10num = []
-    last10vs = []
-    for i in winLog:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    i = 0
-    graphLine = []
-    while i < len(last10num):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title='Wins', xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-
-    graphWins = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-
-    last10num = []
-    last10vs = []
-    for i in lossLog:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    i = 0
-    graphLine = []
-    while i < len(last10num):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title='Losses', xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-
-    graphLoss = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-
-    last10num = []
-    last10vs = []
-    for i in lastYearhomeAway:
-        last10num.append(i[1])
-        last10vs.append(i[0])
-    
-    if home:
-        title = "22-23 At Home"
-    else:
-        title = "22-23 On the road"
-    i = 0
-    graphLine = []
-    while i < len(lastYearhomeAway):
-        graphLine.append(float(line))
-        i = i + 1
-    data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-    layout = go.Layout(title=title, xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-    fig = go.Figure(data=data, layout=layout)
-    fig.update_yaxes(rangemode= "tozero")
-    fig.update_yaxes(fixedrange= True)
-    fig.update_xaxes(fixedrange= True)
-    fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-    #fig.update_layout(displayModeBar = False)
-
-    lastyeargraphHomeAway = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-
-    print(lastYearvsLog)
-    if len(lastYearvsLog) > 0:
-        playedAgainst2 = True
-        last10num = []
-        last10vs = []
-        for i in lastYearvsLog:
-            last10num.append(i[1])
-            last10vs.append(i[0])
-
-        i = 0
-        graphLine = []
-        while i < 10:
-            graphLine.append(float(line))
-            i = i + 1
-        data = [go.Bar(y = last10num, x=last10vs, marker=dict(color=['green' if float(x) > float(line) else 'red' for x in last10num]), hovertemplate = "%{x}<br>%{y}<extra></extra>")]
-        layout = go.Layout(title='22-23 vs ' + oppTeam, xaxis=dict(title='Game'), yaxis=dict(title=stat), height=500, width=800, barmode="group", showlegend=False)
-        fig = go.Figure(data=data, layout=layout)
-        fig.update_yaxes(rangemode= "tozero")
-        fig.update_yaxes(fixedrange= True)
-        fig.update_xaxes(fixedrange= True)
-        fig.add_trace(go.Scatter(x=last10vs, y=graphLine, mode='lines', name='Line', line=dict(color='black', width=2), showlegend=False, hovertemplate ="%{y}"))
-
-        lastyeargraphVs = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-    else:
-        playedAgainst2 = False
-        lastyeargraphVs = graphLast10
-    score = float(score)
-    fullname = first + " " + last
-    try:
-        sqlite_connection = sqlite3.connect('subscribers.db')
-        cursor = sqlite_connection.cursor()
-        cursor.execute("SELECT * FROM Props WHERE name=? AND stat=? AND cat=? AND sport=?;", (fullname, line, stat, "nba"))
-        result = cursor.fetchall()
-        if len(result) > 0:
-            cursor.execute("UPDATE Props SET views = views + ? WHERE name=? AND stat=? AND cat=? AND sport=?", (1, fullname, line, stat, "nba"))
-            sqlite_connection.commit()
-        else:
-            cursor.execute("""INSERT INTO Props(name, stat, cat, score, views, over, under, sport) VALUES(?, ?, ?, ?, ?, ?, ?, ?);""", (fullname, line, stat, score, 1, 0, 0, "nba"))
-            sqlite_connection.commit()
-    except sqlite3.Error as error:
-        print("Error while connection to sqlite", error)
-    finally:
-        if sqlite_connection:
-            cursor.close()
-            sqlite_connection.close()
-    return render_template("player.html", playedAgainst2=playedAgainst2, lastyeargraphHomeAway=lastyeargraphHomeAway, lastyeargraphVs=lastyeargraphVs, fname=first, lname=last, score=score, graphLast10=graphLast10, graphHomeAway=graphHomeAway, stat=stat,\
-                            playedAgainst=playedAgainst, oppTeam=oppTeam, graphVs=graphVs, graphWins=graphWins, graphLoss=graphLoss)
-    
-
 @app.route("/propschat", methods=('GET','POST'))
 def chat():
     if request.method == 'POST':
@@ -3296,7 +2476,6 @@ def chat():
                     cat = arguments.get("cat")
                     id = getPlayerID(arguments.get("firstname"), arguments.get("lastname"))
                     log = getGameLog(id,False)
-                    print(cat)
                     position, team = getPlayerInfoNBA(id)
                     if position == 'Point Guard':
                         new_pos = 'GC-0 PG'
@@ -3401,7 +2580,6 @@ def chat():
                         features = [[ float(arguments.get("line")), nba.last10Hit(log,"rebounds",arguments.get("line")), nba.last5Hit(log,'rebounds',arguments.get("line")), posrank, float(overunder), minutes,shots,float(spread)]]
                         prediction = reboundsmodel.predict(features)
                     elif cat.lower() == '3-pt' or cat.lower() == "three pointers made":
-                        print(arguments.get("line"))
                         threeptRank = get3ptRank()
                         for x in posrankings[3]:
                             if oppTeam2 in x[1]:
@@ -3419,8 +2597,6 @@ def chat():
                         user_message = f"From our model we predict that {arguments.get('firstname')} {arguments.get('lastname')} will have less than {arguments.get('line')} {cat} in his upcoming game."
                     else:
                         user_message = f"From our model we predict that {arguments.get('firstname')} {arguments.get('lastname')} will have more than {arguments.get('line')} {cat} in his upcoming game."
-                    print(features)
-                    print(prediction)
 
                     return jsonify({"reply": user_message})
                 elif function == "playerVsTeam":

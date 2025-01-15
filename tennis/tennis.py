@@ -12,7 +12,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 def getLines():
     # Put whatever tennis moneylines from DraftKings you want
-    page = requests.get("https://sportsbook.draftkings.com/leagues/tennis/australian-open-men-qualifiers")
+    page = requests.get("https://sportsbook.draftkings.com/leagues/tennis/australian-open-men")
     page = page.text
     page_soup = BeautifulSoup(page, 'html5lib')
     matches = []
