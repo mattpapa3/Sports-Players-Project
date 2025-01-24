@@ -22,7 +22,7 @@ $(document).ready(function() {
              },
             success: function(response) {
                 var updatedProps = "<table><thead>";
-                updatedProps += "<tr> <th>Player</th> <th>Line</th> <th>PropCodes Score</th> <th>Views</th> <th>Over</th> <th>Under</th> </tr></thead><tbody>";
+                updatedProps += "<tr> <th>Player</th> <th>Line</th> <th>PropCodes Score</th> <th>Views</th> <th>Over</th> <th>Under</th> <th>EV Over</th> <th> EV Under</th></tr></thead><tbody>";
                 $.each(response.content, function(index, row){
                     updatedProps += "<tr>"
                     $.each(row, function(itemIndex, i) {

@@ -58,9 +58,19 @@ position_mapping = {
     "Center": 5,
     "Forward": 6
 }
-hittersRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/hittersHitRegressionmodel.pkl", "rb"))
-strikeoutRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/strikeoutHitRegressionmodel.pkl", "rb"))
-earnedRunsRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/earnedRunsAllowedRegressionmodel.pkl", "rb"))
+
+cat_mapping = {
+    "3-pt": 0,
+    "points": 1,
+    "assists": 2,
+    "pra": 3,
+    "rebounds": 4,
+    "blocks": 5,
+    "steals": 6
+}
+# hittersRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/hittersHitRegressionmodel.pkl", "rb"))
+# strikeoutRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/strikeoutHitRegressionmodel.pkl", "rb"))
+# earnedRunsRegressionmodel = pickle.load(open("/root/propscode/propscode/MLB/earnedRunsAllowedRegressionmodel.pkl", "rb"))
 pointsRegressionMdoel = pickle.load(open("/root/propscode/propscode/NBA/pointsRegressionmodel.pkl", "rb"))
 praRegressionModel = pickle.load(open("/root/propscode/propscode/NBA/praRegressionmodel.pkl", "rb"))
 reboundsRegressionModel = pickle.load(open("/root/propscode/propscode/NBA/reboundsRegressionmodel.pkl", "rb"))
@@ -73,7 +83,18 @@ reboundsmodel = pickle.load(open("/root/propscode/propscode/NBA/reboundsmodel.pk
 pramodel = pickle.load(open("/root/propscode/propscode/NBA/pramodel.pkl", "rb"))
 pointsmodel = pickle.load(open("/root/propscode/propscode/NBA/pointsmodel.pkl", "rb"))
 tresmodel = pickle.load(open("/root/propscode/propscode/NBA/threepointmodel.pkl", "rb"))
+overModel = pickle.load(open("/root/propscode/propscode/NBA/overOddsmodel.pkl", "rb"))
+underModel = pickle.load(open("/root/propscode/propscode/NBA/underOddsmodel.pkl", "rb"))
 
+
+def scale_predictions(prediction):
+    scaled_preds = prediction
+    if prediction > -110 and prediction < 100:
+        if prediction > -3:
+            scaled_preds = 100
+        else:
+            scaled_preds = -105
+    return scaled_preds
 
 def getHits_Runs_RBISLines():
 #    display = Display(visible=0, size=(1920, 1080))
@@ -691,7 +712,7 @@ def getNBAProps():
     #print(links[:2])
     today = datetime.now()
     gameinfo = nba.getNbaTodayGames()
-    # print(gameinfo)
+    print(gameinfo)
     arr_games = np.array(gameinfo)
     sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
     cursor = sqlite_connection.cursor()
@@ -1117,11 +1138,12 @@ def calcScoreNBA():
     praRank = nba.getpraRank()
     bRank = nba.getBlocksRank()
     sRank = nba.getStealsRank()
+    reboundsRank = nba.getReboundsRank()
     sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
     cursor = sqlite_connection.cursor()
-    cursor.execute("SELECT * FROM Props WHERE regressionLine IS NULL AND cat != ? AND cat != ?;", ("blocks", "steals"))
+    cursor.execute("SELECT * FROM Props WHERE regressionLine IS NULL;")
     result = cursor.fetchall()
-    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p in result:
+    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r in result:
         props.append([a,b,c,j,k,l[l.find('-')+1:]])
     props.sort()
     # print(props)
@@ -1208,10 +1230,42 @@ def calcScoreNBA():
             previous = i[0]
             oppTeamNum = team_mapping.get(oppTeam2)
          #   lastyearLog = nba.getGameLog(id,True) 
+            FGlast5 = 0.0
+            FGlast3 = 0.0
+            threePTPercentlast5 = 0.0
+            threePTPercentlast3 = 0.0
+            for num, m in enumerate(log[:5]):
+                tot += int(m[3])
+                totshots += int(m[4][m[4].find('-') + 1:])
+                FGlast5 += float(m[5])
+                threePTPercentlast5 += float(m[7])
+                if num < 3:
+                    FGlast3 += float(m[5])
+                    threePTPercentlast3 += float(m[7])
+            
+            team_abb = nba.teamname(nba.oppteamname2(team))
+            DNPplayers = nba.getInjuredPlayers(team_abb, team)
+            usageInjured = 0.0
+            if team == "LA Clippers":
+                teamstats = nba.getTeamStats("Los Angeles Clippers")
+            else:
+                teamstats = nba.getTeamStats(team)
+            for p in DNPplayers:
+                cursor.execute("SELECT id FROM nbaInfo WHERE name=?", (p,))
+                result = cursor.fetchall()
+                if len(result) > 0:
+                    DNPid = result[0][0]
+                else:
+                    DNPid = nba.getPlayerID(p[:p.find(" ")], p[p.find(" ") + 1:])
+                DNPstats = nba.getTotStats(DNPid)
+                usageInjured += nba.calc_uasge_perc(DNPstats, teamstats)
+            totstats = nba.getTotStats(id)
+            usageP = nba.calc_uasge_perc(totstats, teamstats)
         gamescore = float(i[4])
         spread = float(i[5])
         line = float(i[1])
         # print(position)
+        lastGameHit = 0
         if i[2] == "points":
             for x in posrankings[0]:
                 if oppTeam2 in x[1]:
@@ -1225,10 +1279,16 @@ def calcScoreNBA():
             # print(i)
             prediction = pointsRegressionMdoel.predict(features)
             prediction2 = pointsmodel.predict(features)
+            if float(log[0][16]) > float(i[1]):
+                lastGameHit = 1
         elif i[2] == 'rebounds':
             for x in posrankings[1]:
                 if oppTeam2 in x[1]:
                    posrank = x[0]
+                   break
+            for x in reboundsRank:
+                if fulloppteam in x:
+                   rank = int(x[0])
                    break
           #  logHit = nba.logHit(lastyearLog, 'rebounds', i[1])
             features = [[ line, positionnum, nba.last10Hit(log,"rebounds",i[1]), nba.last5Hit(log,'rebounds',i[1]), posrank, gamescore, minutes, shots, spread]]
@@ -1237,6 +1297,8 @@ def calcScoreNBA():
             prediction2 = reboundsmodel.predict(features)
             # print(i)
             # print(features)
+            if float(log[0][10]) > float(i[1]):
+                lastGameHit = 1
         elif i[2] == "assists":
             for x in posrankings[2]:
                 if oppTeam2 in x[1]:
@@ -1256,6 +1318,8 @@ def calcScoreNBA():
             
             # print(i)
             # print(features)
+            if float(log[0][11]) > float(i[1]):
+                lastGameHit = 1
         elif i[2] == '3-pt':
             for x in posrankings[3]:
                if oppTeam2 in x[1]:
@@ -1272,6 +1336,8 @@ def calcScoreNBA():
             prediction2 = tresmodel.predict(features)
             # print(i)
             # print(features)
+            if float(log[0][6][:log[0][6].find('-')]) > float(i[1]):
+                lastGameHit = 1
         elif i[2] == 'pra':
             for x in posrankings[4]:
                 if oppTeam2 in x[1]:
@@ -1281,41 +1347,65 @@ def calcScoreNBA():
                 if fulloppteam in x:
                    rank = int(x[0])
                    break
-            features = [[line, positionnum, rank, nba.last10Hit(log,"points",i[1]), posrank, gamescore, minutes, shots, spread]]
+            features = [[line, positionnum, rank, nba.last10Hit(log,"pra",i[1]), posrank, gamescore, minutes, shots, spread]]
             # print(features)
             prediction = praRegressionModel.predict(features)
             prediction2 = pramodel.predict(features)
             # print(i)
             # print(features)
-        # elif i[2] == "steals":
-        #     for x in posrankings[6]:
-        #         if oppTeam2 in x[1]:
-        #             posrank = x[0]
-        #             break
-        #     for x in sRank:
-        #         if fulloppteam in x:
-        #            rank = int(x[0])
-        #            break
-        #     features = [[line, positionnum, rank, nba.last10Hit(log,"steals",i[1]), posrank, minutes,shots]]
-        #     # print(features)
-        #     prediction = stealsRegressionModel.predict(features)
-        #     # print(i)
-        #     # print(features)
-        # elif i[2] == "blocks":
-        #     for x in posrankings[5]:
-        #         if oppTeam2 in x[1]:
-        #             posrank = x[0]
-        #             break
-        #     for x in bRank:
-        #         if fulloppteam in x:
-        #            rank = int(x[0])
-        #            break
-        #     features = [[home, line, rank, nba.last10Hit(log,"blocks",i[1]), nba.last5Hit(log,'steals',i[1]), oppTeamNum, gamescore, minutes, shots, spread]]
-        #     # print(features)
-        #     prediction = blocksRegressionModel.predict(features)
+            tot = float(log[0][11]) + float(log[0][10]) + float(log[0][16])
+            if tot > float(i[1]):
+                lastGameHit = 1
+        elif i[2] == "steals":
+            for x in posrankings[6]:
+                if oppTeam2 in x[1]:
+                    posrank = x[0]
+                    break
+            for x in sRank:
+                if fulloppteam in x:
+                   rank = int(x[0])
+                   break
+            features = [[line, positionnum, rank, nba.last10Hit(log,"steals",i[1]), posrank, minutes,shots]]
+            # print(features)
+            prediction = stealsRegressionModel.predict(features)
             # print(i)
             # print(features)
+            prediction2 = -1
+            if float(log[0][13]) > float(i[1]):
+                lastGameHit = 1
+        elif i[2] == "blocks":
+            for x in posrankings[5]:
+                if oppTeam2 in x[1]:
+                    posrank = x[0]
+                    break
+            for x in bRank:
+                if fulloppteam in x:
+                   rank = int(x[0])
+                   break
+            features = [[home, line, rank, nba.last10Hit(log,"blocks",i[1]), nba.last5Hit(log,'steals',i[1]), oppTeamNum, gamescore, minutes, shots, spread]]
+            # print(features)
+            prediction = blocksRegressionModel.predict(features)
+            # print(i)
+            # print(features)
+            prediction2 = -1
+            if float(log[0][12]) > float(i[1]):
+                lastGameHit = 1
+        catnum = cat_mapping.get(i[2])
+        team_abb = nba.teamname(nba.oppteamname2(team))
+        if team_abb in i[3]:
+            favorite = 1
+        else:
+            favorite = 0
+        features = [[home,line,positionnum,rank,catnum,nba.last10Hit(log,i[2],i[1]),nba.last5Hit(log,i[2],i[1]),nba.logHit(log,i[2],i[1]),posrank,gamescore,shots,spread,favorite,\
+                     FGlast3,FGlast5,lastGameHit,threePTPercentlast5,threePTPercentlast3,usageInjured,usageP]]
+        overPrediction = scale_predictions(int(overModel.predict(features)))
+        underPrediction = scale_predictions(int(underModel.predict(features)))
+        cursor.execute("UPDATE Props SET overEV = ? WHERE name=? AND cat=?;",(overPrediction, i[0],i[2]))
+        sqlite_connection.commit()
+        cursor.execute("UPDATE Props SET underEV = ? WHERE name=? AND cat=?;",(underPrediction, i[0],i[2]))
+        sqlite_connection.commit()
         cursor.execute("UPDATE Props SET regressionLine = ? WHERE name = ? AND cat = ?;", (prediction[0], i[0], i[2]))
+        sqlite_connection.commit()
         if prediction2 == 1:
             cursor.execute("UPDATE Props SET prediction = ? WHERE name = ? AND cat = ?;", ("over", i[0], i[2]))
         elif prediction2 == 0:
@@ -1361,7 +1451,7 @@ def checkModelAcc():
     threeTotOver = 0
     threeTotUnder = 0
     threeHitUnder = 0
-    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o in result:
+    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p in result:
         props.append([a,b,c,n,o])
     props.sort()
     previous = ""
@@ -1373,7 +1463,7 @@ def checkModelAcc():
             id = cursor.fetchall()[0][0]
             log = nba.getGameLog(id,False)
             lastGame = log[0]
-        if lastGame[0] == '1/12':
+        if lastGame[0] == '1/19':
             if i[2] == "points":
                 pointsTot += 1
                 if float(i[1]) > float(lastGame[16]):

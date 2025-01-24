@@ -209,6 +209,8 @@
                                 <th>Views</th>
                                 <th>Over</th>
                                 <th>Under</th>
+                                <th>EV Over</th>
+                                <th>EV Under</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -220,6 +222,8 @@
                                     <td> {{ i[4] }} </td>
                                     <td style="color: green;"> {{ i[5] }} </td>
                                     <td> {{ i[6] }} </td>
+                                    <td>{{ i[10] }}</td>
+                                    <td>{{ i[11] }}</td>
                                     <td><button class="researchButton" data-name="{{ i[0] }}" data-line="{{ i[1] }}" data-cat="{{ i[2] }}" data-tot="{{ i[8]}}" data-spread="{{ i[9] }}">Research</button></td>
                                 </tr>
                             {% endfor %}

@@ -376,6 +376,70 @@ def teamnamemap(teamname):
         teamname = 30
     return teamname
 
+def abbToTeamName(teamname):
+    if teamname == "BOS":
+        teamname = "Boston Celtics"
+    elif teamname == "BKN":
+        teamname = "Brooklyn Nets"
+    elif teamname == "NY":
+        teamname = "New York Knicks"
+    elif teamname == "PHI":
+        teamname = "Philadelphia 76ers"
+    elif teamname == "TOR":
+        teamname = "Toronto Raptors"
+    elif teamname == "GS":
+        teamname = "Golden State Warriors"
+    elif teamname == "LAC":
+        teamname = "LA Clippers"
+    elif teamname == "LAL":
+        teamname = "Los Angeles Lakers"
+    elif teamname == "PHX":
+        teamname = "Phoenix Suns"
+    elif teamname == "SAC":
+        teamname = "Sacramento Kings"
+    elif teamname == "CHI":
+        teamname = "Chicago Bulls"
+    elif teamname == "CLE":
+        teamname = "Cleveland Cavaliers"
+    elif teamname == "DET":
+        teamname = "Detroit Pistons"
+    elif teamname == "IND":
+        teamname = "Indiana Pacers"
+    elif teamname == "MIL":
+        teamname = "Milwaukee Bucks"
+    elif teamname == "ATL":
+        teamname = "Atlanta Hawks"
+    elif teamname == "CHA":
+        teamname = "Charlotte Hornets"
+    elif teamname == "MIA":
+        teamname = "Miami Heat"
+    elif teamname == "ORL":
+        teamname = "Orlando Magic"
+    elif teamname == "WSH":
+        teamname = "Washington Wizards"
+    elif teamname == "DEN":
+        teamname = "Denver Nuggets"
+    elif teamname == "MIN":
+        teamname = "Minnesota Timberwolves"
+    elif teamname == "OKC":
+        teamname = "Oklahoma City Thunder"
+    elif teamname == "POR":
+        teamname = "Portland Trail Blazers"
+    elif teamname == "UTA" or teamname == "UTAH":
+        teamname = "Utah Jazz"
+    elif teamname == "DAL":
+        teamname = "Dallas Mavericks"
+    elif teamname == "HOU":
+        teamname = "Houston Rockets"
+    elif teamname == "MEM":
+        teamname = "Memphis Grizzlies"
+    elif teamname == "NO":
+        teamname = "New Orleans Pelicans"
+    elif teamname == "SA":
+        teamname = "San Antonio Spurs"
+    return teamname
+
+
 def getPlayerID(firstname, lastname):
     sqlite_connection = sqlite3.connect('/root/propscode/propscode/subscribers.db')
     cursor = sqlite_connection.cursor()
@@ -1445,7 +1509,7 @@ def logHit(log,cat, line):
        return 0.0
     if cat == '3-pt':
         for i in range(0,len(log)):
-            if float(log[i][6][0]) > float(line):
+            if float(log[i][6][:log[i][6].find('-')]) > float(line):
                 last10hit += 1
         last10hit = last10hit / len(log)
     elif cat == "points":
@@ -1467,6 +1531,16 @@ def logHit(log,cat, line):
         for i in range(0,len(log)):
             tot = float(log[i][11]) + float(log[i][10]) + float(log[i][16])
             if float(tot) > float(line):
+                last10hit += 1
+        last10hit = last10hit / len(log)
+    elif cat == "steals":
+        for i in range(0,len(log)):
+            if float(log[i][13]) > float(line):
+                last10hit += 1
+        last10hit = last10hit / len(log)
+    elif cat == "blocks":
+        for i in range(0,len(log)):
+            if float(log[i][12]) > float(line):
                 last10hit += 1
         last10hit = last10hit / len(log)
     
@@ -1495,6 +1569,12 @@ def getNbaTodayGames():
     data = nba_API.text
     data_soup = BeautifulSoup(data, 'html5lib')
     games = []
+    
+    element = data_soup.findAll('span', attrs={'class':"VZTD mLASH rIczU LNzKp jsU hfDkF FoYYc FuEs"})
+    lines = []
+    for num, row in enumerate(element):
+        if '-' in row.text:
+            lines.append([row.text, element[num+1].text])
 
 
     element = data_soup.findAll('div', attrs={'class':"ScoreCell__TeamName ScoreCell__TeamName--shortDisplayName db"})
@@ -1508,30 +1588,17 @@ def getNbaTodayGames():
             home = True
             homeTeam = oppteamname(row.text)
         if home and away:
-            games.append([awayTeam + " @ " + homeTeam])
+            games.append(awayTeam + " @ " + homeTeam)
             home = False
             away = False
-    element = data_soup.findAll('span', attrs={'class':"VZTD mLASH rIczU LNzKp jsU hfDkF FoYYc FuEs"})
-    num_games = len(element) // 2
-    index = 0
-    # print(games)
-    games = games[len(games) - num_games:]
-    #print(games)
-    for num, row in enumerate(element):
-        if row.text != None:
-            games[index].append(row.text)
-            if num % 2 != 0 and num != 0:
-                index += 1
-    # Get game IDs
-    # element = data_soup.findAll('a', attrs={'class':"AnchorLink Button Button--sm Button--anchorLink Button--alt mb4 w-100 mr2"})
-    # index = 0
-    # for num, row in enumerate(element):
-    #     #if num % 3 == 0:
-    #     temp = row['href'][row['href'].find("gameId/"):]
-    #     id = temp[temp.find('/') + 1:temp.find('/', temp.find('/') + 1)]
-    #     games[index].append(id)
-    #     index += 1
-    return games
+    real_games = []
+    for i in lines:
+        team = abbToTeamName(i[0][:i[0].find('-')-1])
+        for x in games:
+            if team in x:
+                real_games.append([x,i[0],i[1]])
+                break
+    return real_games
 
 def getPlayerInfo(id):
     nba_API = requests.get(f'https://www.espn.com/nba/player/_/id/{id}', headers={"User-Agent": "Mozilla/5.0"})
