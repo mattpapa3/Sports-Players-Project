@@ -29,13 +29,9 @@ $(document).ready(function() {
                         console.log(i)
                         if (itemIndex === 6)
                         {
-                           updatedProps += ("<td style='color: green;'>" + i + "</td>")
+                           updatedProps += ("<td>" + i + "</td>")
                         }
-                        else if (itemIndex === 7)
-                        {
-                            updatedProps += ("<td>" + i + "</td>")
-                        }
-                        else if (itemIndex != 8 && itemIndex != 2 && itemIndex != 9)
+                        else if (itemIndex != 8 && itemIndex != 2 && itemIndex != 9 && itemIndex != 7)
                         {
                             updatedProps += ("<td>" + i + "</td>");
                         }
@@ -97,20 +93,16 @@ $(document).ready(function() {
           data: {parameter: parameter, parameter2: parameter2 },
           success: function(response) {
               var updatedProps = "<table><thead>";
-              updatedProps += "<tr> <th>Player</th> <th>Line</th> <th>PropCodes Score</th> <th>Views</th> <th>Over</th> <th>Under</th> </tr></thead><tbody>";
+              updatedProps += "<tr> <th>Player</th> <th>Line</th> <th>PropCodes Score</th> <th>Views</th> <th>Over</th> <th>Under</th> <th>EV Over</th> <th> EV Under</th></tr></thead><tbody>";
               $.each(response.content, function(index, row){
                   updatedProps += "<tr>"
                   $.each(row, function(itemIndex, i) {
                     console.log(i);
                       if (itemIndex === 6)
                       {
-                         updatedProps += ("<td style='color: green;'>" + i + "</td>")
+                         updatedProps += ("<td>" + i + "</td>")
                       }
-                      else if (itemIndex === 7)
-                      {
-                          updatedProps += ("<td style='color: red;'>" + i + "</td>")
-                      }
-                      else if (itemIndex != 2 && itemIndex != 8 && itemIndex != 9)
+                      else if (itemIndex != 2 && itemIndex != 8 && itemIndex != 9 && itemIndex != 7)
                       {
                           updatedProps += ("<td>" + i + "</td>");
                       }

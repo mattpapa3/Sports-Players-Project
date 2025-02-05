@@ -1261,6 +1261,7 @@ def calcScoreNBA():
                 usageInjured += nba.calc_uasge_perc(DNPstats, teamstats)
             totstats = nba.getTotStats(id)
             usageP = nba.calc_uasge_perc(totstats, teamstats)
+            restDays = nba.getRestDays(log, True)
         gamescore = float(i[4])
         spread = float(i[5])
         line = float(i[1])
@@ -1397,7 +1398,7 @@ def calcScoreNBA():
         else:
             favorite = 0
         features = [[home,line,positionnum,rank,catnum,nba.last10Hit(log,i[2],i[1]),nba.last5Hit(log,i[2],i[1]),nba.logHit(log,i[2],i[1]),posrank,gamescore,shots,spread,favorite,\
-                     FGlast3,FGlast5,lastGameHit,threePTPercentlast5,threePTPercentlast3,usageInjured,usageP]]
+                     FGlast3,FGlast5,lastGameHit,threePTPercentlast5,threePTPercentlast3,usageInjured,usageP,restDays]]
         overPrediction = scale_predictions(int(overModel.predict(features)))
         underPrediction = scale_predictions(int(underModel.predict(features)))
         cursor.execute("UPDATE Props SET overEV = ? WHERE name=? AND cat=?;",(overPrediction, i[0],i[2]))

@@ -79,13 +79,13 @@ X = df[[ "line","opp", "last10", "oppposrank", "gamescore", "minutes", "shots", 
 #X = df[["homeaway", "line", "opp", "last10", "last5","oppteam", "gamescore", "minutes", "shots", "spread"]]  # Blocks
 y = df["hit"].astype(float)
 
-# corr_matrix = df.corr()
-# plt.figure(figsize=(12, 10))
-# sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', linewidths=0.5)
-# plt.title('Feature Correlation Matrix')
+corr_matrix = df.corr()
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr_matrix, annot=True, fmt='.2f', cmap='coolwarm', linewidths=0.5)
+plt.title('Feature Correlation Matrix')
 
 # #Save the plot to a file
-# plt.savefig('3PT_feature_correlation_matrix.png')
+plt.savefig('Points_feature_correlation_matrix.png')
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 # sc = StandardScaler()

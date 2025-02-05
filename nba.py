@@ -504,7 +504,7 @@ def getGameLog(id, lastYear):
      #   if '2/19' in row.text:
       #      stop2 = True
         if not stop and not stop2 and row.text != 'NBA Mexico City Game 2022' and row.text != 'Averages' and row.text != 'NBA Paris Game 2023' and "Previously" not in row.text and 'All-Star' not in row.text and 'Round' not in row.text and 'Game' not in row.text and 'In-Season' not in row.text and 'Makeup' not in row.text and 'Play-In' not in row.text \
-            and "Cup" not in row.text:
+            and "Cup" not in row.text and "Rescheduled" not in row.text:
             stats_log.append(row.text)
         if stop or stop2:
             i = i + 1
@@ -1830,3 +1830,29 @@ def calc_uasge_perc(stats, team_stats):
 
     return usg_percentage
 
+def getRestDays(log, today):
+    if today:
+        if int(log[0][0][:log[0][0].find('/')]) < 9:
+            date1 = log[0][0] + "/25"
+        else:
+            date1 = log[0][0] + "/24"
+        today_date = datetime.today()
+        date2 = today_date.strftime('%m/%d/%y')
+        date1 = datetime.strptime(date1, '%m/%d/%y')
+        date2 = datetime.strptime(date2, '%m/%d/%y')
+        restDays = abs((date2 - date1).days)
+    elif len(log) > 1:
+        if int(log[0][0][:log[0][0].find('/')]) < 9:
+            date1 = log[0][0] + "/25"
+        else:
+            date1 = log[0][0] + "/24"
+        if int(log[1][0][:log[1][0].find('/')]) < 9:
+            date2 = log[1][0] + "/25"
+        else:
+            date2 = log[1][0] + "/24"
+        date1 = datetime.strptime(date1, '%m/%d/%y')
+        date2 = datetime.strptime(date2, '%m/%d/%y')
+        restDays = abs((date2 - date1).days)
+    else:
+        restDays = 0
+    return restDays

@@ -591,18 +591,7 @@ def checkProps():
                 print(favorite)
                 log = nba.getGameLog(id, False)
                 lastGame = log[0]
-                if int(log[0][0][:log[0][0].find('/')]) < 9:
-                    date1 = log[0][0] + "/25"
-                else:
-                    date1 = log[0][0] + "/24"
-
-                if int(log[1][0][:log[0][0].find('/')]) < 9:
-                    date2 = log[0][0] + "/25"
-                else:
-                    date2 = log[0][0] + "/24"
-                date1 = datetime.strptime(date1, '%m/%d/%y')
-                date2 = datetime.strptime('12/24/24', '%m/%d/%y')
-                restDays = abs((date2 - date1).days)
+                restDays = nba.getRestDays(log, False)
                 if formatted_date in lastGame[0]:
                     print("PLAYED")
                     check = True
