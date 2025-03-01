@@ -545,7 +545,7 @@ def checkProps():
         cursor = sqlite_connection.cursor()
         cursor.execute("SELECT * FROM Props;")
         result = cursor.fetchall()
-        for a, b, c, d, e, f, g, h, n, j, k, l, o, p, q, r, s, t in result:
+        for a, b, c, d, e, f, g, h, n, j, k, l, o, p, q, r, s, t, u in result:
             props.append([a,b,c,l,j,q,k,r])
         props.sort()
         print(props)

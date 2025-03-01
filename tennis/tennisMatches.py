@@ -8,8 +8,8 @@ def getMatches():
     sqlite_connection = sqlite3.connect("/root/propscode/propscode/tennis/tennis.db")
     cursor = sqlite_connection.cursor()
     lines = tennis.getLines()
-    print(lines[:1])
-    for i in lines[:2]:
+    print(lines[1:2])
+    for i in lines[1:2]:
         vs_index = i[0].find("vs")
         odds_index = i[1].find("vs")
         if i[1][odds_index+3] == "+":
@@ -232,5 +232,5 @@ def updateMatches():
     sqlite_connection.close()
 
 if __name__ == "__main__":
-    # getMatches()
-   updateMatches()
+    getMatches()
+    # updateMatches()

@@ -15,6 +15,7 @@ import numpy as np
 from selenium.webdriver.common.action_chains import ActionChains
 import pickle
 from datetime import datetime
+from selenium_stealth import stealth
 
 team_mapping = {
     "Boston" : 1,
@@ -85,16 +86,27 @@ pointsmodel = pickle.load(open("/root/propscode/propscode/NBA/pointsmodel.pkl", 
 tresmodel = pickle.load(open("/root/propscode/propscode/NBA/threepointmodel.pkl", "rb"))
 overModel = pickle.load(open("/root/propscode/propscode/NBA/overOddsmodel.pkl", "rb"))
 underModel = pickle.load(open("/root/propscode/propscode/NBA/underOddsmodel.pkl", "rb"))
+# linesModel = pickle.load(open("/root/propscode/propscode/NBA/linesModel.pkl", "rb"))
 
 
 def scale_predictions(prediction):
-    scaled_preds = prediction
     if prediction > -110 and prediction < 100:
         if prediction > -3:
-            scaled_preds = 100
+            return 100
         else:
-            scaled_preds = -105
-    return scaled_preds
+            return -105
+    return prediction
+
+def american_odds_to_percentage(odds):
+    """Converts American odds to percentage."""
+    if int(odds) > 0:
+        return round(100 / (int(odds) + 100), 4)
+    return round(-int(odds) / (-int(odds) + 100),4)
+
+def probability_to_american_odds(probability):
+    if probability > 0.5:
+        return int(-((probability / (1 - probability)) * 100))
+    return int(((1 - probability) / probability) * 100)
 
 def getHits_Runs_RBISLines():
 #    display = Display(visible=0, size=(1920, 1080))
@@ -373,19 +385,20 @@ def getEarnedRunsAllowedLines():
     return props
 
 def getNBAPointsLines():
-#    display = Display(visible=0, size=(1920, 1080))
-#    display.start()
+    # display = Display(visible=0, size=(1920, 1080))
+    # display.start()
     options = Options()
-    options.add_argument("--headless")
+
+    options.add_argument("--headless=new")
     options.add_argument("--disable-extensions")
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-
-
     props = []
     driver.get("https://sportsbook.draftkings.com/nba-player-props")
-    #element = driver.find_element(By.XPATH, "//a[@id='subcategory_Total Bases']")
+    print(driver.page_source)
+    return 0
+    #element = driver.find_element(By.XPATH, "//a[@id='subcategory_Total Bases']")'subcategory_Points O/U'
     element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[@id='subcategory_Points O/U']")))
     driver.execute_script("arguments[0].scrollIntoView();", element)
     driver.execute_script("arguments[0].click();", element)
@@ -1143,7 +1156,7 @@ def calcScoreNBA():
     cursor = sqlite_connection.cursor()
     cursor.execute("SELECT * FROM Props WHERE regressionLine IS NULL;")
     result = cursor.fetchall()
-    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r in result:
+    for a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s in result:
         props.append([a,b,c,j,k,l[l.find('-')+1:]])
     props.sort()
     # print(props)
@@ -1397,16 +1410,23 @@ def calcScoreNBA():
             favorite = 1
         else:
             favorite = 0
-        features = [[home,line,positionnum,rank,catnum,nba.last10Hit(log,i[2],i[1]),nba.last5Hit(log,i[2],i[1]),nba.logHit(log,i[2],i[1]),posrank,gamescore,shots,spread,favorite,\
-                     FGlast3,FGlast5,lastGameHit,threePTPercentlast5,threePTPercentlast3,usageInjured,usageP,restDays]]
-        overPrediction = scale_predictions(int(overModel.predict(features)))
-        underPrediction = scale_predictions(int(underModel.predict(features)))
+        features = [[home,line,positionnum,rank,catnum,nba.last10Hit(log,i[2],i[1]),nba.last5Hit(log,i[2],i[1]),nba.logHit(log,i[2],i[1]),posrank,shots,spread,\
+                     lastGameHit,threePTPercentlast5,threePTPercentlast3,usageInjured,usageP,restDays]]
+        over_prediction = overModel.predict(features)
+        under_prediction = underModel.predict(features)
+        overPrediction = int(scale_predictions(over_prediction[0]))
+        underPrediction = int(scale_predictions(under_prediction[0]))
+        # features = [[home,positionnum,rank,catnum,nba.last10Hit(log,i[2],i[1]),nba.last5Hit(log,i[2],i[1]),nba.logHit(log,i[2],i[1]),posrank,gamescore,shots,favorite,\
+        #              FGlast3, FGlast5, lastGameHit,threePTPercentlast5,threePTPercentlast3,usageP,restDays]]
+        # linePrediction = linesModel.predict(features)
         cursor.execute("UPDATE Props SET overEV = ? WHERE name=? AND cat=?;",(overPrediction, i[0],i[2]))
         sqlite_connection.commit()
         cursor.execute("UPDATE Props SET underEV = ? WHERE name=? AND cat=?;",(underPrediction, i[0],i[2]))
         sqlite_connection.commit()
         cursor.execute("UPDATE Props SET regressionLine = ? WHERE name = ? AND cat = ?;", (prediction[0], i[0], i[2]))
         sqlite_connection.commit()
+        # cursor.execute("UPDATE Props SET EVline = ? WHERE name = ? AND cat = ?;", (linePrediction[0], i[0], i[2]))
+        # sqlite_connection.commit()
         if prediction2 == 1:
             cursor.execute("UPDATE Props SET prediction = ? WHERE name = ? AND cat = ?;", ("over", i[0], i[2]))
         elif prediction2 == 0:
@@ -1551,8 +1571,35 @@ def checkModelAcc():
     print(threepointersHit)
             
 
+def stealthy():
+    options = webdriver.ChromeOptions()
+    options.add_argument("start-maximized")
+
+    # options.add_argument("--headless")
+    options.add_argument("--headless")
+    # options.add_argument("--disable-extensions")
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    stealth(driver,
+            languages=["en-US", "en"],
+            vendor="Google Inc.",
+            platform="Win32",
+            webgl_vendor="Intel Inc.",
+            renderer="Intel Iris OpenGL Engine",
+            fix_hairline=True,
+            user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.53 Safari/537.36',
+            )
+
+    url = "https://sportsbook.fanduel.com/navigation/nba"
+    driver.get(url)
+    elements = WebDriverWait(driver, 15).until(EC.presence_of_all_elements_located((By.XPATH, "//a[contains(@href, '/basketball/nba/')]")))
+    hrefs = [element.get_attribute("href") for element in elements]
+    print(hrefs)
+    driver.quit()
     
 if __name__ == "__main__":
-    getNBAProps()
-    calcScoreNBA()
+    print(getNBAPointsLines())
+    # getNBAProps()
+    # calcScoreNBA()
     # checkModelAcc()

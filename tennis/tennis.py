@@ -12,7 +12,8 @@ from selenium.common.exceptions import NoSuchElementException
 
 def getLines():
     # Put whatever tennis moneylines from DraftKings you want
-    page = requests.get("https://sportsbook.draftkings.com/leagues/tennis/atp-montpellier")
+    link = "https://sportsbook.draftkings.com/leagues/tennis/atp-santiago"
+    page = requests.get(link)
     page = page.text
     page_soup = BeautifulSoup(page, 'html5lib')
     matches = []
@@ -37,7 +38,10 @@ def getLines():
             lines.append(line)
     tot = []
     for num, i in enumerate(matches):
-        tot.append([i, lines[num], 'hard'])
+        if link == "https://sportsbook.draftkings.com/leagues/tennis/atp-rio-de-janeiro":
+            tot.append([i, lines[num], 'clay'])
+        else:
+            tot.append([i, lines[num], 'hard'])
     
     return tot
 
@@ -52,10 +56,12 @@ def getStats(name):
         print(name)
     if name == "SoonwooKwon":
         name = "SoonWooKwon"
-    if name == "DanEvans":
+    elif name == "DanEvans":
         name = "DanielEvans"
-    if name == "MackenzieMcDonald":
+    elif name == "MackenzieMcDonald":
         name = "MackenzieMcdonald"
+    elif name == "YunchaoketeBu":
+        name = "BuYunchaokete"
     recentstats = []
     options = Options()
     options.add_argument("--headless=new")

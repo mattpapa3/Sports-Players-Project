@@ -1702,7 +1702,7 @@ def nbaTodaysProps():
                 games.append(i[0])
             cursor.execute("SELECT * FROM Props WHERE cat=? AND game=?;", ("points",games[0]))
             result = cursor.fetchall()
-            for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r in result:
+            for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r,s in result:
                 props.append([a,b,c,n,m,o,p,h,k,l,q,r])
     except sqlite3.Error as error:
         print("Error while connection to sqlite", error)
@@ -1963,7 +1963,7 @@ def process():
  #           cursor.close()
  #           sqlite_connection.close()
     
-    for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r in result:
+    for a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r,s in result:
         updatedProps.append([a,b,c,n,m,o,p,h,k,l,q,r])
     return jsonify(content=updatedProps)
 
